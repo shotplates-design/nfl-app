@@ -1,0 +1,1412 @@
+{
+  "season": 2026,
+  "week": 6,
+  "schedule_source": "NFL.com",
+  "schedule_game_count": 13,
+  "matchups": [
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Seahawks@Broncos",
+      "away_team": "Seahawks",
+      "home_team": "Broncos",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Seahawks",
+        "home_team": "Broncos",
+        "overall_edge": -0.0488,
+        "lean": "Broncos slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.7734,
+            "home": 0.5469,
+            "edge": 0.2266
+          },
+          "rushing": {
+            "away": 0.3359,
+            "home": 0.5,
+            "edge": -0.1641
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.6094,
+            "home": 0.8672,
+            "edge": -0.2578
+          },
+          "third_down": {
+            "away": 0.1797,
+            "home": 0.1797,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Pass defense",
+        "Interceptions",
+        "Receiving first-down rate",
+        "Pass coverage",
+        "Rush TD prevention"
+      ],
+      "away_weaknesses": [
+        "Third-down conversion",
+        "Rush first-down rate",
+        "Forced fumbles",
+        "Rush ball security",
+        "Ball security through the air"
+      ],
+      "home_strengths": [
+        "Pass protection",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security",
+        "Pass rush"
+      ],
+      "home_weaknesses": [
+        "Pass efficiency",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "Rush efficiency",
+        "QB/pass rating"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Broncos@Jaguars",
+      "away_team": "Broncos",
+      "home_team": "Jaguars",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Broncos",
+        "home_team": "Jaguars",
+        "overall_edge": -0.1015,
+        "lean": "Jaguars clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.1562,
+            "home": 0.8047,
+            "edge": -0.6484
+          },
+          "rushing": {
+            "away": 0.5938,
+            "home": 0.3906,
+            "edge": 0.2031
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.7422,
+            "home": 0.7031,
+            "edge": 0.0391
+          },
+          "third_down": {
+            "away": 0.5234,
+            "home": 0.5234,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Pass protection",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security",
+        "Pass rush"
+      ],
+      "away_weaknesses": [
+        "Pass efficiency",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "Rush efficiency",
+        "QB/pass rating"
+      ],
+      "home_strengths": [
+        "Run defense",
+        "Pass TD prevention",
+        "Pass efficiency",
+        "QB/pass rating",
+        "Interceptions"
+      ],
+      "home_weaknesses": [
+        "Pass defense",
+        "Fumble recoveries",
+        "Receiving ball security",
+        "Forced fumbles",
+        "Rush efficiency"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Bears@Falcons",
+      "away_team": "Bears",
+      "home_team": "Falcons",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Bears",
+        "home_team": "Falcons",
+        "overall_edge": 0.0762,
+        "lean": "Bears slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.6562,
+            "home": 0.4062,
+            "edge": 0.25
+          },
+          "rushing": {
+            "away": 0.7578,
+            "home": 0.6328,
+            "edge": 0.125
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.5156,
+            "home": 0.5859,
+            "edge": -0.0703
+          },
+          "third_down": {
+            "away": 0.7266,
+            "home": 0.7266,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Third-down conversion",
+        "Rush efficiency",
+        "Pass rush",
+        "Pass TD prevention",
+        "Receiving first-down rate"
+      ],
+      "away_weaknesses": [
+        "Pass defense",
+        "off_3rd_attempts",
+        "Passing TD production",
+        "Forced fumbles",
+        "Rush ball security"
+      ],
+      "home_strengths": [
+        "Rush efficiency",
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass defense",
+        "Rush TD prevention"
+      ],
+      "home_weaknesses": [
+        "Ball security through the air",
+        "Interceptions",
+        "QB/pass rating",
+        "Passing TD production",
+        "Pass TD prevention"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Falcons@Browns",
+      "away_team": "Falcons",
+      "home_team": "Browns",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Falcons",
+        "home_team": "Browns",
+        "overall_edge": 0.1309,
+        "lean": "Falcons clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.7031,
+            "home": 0.6562,
+            "edge": 0.0469
+          },
+          "rushing": {
+            "away": 0.6094,
+            "home": 0.5078,
+            "edge": 0.1016
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.6641,
+            "home": 0.2891,
+            "edge": 0.375
+          },
+          "third_down": {
+            "away": 0.3203,
+            "home": 0.3203,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Rush efficiency",
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass defense",
+        "Rush TD prevention"
+      ],
+      "away_weaknesses": [
+        "Ball security through the air",
+        "Interceptions",
+        "QB/pass rating",
+        "Passing TD production",
+        "Pass TD prevention"
+      ],
+      "home_strengths": [
+        "Rush TD prevention",
+        "Pass rush",
+        "Ball security through the air",
+        "Receiving ball security",
+        "Forced fumbles"
+      ],
+      "home_weaknesses": [
+        "Pass protection",
+        "Third-down conversion",
+        "Rush first-down rate",
+        "Rush ball security",
+        "Receiving first-down rate"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Ravens@Colts",
+      "away_team": "Ravens",
+      "home_team": "Colts",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Ravens",
+        "home_team": "Colts",
+        "overall_edge": 0.0488,
+        "lean": "Ravens slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.5547,
+            "home": 0.3359,
+            "edge": 0.2188
+          },
+          "rushing": {
+            "away": 0.5547,
+            "home": 0.4219,
+            "edge": 0.1328
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.4219,
+            "home": 0.5781,
+            "edge": -0.1562
+          },
+          "third_down": {
+            "away": 0.3047,
+            "home": 0.3047,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Pass efficiency",
+        "QB/pass rating",
+        "Rush efficiency",
+        "Receiving first-down rate",
+        "off_3rd_attempts"
+      ],
+      "away_weaknesses": [
+        "Third-down conversion",
+        "Rush TD prevention",
+        "Pass rush",
+        "Interceptions",
+        "Pass protection"
+      ],
+      "home_strengths": [
+        "Rush first-down rate",
+        "Rush ball security",
+        "Pass protection",
+        "Receiving ball security",
+        "Third-down conversion"
+      ],
+      "home_weaknesses": [
+        "Passing TD production",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "QB/pass rating",
+        "Pass efficiency"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Colts@Patriots",
+      "away_team": "Colts",
+      "home_team": "Patriots",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Colts",
+        "home_team": "Patriots",
+        "overall_edge": 0.0449,
+        "lean": "Colts slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.3594,
+            "home": 0.4844,
+            "edge": -0.125
+          },
+          "rushing": {
+            "away": 0.4219,
+            "home": 0.3672,
+            "edge": 0.0547
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.6719,
+            "home": 0.4219,
+            "edge": 0.25
+          },
+          "third_down": {
+            "away": 0.4375,
+            "home": 0.4375,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Rush first-down rate",
+        "Rush ball security",
+        "Pass protection",
+        "Receiving ball security",
+        "Third-down conversion"
+      ],
+      "away_weaknesses": [
+        "Passing TD production",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "QB/pass rating",
+        "Pass efficiency"
+      ],
+      "home_strengths": [
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Pass TD prevention",
+        "Pass defense",
+        "Forced fumbles"
+      ],
+      "home_weaknesses": [
+        "Ball security through the air",
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Interceptions"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Patriots@Giants",
+      "away_team": "Patriots",
+      "home_team": "Giants",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Patriots",
+        "home_team": "Giants",
+        "overall_edge": 0.041,
+        "lean": "Patriots slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.7969,
+            "home": 0.4531,
+            "edge": 0.3438
+          },
+          "rushing": {
+            "away": 0.3203,
+            "home": 0.4219,
+            "edge": -0.1016
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.3516,
+            "home": 0.4297,
+            "edge": -0.0781
+          },
+          "third_down": {
+            "away": 0.6797,
+            "home": 0.6797,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Pass TD prevention",
+        "Pass defense",
+        "Forced fumbles"
+      ],
+      "away_weaknesses": [
+        "Ball security through the air",
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Interceptions"
+      ],
+      "home_strengths": [
+        "Third-down conversion",
+        "Interceptions",
+        "Pass defense",
+        "Pass coverage",
+        "Passing TD production"
+      ],
+      "home_weaknesses": [
+        "Run defense",
+        "Rush ball security",
+        "off_3rd_attempts",
+        "Pass rush",
+        "Receiving efficiency"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Panthers@Eagles",
+      "away_team": "Panthers",
+      "home_team": "Eagles",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Panthers",
+        "home_team": "Eagles",
+        "overall_edge": 0.1855,
+        "lean": "Panthers clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.6641,
+            "home": 0.4297,
+            "edge": 0.2344
+          },
+          "rushing": {
+            "away": 0.5938,
+            "home": 0.2266,
+            "edge": 0.3672
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.4062,
+            "home": 0.2656,
+            "edge": 0.1406
+          },
+          "third_down": {
+            "away": 0.3203,
+            "home": 0.3203,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Receiving first-down rate",
+        "off_3rd_attempts",
+        "Receiving efficiency",
+        "Rush ball security",
+        "Pass TD prevention"
+      ],
+      "away_weaknesses": [
+        "Run defense",
+        "Receiving ball security",
+        "Third-down conversion",
+        "Rush TD prevention",
+        "Forced fumbles"
+      ],
+      "home_strengths": [
+        "Receiving ball security",
+        "Pass TD prevention",
+        "Pass coverage",
+        "Forced fumbles",
+        "Pass defense"
+      ],
+      "home_weaknesses": [
+        "Fumble recoveries",
+        "Rush first-down rate",
+        "Rush TD prevention",
+        "Pass rush",
+        "Pass efficiency"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Panthers@Buccaneers",
+      "away_team": "Panthers",
+      "home_team": "Buccaneers",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Panthers",
+        "home_team": "Buccaneers",
+        "overall_edge": 0.1914,
+        "lean": "Panthers clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.6328,
+            "home": 0.4688,
+            "edge": 0.1641
+          },
+          "rushing": {
+            "away": 0.7891,
+            "home": 0.4453,
+            "edge": 0.3438
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.4062,
+            "home": 0.1484,
+            "edge": 0.2578
+          },
+          "third_down": {
+            "away": 0.375,
+            "home": 0.375,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Receiving first-down rate",
+        "off_3rd_attempts",
+        "Receiving efficiency",
+        "Rush ball security",
+        "Pass TD prevention"
+      ],
+      "away_weaknesses": [
+        "Run defense",
+        "Receiving ball security",
+        "Third-down conversion",
+        "Rush TD prevention",
+        "Forced fumbles"
+      ],
+      "home_strengths": [
+        "Run defense",
+        "Rush TD prevention",
+        "Rush efficiency",
+        "Interceptions",
+        "Rush ball security"
+      ],
+      "home_weaknesses": [
+        "Pass protection",
+        "Pass rush",
+        "Receiving efficiency",
+        "Passing TD production",
+        "Receiving first-down rate"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Cardinals@Rams",
+      "away_team": "Cardinals",
+      "home_team": "Rams",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Cardinals",
+        "home_team": "Rams",
+        "overall_edge": -0.0938,
+        "lean": "Rams clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.5,
+            "home": 0.2812,
+            "edge": 0.2188
+          },
+          "rushing": {
+            "away": 0.3516,
+            "home": 0.5312,
+            "edge": -0.1797
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.2969,
+            "home": 0.7109,
+            "edge": -0.4141
+          },
+          "third_down": {
+            "away": 0.8281,
+            "home": 0.8281,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Forced fumbles",
+        "Fumble recoveries"
+      ],
+      "away_weaknesses": [
+        "Pass defense",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "off_3rd_attempts",
+        "Pass TD prevention"
+      ],
+      "home_strengths": [
+        "Pass defense",
+        "Pass protection",
+        "Pass coverage",
+        "Third-down conversion",
+        "Receiving ball security"
+      ],
+      "home_weaknesses": [
+        "Ball security through the air",
+        "Fumble recoveries",
+        "Pass rush",
+        "Run defense",
+        "QB/pass rating"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Cardinals@Chiefs",
+      "away_team": "Cardinals",
+      "home_team": "Chiefs",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Cardinals",
+        "home_team": "Chiefs",
+        "overall_edge": -0.1386,
+        "lean": "Chiefs clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.4453,
+            "home": 0.4375,
+            "edge": 0.0078
+          },
+          "rushing": {
+            "away": 0.6484,
+            "home": 0.6797,
+            "edge": -0.0312
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.2109,
+            "home": 0.7422,
+            "edge": -0.5312
+          },
+          "third_down": {
+            "away": 0.5781,
+            "home": 0.5781,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Forced fumbles",
+        "Fumble recoveries"
+      ],
+      "away_weaknesses": [
+        "Pass defense",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "off_3rd_attempts",
+        "Pass TD prevention"
+      ],
+      "home_strengths": [
+        "Rush efficiency",
+        "off_3rd_attempts",
+        "Receiving ball security",
+        "Pass TD prevention",
+        "Pass protection"
+      ],
+      "home_weaknesses": [
+        "Pass rush",
+        "Forced fumbles",
+        "Third-down conversion",
+        "Fumble recoveries",
+        "Passing TD production"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Bills@Raiders",
+      "away_team": "Bills",
+      "home_team": "Raiders",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Bills",
+        "home_team": "Raiders",
+        "overall_edge": 0.0664,
+        "lean": "Bills slight matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.5703,
+            "home": 0.4766,
+            "edge": 0.0938
+          },
+          "rushing": {
+            "away": 0.5234,
+            "home": 0.3594,
+            "edge": 0.1641
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.7031,
+            "home": 0.6953,
+            "edge": 0.0078
+          },
+          "third_down": {
+            "away": 0.6406,
+            "home": 0.6406,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Rush efficiency",
+        "off_3rd_attempts"
+      ],
+      "away_weaknesses": [
+        "Rush ball security",
+        "Pass TD prevention",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security"
+      ],
+      "home_strengths": [
+        "Forced fumbles",
+        "Fumble recoveries",
+        "Passing TD production",
+        "Rush ball security",
+        "Receiving first-down rate"
+      ],
+      "home_weaknesses": [
+        "Rush first-down rate",
+        "Rush efficiency",
+        "Run defense",
+        "Pass defense",
+        "Pass TD prevention"
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "game_id": "Bills@Packers",
+      "away_team": "Bills",
+      "home_team": "Packers",
+      "kickoff": null,
+      "venue": null,
+      "source": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "analysis": {
+        "away_team": "Bills",
+        "home_team": "Packers",
+        "overall_edge": 0.2109,
+        "lean": "Bills clear matchup edge",
+        "categories": {
+          "passing": {
+            "away": 0.8828,
+            "home": 0.5234,
+            "edge": 0.3594
+          },
+          "rushing": {
+            "away": 0.7188,
+            "home": 0.3594,
+            "edge": 0.3594
+          },
+          "passing_protection_vs_pass_rush": {
+            "away": 0.7344,
+            "home": 0.6094,
+            "edge": 0.125
+          },
+          "third_down": {
+            "away": 0.3359,
+            "home": 0.3359,
+            "edge": 0.0
+          }
+        }
+      },
+      "away_strengths": [
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Rush efficiency",
+        "off_3rd_attempts"
+      ],
+      "away_weaknesses": [
+        "Rush ball security",
+        "Pass TD prevention",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security"
+      ],
+      "home_strengths": [
+        "Interceptions",
+        "Receiving efficiency",
+        "Pass coverage",
+        "Passing TD production",
+        "off_3rd_attempts"
+      ],
+      "home_weaknesses": [
+        "Third-down conversion",
+        "Rush efficiency",
+        "Rush TD prevention",
+        "Forced fumbles",
+        "Rush first-down rate"
+      ]
+    }
+  ],
+  "team_strengths_weaknesses": [
+    {
+      "team": "49ers",
+      "strengths": [
+        "QB/pass rating",
+        "Passing TD production",
+        "Pass protection",
+        "Receiving ball security",
+        "Forced fumbles"
+      ],
+      "weaknesses": [
+        "Interceptions",
+        "Pass rush",
+        "Rush ball security",
+        "Rush efficiency",
+        "Third-down conversion"
+      ]
+    },
+    {
+      "team": "Bears",
+      "strengths": [
+        "Third-down conversion",
+        "Rush efficiency",
+        "Pass rush",
+        "Pass TD prevention",
+        "Receiving first-down rate"
+      ],
+      "weaknesses": [
+        "Pass defense",
+        "off_3rd_attempts",
+        "Passing TD production",
+        "Forced fumbles",
+        "Rush ball security"
+      ]
+    },
+    {
+      "team": "Bengals",
+      "strengths": [
+        "Third-down conversion",
+        "Fumble recoveries",
+        "Pass rush",
+        "Passing TD production",
+        "QB/pass rating"
+      ],
+      "weaknesses": [
+        "Run defense",
+        "Rush efficiency",
+        "Receiving efficiency",
+        "Receiving ball security",
+        "off_3rd_attempts"
+      ]
+    },
+    {
+      "team": "Bills",
+      "strengths": [
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Rush efficiency",
+        "off_3rd_attempts"
+      ],
+      "weaknesses": [
+        "Rush ball security",
+        "Pass TD prevention",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security"
+      ]
+    },
+    {
+      "team": "Broncos",
+      "strengths": [
+        "Pass protection",
+        "Pass coverage",
+        "Interceptions",
+        "Receiving ball security",
+        "Pass rush"
+      ],
+      "weaknesses": [
+        "Pass efficiency",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "Rush efficiency",
+        "QB/pass rating"
+      ]
+    },
+    {
+      "team": "Browns",
+      "strengths": [
+        "Rush TD prevention",
+        "Pass rush",
+        "Ball security through the air",
+        "Receiving ball security",
+        "Forced fumbles"
+      ],
+      "weaknesses": [
+        "Pass protection",
+        "Third-down conversion",
+        "Rush first-down rate",
+        "Rush ball security",
+        "Receiving first-down rate"
+      ]
+    },
+    {
+      "team": "Buccaneers",
+      "strengths": [
+        "Run defense",
+        "Rush TD prevention",
+        "Rush efficiency",
+        "Interceptions",
+        "Rush ball security"
+      ],
+      "weaknesses": [
+        "Pass protection",
+        "Pass rush",
+        "Receiving efficiency",
+        "Passing TD production",
+        "Receiving first-down rate"
+      ]
+    },
+    {
+      "team": "Cardinals",
+      "strengths": [
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Forced fumbles",
+        "Fumble recoveries"
+      ],
+      "weaknesses": [
+        "Pass defense",
+        "Receiving efficiency",
+        "Pass efficiency",
+        "off_3rd_attempts",
+        "Pass TD prevention"
+      ]
+    },
+    {
+      "team": "Chargers",
+      "strengths": [
+        "Forced fumbles",
+        "Fumble recoveries",
+        "Run defense",
+        "Interceptions",
+        "Rush efficiency"
+      ],
+      "weaknesses": [
+        "Ball security through the air",
+        "QB/pass rating",
+        "Pass protection",
+        "Rush TD prevention",
+        "Rush first-down rate"
+      ]
+    },
+    {
+      "team": "Chiefs",
+      "strengths": [
+        "Rush efficiency",
+        "off_3rd_attempts",
+        "Receiving ball security",
+        "Pass TD prevention",
+        "Pass protection"
+      ],
+      "weaknesses": [
+        "Pass rush",
+        "Forced fumbles",
+        "Third-down conversion",
+        "Fumble recoveries",
+        "Passing TD production"
+      ]
+    },
+    {
+      "team": "Colts",
+      "strengths": [
+        "Rush first-down rate",
+        "Rush ball security",
+        "Pass protection",
+        "Receiving ball security",
+        "Third-down conversion"
+      ],
+      "weaknesses": [
+        "Passing TD production",
+        "Receiving first-down rate",
+        "Receiving efficiency",
+        "QB/pass rating",
+        "Pass efficiency"
+      ]
+    },
+    {
+      "team": "Commanders",
+      "strengths": [
+        "Ball security through the air",
+        "Rush TD prevention",
+        "Rush efficiency",
+        "Fumble recoveries",
+        "Pass protection"
+      ],
+      "weaknesses": [
+        "Pass TD prevention",
+        "off_3rd_attempts",
+        "Pass efficiency",
+        "Pass coverage",
+        "Pass rush"
+      ]
+    },
+    {
+      "team": "Cowboys",
+      "strengths": [
+        "Pass protection",
+        "Third-down conversion",
+        "Rush first-down rate",
+        "off_3rd_attempts",
+        "Receiving ball security"
+      ],
+      "weaknesses": [
+        "Interceptions",
+        "Pass coverage",
+        "Pass rush",
+        "Pass defense",
+        "Run defense"
+      ]
+    },
+    {
+      "team": "Dolphins",
+      "strengths": [
+        "Rush efficiency",
+        "Run defense",
+        "Rush TD prevention",
+        "Receiving efficiency",
+        "Third-down conversion"
+      ],
+      "weaknesses": [
+        "Passing TD production",
+        "QB/pass rating",
+        "Pass rush",
+        "Pass coverage",
+        "Fumble recoveries"
+      ]
+    },
+    {
+      "team": "Eagles",
+      "strengths": [
+        "Receiving ball security",
+        "Pass TD prevention",
+        "Pass coverage",
+        "Forced fumbles",
+        "Pass defense"
+      ],
+      "weaknesses": [
+        "Fumble recoveries",
+        "Rush first-down rate",
+        "Rush TD prevention",
+        "Pass rush",
+        "Pass efficiency"
+      ]
+    },
+    {
+      "team": "Falcons",
+      "strengths": [
+        "Rush efficiency",
+        "Rush first-down rate",
+        "Receiving efficiency",
+        "Pass defense",
+        "Rush TD prevention"
+      ],
+      "weaknesses": [
+        "Ball security through the air",
+        "Interceptions",
+        "QB/pass rating",
+        "Passing TD production",
+        "Pass TD prevention"
+      ]
+    },
+    {
+      "team": "Giants",
+      "strengths": [
+        "Third-down conversion",
+        "Interceptions",
+        "Pass defense",
+        "Pass coverage",
+        "Passing TD production"
+      ],
+      "weaknesses": [
+        "Run defense",
+        "Rush ball security",
+        "off_3rd_attempts",
+        "Pass rush",
+        "Receiving efficiency"
+      ]
+    },
+    {
+      "team": "Jaguars",
+      "strengths": [
+        "Run defense",
+        "Pass TD prevention",
+        "Pass efficiency",
+        "QB/pass rating",
+        "Interceptions"
+      ],
+      "weaknesses": [
+        "Pass defense",
+        "Fumble recoveries",
+        "Receiving ball security",
+        "Forced fumbles",
+        "Rush efficiency"
+      ]
+    },
+    {
+      "team": "Jets",
+      "strengths": [
+        "Ball security through the air",
+        "Fumble recoveries",
+        "Pass defense",
+        "Pass rush",
+        "Forced fumbles"
+      ],
+      "weaknesses": [
+        "Receiving first-down rate",
+        "Interceptions",
+        "Pass protection",
+        "Rush efficiency",
+        "Rush ball security"
+      ]
+    },
+    {
+      "team": "Lions",
+      "strengths": [
+        "Pass rush",
+        "Ball security through the air",
+        "Passing TD production",
+        "QB/pass rating",
+        "Rush first-down rate"
+      ],
+      "weaknesses": [
+        "Pass TD prevention",
+        "Pass coverage",
+        "Rush TD prevention",
+        "Third-down conversion",
+        "Pass defense"
+      ]
+    },
+    {
+      "team": "Packers",
+      "strengths": [
+        "Interceptions",
+        "Receiving efficiency",
+        "Pass coverage",
+        "Passing TD production",
+        "off_3rd_attempts"
+      ],
+      "weaknesses": [
+        "Third-down conversion",
+        "Rush efficiency",
+        "Rush TD prevention",
+        "Forced fumbles",
+        "Rush first-down rate"
+      ]
+    },
+    {
+      "team": "Panthers",
+      "strengths": [
+        "Receiving first-down rate",
+        "off_3rd_attempts",
+        "Receiving efficiency",
+        "Rush ball security",
+        "Pass TD prevention"
+      ],
+      "weaknesses": [
+        "Run defense",
+        "Receiving ball security",
+        "Third-down conversion",
+        "Rush TD prevention",
+        "Forced fumbles"
+      ]
+    },
+    {
+      "team": "Patriots",
+      "strengths": [
+        "Receiving efficiency",
+        "Pass efficiency",
+        "Pass TD prevention",
+        "Pass defense",
+        "Forced fumbles"
+      ],
+      "weaknesses": [
+        "Ball security through the air",
+        "Receiving ball security",
+        "Rush ball security",
+        "Third-down conversion",
+        "Interceptions"
+      ]
+    },
+    {
+      "team": "Raiders",
+      "strengths": [
+        "Forced fumbles",
+        "Fumble recoveries",
+        "Passing TD production",
+        "Rush ball security",
+        "Receiving first-down rate"
+      ],
+      "weaknesses": [
+        "Rush first-down rate",
+        "Rush efficiency",
+        "Run defense",
+        "Pass defense",
+        "Pass TD prevention"
+      ]
+    },
+    {
+      "team": "Rams",
+      "strengths": [
+        "Pass defense",
+        "Pass protection",
+        "Pass coverage",
+        "Third-down conversion",
+        "Receiving ball security"
+      ],
+      "weaknesses": [
+        "Ball security through the air",
+        "Fumble recoveries",
+        "Pass rush",
+        "Run defense",
+        "QB/pass rating"
+      ]
+    },
+    {
+      "team": "Ravens",
+      "strengths": [
+        "Pass efficiency",
+        "QB/pass rating",
+        "Rush efficiency",
+        "Receiving first-down rate",
+        "off_3rd_attempts"
+      ],
+      "weaknesses": [
+        "Third-down conversion",
+        "Rush TD prevention",
+        "Pass rush",
+        "Interceptions",
+        "Pass protection"
+      ]
+    },
+    {
+      "team": "Saints",
+      "strengths": [
+        "Third-down conversion",
+        "Forced fumbles",
+        "Fumble recoveries",
+        "Receiving ball security",
+        "Passing TD production"
+      ],
+      "weaknesses": [
+        "Rush TD prevention",
+        "off_3rd_attempts",
+        "Interceptions",
+        "Pass coverage",
+        "Receiving efficiency"
+      ]
+    },
+    {
+      "team": "Seahawks",
+      "strengths": [
+        "Pass defense",
+        "Interceptions",
+        "Receiving first-down rate",
+        "Pass coverage",
+        "Rush TD prevention"
+      ],
+      "weaknesses": [
+        "Third-down conversion",
+        "Rush first-down rate",
+        "Forced fumbles",
+        "Rush ball security",
+        "Ball security through the air"
+      ]
+    },
+    {
+      "team": "Steelers",
+      "strengths": [
+        "Rush ball security",
+        "Forced fumbles",
+        "Pass TD prevention",
+        "Passing TD production",
+        "Rush efficiency"
+      ],
+      "weaknesses": [
+        "Third-down conversion",
+        "Pass protection",
+        "Receiving first-down rate",
+        "Receiving ball security",
+        "QB/pass rating"
+      ]
+    },
+    {
+      "team": "Texans",
+      "strengths": [
+        "Ball security through the air",
+        "Pass rush",
+        "Receiving ball security",
+        "Run defense",
+        "Rush ball security"
+      ],
+      "weaknesses": [
+        "Rush efficiency",
+        "Interceptions",
+        "Pass protection",
+        "Passing TD production",
+        "Pass coverage"
+      ]
+    },
+    {
+      "team": "Titans",
+      "strengths": [
+        "Run defense",
+        "Pass TD prevention",
+        "off_3rd_attempts",
+        "Pass protection",
+        "Ball security through the air"
+      ],
+      "weaknesses": [
+        "Forced fumbles",
+        "Fumble recoveries",
+        "Receiving ball security",
+        "Receiving first-down rate",
+        "Receiving efficiency"
+      ]
+    },
+    {
+      "team": "Vikings",
+      "strengths": [
+        "Pass coverage",
+        "Pass TD prevention",
+        "Rush TD prevention",
+        "Interceptions",
+        "Pass rush"
+      ],
+      "weaknesses": [
+        "off_3rd_attempts",
+        "Receiving first-down rate",
+        "Rush first-down rate",
+        "Pass protection",
+        "Passing TD production"
+      ]
+    }
+  ]
+}
