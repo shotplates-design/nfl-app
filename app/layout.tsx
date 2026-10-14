@@ -4,7 +4,7 @@ export const metadata: Metadata = { metadataBase:new URL(SITE), title:{default:`
   openGraph:{siteName:SITE_NAME,type:'website',locale:'en_US'}, twitter:{card:'summary_large_image'}, alternates:{canonical:'/'},
   appleWebApp:{capable:true,title:'BetStats',statusBarStyle:'black-translucent'}, icons:{icon:'/icon.svg',apple:'/icon-192.png'} };
 export const viewport: Viewport = { themeColor:'#020617', width:'device-width', initialScale:1 };
-export default function Root({children}:{children:React.ReactNode}){ return <html lang="en"><body>
+export default function Root({children}:{children:React.ReactNode}){ return <html lang="en"><body className="overflow-x-hidden">
   <header className="sticky top-0 z-10 bg-slate-950/90 backdrop-blur border-b border-slate-800"><nav className="max-w-5xl mx-auto px-4 h-12 flex items-center gap-4 text-sm">
     <Link href="/" className="font-bold text-white whitespace-nowrap">🏈 BetStats</Link><div className="hidden md:flex items-center gap-4"><Link href="/matchups">Matchups</Link><Link href="/dashboard">Dashboard</Link><Link href="/players">Players</Link><Link href="/teams">Teams</Link><Link href="/streaks">Streaks</Link><Link href="/leaders">Leaders</Link><Link href="/insights">Insights</Link><Link href="/watchlist">★ Watchlist</Link><Link href="/compare">Compare</Link></div><Link href="/login" className="ml-auto whitespace-nowrap rounded-full border border-slate-700 px-3 py-1 text-slate-200">Log in</Link></nav></header>
   <main className="max-w-5xl mx-auto px-4 py-5 pb-24 md:pb-5">{children}</main>

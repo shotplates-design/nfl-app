@@ -7,7 +7,7 @@ export const TEAMS: Record<string,string> = {ari:'Arizona Cardinals',atl:'Atlant
 export const teamName = (t:string)=> TEAMS[t] || t.toUpperCase();
 // key stats per category: [field, label]
 export const CAT_STATS: Record<string,[string,string][]> = {
-  passing:[['passYds','Pass Yds'],['passTd','Pass TD'],['int','INT'],['cmp','Cmp'],['att','Att'],['rtg','Rating']],
+  passing:[['passYds','Pass Yds'],['passTd','Pass TD'],['int','INT'],['cmp','Cmp'],['att','Att'],['rtg','Rating'],['car','Car'],['primYds','Rush Yds'],['primTd','Rush TD']],
   rushing:[['primYds','Rush Yds'],['car','Carries'],['primTd','TD'],['rec','Rec'],['tgts','Targets'],['lng','Long']],
   receiving:[['primYds','Rec Yds'],['rec','Rec'],['tgts','Targets'],['primTd','TD'],['lng','Long'],['car','Carries']],
   defense:[['tackles','Tackles'],['solo','Solo'],['sacks','Sacks'],['int','INT'],['pd','PD'],['ff','FF']],
@@ -20,8 +20,8 @@ export function catGames(p:Player){ return p.games.filter(g=>g.cat===p.cat); }
 export function avg(gs:Game[],f:string){ const v=gs.map(g=>g[f]).filter(x=>typeof x==='number'); return v.length? v.reduce((a,b)=>a+b,0)/v.length : null; }
 export function sum(gs:Game[],f:string){ return gs.map(g=>g[f]).filter(x=>typeof x==='number').reduce((a,b)=>a+b,0); }
 export const fmt=(n:number|null|undefined,d=1)=> n==null? '—' : (Number.isInteger(n)? String(n) : n.toFixed(d));
-// Carries leaderboard also includes QBs (carries are on their passing rows).
-export function leaders(cat:string,field:string,n=50,minGames=2){ const qbCar=cat==='rushing'&&field==='car'; return players.filter(p=>p.cat===cat||(qbCar&&p.cat==='passing')).map(p=>{const gs=qbCar?p.games.filter(g=>(g.cat==='rushing'||g.cat==='passing')&&typeof g.car==='number'):catGames(p);return {p,gp:gs.length,total:sum(gs,field),avg:avg(gs,field)}})
+// Rushing leaderboards (yds, carries, TD) include QBs: their rushing is stored on passing rows.
+export function leaders(cat:string,field:string,n=50,minGames=2){ const qbCar=cat==='rushing'&&['car','primYds','primTd'].includes(field); return players.filter(p=>p.cat===cat||(qbCar&&p.cat==='passing')).map(p=>{const gs=qbCar?p.games.filter(g=>(g.cat==='rushing'||g.cat==='passing')&&typeof g[field]==='number'):catGames(p);return {p,gp:gs.length,total:sum(gs,field),avg:avg(gs,field)}})
   .filter(x=>x.gp>=minGames&&x.avg!=null).sort((a,b)=>b.total-a.total).slice(0,n); }
 export const teamCodes = ()=> Array.from(new Set(players.map(p=>p.team))).sort();
 export const bySlug = (s:string)=> players.find(p=>p.slug===s);

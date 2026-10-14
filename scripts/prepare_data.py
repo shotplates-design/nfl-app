@@ -10,6 +10,8 @@ def slug(s): return re.sub(r'[^a-z0-9]+','-',s.lower()).strip('-')
 MON={'9':9,'10':10,'11':11,'12':12,'1':1,'2':2}
 def sortkey(date):
     m,dd=date.split()[1].split('/'); m=int(m); return (m+12 if m<8 else m)*100+int(dd)
+SP=D+'/supplemental/qb-rushing.json'
+SUPP={pid:{(x['date'],x['opp']):x for x in v['games']} for pid,v in (json.load(open(SP))['players'].items() if os.path.exists(SP) else [])}
 players={}
 for _,r in d.iterrows():
     pid=r.player_id
@@ -21,6 +23,9 @@ for _,r in d.iterrows():
             for c,k in [('cmp','cmp'),('att','att'),('yds','passYds'),('td','passTd'),('int','int'),('rtg','rtg'),('qbr','qbr'),('sack','sacks'),('lng','lng')]: g[k]=num(r[c])
             # QB rows carry a 'car' value (carries). The CSV has no QB rush yds/TD: yds/td on these rows are passing.
             g['car']=num(r.car)
+            # Supplemental QB rushing (ESPN gamelog, carries verified against this CSV): stored as primYds/primTd like RB rows.
+            sg=SUPP.get(str(pid),{}).get((r.date,r.opp))
+            if sg and sg['car']==g['car']: g['primYds']=sg['rushYds']; g['primTd']=sg['rushTd']
         elif num(r.car) is not None:
             y,a,car,rec=num(r.yds),num(r.avg),num(r.car) or 0,num(r.rec) or 0
             # shared yds/avg/td columns: decide rushing vs receiving by which divisor reproduces avg
