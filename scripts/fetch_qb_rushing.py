@@ -13,7 +13,7 @@ out={'source':'ESPN public athlete gamelog API (site.web.api.espn.com)','fetched
 for pid,rows in q.groupby('player_id'):
     season=int(float(rows.season.iloc[0]))
     try:
-        req=urllib.request.Request(URL.format(pid,season),headers={'User-Agent':'Mozilla/5.0 (betstats data refresh)'})
+        req=urllib.request.Request(URL.format(pid,season),headers={'User-Agent':'Mozilla/5.0 (theplayerprops data refresh)'})
         j=json.load(urllib.request.urlopen(req,timeout=20))
     except Exception as e:
         out['unmatched'].append({'id':pid,'name':rows.player_name.iloc[0],'error':str(e)}); time.sleep(1.5); continue

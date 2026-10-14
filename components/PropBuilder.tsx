@@ -11,7 +11,7 @@ export default function PropBuilder({initial=DEFAULT_Q,syncUrl=true}:{initial?:a
   useEffect(()=>{ if(!syncUrl) return; const u=new URLSearchParams(Object.entries(q).map(([k,v])=>[k,String(v)])); history.replaceState(null,'',`${location.pathname}?${u}`); },[q,syncUrl]);
   const set=(k:string)=>(v:any)=>{ setLim(50); setQ((o:any)=>{ const n={...o,[k]:v}; if(k==='stat') n.line=STATS[v][3]; if(k==='pos'&&!POS_STATS[v].includes(o.stat)){ n.stat=POS_STATS[v][0]; n.line=STATS[n.stat][3]; } return n; }); };
   const rows=useMemo(()=>pg?runQuery(pg,q):[],[pg,q]); const [lab]=STATS[q.stat];
-  const share=()=>{ const url=location.href; (navigator as any).share?(navigator as any).share({url,title:'BetStats prop search'}).catch(()=>{}):navigator.clipboard?.writeText(url); };
+  const share=()=>{ const url=location.href; (navigator as any).share?(navigator as any).share({url,title:'ThePlayerProps prop search'}).catch(()=>{}):navigator.clipboard?.writeText(url); };
   const desc=`${q.pos==='any'?'Players':q.pos} ${q.dir==='under'?'under':'with'} ${q.line}${q.dir==='under'?'':'+'} ${lab.toLowerCase()} ${q.scope==='season'?`in every game this season (min ${q.n} games)`:q.scope==='last'?`in each of their last ${q.n} games`:q.scope==='streak'?`in ${q.n}+ straight games (active)`:`in ${q.n}%+ of games`}`;
   return <div className="card"><h2 className="!mt-0">Prop search builder</h2>
    <div className="text-xs text-slate-400">1. Position</div><Chips label="Position" options={ROLES as any} value={q.pos} onChange={set('pos')}/>
