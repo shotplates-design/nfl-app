@@ -1,0 +1,9 @@
+import Link from 'next/link'; import { notFound } from 'next/navigation'; import { CAT_STATS, CAT_LABEL, leaders, fmt } from '@/lib/data'; import { Crumbs } from '@/lib/ui';
+export const dynamicParams=false;
+export function generateStaticParams(){ return Object.keys(CAT_STATS).map(cat=>({cat})); }
+export function generateMetadata({params}:{params:{cat:string}}){ const l=CAT_LABEL[params.cat]; const title=`NFL ${l} Leaders ${new Date().getFullYear()} – Totals & Per-Game`; const description=`Who leads the NFL in ${l.toLowerCase()}? Sortable ${l.toLowerCase()} leaderboards with season totals and per-game averages for bettors.`;
+ return {title,description,alternates:{canonical:`/leaders/${params.cat}`},openGraph:{title,description,url:`/leaders/${params.cat}`}}; }
+export default function Page({params}:{params:{cat:string}}){ const c=params.cat; if(!CAT_STATS[c]) notFound();
+ return <><Crumbs items={[['Home','/'],['Leaders','/leaders'],[CAT_LABEL[c],`/leaders/${c}`]]}/><h1>NFL {CAT_LABEL[c]} Leaders</h1><p className="text-sm text-slate-400">Minimum 2 games. Totals and averages from game logs in our data.</p>
+ {CAT_STATS[c].slice(0,c==='punting'?1:3).map(([f,label])=><section key={f}><h2 id={f}>{label}</h2><div className="card overflow-x-auto"><table><thead><tr><th>#</th><th>Player</th><th>Team</th><th>G</th><th>Total</th><th>Per game</th></tr></thead><tbody>
+ {leaders(c,f,25).map((x,i)=><tr key={x.p.slug}><td>{i+1}</td><td><Link href={`/players/${x.p.slug}`}>{x.p.name}</Link></td><td><Link href={`/teams/${x.p.team}`}>{x.p.team.toUpperCase()}</Link></td><td>{x.gp}</td><td>{fmt(x.total)}</td><td>{fmt(x.avg)}</td></tr>)}</tbody></table></div></section>)}</>; }

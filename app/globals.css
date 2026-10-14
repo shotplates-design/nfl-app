@@ -1,0 +1,6 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply bg-slate-950 text-slate-100 antialiased}
+a{@apply text-emerald-400 hover:underline}
+.card{@apply rounded-xl bg-slate-900 border border-slate-800 p-4}
+table{@apply w-full text-sm} th{@apply text-left text-slate-400 font-medium py-1 pr-3 whitespace-nowrap} td{@apply py-1 pr-3 border-t border-slate-800 whitespace-nowrap}
+h1{@apply text-2xl font-bold mb-2} h2{@apply text-lg font-semibold mb-2 mt-6}

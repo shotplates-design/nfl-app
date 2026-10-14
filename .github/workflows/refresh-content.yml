@@ -1,0 +1,13 @@
+# Regenerates SEO content pages daily and redeploys via a Vercel Deploy Hook (set VERCEL_DEPLOY_HOOK secret).
+name: refresh-content
+on: { schedule: [{ cron: '0 11 * * *' }], workflow_dispatch: {} }
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: python3 scripts/prepare_data.py || true   # only if data/raw.csv was updated
+      - run: node scripts/generate-content.mjs
+      - run: curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
