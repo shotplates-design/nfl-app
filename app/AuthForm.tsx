@@ -2,7 +2,7 @@
 export default function AuthForm({mode}:{mode:'login'|'signup'}){ const [err,setErr]=useState(''); const [busy,setBusy]=useState(false);
  async function submit(e:any){ e.preventDefault(); setErr(''); setBusy(true); const f=new FormData(e.target); const email=String(f.get('email')), password=String(f.get('password'));
   if(mode==='signup'){ const r=await fetch('/api/signup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email,password,name:f.get('name')})}); const j=await r.json(); if(!r.ok){setErr(j.error);setBusy(false);return;} }
-  const r=await signIn('credentials',{email,password,redirect:false}); setBusy(false); if(r?.ok) location.href=mode==='signup'?'/subscribe':'/'; else setErr('Invalid email or password (or accounts not configured).'); }
+  const r=await signIn('credentials',{email,password,redirect:false}); setBusy(false); if(r?.ok) { const c=new URLSearchParams(location.search).get('callbackUrl')||''; location.href=mode==='signup'?'/subscribe':(c.startsWith('/')&&!c.startsWith('//')?c:'/'); } else setErr('Invalid email or password (or accounts not configured).'); }
  const inp="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-base";
  return <form onSubmit={submit} className="card max-w-sm mx-auto space-y-3"><h1>{mode==='login'?'Log in':'Create account'}</h1>
   {mode==='signup'&&<input name="name" placeholder="Name (optional)" className={inp}/>}
