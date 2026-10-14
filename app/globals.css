@@ -13,3 +13,5 @@ h1{@apply text-2xl font-bold mb-2} h2{@apply text-lg font-semibold mb-2 mt-6}
 .skeleton{@apply bg-slate-800 rounded animate-pulse}
 details>summary{list-style:none}details>summary::-webkit-details-marker{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes drawer-in{from{transform:translateX(-100%)}to{transform:none}}.drawer-in{animation:drawer-in .2s ease-out}
+@media (prefers-reduced-motion:reduce){.drawer-in{animation:none}}

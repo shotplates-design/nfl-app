@@ -47,3 +47,35 @@ export function bestProps(limit=18){ const all=candidates(); const pick:any[]=[]
       const counts:Record<string,number>={}; pick.forEach(x=>counts[x.role]=(counts[x.role]||0)+1);
       const over=[...pick].reverse().find(x=>x.role!==role&&(counts[x.role]||0)>3); if(!over) break; pick.splice(pick.indexOf(over),1,c); } }
   return pick.sort((a,b)=>b.score-a.score); }
+
+// ---------- Sleepers: under-the-radar value ----------
+const VOL:Record<string,string>={QB:'passYds',RB:'rushYds','WR/TE':'recYds'};
+export const SLEEPER_RATE=0.75, STAR_RANK=15;
+export const SLEEPER_NOTE=`"Not a big name" means outside the top ${STAR_RANK} at his position in both season total and per-game volume (passing yds for QBs, rushing yds for RBs, receiving yds for WR/TEs), and, for RBs and WR/TEs, outside the top ${STAR_RANK} in targets per game. For each such player we take the highest line he cleared in at least ${SLEEPER_RATE*100}% of games (3+ games), skipping lines under half of a solid starter's output. Score = 35 × hit rate + 25 × line difficulty + 20 × recent trend (last-3 average vs season, up to +100%) + 10 if the Week 6 opponent's matching defensive area is listed as a weakness (−5 if a strength) + 2 per game played (max 6). Players on bye or listed Out are excluded; at most 2 per team.`;
+export function sleepers(limit=15){ const w=currentWeek(); const pg=(PG ||= buildPgames(players)).p as any[]; candidates();
+  const T:Record<string,any>={}; for(const g of w.games){ const base={kick:fmtKick(g.kickoff),slug:g.slug,weather:g.cond?.weather,inj:g.cond?.injuries||[]};
+    T[g.awayCode]={...base,oppName:g.home,at:'@',oppStr:g.home_strengths||[],oppWeak:g.home_weaknesses||[]}; T[g.homeCode]={...base,oppName:g.away,at:'vs',oppStr:g.away_strengths||[],oppWeak:g.away_weaknesses||[]}; }
+  const rank:Record<string,number>={}; const star=new Set<string>();
+  const rankBy=(role:string,k:string,perGame:boolean)=>pg.filter(p=>p[3]===role).map(p=>{const v=p[4].filter((g:any)=>k in g[2]).map((g:any)=>g[2][k]); const tot=v.reduce((a:number,b:number)=>a+b,0); return [p[0], perGame?(v.length>=2?tot/v.length:0):tot] as [string,number];}).sort((a,b)=>b[1]-a[1]);
+  for(const [role,k] of Object.entries(VOL)){ rankBy(role,k,false).forEach(([s],i)=>{rank[s]=i+1; if(i<STAR_RANK) star.add(s);}); rankBy(role,k,true).slice(0,STAR_RANK).forEach(([s])=>star.add(s));
+    if(role!=='QB') rankBy(role,'tgts',true).slice(0,STAR_RANK).forEach(([s])=>star.add(s)); }
+  const norm:Record<string,number>={}; for(const [role,ks] of Object.entries(PROPS)) for(const k of ks){ const avgs=pg.filter(p=>p[3]===role).map(p=>p[4].filter((g:any)=>k in g[2]).map((g:any)=>g[2][k])).filter((v:number[])=>v.length>=3).map((v:number[])=>v.reduce((a,b)=>a+b,0)/v.length); norm[role+k]=pct(avgs.filter((x:number)=>x>0),0.75)||1; }
+  const out:any[]=[];
+  for(const [slug,name,team,role,games] of pg){ const t=T[team]; if(!t||!VOL[role]||star.has(slug)) continue;
+    if(t.inj.some((i:any)=>(i.player||i.name)===name&&/^out|^ir|doubtful/i.test(i.status||''))) continue;
+    let best:any=null;
+    for(const k of PROPS[role]){ const gs=games.filter((g:any)=>k in g[2]); if(gs.length<3) continue; const vals=gs.map((g:any)=>g[2][k]);
+      const sorted=[...vals].sort((a,b)=>a-b); const miss=Math.floor(gs.length*(1-SLEEPER_RATE)+1e-9); const st=STEP(k); const line=Math.floor(sorted[miss]/st)*st; if(line<1) continue;
+      const diff=Math.min(line/norm[role+k],1.5); if(diff<0.5) continue;
+      const strip=gs.map((g:any)=>({d:g[0],o:g[1],v:g[2][k],h:g[2][k]>=line})); const hits=strip.filter((x:any)=>x.h).length;
+      const avg=vals.reduce((a:number,b:number)=>a+b,0)/vals.length; const l3=vals.slice(-3).reduce((a:number,b:number)=>a+b,0)/Math.min(3,vals.length); const trend=avg?Math.max(0,Math.min(l3/avg-1,1)):0;
+      const area=AREA(k); const weak=area.find(a=>t.oppWeak.includes(a)), str=area.find(a=>t.oppStr.includes(a));
+      const score=35*hits/gs.length+25*diff/1.5+20*trend+(weak?10:str?-5:0)+2*Math.min(gs.length,6);
+      if(!best||score>best.score) best={k,line,strip,hits,games:gs.length,avg,l3,trend,weak,str,score,diff}; }
+    if(!best) continue; const lab=STATS[best.k][0];
+    const why=[`#${rank[slug]} ${role} in season ${STATS[VOL[role]][0].toLowerCase()}`,`hit ${best.line}+ in ${best.hits}/${best.games}`,`last 3 avg ${best.l3.toFixed(1)} vs ${best.avg.toFixed(1)} season`];
+    if(best.weak) why.push(`${t.oppName} ${best.weak} is listed as a weakness`); else if(best.str) why.push(`caution: ${t.oppName} ${best.str} is listed as a strength`);
+    out.push({slug,name,team,role,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,hits:best.hits,games:best.games,
+      streak:(()=>{let n=0;for(let i=best.strip.length-1;i>=0&&best.strip[i].h;i--)n++;return n})(),avg:best.avg,thr:best.line,score:Math.round(best.score*10)/10,strip:best.strip.slice(-5),label:`${best.line}+ ${lab}`,why:why.join('; ')+'.',rank:rank[slug]}); }
+  const pick:any[]=[]; for(const r of out.sort((a,b)=>b.score-a.score)){ if(pick.length>=limit) break; if(pick.filter(x=>x.team===r.team).length<2) pick.push(r); }
+  return {pick,all:out}; }
