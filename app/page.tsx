@@ -8,7 +8,7 @@ export default function Home(){ const w=currentWeek(); const rows=bestProps(18);
   <JsonLd data={{'@context':'https://schema.org','@type':'ItemList',name:`Best NFL player props Week ${w.week}`,itemListElement:rows.map((r,i)=>({'@type':'ListItem',position:i+1,name:`${r.name} ${r.prop}`,url:`${SITE}/players/${r.slug}`}))}}/>
   <div className="mb-4"><Search/></div>
   <h1>Best Props This Week: NFL Week {w.week}</h1>
-  <p className="text-sm text-slate-400">The {rows.length} strongest player props for Week {w.week}, ranked from this season's game logs. Teams on bye{w.byes?.length?` (${w.byes.map(b=>b.toUpperCase()).join(', ')})`:''} and players listed Out are excluded. Lines are our standard benchmarks, not sportsbook lines.</p>
+  <p className="text-sm text-slate-400">The {rows.length} strongest player props for Week {w.week}, ranked from this season's game logs. Teams on bye{w.byes?.length?` (${w.byes.map(b=>b.toUpperCase()).join(', ')})`:''} and players listed Out are excluded. Each line is set from the player's own game logs (the highest number he clears in 80%+ of games), not a sportsbook line.</p>
   <div className="mt-3"><BestProps rows={rows}/></div>
   <details className="card mt-4 text-xs text-slate-400"><summary className="cursor-pointer text-slate-200">How we rank</summary><p className="mt-2">{SCORE_NOTE} The "Why" line uses only these game logs, the supplied matchup report (team strengths and weaknesses) and the weather forecast feed.</p></details>
   <p className="mt-4 text-sm flex flex-wrap gap-3"><Link href="/matchups">All Week {w.week} matchups →</Link><Link href="/streaks">Prop search builder →</Link></p>
