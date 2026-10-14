@@ -2,7 +2,7 @@ import raw from '@/data/players.json';
 export type Game = any; export type Player = { id:string; name:string; team:string; season:number; slug:string; cat:string|null; games:Game[]; splits:any[] };
 export const players = raw as Player[];
 export const SITE = (process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://'+process.env.VERCEL_PROJECT_PRODUCTION_URL : 'http://localhost:3000')).replace(/\/$/,'');
-export const SITE_NAME = 'BetStats NFL';
+export const SITE_NAME = 'ThePlayerProps';
 export const TEAMS: Record<string,string> = {ari:'Arizona Cardinals',atl:'Atlanta Falcons',bal:'Baltimore Ravens',buf:'Buffalo Bills',car:'Carolina Panthers',chi:'Chicago Bears',cin:'Cincinnati Bengals',cle:'Cleveland Browns',dal:'Dallas Cowboys',den:'Denver Broncos',det:'Detroit Lions',gb:'Green Bay Packers',hou:'Houston Texans',ind:'Indianapolis Colts',jax:'Jacksonville Jaguars',kc:'Kansas City Chiefs',lac:'Los Angeles Chargers',lar:'Los Angeles Rams',lv:'Las Vegas Raiders',mia:'Miami Dolphins',min:'Minnesota Vikings',ne:'New England Patriots',no:'New Orleans Saints',nyg:'New York Giants',nyj:'New York Jets',phi:'Philadelphia Eagles',pit:'Pittsburgh Steelers',sea:'Seattle Seahawks',sf:'San Francisco 49ers',tb:'Tampa Bay Buccaneers',ten:'Tennessee Titans',wsh:'Washington Commanders'};
 export const teamName = (t:string)=> TEAMS[t] || t.toUpperCase();
 // key stats per category: [field, label]

@@ -1,4 +1,5 @@
-# nfl-app# BetStats NFL
+# nfl-app
+# ThePlayerProps
 Data: `data/raw.csv` -> `npm run prepare-data` -> `data/players.json`.
 Content: `npm run content` regenerates `data/articles.json` (trending/top-performance/matchup pages) + `public/search.json`. Runs automatically in `npm run build`.
 Schedule: cron `0 11 * * * cd /workspace/betstats && npm run content && npm run build` or `.github/workflows/refresh-content.yml` (deploy hook).
