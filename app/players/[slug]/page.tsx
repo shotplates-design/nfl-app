@@ -1,5 +1,5 @@
 import Link from 'next/link'; import { notFound } from 'next/navigation';
-import { players, bySlug, CAT_STATS, CAT_LABEL, catGames, avg, fmt, teamName, SITE, streaksFor, bestHot } from '@/lib/data'; import Gate from '@/components/Gate'; import LineToggle from '@/components/LineToggle'; import FavButton from '@/components/FavButton'; import { Crumbs, JsonLd, Bars, Strip, HitBar, BENCH_NOTE } from '@/lib/ui';
+import { players, bySlug, CAT_STATS, CAT_LABEL, catGames, avg, fmt, teamName, SITE, streaksFor, bestHot } from '@/lib/data'; import Gate from '@/components/Gate'; import FreeLeft from '@/components/FreeLeft'; import LineToggle from '@/components/LineToggle'; import FavButton from '@/components/FavButton'; import { Crumbs, JsonLd, Bars, Strip, HitBar, BENCH_NOTE } from '@/lib/ui';
 export const dynamicParams=false;
 export function generateStaticParams(){ return players.map(p=>({slug:p.slug})); }
 export function generateMetadata({params}:{params:{slug:string}}){ const p=bySlug(params.slug); if(!p) return {};
@@ -11,7 +11,7 @@ export default function Page({params}:{params:{slug:string}}){ const p=bySlug(pa
  const opp: Record<string,any[]> = {}; gs.forEach(g=>{(opp[g.opp.replace(/^(@|vs)/,'')] ||= []).push(g)});
  const mates=players.filter(x=>x.team===p.team&&x.slug!==p.slug&&x.cat===cat).slice(0,8);
  return <>
-  <Crumbs items={[['Home','/'],[teamName(p.team),`/teams/${p.team}`],[p.name,`/players/${p.slug}`]]}/>
+  <FreeLeft className="mb-2"/><Crumbs items={[['Home','/'],[teamName(p.team),`/teams/${p.team}`],[p.name,`/players/${p.slug}`]]}/>
   <JsonLd data={{'@context':'https://schema.org','@type':'Person',additionalType:'https://schema.org/SportsPerson',name:p.name,url:`${SITE}/players/${p.slug}`,memberOf:{'@type':'SportsTeam',name:teamName(p.team),sport:'American Football',url:`${SITE}/teams/${p.team}`}}}/>
   <div className="flex items-center gap-3"><h1>{p.name}</h1><FavButton slug={p.slug} name={p.name}/><Link href={`/compare?a=${p.slug}`} className="text-xs ml-auto">Compare ⇄</Link></div><p className="text-sm text-slate-400"><Link href={`/teams/${p.team}`}>{teamName(p.team)}</Link> · {p.season} season{cat&&<> · {CAT_LABEL[cat]}</>}</p>
   {markets.length>0&&<><h2>Line explorer</h2><p className="text-xs text-slate-500 mb-2">Pick a quick line or set any number to see the hit rate update.</p><Gate label="The line explorer"><LineToggle markets={markets as any}/></Gate></>}

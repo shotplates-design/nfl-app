@@ -1,4 +1,4 @@
-import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import BestProps from '@/components/BestProps'; import { allStreaks } from '@/lib/data'; import { StreakTable } from '@/lib/ui'; import Search from '../Search';
+import FreeLeft from '@/components/FreeLeft'; import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import BestProps from '@/components/BestProps'; import { allStreaks } from '@/lib/data'; import { StreakTable } from '@/lib/ui'; import Search from '../Search';
 // Public home shown at "/" to visitors without a membership (middleware rewrite). Same look as the member home, but the HTML carries ONLY the top 3
 // Best Props (fields the card needs, no player/matchup links, no watchlist); the locked section uses dummy rows, not real data.
 export const metadata={title:`${SITE_NAME}: NFL Player Props, Hit Rates & Streaks`,description:'Weekly NFL player props ranked by hit rate, streaks and matchups, plus sleepers, a prop search builder and line explorer. $4.99/month.',alternates:{canonical:'/'}};
@@ -13,7 +13,7 @@ const Lock=({title}:{title:string})=><div className="absolute inset-0 flex items
 export default function Welcome(){ const streaks=allStreaks().hot.filter((r,i,a)=>a.findIndex(x=>x.slug===r.slug)===i).slice(0,3).map((r:any)=>Object.fromEntries(SPICK.map(k=>[k,r[k]]))); const w=currentWeek(); const all=bestProps(18);
  const top=all.slice(0,3).map(r=>Object.fromEntries(PICK.map(k=>[k,(r as any)[k]])));
  return <>
-  <div className="mb-4"><Search/><p className="text-xs text-slate-500 mt-1">Look up any 5 players free.</p></div>
+  <div className="mb-4"><Search/><FreeLeft className="mt-1"/></div>
   <h1>Best Props This Week: NFL Week {w.week}</h1>
   <p className="text-sm text-slate-400">The {all.length} strongest player props for Week {w.week}, ranked from this season's game logs. Teams on bye{w.byes?.length?` (${w.byes.map(b=>b.toUpperCase()).join(', ')})`:''} and players listed Out are excluded. Each line is set from the player's own game logs (the highest number he clears in 80%+ of games), not a sportsbook line.</p>
   <div className="mt-3"><BestProps rows={top} preview/></div>
