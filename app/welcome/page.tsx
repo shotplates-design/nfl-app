@@ -1,19 +1,23 @@
-import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import TeamBadge from '@/components/TeamBadge';
-// Public marketing home shown at "/" to visitors without a membership (middleware rewrite). Server-renders ONLY the top 3 Best Props (selected fields); the locked section below is dummy content, not real data.
+import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import BestProps from '@/components/BestProps'; import { allStreaks } from '@/lib/data'; import { StreakTable } from '@/lib/ui'; import Search from '../Search';
+// Public home shown at "/" to visitors without a membership (middleware rewrite). Same look as the member home, but the HTML carries ONLY the top 3
+// Best Props (fields the card needs, no player/matchup links, no watchlist); the locked section uses dummy rows, not real data.
 export const metadata={title:`${SITE_NAME}: NFL Player Props, Hit Rates & Streaks`,description:'Weekly NFL player props ranked by hit rate, streaks and matchups, plus sleepers, a prop search builder and line explorer. $4.99/month.',alternates:{canonical:'/'}};
-const short=(t:string)=>{ const m=String(t||'').match(/^.*?[.!?](\s|$)/); const x=(m?m[0]:String(t||'')).trim(); return x.length>140?x.slice(0,137)+'…':x; };
-const FAKE=[['Player Name','Over 00.5 Yds','00%'],['Player Name','Over 00.5 Yds','00%'],['Player Name','Over 0.5 Rec','00%'],['Player Name','Over 00.5 Yds','00%']];
-export default function Welcome(){ const w=currentWeek(); const top=bestProps(3).slice(0,3).map(r=>({name:r.name,team:r.team,role:r.role,prop:r.prop,hits:r.hits,games:r.games,why:short(r.why)}));
- return <div className="max-w-lg mx-auto space-y-4 py-4">
-  <section aria-labelledby="pv"><h2 id="pv" className="mt-0">Free preview: top 3 props for Week {w.week}</h2>
-   <ol className="space-y-2 mt-2">{top.map((r,i)=><li key={i} className="card min-w-0"><div className="flex items-center gap-1.5 min-w-0"><span className="text-slate-500 text-sm font-bold w-5">{i+1}</span><TeamBadge code={r.team} name={r.team}/><span className="font-bold text-white truncate">{r.name}</span><span className="text-xs text-slate-400">{r.role}</span><span className="ml-auto text-xs text-emerald-300 font-semibold">{Math.round(100*r.hits/r.games)}% ({r.hits}/{r.games})</span></div>
-    <div className="mt-1 text-emerald-300 font-semibold">{r.prop} <span className="text-[10px] text-slate-500 font-normal">benchmark line, not a sportsbook line</span></div>
-    {r.why&&<p className="text-xs text-slate-300 mt-1"><span className="text-slate-500">Why:</span> {r.why}</p>}</li>)}</ol>
-   <div className="relative mt-2"><ol aria-hidden="true" className="space-y-2 blur-sm select-none pointer-events-none">{FAKE.map(([n,p,h],i)=><li key={i} className="card"><div className="flex gap-2"><span className="text-slate-500 font-bold w-5">{i+4}</span><span className="font-bold text-white">{n}</span><span className="ml-auto text-xs text-emerald-300">{h}</span></div><div className="mt-1 text-emerald-300 font-semibold">{p}</div></li>)}</ol>
-    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-slate-950/30 to-slate-950/90"><div className="card max-w-xs text-center space-y-2"><p className="font-semibold text-white">🔒 Sign up for $4.99/month to see all props</p>
-     <Link href="/signup" className="block rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Sign up – $4.99/month</Link><p className="text-xs text-slate-400">Already a member? <Link href="/login">Log in</Link></p></div></div></div></section>
-  <h1>NFL player props, ranked by the numbers</h1>
-  <p className="text-slate-300">Every week we rank the strongest player props from this season's game logs: hit rates against benchmark lines, current streaks, recent form and matchup context.</p>
-  <ul className="card text-sm space-y-1 list-disc pl-6"><li>Best Props This Week, ranked with a transparent score</li><li>Under-the-radar Sleepers</li><li>Prop search builder and line explorer for any player</li><li>Matchups with weather and injuries, streaks, leaders, dashboard, watchlist and compare</li></ul>
-  <Link href="/signup" className="block text-center rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Get full access – $4.99/month</Link>
-  <p className="text-sm text-slate-400 text-center">Already a member? <Link href="/login">Log in</Link></p></div>; }
+const PICK=['name','team','role','at','oppName','kick','prop','bench','hits','games','streak','avg','thr','score','strip','why'];
+const DUMMY=Array.from({length:4},()=>({name:'Player Name',team:'',role:'WR',at:'vs',oppName:'Opponent',kick:'Sun 1:00 PM',prop:'Over 00.5 Yds',bench:'00.5',hits:0,games:5,streak:0,avg:0,thr:1,score:0,
+  strip:Array.from({length:5},()=>({h:true,v:0,v2:0})),why:'Locked. Members see every ranked prop with the full reasoning.'}));
+const SPICK=['slug','key','name','team','label','hot','streak','hits','games','strip'];
+const SDUMMY=Array.from({length:5},(_,i)=>({slug:'locked',key:String(i),name:'Player Name',team:'xxx',label:'Over 00.5 Yds',hot:true,streak:0,hits:0,games:5,strip:Array.from({length:5},()=>({h:true,d:'',o:'',v:0}))}));
+const Lock=({title}:{title:string})=><div className="absolute inset-0 flex items-start justify-center pt-8 bg-gradient-to-b from-slate-950/40 to-slate-950/90"><div className="card max-w-xs text-center space-y-2"><p className="font-semibold text-white">🔒 {title}</p>
+    <p className="text-sm text-slate-400">Full access to Best Props, Sleepers, prop search, line explorer, dashboard, watchlist and compare.</p>
+    <Link href="/signup" className="block rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Sign up – $4.99/month</Link><p className="text-xs text-slate-500">Already a member? <Link href="/login">Log in</Link></p></div></div>;
+export default function Welcome(){ const streaks=allStreaks().hot.filter((r,i,a)=>a.findIndex(x=>x.slug===r.slug)===i).slice(0,3).map((r:any)=>Object.fromEntries(SPICK.map(k=>[k,r[k]]))); const w=currentWeek(); const all=bestProps(18);
+ const top=all.slice(0,3).map(r=>Object.fromEntries(PICK.map(k=>[k,(r as any)[k]])));
+ return <>
+  <div className="mb-4"><Search/><p className="text-xs text-slate-500 mt-1">Look up any 5 players free.</p></div>
+  <h1>Best Props This Week: NFL Week {w.week}</h1>
+  <p className="text-sm text-slate-400">The {all.length} strongest player props for Week {w.week}, ranked from this season's game logs. Teams on bye{w.byes?.length?` (${w.byes.map(b=>b.toUpperCase()).join(', ')})`:''} and players listed Out are excluded. Each line is set from the player's own game logs (the highest number he clears in 80%+ of games), not a sportsbook line.</p>
+  <div className="mt-3"><BestProps rows={top} preview/></div>
+  <div className="relative mt-3"><div aria-hidden="true" className="blur-sm pointer-events-none select-none max-h-[520px] overflow-hidden" {...{inert:''} as any}><BestProps rows={DUMMY} start={4} preview/></div><Lock title="Sign up for $4.99/month to see all props"/></div>
+  <h2>Top active streaks</h2><StreakTable rows={streaks} preview/>
+  <div className="relative mt-2"><div aria-hidden="true" className="blur-sm pointer-events-none select-none overflow-hidden" {...{inert:''} as any}><StreakTable rows={SDUMMY} preview nolink/></div><Lock title="Sign up for $4.99/month to see all streaks"/></div>
+ </>; }
