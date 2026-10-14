@@ -1,0 +1,202 @@
+{
+  "week": 6,
+  "updated": "2026-10-14T12:14:50-04:00",
+  "games": [
+    {
+      "away": "SEA",
+      "home": "DEN",
+      "kickoff_et": "2026-10-15T20:15:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 45,
+        "wind_mph": 6,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Empower Field; clear and cool, gusts to ~17 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "HOU",
+      "home": "JAX",
+      "kickoff_et": "2026-10-18T09:30:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 55,
+        "wind_mph": 10,
+        "precip_pct": 16,
+        "impact": "minor",
+        "note": "Wembley Stadium, London (neutral site, JAX designated home); gusts to ~21 mph, slight shower chance. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "CHI",
+      "home": "ATL",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Mercedes-Benz Stadium, retractable roof (typically closed)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "BAL",
+      "home": "CLE",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 59,
+        "wind_mph": 11,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Huntington Bank Field; dry, gusts to ~16 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "TEN",
+      "home": "IND",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Lucas Oil Stadium, retractable roof (typically closed)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "NYJ",
+      "home": "NE",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 57,
+        "wind_mph": 10,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Gillette Stadium; dry, gusts to ~14 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "NO",
+      "home": "NYG",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 60,
+        "wind_mph": 7,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "MetLife Stadium; dry, light wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "CAR",
+      "home": "PHI",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 59,
+        "wind_mph": 6,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Lincoln Financial Field; dry, light wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "PIT",
+      "home": "TB",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 80,
+        "wind_mph": 21,
+        "precip_pct": 15,
+        "impact": "major",
+        "note": "Raymond James Stadium; sustained ~21 mph, gusts to ~28 mph could affect passing/kicking. 4-day-out forecast, recheck. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "ARI",
+      "home": "LAR",
+      "kickoff_et": "2026-10-18T16:05:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "SoFi Stadium, fixed translucent roof (indoor conditions)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "LAC",
+      "home": "KC",
+      "kickoff_et": "2026-10-18T16:25:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 66,
+        "wind_mph": 15,
+        "precip_pct": 0,
+        "impact": "minor",
+        "note": "GEHA Field at Arrowhead; breezy, gusts to ~21 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "BUF",
+      "home": "LV",
+      "kickoff_et": "2026-10-18T16:25:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Allegiant Stadium, fixed dome"
+      },
+      "injuries": []
+    },
+    {
+      "away": "DAL",
+      "home": "GB",
+      "kickoff_et": "2026-10-18T20:20:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 56,
+        "wind_mph": 18,
+        "precip_pct": 0,
+        "impact": "minor",
+        "note": "Lambeau Field; sustained ~18 mph, gusts to ~34 mph; recheck, could become major. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "WAS",
+      "home": "SF",
+      "kickoff_et": "2026-10-19T20:15:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 66,
+        "wind_mph": 11,
+        "precip_pct": 2,
+        "impact": "none",
+        "note": "Levi's Stadium; dry, ~10 mph wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-14); precip_pct = max probability over the ~3h game window"
+      },
+      "injuries": []
+    }
+  ]
+}

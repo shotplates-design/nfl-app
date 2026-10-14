@@ -1,0 +1,2038 @@
+{
+ "source": "ESPN public athlete gamelog API (site.web.api.espn.com)",
+ "fetched": "2026-10-14T13:02:20-04:00",
+ "players": {
+  "11252": {
+   "name": "Joe Flacco",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsTB",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872925"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@HOU",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872934"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@PIT",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872950"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsJAX",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872969"
+    }
+   ]
+  },
+  "12483": {
+   "name": "Matthew Stafford",
+   "games": [
+    {
+     "date": "Thu 9/10",
+     "opp": "vsSF",
+     "car": 2.0,
+     "rushYds": -1.0,
+     "rushTd": 0.0,
+     "eventId": "401872657"
+    },
+    {
+     "date": "Mon 9/21",
+     "opp": "vsNYG",
+     "car": 4.0,
+     "rushYds": -1.0,
+     "rushTd": 0.0,
+     "eventId": "401872947"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@DEN",
+     "car": 2.0,
+     "rushYds": 13.0,
+     "rushTd": 0.0,
+     "eventId": "401872962"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@PHI",
+     "car": 3.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872970"
+    },
+    {
+     "date": "Mon 10/12",
+     "opp": "vsBUF",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872994"
+    }
+   ]
+  },
+  "14163": {
+   "name": "Tyrod Taylor",
+   "games": [
+    {
+     "date": "Sun 10/11",
+     "opp": "vsCHI",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "401872990"
+    }
+   ]
+  },
+  "14880": {
+   "name": "Kirk Cousins",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsMIA",
+     "car": 5.0,
+     "rushYds": -6.0,
+     "rushTd": 0.0,
+     "eventId": "401872928"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@LAC",
+     "car": 4.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "401872941"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@NO",
+     "car": 3.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872961"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsKC",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872976"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@NE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872986"
+    }
+   ]
+  },
+  "15168": {
+   "name": "Case Keenum",
+   "games": [
+    {
+     "date": "Mon 9/28",
+     "opp": "vsPHI",
+     "car": 4.0,
+     "rushYds": 6.0,
+     "rushTd": 1.0,
+     "eventId": "401872963"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsNYJ",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872972"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@GB",
+     "car": 1.0,
+     "rushYds": 4.0,
+     "rushTd": 0.0,
+     "eventId": "401872990"
+    }
+   ]
+  },
+  "15864": {
+   "name": "Geno Smith",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@TEN",
+     "car": 6.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "401872924"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsGB",
+     "car": 5.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872936"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@DET",
+     "car": 2.0,
+     "rushYds": 12.0,
+     "rushTd": 0.0,
+     "eventId": "401872954"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@CHI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872972"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsCLE",
+     "car": 5.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "401872983"
+    }
+   ]
+  },
+  "2573079": {
+   "name": "Carson Wentz",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsGB",
+     "car": 5.0,
+     "rushYds": -1.0,
+     "rushTd": 0.0,
+     "eventId": "401872927"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@CHI",
+     "car": 3.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872937"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@TB",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872959"
+    }
+   ]
+  },
+  "2576980": {
+   "name": "Marcus Mariota",
+   "games": [
+    {
+     "date": "Sun 9/20",
+     "opp": "@DAL",
+     "car": 1.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872944"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsSEA",
+     "car": 5.0,
+     "rushYds": 11.0,
+     "rushTd": 0.0,
+     "eventId": "401872955"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsIND",
+     "car": 1.0,
+     "rushYds": 35.0,
+     "rushTd": 0.0,
+     "eventId": "401872965"
+    }
+   ]
+  },
+  "2577417": {
+   "name": "Dak Prescott",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@NYG",
+     "car": 2.0,
+     "rushYds": 14.0,
+     "rushTd": 0.0,
+     "eventId": "401872930"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsWSH",
+     "car": 4.0,
+     "rushYds": 26.0,
+     "rushTd": 0.0,
+     "eventId": "401872944"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsBAL",
+     "car": 4.0,
+     "rushYds": 19.0,
+     "rushTd": 0.0,
+     "eventId": "401872960"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@HOU",
+     "car": 2.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "401872967"
+    },
+    {
+     "date": "Thu 10/8",
+     "opp": "vsTB",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872980"
+    }
+   ]
+  },
+  "2578570": {
+   "name": "Jacoby Brissett",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@LAC",
+     "car": 6.0,
+     "rushYds": 14.0,
+     "rushTd": 0.0,
+     "eventId": "401872926"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsSEA",
+     "car": 1.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "401872943"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@SF",
+     "car": 4.0,
+     "rushYds": 4.0,
+     "rushTd": 1.0,
+     "eventId": "401872958"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@NYG",
+     "car": 4.0,
+     "rushYds": 18.0,
+     "rushTd": 0.0,
+     "eventId": "401872966"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsDET",
+     "car": 2.0,
+     "rushYds": 19.0,
+     "rushTd": 0.0,
+     "eventId": "401872991"
+    }
+   ]
+  },
+  "2969939": {
+   "name": "Jameis Winston",
+   "games": [
+    {
+     "date": "Mon 9/21",
+     "opp": "@LAR",
+     "car": 2.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "401872947"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsTEN",
+     "car": 2.0,
+     "rushYds": 14.0,
+     "rushTd": 0.0,
+     "eventId": "401872956"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsARI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872966"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@WSH",
+     "car": 5.0,
+     "rushYds": 27.0,
+     "rushTd": 0.0,
+     "eventId": "401872988"
+    }
+   ]
+  },
+  "2972515": {
+   "name": "Cooper Rush",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@PIT",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872658"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsCAR",
+     "car": 2.0,
+     "rushYds": 20.0,
+     "rushTd": 0.0,
+     "eventId": "401872933"
+    }
+   ]
+  },
+  "3044720": {
+   "name": "Joshua Dobbs",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsNO",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872923"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@ARI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872991"
+    }
+   ]
+  },
+  "3046779": {
+   "name": "Jared Goff",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsNO",
+     "car": 2.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872923"
+    },
+    {
+     "date": "Thu 9/17",
+     "opp": "@BUF",
+     "car": 3.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "401872932"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsNYJ",
+     "car": 4.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872954"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@CAR",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872978"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@ARI",
+     "car": 1.0,
+     "rushYds": 1.0,
+     "rushTd": 1.0,
+     "eventId": "401872991"
+    }
+   ]
+  },
+  "3052587": {
+   "name": "Baker Mayfield",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@CIN",
+     "car": 5.0,
+     "rushYds": 30.0,
+     "rushTd": 1.0,
+     "eventId": "401872925"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsCLE",
+     "car": 4.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "401872935"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsMIN",
+     "car": 2.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872959"
+    }
+   ]
+  },
+  "3059989": {
+   "name": "Nick Mullens",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsCLE",
+     "car": 3.0,
+     "rushYds": -3.0,
+     "rushTd": 0.0,
+     "eventId": "401872922"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@DEN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872940"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsNE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872957"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@CIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872969"
+    }
+   ]
+  },
+  "3116407": {
+   "name": "Mason Rudolph",
+   "games": [
+    {
+     "date": "Sun 9/20",
+     "opp": "@NE",
+     "car": 1.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872946"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsCIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872950"
+    },
+    {
+     "date": "Thu 10/1",
+     "opp": "@CLE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872964"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsIND",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "401872985"
+    }
+   ]
+  },
+  "3122840": {
+   "name": "Deshaun Watson",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@JAX",
+     "car": 6.0,
+     "rushYds": 38.0,
+     "rushTd": 0.0,
+     "eventId": "401872922"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@TB",
+     "car": 7.0,
+     "rushYds": 22.0,
+     "rushTd": 0.0,
+     "eventId": "401872935"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsCAR",
+     "car": 11.0,
+     "rushYds": 45.0,
+     "rushTd": 0.0,
+     "eventId": "401872949"
+    },
+    {
+     "date": "Thu 10/1",
+     "opp": "vsPIT",
+     "car": 7.0,
+     "rushYds": 22.0,
+     "rushTd": 0.0,
+     "eventId": "401872964"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@NYJ",
+     "car": 6.0,
+     "rushYds": 40.0,
+     "rushTd": 0.0,
+     "eventId": "401872983"
+    }
+   ]
+  },
+  "3139477": {
+   "name": "Patrick Mahomes",
+   "games": [
+    {
+     "date": "Mon 9/14",
+     "opp": "vsDEN",
+     "car": 7.0,
+     "rushYds": 23.0,
+     "rushTd": 1.0,
+     "eventId": "401872931"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsIND",
+     "car": 2.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872945"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@MIA",
+     "car": 1.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "401872952"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@LV",
+     "car": 2.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872976"
+    }
+   ]
+  },
+  "3912547": {
+   "name": "Sam Darnold",
+   "games": [
+    {
+     "date": "Wed 9/9",
+     "opp": "vsNE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872656"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@WSH",
+     "car": 1.0,
+     "rushYds": 5.0,
+     "rushTd": 0.0,
+     "eventId": "401872955"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsLAC",
+     "car": 3.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872977"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsSF",
+     "car": 1.0,
+     "rushYds": 5.0,
+     "rushTd": 0.0,
+     "eventId": "401872992"
+    }
+   ]
+  },
+  "3915511": {
+   "name": "Joe Burrow",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsTB",
+     "car": 5.0,
+     "rushYds": 20.0,
+     "rushTd": 0.0,
+     "eventId": "401872925"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@HOU",
+     "car": 1.0,
+     "rushYds": -1.0,
+     "rushTd": 0.0,
+     "eventId": "401872934"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@PIT",
+     "car": 2.0,
+     "rushYds": 13.0,
+     "rushTd": 0.0,
+     "eventId": "401872950"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsJAX",
+     "car": 3.0,
+     "rushYds": 6.0,
+     "rushTd": 1.0,
+     "eventId": "401872969"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@MIA",
+     "car": 4.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872982"
+    }
+   ]
+  },
+  "3916387": {
+   "name": "Lamar Jackson",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@IND",
+     "car": 7.0,
+     "rushYds": 40.0,
+     "rushTd": 1.0,
+     "eventId": "401872659"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsNO",
+     "car": 4.0,
+     "rushYds": 34.0,
+     "rushTd": 0.0,
+     "eventId": "401872938"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsDAL",
+     "car": 6.0,
+     "rushYds": 50.0,
+     "rushTd": 0.0,
+     "eventId": "401872960"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsTEN",
+     "car": 2.0,
+     "rushYds": 20.0,
+     "rushTd": 0.0,
+     "eventId": "401872973"
+    }
+   ]
+  },
+  "3917315": {
+   "name": "Kyler Murray",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsGB",
+     "car": 2.0,
+     "rushYds": 9.0,
+     "rushTd": 0.0,
+     "eventId": "401872927"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@TB",
+     "car": 2.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872959"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsMIA",
+     "car": 6.0,
+     "rushYds": 16.0,
+     "rushTd": 0.0,
+     "eventId": "401872974"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@NO",
+     "car": 10.0,
+     "rushYds": 51.0,
+     "rushTd": 0.0,
+     "eventId": "401872987"
+    }
+   ]
+  },
+  "3917792": {
+   "name": "Daniel Jones",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsBAL",
+     "car": 1.0,
+     "rushYds": 4.0,
+     "rushTd": 0.0,
+     "eventId": "401872659"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@KC",
+     "car": 3.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872945"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsHOU",
+     "car": 3.0,
+     "rushYds": 5.0,
+     "rushTd": 0.0,
+     "eventId": "401872951"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsWSH",
+     "car": 4.0,
+     "rushYds": 2.0,
+     "rushTd": 1.0,
+     "eventId": "401872965"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@PIT",
+     "car": 3.0,
+     "rushYds": 4.0,
+     "rushTd": 0.0,
+     "eventId": "401872985"
+    }
+   ]
+  },
+  "3918298": {
+   "name": "Josh Allen",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@HOU",
+     "car": 6.0,
+     "rushYds": 23.0,
+     "rushTd": 2.0,
+     "eventId": "401872660"
+    },
+    {
+     "date": "Thu 9/17",
+     "opp": "vsDET",
+     "car": 14.0,
+     "rushYds": 69.0,
+     "rushTd": 2.0,
+     "eventId": "401872932"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsLAC",
+     "car": 8.0,
+     "rushYds": 22.0,
+     "rushTd": 2.0,
+     "eventId": "401872953"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsNE",
+     "car": 5.0,
+     "rushYds": 4.0,
+     "rushTd": 1.0,
+     "eventId": "401872971"
+    },
+    {
+     "date": "Mon 10/12",
+     "opp": "@LAR",
+     "car": 10.0,
+     "rushYds": 121.0,
+     "rushTd": 1.0,
+     "eventId": "401872994"
+    }
+   ]
+  },
+  "3924327": {
+   "name": "Drew Lock",
+   "games": [
+    {
+     "date": "Wed 9/9",
+     "opp": "vsNE",
+     "car": 2.0,
+     "rushYds": 13.0,
+     "rushTd": 0.0,
+     "eventId": "401872656"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@ARI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872943"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@WSH",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872955"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsSF",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872992"
+    }
+   ]
+  },
+  "4035671": {
+   "name": "Tyler Huntley",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@IND",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872659"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsTEN",
+     "car": 4.0,
+     "rushYds": 16.0,
+     "rushTd": 0.0,
+     "eventId": "401872973"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@ATL",
+     "car": 6.0,
+     "rushYds": 20.0,
+     "rushTd": 1.0,
+     "eventId": "401872993"
+    }
+   ]
+  },
+  "4036378": {
+   "name": "Jordan Love",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@MIN",
+     "car": 1.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872927"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@NYJ",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872936"
+    },
+    {
+     "date": "Thu 9/24",
+     "opp": "vsATL",
+     "car": 1.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872948"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@TB",
+     "car": 4.0,
+     "rushYds": -8.0,
+     "rushTd": 0.0,
+     "eventId": "401872968"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsCHI",
+     "car": 1.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872990"
+    }
+   ]
+  },
+  "4038941": {
+   "name": "Justin Herbert",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsARI",
+     "car": 5.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "401872926"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsLV",
+     "car": 3.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872941"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@BUF",
+     "car": 4.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872953"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@SEA",
+     "car": 6.0,
+     "rushYds": 40.0,
+     "rushTd": 0.0,
+     "eventId": "401872977"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsDEN",
+     "car": 6.0,
+     "rushYds": 54.0,
+     "rushTd": 0.0,
+     "eventId": "401872989"
+    }
+   ]
+  },
+  "4040715": {
+   "name": "Jalen Hurts",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsWSH",
+     "car": 7.0,
+     "rushYds": 46.0,
+     "rushTd": 0.0,
+     "eventId": "401872929"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@TEN",
+     "car": 5.0,
+     "rushYds": 16.0,
+     "rushTd": 0.0,
+     "eventId": "401872939"
+    },
+    {
+     "date": "Mon 9/28",
+     "opp": "@CHI",
+     "car": 4.0,
+     "rushYds": 25.0,
+     "rushTd": 1.0,
+     "eventId": "401872963"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsLAR",
+     "car": 5.0,
+     "rushYds": 18.0,
+     "rushTd": 0.0,
+     "eventId": "401872970"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsJAX",
+     "car": 2.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872981"
+    }
+   ]
+  },
+  "4240391": {
+   "name": "Tommy DeVito",
+   "games": [
+    {
+     "date": "Sun 9/27",
+     "opp": "@JAX",
+     "car": 1.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872957"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@BUF",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872971"
+    }
+   ]
+  },
+  "4240703": {
+   "name": "Kenny Pickett",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsCHI",
+     "car": 1.0,
+     "rushYds": 24.0,
+     "rushTd": 0.0,
+     "eventId": "401872661"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@ATL",
+     "car": 1.0,
+     "rushYds": -4.0,
+     "rushTd": 0.0,
+     "eventId": "401872933"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@CLE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872949"
+    }
+   ]
+  },
+  "4241464": {
+   "name": "Mac Jones",
+   "games": [
+    {
+     "date": "Thu 9/10",
+     "opp": "vsLAR",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872657"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsMIA",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "401872942"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsARI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872958"
+    }
+   ]
+  },
+  "4241479": {
+   "name": "Tua Tagovailoa",
+   "games": [
+    {
+     "date": "Sun 10/11",
+     "opp": "vsBAL",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872993"
+    }
+   ]
+  },
+  "4242512": {
+   "name": "Malik Willis",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@LV",
+     "car": 6.0,
+     "rushYds": 39.0,
+     "rushTd": 1.0,
+     "eventId": "401872928"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@SF",
+     "car": 2.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872942"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsKC",
+     "car": 9.0,
+     "rushYds": 56.0,
+     "rushTd": 0.0,
+     "eventId": "401872952"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@MIN",
+     "car": 2.0,
+     "rushYds": 11.0,
+     "rushTd": 0.0,
+     "eventId": "401872974"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsCIN",
+     "car": 8.0,
+     "rushYds": 74.0,
+     "rushTd": 1.0,
+     "eventId": "401872982"
+    }
+   ]
+  },
+  "4259553": {
+   "name": "Stetson Bennett IV",
+   "games": [
+    {
+     "date": "Thu 9/10",
+     "opp": "vsSF",
+     "car": 1.0,
+     "rushYds": 9.0,
+     "rushTd": 0.0,
+     "eventId": "401872657"
+    },
+    {
+     "date": "Mon 9/21",
+     "opp": "vsNYG",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872947"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@DEN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872962"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@PHI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872970"
+    }
+   ]
+  },
+  "4360310": {
+   "name": "Trevor Lawrence",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsCLE",
+     "car": 2.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872922"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@DEN",
+     "car": 2.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872940"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsNE",
+     "car": 4.0,
+     "rushYds": 25.0,
+     "rushTd": 0.0,
+     "eventId": "401872957"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@CIN",
+     "car": 3.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872969"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsPHI",
+     "car": 3.0,
+     "rushYds": 25.0,
+     "rushTd": 0.0,
+     "eventId": "401872981"
+    }
+   ]
+  },
+  "4360423": {
+   "name": "Michael Penix Jr.",
+   "games": [
+    {
+     "date": "Thu 9/24",
+     "opp": "@GB",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "401872948"
+    },
+    {
+     "date": "Mon 10/5",
+     "opp": "@NO",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "401872979"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsBAL",
+     "car": 2.0,
+     "rushYds": 8.0,
+     "rushTd": 0.0,
+     "eventId": "401872993"
+    }
+   ]
+  },
+  "4360689": {
+   "name": "Tyler Shough",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@DET",
+     "car": 4.0,
+     "rushYds": 8.0,
+     "rushTd": 0.0,
+     "eventId": "401872923"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@BAL",
+     "car": 9.0,
+     "rushYds": 23.0,
+     "rushTd": 1.0,
+     "eventId": "401872938"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsLV",
+     "car": 1.0,
+     "rushYds": 36.0,
+     "rushTd": 0.0,
+     "eventId": "401872961"
+    },
+    {
+     "date": "Mon 10/5",
+     "opp": "vsATL",
+     "car": 2.0,
+     "rushYds": 5.0,
+     "rushTd": 0.0,
+     "eventId": "401872979"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsMIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872987"
+    }
+   ]
+  },
+  "4361741": {
+   "name": "Brock Purdy",
+   "games": [
+    {
+     "date": "Thu 9/10",
+     "opp": "vsLAR",
+     "car": 5.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "401872657"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsMIA",
+     "car": 3.0,
+     "rushYds": 30.0,
+     "rushTd": 1.0,
+     "eventId": "401872942"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsARI",
+     "car": 2.0,
+     "rushYds": 34.0,
+     "rushTd": 0.0,
+     "eventId": "401872958"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsDEN",
+     "car": 10.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "401872975"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@SEA",
+     "car": 5.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872992"
+    }
+   ]
+  },
+  "4362887": {
+   "name": "Justin Fields",
+   "games": [
+    {
+     "date": "Mon 9/14",
+     "opp": "vsDEN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872931"
+    }
+   ]
+  },
+  "4426338": {
+   "name": "Bo Nix",
+   "games": [
+    {
+     "date": "Mon 9/14",
+     "opp": "@KC",
+     "car": 3.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872931"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsJAX",
+     "car": 5.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872940"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsLAR",
+     "car": 4.0,
+     "rushYds": 7.0,
+     "rushTd": 1.0,
+     "eventId": "401872962"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@SF",
+     "car": 2.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872975"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@LAC",
+     "car": 4.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872989"
+    }
+   ]
+  },
+  "4426339": {
+   "name": "Spencer Rattler",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@DET",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872923"
+    }
+   ]
+  },
+  "4426348": {
+   "name": "Jayden Daniels",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@PHI",
+     "car": 5.0,
+     "rushYds": 31.0,
+     "rushTd": 0.0,
+     "eventId": "401872929"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@DAL",
+     "car": 7.0,
+     "rushYds": 69.0,
+     "rushTd": 0.0,
+     "eventId": "401872944"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsNYG",
+     "car": 9.0,
+     "rushYds": 103.0,
+     "rushTd": 2.0,
+     "eventId": "401872988"
+    }
+   ]
+  },
+  "4429084": {
+   "name": "Anthony Richardson Sr.",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsBAL",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872659"
+    }
+   ]
+  },
+  "4431452": {
+   "name": "Drake Maye",
+   "games": [
+    {
+     "date": "Wed 9/9",
+     "opp": "@SEA",
+     "car": 7.0,
+     "rushYds": 47.0,
+     "rushTd": 0.0,
+     "eventId": "401872656"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsPIT",
+     "car": 4.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872946"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@JAX",
+     "car": 4.0,
+     "rushYds": 18.0,
+     "rushTd": 0.0,
+     "eventId": "401872957"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@BUF",
+     "car": 8.0,
+     "rushYds": 54.0,
+     "rushTd": 0.0,
+     "eventId": "401872971"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsLV",
+     "car": 7.0,
+     "rushYds": 25.0,
+     "rushTd": 1.0,
+     "eventId": "401872986"
+    }
+   ]
+  },
+  "4431611": {
+   "name": "Caleb Williams",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@CAR",
+     "car": 10.0,
+     "rushYds": 65.0,
+     "rushTd": 2.0,
+     "eventId": "401872661"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsMIN",
+     "car": 5.0,
+     "rushYds": 42.0,
+     "rushTd": 0.0,
+     "eventId": "401872937"
+    }
+   ]
+  },
+  "4432577": {
+   "name": "C.J. Stroud",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsBUF",
+     "car": 2.0,
+     "rushYds": 15.0,
+     "rushTd": 0.0,
+     "eventId": "401872660"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsCIN",
+     "car": 3.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "401872934"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@IND",
+     "car": 2.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872951"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsDAL",
+     "car": 2.0,
+     "rushYds": 12.0,
+     "rushTd": 0.0,
+     "eventId": "401872967"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@TEN",
+     "car": 6.0,
+     "rushYds": 5.0,
+     "rushTd": 1.0,
+     "eventId": "401872984"
+    }
+   ]
+  },
+  "4432722": {
+   "name": "Athan Kaliakmanis",
+   "games": [
+    {
+     "date": "Sun 10/4",
+     "opp": "vsIND",
+     "car": 3.0,
+     "rushYds": 16.0,
+     "rushTd": 0.0,
+     "eventId": "401872965"
+    }
+   ]
+  },
+  "4432762": {
+   "name": "Shedeur Sanders",
+   "games": [
+    {
+     "date": "Sun 9/27",
+     "opp": "vsCAR",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872949"
+    },
+    {
+     "date": "Thu 10/1",
+     "opp": "vsPIT",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872964"
+    }
+   ]
+  },
+  "4433970": {
+   "name": "J.J. McCarthy",
+   "games": [
+    {
+     "date": "Sun 10/11",
+     "opp": "@WSH",
+     "car": 2.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872988"
+    }
+   ]
+  },
+  "4434153": {
+   "name": "Tyson Bagent",
+   "games": [
+    {
+     "date": "Sun 9/20",
+     "opp": "vsMIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872937"
+    },
+    {
+     "date": "Mon 9/28",
+     "opp": "vsPHI",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872963"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsNYJ",
+     "car": 4.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "401872972"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@GB",
+     "car": 3.0,
+     "rushYds": 17.0,
+     "rushTd": 0.0,
+     "eventId": "401872990"
+    }
+   ]
+  },
+  "4596472": {
+   "name": "Jalon Daniels",
+   "games": [
+    {
+     "date": "Sun 9/27",
+     "opp": "vsMIN",
+     "car": 1.0,
+     "rushYds": 9.0,
+     "rushTd": 0.0,
+     "eventId": "401872959"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsGB",
+     "car": 8.0,
+     "rushYds": 55.0,
+     "rushTd": 0.0,
+     "eventId": "401872968"
+    },
+    {
+     "date": "Thu 10/8",
+     "opp": "@DAL",
+     "car": 7.0,
+     "rushYds": 23.0,
+     "rushTd": 0.0,
+     "eventId": "401872980"
+    }
+   ]
+  },
+  "4685413": {
+   "name": "Cade Klubnik",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "@TEN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872924"
+    }
+   ]
+  },
+  "4685720": {
+   "name": "Bryce Young",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsCHI",
+     "car": 2.0,
+     "rushYds": 10.0,
+     "rushTd": 1.0,
+     "eventId": "401872661"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@ATL",
+     "car": 1.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872933"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@CLE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872949"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "vsDET",
+     "car": 3.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872978"
+    }
+   ]
+  },
+  "4688380": {
+   "name": "Cam Ward",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsNYJ",
+     "car": 4.0,
+     "rushYds": 21.0,
+     "rushTd": 0.0,
+     "eventId": "401872924"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "vsPHI",
+     "car": 4.0,
+     "rushYds": 7.0,
+     "rushTd": 2.0,
+     "eventId": "401872939"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "@NYG",
+     "car": 1.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872956"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@BAL",
+     "car": 4.0,
+     "rushYds": 27.0,
+     "rushTd": 0.0,
+     "eventId": "401872973"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsHOU",
+     "car": 1.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "401872984"
+    }
+   ]
+  },
+  "4689114": {
+   "name": "Jaxson Dart",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsDAL",
+     "car": 11.0,
+     "rushYds": 54.0,
+     "rushTd": 0.0,
+     "eventId": "401872930"
+    },
+    {
+     "date": "Mon 9/21",
+     "opp": "@LAR",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872947"
+    }
+   ]
+  },
+  "4837248": {
+   "name": "Fernando Mendoza",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsMIA",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872928"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@LAC",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872941"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "@NE",
+     "car": 1.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "401872986"
+    }
+   ]
+  },
+  "4879250": {
+   "name": "Cole Payton",
+   "games": [
+    {
+     "date": "Sun 10/11",
+     "opp": "vsJAX",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872981"
+    }
+   ]
+  },
+  "4889929": {
+   "name": "Quinn Ewers",
+   "games": [
+    {
+     "date": "Sun 9/27",
+     "opp": "vsNE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872957"
+    },
+    {
+     "date": "Sun 10/4",
+     "opp": "@CIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872969"
+    }
+   ]
+  },
+  "5344782": {
+   "name": "Jack Strand",
+   "games": [
+    {
+     "date": "Sun 9/20",
+     "opp": "vsCAR",
+     "car": 2.0,
+     "rushYds": 16.0,
+     "rushTd": 0.0,
+     "eventId": "401872933"
+    }
+   ]
+  },
+  "8439": {
+   "name": "Aaron Rodgers",
+   "games": [
+    {
+     "date": "Sun 9/13",
+     "opp": "vsATL",
+     "car": 3.0,
+     "rushYds": -3.0,
+     "rushTd": 0.0,
+     "eventId": "401872658"
+    },
+    {
+     "date": "Sun 9/20",
+     "opp": "@NE",
+     "car": 1.0,
+     "rushYds": 5.0,
+     "rushTd": 0.0,
+     "eventId": "401872946"
+    },
+    {
+     "date": "Sun 9/27",
+     "opp": "vsCIN",
+     "car": 3.0,
+     "rushYds": 10.0,
+     "rushTd": 0.0,
+     "eventId": "401872950"
+    },
+    {
+     "date": "Thu 10/1",
+     "opp": "@CLE",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "401872964"
+    },
+    {
+     "date": "Sun 10/11",
+     "opp": "vsIND",
+     "car": 1.0,
+     "rushYds": 6.0,
+     "rushTd": 0.0,
+     "eventId": "401872985"
+    }
+   ]
+  }
+ },
+ "mismatches": [],
+ "unmatched": []
+}

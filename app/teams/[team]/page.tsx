@@ -1,3 +1,4 @@
+import TeamBadge, { teamColor } from '@/components/TeamBadge';
 import Link from 'next/link'; import { notFound } from 'next/navigation'; import { players, teamCodes, teamName, CAT_LABEL, CAT_STATS, catGames, avg, fmt, bestHot, SITE } from '@/lib/data'; import { Crumbs, JsonLd } from '@/lib/ui';
 import articles from '@/data/articles.json';
 export const dynamicParams=false;
@@ -9,7 +10,7 @@ export default function Page({params}:{params:{team:string}}){ const t=params.te
  const ms=(articles as any[]).filter(a=>a.kind==='matchup'&&a.team===t);
  return <><Crumbs items={[['Home','/'],['Teams','/teams'],[teamName(t),`/teams/${t}`]]}/>
  <JsonLd data={{'@context':'https://schema.org','@type':'SportsTeam',name:teamName(t),sport:'American Football',url:`${SITE}/teams/${t}`,athlete:roster.slice(0,50).map(p=>({'@type':'Person',name:p.name,url:`${SITE}/players/${p.slug}`}))}}/>
- <h1>{teamName(t)} Player Stats</h1>
+ <h1 className="flex items-center gap-3"><TeamBadge code={t} name={teamName(t)} size="lg"/>{teamName(t)} Player Stats</h1><div aria-hidden="true" className="h-1 w-24 rounded my-2" style={{background:teamColor(t)}}/>
  {['passing','rushing','receiving','defense','kicking','punting'].map(c=>{const r=roster.filter(p=>p.cat===c).map(p=>({p,a:avg(catGames(p),CAT_STATS[c][0][0]),tr:bestHot(p)})).sort((x,y)=>(y.a??0)-(x.a??0)); if(!r.length) return null;
   return <section key={c}><h2>{CAT_LABEL[c]}</h2><div className="card overflow-x-auto"><table><thead><tr><th>Player</th><th>G</th><th>Avg {CAT_STATS[c][0][1]}</th><th>Best active streak</th></tr></thead><tbody>
   {r.slice(0,c==='defense'?15:10).map(({p,a,tr})=><tr key={p.slug}><td><Link href={`/players/${p.slug}`}>{p.name}</Link></td><td>{catGames(p).length}</td><td>{fmt(a)}</td><td>{tr?`🔥 ${tr.streak}× ${tr.label}`:'—'}</td></tr>)}</tbody></table></div></section>})}

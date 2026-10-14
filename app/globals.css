@@ -4,3 +4,14 @@ a{@apply text-emerald-400 hover:underline}
 .card{@apply rounded-xl bg-slate-900 border border-slate-800 p-4}
 table{@apply w-full text-sm} th{@apply text-left text-slate-400 font-medium py-1 pr-3 whitespace-nowrap} td{@apply py-1 pr-3 border-t border-slate-800 whitespace-nowrap}
 h1{@apply text-2xl font-bold mb-2} h2{@apply text-lg font-semibold mb-2 mt-6}
+@keyframes growBar{from{width:0}to{width:var(--w)}} .grow-bar{width:var(--w);animation:growBar .8s ease-out both}
+@keyframes ring{from{stroke-dashoffset:138.2}to{stroke-dashoffset:var(--off)}} .ring-anim{animation:ring 1s ease-out both}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}} .strip-pop{animation:pop .3s ease-out both}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}} .fade-in,main{animation:fade .35s ease-out both}
+.tip:hover::after,.tip:focus::after{content:attr(data-tip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);white-space:nowrap;background:#0f172a;border:1px solid #334155;color:#e2e8f0;font-weight:500;font-size:11px;padding:2px 6px;border-radius:6px;z-index:30}
+.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}
+.skeleton{@apply bg-slate-800 rounded animate-pulse}
+details>summary{list-style:none}details>summary::-webkit-details-marker{display:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes drawer-in{from{transform:translateX(-100%)}to{transform:none}}.drawer-in{animation:drawer-in .2s ease-out}
+@media (prefers-reduced-motion:reduce){.drawer-in{animation:none}}

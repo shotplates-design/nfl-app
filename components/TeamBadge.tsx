@@ -1,0 +1,7 @@
+/** Team-colored abbreviation badge (no logos). Text color picked for contrast; a light ring keeps dark team colors visible on the dark theme. */
+const C:Record<string,string>={ari:'#97233F',atl:'#A71930',bal:'#241773',buf:'#00338D',car:'#0085CA',chi:'#0B162A',cin:'#FB4F14',cle:'#FF3C00',dal:'#003594',den:'#FB4F14',det:'#0076B6',gb:'#203731',hou:'#03202F',ind:'#002C5F',jax:'#006778',kc:'#E31837',lac:'#0080C6',lar:'#003594',lv:'#A5ACAF',mia:'#008E97',min:'#4F2683',ne:'#002244',no:'#D3BC8D',nyg:'#0B2265',nyj:'#125740',phi:'#004C54',pit:'#FFB612',sea:'#69BE28',sf:'#AA0000',tb:'#D50A0A',ten:'#4B92DB',wsh:'#5A1414'};
+const lum=(h:string)=>{ const [r,g,b]=[1,3,5].map(i=>{const c=parseInt(h.slice(i,i+2),16)/255; return c<=0.03928?c/12.92:((c+0.055)/1.055)**2.4;}); return 0.2126*r+0.7152*g+0.0722*b; };
+export const teamColor=(code:string)=>C[code]||'#475569';
+export default function TeamBadge({code,name,size='sm'}:{code:string,name?:string,size?:'sm'|'md'|'lg'}){ const bg=teamColor(code); const fg=lum(bg)>0.4?'#0f172a':'#ffffff';
+  const cls=size==='lg'?'text-base px-2.5 py-1':size==='md'?'text-sm px-2 py-0.5':'text-[10px] px-1.5 py-0.5';
+  return <span className={`inline-flex items-center rounded font-bold tracking-wide ring-1 ring-white/30 shrink-0 ${cls}`} style={{background:bg,color:fg}} aria-label={name?`${name} (${code.toUpperCase()})`:code.toUpperCase()} title={name}>{code.toUpperCase()}</span>; }

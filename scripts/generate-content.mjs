@@ -48,3 +48,14 @@ for (const t of teams) {
 fs.writeFileSync(new URL('../data/articles.json', import.meta.url), JSON.stringify(articles));
 fs.writeFileSync(new URL('../public/search.json', import.meta.url), JSON.stringify(P.map(p=>[p.name,p.slug,p.team,p.cat||''])));
 console.log(`generated ${articles.length} articles`);
+// Compact player index for client features (watchlist, compare). Every number computed from players.json.
+import { playerStreaks } from '../lib/streaks.mjs';
+const CS={passing:['passYds','passTd','int','cmp','att','rtg'],rushing:['primYds','car','primTd','rec','tgts','lng'],receiving:['primYds','rec','tgts','primTd','lng','car'],defense:['tackles','solo','sacks','int','pd','ff'],kicking:['fgm','fga','pts','fgLng'],punting:['punts','puntYds','puntAvg','in20','net']};
+const idx={};
+for(const p of P){ const gs=p.games.filter(g=>g.cat===p.cat); if(!gs.length||!p.cat) continue;
+  const av={}; for(const f of CS[p.cat]||[]){ const v=gs.map(g=>g[f]).filter(x=>typeof x==='number'); if(v.length) av[f]=Math.round(v.reduce((a,b)=>a+b,0)/v.length*10)/10; }
+  idx[p.slug]={n:p.name,t:p.team,c:p.cat,gp:gs.length,av,st:playerStreaks(p).map(r=>[r.label,r.streak,r.hot?1:0,r.hits,r.games])}; }
+fs.writeFileSync(new URL('../public/pindex.json', import.meta.url), JSON.stringify(idx));
+const { buildPgames } = await import('../lib/props.mjs');
+fs.writeFileSync(new URL('../public/pgames.json', import.meta.url), JSON.stringify(buildPgames(P)));
+console.log('pindex', Object.keys(idx).length);

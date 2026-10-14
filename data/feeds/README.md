@@ -1,0 +1,2 @@
+# Game conditions feeds
+Drop a refreshed `week-N-conditions.json` here (same shape: `{week, updated, games:[{away, home, kickoff_et, weather:{indoor,temp_f,wind_mph,precip_pct,impact:"none"|"minor"|"major",note}, injuries:[{player,team,pos,status,note}]}]}` using team abbreviations) and redeploy. It's read at build time and matched to games by home/away team codes. Weather is a forecast, and the site shows the `updated` time next to it.
