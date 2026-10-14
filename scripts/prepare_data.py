@@ -19,6 +19,8 @@ for _,r in d.iterrows():
         if num(r.cmp) is not None:
             g['cat']='passing'
             for c,k in [('cmp','cmp'),('att','att'),('yds','passYds'),('td','passTd'),('int','int'),('rtg','rtg'),('qbr','qbr'),('sack','sacks'),('lng','lng')]: g[k]=num(r[c])
+            # QB rows carry a 'car' value (carries). The CSV has no QB rush yds/TD: yds/td on these rows are passing.
+            g['car']=num(r.car)
         elif num(r.car) is not None:
             y,a,car,rec=num(r.yds),num(r.avg),num(r.car) or 0,num(r.rec) or 0
             # shared yds/avg/td columns: decide rushing vs receiving by which divisor reproduces avg

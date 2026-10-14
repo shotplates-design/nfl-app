@@ -20,7 +20,8 @@ export function catGames(p:Player){ return p.games.filter(g=>g.cat===p.cat); }
 export function avg(gs:Game[],f:string){ const v=gs.map(g=>g[f]).filter(x=>typeof x==='number'); return v.length? v.reduce((a,b)=>a+b,0)/v.length : null; }
 export function sum(gs:Game[],f:string){ return gs.map(g=>g[f]).filter(x=>typeof x==='number').reduce((a,b)=>a+b,0); }
 export const fmt=(n:number|null|undefined,d=1)=> n==null? '—' : (Number.isInteger(n)? String(n) : n.toFixed(d));
-export function leaders(cat:string,field:string,n=50,minGames=2){ return players.filter(p=>p.cat===cat).map(p=>{const gs=catGames(p);return {p,gp:gs.length,total:sum(gs,field),avg:avg(gs,field)}})
+// Carries leaderboard also includes QBs (carries are on their passing rows).
+export function leaders(cat:string,field:string,n=50,minGames=2){ const qbCar=cat==='rushing'&&field==='car'; return players.filter(p=>p.cat===cat||(qbCar&&p.cat==='passing')).map(p=>{const gs=qbCar?p.games.filter(g=>(g.cat==='rushing'||g.cat==='passing')&&typeof g.car==='number'):catGames(p);return {p,gp:gs.length,total:sum(gs,field),avg:avg(gs,field)}})
   .filter(x=>x.gp>=minGames&&x.avg!=null).sort((a,b)=>b.total-a.total).slice(0,n); }
 export const teamCodes = ()=> Array.from(new Set(players.map(p=>p.team))).sort();
 export const bySlug = (s:string)=> players.find(p=>p.slug===s);
