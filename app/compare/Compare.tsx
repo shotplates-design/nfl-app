@@ -1,0 +1,15 @@
+'use client'; import { useEffect, useMemo, useState } from 'react'; import Link from 'next/link'; import { usePindex, LBL } from '@/components/usePindex';
+function Pick({idx,value,onChange,label}:{idx:any,value:string,onChange:(s:string)=>void,label:string}){ const [q,setQ]=useState(''); const res=q.length>1?Object.entries(idx).filter(([,p]:any)=>p.n.toLowerCase().includes(q.toLowerCase())).slice(0,8):[];
+  return <div className="relative"><label className="text-xs text-slate-400">{label}<input value={q} onChange={e=>setQ(e.target.value)} placeholder={value?idx[value]?.n:'Search player…'} className="w-full mt-1 rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-base"/></label>
+   {res.length>0&&<ul className="absolute z-10 w-full card p-1 mt-1">{res.map(([s,p]:any)=><li key={s}><button type="button" className="w-full text-left px-2 py-1 rounded hover:bg-slate-800" onClick={()=>{onChange(s);setQ('')}}>{p.n} <span className="text-xs text-slate-500">{p.t.toUpperCase()}</span></button></li>)}</ul>}</div>; }
+export default function Compare(){ const idx=usePindex(); const [a,setA]=useState(''), [b,setB]=useState('');
+  useEffect(()=>{ const u=new URLSearchParams(location.search); setA(u.get('a')||''); setB(u.get('b')||''); },[]);
+  useEffect(()=>{ if(a||b) history.replaceState(null,'',`/compare?a=${a}&b=${b}`); },[a,b]);
+  const pa=idx?.[a], pb=idx?.[b]; const fields=useMemo(()=>Array.from(new Set([...Object.keys(pa?.av||{}),...Object.keys(pb?.av||{})])),[pa,pb]);
+  if(!idx) return <div className="grid grid-cols-2 gap-3" aria-busy="true"><div className="skeleton h-10"/><div className="skeleton h-10"/><div className="skeleton h-40 col-span-2"/></div>;
+  const cell=(p:any,f:string,o:any)=>{const v=p?.av?.[f], w=o?.av?.[f]; return <td className={v!=null&&w!=null&&v>w?'text-emerald-400 font-semibold':''}>{v??'—'}</td>};
+  return <div><div className="grid grid-cols-2 gap-3"><Pick idx={idx} value={a} onChange={setA} label="Player A"/><Pick idx={idx} value={b} onChange={setB} label="Player B"/></div>
+   {(pa||pb)&&<div className="card mt-4 overflow-x-auto fade-in"><table><thead><tr><th>Per game</th><th>{pa?<Link href={`/players/${a}`}>{pa.n}</Link>:'—'}</th><th>{pb?<Link href={`/players/${b}`}>{pb.n}</Link>:'—'}</th></tr></thead><tbody>
+    <tr><td>Games</td><td>{pa?.gp??'—'}</td><td>{pb?.gp??'—'}</td></tr>{fields.map(f=><tr key={f}><td>{LBL[f]||f}</td>{cell(pa,f,pb)}{cell(pb,f,pa)}</tr>)}</tbody></table>
+    {pa&&pb&&pa.c!==pb.c&&<p className="text-xs text-amber-300 mt-2">Different stat categories ({pa.c} vs {pb.c}); "Yds"/"TD" mean different things.</p>}</div>}
+   {(pa||pb)&&<div className="grid sm:grid-cols-2 gap-3 mt-3">{[pa,pb].map((p,i)=>p&&<div key={i} className="card text-sm"><div className="font-semibold mb-1">{p.n} – benchmark hit rates</div><ul className="space-y-1">{p.st.map((x:any)=><li key={x[0]} className="flex justify-between"><span>{x[0]}</span><span className={x[2]?'text-emerald-400':'text-sky-300'}>{x[3]}/{x[4]} · {x[2]?'🔥':'🧊'}{x[1]}</span></li>)}</ul></div>)}</div>}</div>; }

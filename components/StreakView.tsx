@@ -1,0 +1,14 @@
+// Presentational pieces shared by server pages and client explorers. No data imports here (keeps client bundles small).
+import Link from 'next/link'; import FavButton from './FavButton';
+export function Strip({r}:{r:any}){ return <span className="inline-flex gap-0.5 align-middle" role="list" aria-label={`${r.hits} of ${r.games} games hit ${r.label}`}>
+  {r.strip.map((g:any,i:number)=><span key={i} role="listitem" tabIndex={0} aria-label={`${g.d} ${g.o}: ${g.v} — ${g.h?'hit':'miss'}`}
+   className={`tip relative w-5 h-5 rounded text-[9px] leading-5 text-center font-bold outline-none focus:ring-2 focus:ring-emerald-400 strip-pop ${g.h?'bg-emerald-600 text-white':'bg-slate-700 text-slate-300'}`} style={{animationDelay:`${i*60}ms`}} data-tip={`${g.d} ${g.o}: ${g.v}`}>{g.h?'✓':'✗'}</span>)}</span>; }
+export function HitBar({hits,games}:{hits:number,games:number}){ const pct=games?Math.round(hits/games*100):0;
+  return <span className="inline-flex items-center gap-2 min-w-[90px]" aria-label={`Hit rate ${hits} of ${games} (${pct}%)`}><span className="h-1.5 w-14 rounded bg-slate-700 overflow-hidden"><span className={`block h-full grow-bar ${pct>=60?'bg-emerald-500':pct>=40?'bg-amber-400':'bg-rose-500'}`} style={{['--w' as any]:`${pct}%`}}/></span><span className="tabular-nums">{hits}/{games}</span></span>; }
+export function HitRing({hits,games,size=56}:{hits:number,games:number,size?:number}){ const pct=games?hits/games:0; const r=22,c=2*Math.PI*r;
+  return <svg width={size} height={size} viewBox="0 0 56 56" role="img" aria-label={`Hit rate ${Math.round(pct*100)}%`}><circle cx="28" cy="28" r={r} className="stroke-slate-700" strokeWidth="6" fill="none"/>
+   <circle cx="28" cy="28" r={r} className={`ring-anim ${pct>=.6?'stroke-emerald-500':pct>=.4?'stroke-amber-400':'stroke-rose-500'}`} strokeWidth="6" fill="none" strokeLinecap="round" transform="rotate(-90 28 28)" style={{strokeDasharray:c,['--off' as any]:c*(1-pct),strokeDashoffset:c*(1-pct)}}/>
+   <text x="28" y="32" textAnchor="middle" fontSize="12" className="fill-white font-bold">{Math.round(pct*100)}%</text></svg>; }
+export function StreakTableView({rows}:{rows:any[]}){ return <div className="card overflow-x-auto"><table><thead><tr><th><span className="sr-only">Watch</span></th><th>Player</th><th>Benchmark</th><th>Streak</th><th>Hit rate</th><th>Game by game</th></tr></thead><tbody>
+  {rows.map(r=><tr key={r.slug+r.key} className="fade-in"><td><FavButton slug={r.slug} name={r.name}/></td><td><Link href={`/players/${r.slug}`}>{r.name}</Link> <span className="text-slate-500 text-xs">{r.team.toUpperCase()}</span></td><td>{r.label}</td>
+  <td className={r.hot?'text-emerald-400 font-semibold':'text-sky-300 font-semibold'}>{r.hot?'🔥':'🧊'} {r.streak} straight</td><td><HitBar hits={r.hits} games={r.games}/></td><td><Strip r={r}/></td></tr>)}</tbody></table></div>; }

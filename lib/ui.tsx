@@ -12,9 +12,5 @@ export function Bars({data,label}:{data:{x:string,y:number|null}[],label:string}
       <text x={i*40+20} y={100-h-3} textAnchor="middle" className="fill-slate-200" fontSize="10">{d.y??'—'}</text>
       <text x={i*40+20} y={114} textAnchor="middle" className="fill-slate-400" fontSize="8">{d.x}</text></g>})}
     </svg></figure>; }
-export function Strip({r}:{r:any}){ return <span className="inline-flex gap-0.5 align-middle" aria-label={`${r.hits} of ${r.games} games hit ${r.label}`}>
-  {r.strip.map((g:any,i:number)=><span key={i} title={`${g.d} ${g.o}: ${g.v}`} className={`w-5 h-5 rounded text-[9px] leading-5 text-center font-bold ${g.h?'bg-emerald-600 text-white':'bg-slate-700 text-slate-300'}`}>{g.h?'✓':'✗'}</span>)}</span>; }
-export function StreakTable({rows,showGroup=false}:{rows:any[],showGroup?:boolean}){ return <div className="card overflow-x-auto"><table><thead><tr><th>Player</th><th>Benchmark</th><th>Streak</th><th>Hit rate</th><th>Game by game (oldest → latest)</th></tr></thead><tbody>
-  {rows.map(r=><tr key={r.slug+r.key}><td><Link href={`/players/${r.slug}`}>{r.name}</Link> <span className="text-slate-500 text-xs">{r.team.toUpperCase()}</span></td><td>{r.label}</td>
-  <td className={r.hot?'text-emerald-400 font-semibold':'text-sky-300 font-semibold'}>{r.hot?'🔥':'🧊'} {r.streak} straight</td><td>{r.hits}/{r.games}</td><td><Strip r={r}/></td></tr>)}</tbody></table></div>; }
+export { Strip, HitBar, HitRing, StreakTableView as StreakTable } from '@/components/StreakView';
 export const BENCH_NOTE = 'Thresholds are standard statistical benchmarks, not sportsbook lines. Past results do not guarantee future outcomes.';
