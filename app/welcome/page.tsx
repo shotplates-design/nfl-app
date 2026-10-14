@@ -1,7 +1,17 @@
-import Link from 'next/link'; import { SITE_NAME } from '@/lib/data';
-// Public marketing home shown at "/" to visitors without a membership (middleware rewrite). Contains no player/prop data.
+import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import TeamBadge from '@/components/TeamBadge';
+// Public marketing home shown at "/" to visitors without a membership (middleware rewrite). Server-renders ONLY the top 3 Best Props (selected fields); the locked section below is dummy content, not real data.
 export const metadata={title:`${SITE_NAME}: NFL Player Props, Hit Rates & Streaks`,description:'Weekly NFL player props ranked by hit rate, streaks and matchups, plus sleepers, a prop search builder and line explorer. $4.99/month.',alternates:{canonical:'/'}};
-export default function Welcome(){ return <div className="max-w-lg mx-auto space-y-4 py-4">
+const short=(t:string)=>{ const m=String(t||'').match(/^.*?[.!?](\s|$)/); const x=(m?m[0]:String(t||'')).trim(); return x.length>140?x.slice(0,137)+'…':x; };
+const FAKE=[['Player Name','Over 00.5 Yds','00%'],['Player Name','Over 00.5 Yds','00%'],['Player Name','Over 0.5 Rec','00%'],['Player Name','Over 00.5 Yds','00%']];
+export default function Welcome(){ const w=currentWeek(); const top=bestProps(3).slice(0,3).map(r=>({name:r.name,team:r.team,role:r.role,prop:r.prop,hits:r.hits,games:r.games,why:short(r.why)}));
+ return <div className="max-w-lg mx-auto space-y-4 py-4">
+  <section aria-labelledby="pv"><h2 id="pv" className="mt-0">Free preview: top 3 props for Week {w.week}</h2>
+   <ol className="space-y-2 mt-2">{top.map((r,i)=><li key={i} className="card min-w-0"><div className="flex items-center gap-1.5 min-w-0"><span className="text-slate-500 text-sm font-bold w-5">{i+1}</span><TeamBadge code={r.team} name={r.team}/><span className="font-bold text-white truncate">{r.name}</span><span className="text-xs text-slate-400">{r.role}</span><span className="ml-auto text-xs text-emerald-300 font-semibold">{Math.round(100*r.hits/r.games)}% ({r.hits}/{r.games})</span></div>
+    <div className="mt-1 text-emerald-300 font-semibold">{r.prop} <span className="text-[10px] text-slate-500 font-normal">benchmark line, not a sportsbook line</span></div>
+    {r.why&&<p className="text-xs text-slate-300 mt-1"><span className="text-slate-500">Why:</span> {r.why}</p>}</li>)}</ol>
+   <div className="relative mt-2"><ol aria-hidden="true" className="space-y-2 blur-sm select-none pointer-events-none">{FAKE.map(([n,p,h],i)=><li key={i} className="card"><div className="flex gap-2"><span className="text-slate-500 font-bold w-5">{i+4}</span><span className="font-bold text-white">{n}</span><span className="ml-auto text-xs text-emerald-300">{h}</span></div><div className="mt-1 text-emerald-300 font-semibold">{p}</div></li>)}</ol>
+    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-slate-950/30 to-slate-950/90"><div className="card max-w-xs text-center space-y-2"><p className="font-semibold text-white">🔒 Sign up for $4.99/month to see all props</p>
+     <Link href="/signup" className="block rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Sign up – $4.99/month</Link><p className="text-xs text-slate-400">Already a member? <Link href="/login">Log in</Link></p></div></div></div></section>
   <h1>NFL player props, ranked by the numbers</h1>
   <p className="text-slate-300">Every week we rank the strongest player props from this season's game logs: hit rates against benchmark lines, current streaks, recent form and matchup context.</p>
   <ul className="card text-sm space-y-1 list-disc pl-6"><li>Best Props This Week, ranked with a transparent score</li><li>Under-the-radar Sleepers</li><li>Prop search builder and line explorer for any player</li><li>Matchups with weather and injuries, streaks, leaders, dashboard, watchlist and compare</li></ul>
