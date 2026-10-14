@@ -1,4 +1,4 @@
-'use client'; import { useState } from 'react'; import Link from 'next/link';
+'use client'; import SignedOut from '@/components/SignedOut'; import { useState } from 'react'; import Link from 'next/link';
 export default function Reset(){ const [msg,setMsg]=useState(''); const [ok,setOk]=useState(false); const [busy,setBusy]=useState(false);
  async function submit(e:any){ e.preventDefault(); const f=new FormData(e.target); const password=String(f.get('password')); if(password!==String(f.get('confirm'))){ setMsg('Passwords do not match.'); return; }
   setBusy(true); const token=new URLSearchParams(location.search).get('token')||'';
@@ -10,4 +10,4 @@ export default function Reset(){ const [msg,setMsg]=useState(''); const [ok,setO
   <input name="confirm" type="password" required minLength={8} placeholder="Confirm new password" autoComplete="new-password" className={inp}/>
   <button disabled={busy} className="w-full rounded-lg bg-emerald-600 py-2 font-semibold">{busy?'…':'Update password'}</button></>}
   {msg&&<p role="status" className={`text-sm ${ok?'text-emerald-300':'text-rose-400'}`}>{msg}</p>}
-  <p className="text-sm text-slate-400">{ok?<Link href="/login">Log in →</Link>:<Link href="/forgot-password">Request a new link</Link>}</p></form>; }
+  <p className="text-sm text-slate-400">{ok?<SignedOut><Link href="/login">Log in →</Link></SignedOut>:<Link href="/forgot-password">Request a new link</Link>}</p></form>; }
