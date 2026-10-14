@@ -11,7 +11,8 @@ async function member(email:string){ if(email===ADMIN) return true; if(!RURL()||
     const {result}=await r.json(); const u=typeof result==='string'?JSON.parse(result):result; return !!u&&(u.free===true||['active','trialing'].includes(u.subStatus)); }catch{ return false; } }
 // Free player lookups for non-members: up to FREE_LIMIT distinct /players/<slug> pages.
 // Signed-out: list kept in an httpOnly cookie signed with HMAC-SHA256(NEXTAUTH_SECRET). Signed-in unpaid: Redis set free:<email>.
-const FREE_LIMIT=5, FCOOKIE='tpp_free';
+const FREE_LIMIT=5, FCOOKIE='tpp_free', FREE_TTL=60*60*24*30;
+const clientIp=(req:NextRequest)=>(req.headers.get('x-forwarded-for')?.split(',')[0]||req.headers.get('x-real-ip')||req.ip||'unknown').trim();
 const b64u=(b:ArrayBuffer|Uint8Array)=>btoa(String.fromCharCode(...new Uint8Array(b as ArrayBuffer))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
 async function hmac(data:string){ const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(process.env.NEXTAUTH_SECRET||''),{name:'HMAC',hash:'SHA-256'},false,['sign']); return b64u(await crypto.subtle.sign('HMAC',k,new TextEncoder().encode(data))); }
 async function readCookie(v?:string):Promise<string[]>{ if(!v) return []; const [d,sig]=v.split('.'); if(!d||!sig||sig!==await hmac(d)) return [];
@@ -26,10 +27,15 @@ async function freePlayer(req:NextRequest, slug:string, email:string){
   if(email){ const k=`free:${email}`; if(await redisCmd('SISMEMBER',k,slug)===1) return NextResponse.next();
     if(isPrefetch(req)) return new NextResponse(null,{status:204}); // never spend a lookup on a prefetch/RSC fetch
     const n=await redisCmd('SCARD',k); if(typeof n!=='number'||n>=FREE_LIMIT) return null; await redisCmd('SADD',k,slug); return NextResponse.next(); }
-  const list=await readCookie(req.cookies.get(FCOOKIE)?.value); if(list.includes(slug)) return NextResponse.next();
-  if(isPrefetch(req)) return new NextResponse(null,{status:204});
-  if(list.length>=FREE_LIMIT) return null;
-  const res=NextResponse.next(); res.cookies.set(FCOOKIE,await writeCookie([...list,slug]),{httpOnly:true,secure:true,sameSite:'lax',path:'/',maxAge:60*60*24*365}); return res; }
+  // Signed-out: IP-keyed Redis set is authoritative (in-app webviews like Instagram drop cookies); signed cookie is merged in as an extra signal.
+  const ip=clientIp(req); const k=`freeip:${ip}`; const list=await readCookie(req.cookies.get(FCOOKIE)?.value);
+  if(list.length) await redisCmd('SADD',k,...list);
+  const seen=await redisCmd('SISMEMBER',k,slug)===1||list.includes(slug);
+  if(!seen&&isPrefetch(req)) return new NextResponse(null,{status:204});
+  if(!seen){ const n=await redisCmd('SCARD',k); if(typeof n!=='number'||n>=FREE_LIMIT) return null; await redisCmd('SADD',k,slug); }
+  await redisCmd('EXPIRE',k,String(FREE_TTL));
+  const all=[...new Set([...list,slug])].slice(0,FREE_LIMIT);
+  const res=NextResponse.next(); res.cookies.set(FCOOKIE,await writeCookie(all),{httpOnly:true,secure:true,sameSite:'lax',path:'/',maxAge:60*60*24*365}); return res; }
 const starts=(p:string,l:string[])=>l.some(x=>p===x||p.startsWith(x+'/'));
 export async function middleware(req:NextRequest){ const p=req.nextUrl.pathname;
   if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)) return NextResponse.next();
