@@ -1,4 +1,4 @@
-import Link from 'next/link'; import { notFound } from 'next/navigation'; import { weeks, findGame, fmtKick, teamStreaks, teamName } from '@/lib/matchups'; import { Crumbs, JsonLd, StreakTable, BENCH_NOTE } from '@/lib/ui'; import { SITE } from '@/lib/data';
+import Link from 'next/link'; import { notFound } from 'next/navigation'; import { weeks, findGame, fmtKick, teamStreaks, teamName } from '@/lib/matchups'; import { Crumbs, JsonLd, StreakTable, BENCH_NOTE } from '@/lib/ui'; import { SITE } from '@/lib/data'; import { WeatherBadge, Injuries } from '@/components/Conditions';
 export const dynamicParams=false;
 export function generateStaticParams(){ return weeks().flatMap(w=>w.games.map(g=>({game:g.slug}))); }
 export function generateMetadata({params}:{params:{game:string}}){ const f=findGame(params.game); if(!f) return {}; const {w,g}=f;
@@ -15,6 +15,7 @@ export default function Page({params}:{params:{game:string}}){ const f=findGame(
   awayTeam:{'@type':'SportsTeam',name:teamName(g.awayCode),url:`${SITE}/teams/${g.awayCode}`},homeTeam:{'@type':'SportsTeam',name:teamName(g.homeCode),url:`${SITE}/teams/${g.homeCode}`},
   location:{'@type':'Place',name:g.venue||`${teamName(g.homeCode)} home stadium`},url:`${SITE}/matchups/${g.slug}`}}/>
  <h1>{g.away} @ {g.home}</h1><p className="text-sm text-slate-400">NFL Week {w.week} · {fmtKick(g.kickoff)}{g.network?` · ${g.network}`:''}{g.venue?` · ${g.venue}`:''}</p>
+ {g.cond&&<div className="card mt-3"><h2 className="text-sm font-semibold">Game conditions</h2><WeatherBadge w={g.cond.weather} updated={g.condUpdated} full/><Injuries list={g.cond.injuries} full/></div>}
  {a&&<div className="card mt-3 text-sm"><div className="font-semibold mb-1">Matchup model: {a.lean}</div><table><thead><tr><th>Category</th><th>{g.away}</th><th>{g.home}</th><th>Edge</th></tr></thead><tbody>
   {Object.entries(a.categories||{}).map(([k,v]:any)=><tr key={k}><td>{k.replace(/_/g,' ')}</td><td>{v.away}</td><td>{v.home}</td><td className={v.edge>0?'text-emerald-400':v.edge<0?'text-rose-400':''}>{v.edge>0?`${g.away} +${v.edge}`:v.edge<0?`${g.home} +${-v.edge}`:'even'}</td></tr>)}</tbody></table>
   <p className="text-xs text-slate-500 mt-1">Scores and edges as supplied (0–1 scale); not betting lines.</p></div>}

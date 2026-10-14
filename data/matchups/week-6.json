@@ -5,10 +5,11 @@
  "schedule_checked": "2026-10-14",
  "byes": [
   "cin",
+  "det",
   "mia",
   "min"
  ],
- "notes": "Pairings/times from NFL.com. Matchup-edge analysis from the supplied file is attached only where its pairing matches the official schedule.",
+ "notes": "Pairings/times from NFL.com. Matchup-edge analysis from the supplied file is attached only where its pairing matches the official schedule. ARI@LAR, LAC@KC, BUF@LV added 2026-10-14 after verification against NFL.com (no supplied matchup analysis for these). DET added to byes per NFL.com.",
  "games": [
   {
    "away": "Seahawks",
@@ -414,6 +415,27 @@
     "Passing TD production",
     "Receiving first-down rate"
    ]
+  },
+  {
+   "away": "Cardinals",
+   "home": "Rams",
+   "kickoff": "2026-10-18T16:05:00-04:00",
+   "network": null,
+   "venue": null
+  },
+  {
+   "away": "Chargers",
+   "home": "Chiefs",
+   "kickoff": "2026-10-18T16:25:00-04:00",
+   "network": null,
+   "venue": null
+  },
+  {
+   "away": "Bills",
+   "home": "Raiders",
+   "kickoff": "2026-10-18T16:25:00-04:00",
+   "network": null,
+   "venue": null
   },
   {
    "away": "Cowboys",
