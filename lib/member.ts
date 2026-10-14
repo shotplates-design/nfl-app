@@ -10,3 +10,5 @@ export const stripeReady = () => !!(process.env.STRIPE_SECRET_KEY && process.env
 export async function stripe(path:string, params:Record<string,string>){ // minimal Stripe REST client (no SDK)
   const r=await fetch(`https://api.stripe.com/v1/${path}`,{method:'POST',headers:{Authorization:`Bearer ${process.env.STRIPE_SECRET_KEY}`,'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(params)});
   const j=await r.json(); if(!r.ok) throw new Error(j?.error?.message||'Stripe error'); return j; }
+export const ADMIN_EMAIL = 'drosser1724@yahoo.com';
+export const isAdmin = (email?:string|null) => !!email && email.trim().toLowerCase()===ADMIN_EMAIL;
