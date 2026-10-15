@@ -17,21 +17,6 @@ details>summary{list-style:none}details>summary::-webkit-details-marker{display:
 @media (prefers-reduced-motion:reduce){.drawer-in{animation:none}}
 main,header,nav,section,article,li,.card{min-width:0}
 .break-anywhere{overflow-wrap:anywhere;word-break:break-word}
-@media (max-width:639px){
-  th,td{white-space:normal}
-  .overflow-x-auto{max-width:100%}
-  table.cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
-  table.cards tr{border:1px solid #1e293b;border-radius:12px;padding:8px 10px;margin:0 0 8px;background:#0f172a}
-  table.cards td{border:0;padding:3px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between}
-  table.cards td[data-l]::before{content:attr(data-l);color:#94a3b8;font-size:11px;margin-right:auto}
-  table.cards td.who{font-weight:600;font-size:15px;justify-content:flex-start}
-  table.cards td.who::before{content:none}
-  table.cards.top10 tr{display:flex;flex-wrap:wrap;align-items:center}
-  table.cards.top10 td.rank{width:auto;flex:0 0 auto;padding:0 8px 0 0;font-size:15px}
-  table.cards.top10 td.rank::before{content:none}
-  table.cards.top10 td.who{width:auto;flex:1 1 auto;min-width:0}
-  table.cards.top10 td:not(.rank):not(.who){flex:1 1 100%}
-  .card:has(> table.cards),.card:has(> .overflow-x-auto > table.cards){padding:0;border:0;background:transparent}
-  .strip{flex-wrap:wrap;max-width:100%}
-}
+/* Tables stay tables. If a chart is wider than the phone, it scrolls inside its card, not the page. */
+.overflow-x-auto{max-width:100%;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.overflow-x-auto>table{width:max-content;min-width:100%}
