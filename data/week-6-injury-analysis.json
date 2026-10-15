@@ -1,6 +1,6 @@
 {
   "week": 6,
-  "updated": "2026-10-15T11:50:33-04:00",
+  "updated": "2026-10-15T18:27:29-04:00",
   "headline_summary": [
     "Denver's secondary is gutted for TNF: CB1 Pat Surtain II and S Talanoa Hufanga are Out and CB Riley Moss is Questionable, with NFL receiving leader Jaxon Smith-Njigba coming to town.",
     "Both middles are open: Seattle is without WILL Drake Thomas (Tyrice Knight starts) and Denver is without robber safety Hufanga. Watch Evan Engram and AJ Barner.",
@@ -479,6 +479,161 @@
           "date": "2026-10-14"
         }
       ]
+    },
+    {
+      "game": "HOU@JAX",
+      "team": "HOU",
+      "player": "David Montgomery",
+      "position": "RB",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Groin",
+      "severity": "significant",
+      "coverage_role": "Houston's RB1 and early-down/goal-line back. Hurt in Week 5 vs TEN, and Woody Marks had already been eating into his share (Yahoo). Did not travel to London.",
+      "team_impact": "Woody Marks becomes the workhorse. FantasyPros: after Montgomery left in Week 5, Marks played 95.7% of snaps and took all 13 RB carries. The catch: Jacksonville has one of the league's stingiest run defenses.",
+      "exploited_by": [],
+      "beneficiaries": [
+        {
+          "player": "Woody Marks",
+          "position": "RB",
+          "team": "HOU",
+          "why": "Inherits the backfield; Montgomery and Marks were the only HOU RBs with a touch in Week 5 (Yahoo).",
+          "key_stat_with_without": {
+            "with_montgomery": {
+              "games": 4,
+              "carries_pg": 7.0,
+              "rush_yds_pg": 21.8,
+              "targets_pg": 2.25,
+              "rec_yds_pg": 7.8
+            },
+            "without_montgomery": {
+              "games": 1,
+              "carries": 15,
+              "rush_yds": 62,
+              "targets": 4,
+              "rec_yds": 23,
+              "note": "Week 5 vs TEN; Montgomery exited early in that game"
+            },
+            "small_sample": true,
+            "source_url": "https://www.nfl.com/players/woody-marks/stats/logs/",
+            "extra": "FantasyPros (Derek Brown): 95.7% of snaps, all 13 RB carries, 66.7% route share and 11.5% target share in the final three quarters of Week 5."
+          }
+        }
+      ],
+      "opponent_beneficiaries": [],
+      "matchup_note": "Jacksonville is reported to allow the fewest fantasy points to RBs. That figure is from the user's brief and I didn't verify it myself. FantasyPros confirms JAX allows the 2nd-lowest explosive run rate and the lowest yards after contact per attempt and missed tackle rate.",
+      "expert_takes": [
+        {
+          "source_name": "FantasyPros",
+          "author": "Derek Brown",
+          "quote_or_paraphrase": "Marks 'should be Houston's workhorse back' but 'won't find much running room against one of the best run defenses.'",
+          "url": "https://www.fantasypros.com/nfl/notes/466311/woody-marks-2026-week-6-outlook.php",
+          "date": "2026-10-15"
+        },
+        {
+          "source_name": "NFL.com",
+          "author": "NFL.com fantasy staff",
+          "quote_or_paraphrase": "Possible Marks 'played his way into the starting role regardless of the veteran's health status.'",
+          "url": "https://www.nfl.com/news/2026-nfl-fantasy-football-waiver-wire-week-6-rb-woody-marks-te-brenton-strange-among-targets",
+          "date": "2026-10-12"
+        },
+        {
+          "source_name": "Yahoo Sports",
+          "author": "Yahoo fantasy staff",
+          "quote_or_paraphrase": "Marks is an RB3/flex 'with RB2 upside' if Montgomery sits.",
+          "url": "https://sports.yahoo.com/fantasy/article/fantasy-football-early-week-6-waiver-wire-woody-marks-brenton-strange-among-top-pickups-204002595.html",
+          "date": "2026-10-12"
+        }
+      ],
+      "betting_angle": "Volume over efficiency: Marks carries/receptions overs make more sense than rushing yards against this run defense. Not guaranteed.",
+      "confidence": "high (status); medium (angle)",
+      "sources": [
+        "https://www.houstontexans.com/news/houston-texans-travel-update-10-15-2026",
+        "https://www.fantasypros.com/nfl/notes/466311/woody-marks-2026-week-6-outlook.php",
+        "https://www.nfl.com/news/2026-nfl-fantasy-football-waiver-wire-week-6-rb-woody-marks-te-brenton-strange-among-targets",
+        "https://sports.yahoo.com/fantasy/article/fantasy-football-early-week-6-waiver-wire-woody-marks-brenton-strange-among-top-pickups-204002595.html",
+        "https://www.nfl.com/players/woody-marks/stats/logs/"
+      ]
+    },
+    {
+      "game": "HOU@JAX",
+      "team": "HOU",
+      "player": "Tank Dell",
+      "position": "WR",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Knee",
+      "severity": "moderate",
+      "coverage_role": "N/A (WR). He practiced fully Wed/Thu per the team report but was ruled out and did not travel.",
+      "team_impact": "Removes a field-stretching option from Houston's receiver group. Usage split not verified; qualitative only.",
+      "exploited_by": [],
+      "beneficiaries": [
+        {
+          "player": "Nico Collins",
+          "position": "WR",
+          "team": "HOU",
+          "why": "Target concentration on the WR1; Collins was limited Wednesday per NFL.com, so monitor.",
+          "key_stat_with_without": "Qualitative only"
+        }
+      ],
+      "opponent_beneficiaries": [],
+      "expert_takes": [],
+      "betting_angle": "Small lean toward HOU WR1 target overs if Collins is active. Not guaranteed.",
+      "confidence": "high (status)",
+      "sources": [
+        "https://www.houstontexans.com/news/houston-texans-travel-update-10-15-2026",
+        "https://www.houstontexans.com/team/injury-report/week/reg-6"
+      ]
+    },
+    {
+      "game": "HOU@JAX",
+      "team": "HOU",
+      "player": "Jalen Pitre",
+      "position": "S",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Shoulder",
+      "severity": "significant",
+      "coverage_role": "Nickel/box safety who often covers slot receivers and tight ends in the short-to-intermediate middle. Coach DeMeco Ryans called him week-to-week.",
+      "team_impact": "Houston loses its slot/TE-matchup defender, which leaves the middle of the field softer for Trevor Lawrence's short game.",
+      "exploited_by": [
+        {
+          "player": "Brenton Strange",
+          "team": "JAX",
+          "why": "NFL.com: team-high 26.2% target share over the last two weeks, catching 14 of 16 targets for 163 yards, 'Lawrence's most reliable option this side of WR1 Parker Washington.'",
+          "alignment_notes": "Inline/slot TE working the seams and short middle that Pitre usually covers."
+        },
+        {
+          "player": "Parker Washington",
+          "team": "JAX",
+          "why": "JAX WR1 per NFL.com; works out of the slot at times. Qualitative only.",
+          "alignment_notes": "Slot looks against a backup nickel."
+        }
+      ],
+      "beneficiaries": [],
+      "opponent_beneficiaries": [],
+      "expert_takes": [
+        {
+          "source_name": "FantasyPros (Aaron Wilson via)",
+          "author": "Ari Koslow",
+          "quote_or_paraphrase": "Ryans said Pitre is week-to-week with a left shoulder injury.",
+          "url": "https://www.fantasypros.com/nfl/news/613614/jalen-pitre-shoulder-week-to-week.php",
+          "date": "2026-10-13"
+        },
+        {
+          "source_name": "NFL.com",
+          "author": "NFL.com fantasy staff",
+          "quote_or_paraphrase": "Strange 'is streamable until further notice.'",
+          "url": "https://www.nfl.com/news/2026-nfl-fantasy-football-waiver-wire-week-6-rb-woody-marks-te-brenton-strange-among-targets",
+          "date": "2026-10-12"
+        }
+      ],
+      "betting_angle": "Strange receptions/receiving-yards overs, attacking the hole Pitre leaves. Not guaranteed; check the line.",
+      "confidence": "high (status); medium (angle)",
+      "sources": [
+        "https://www.houstontexans.com/news/houston-texans-travel-update-10-15-2026",
+        "https://www.nfl.com/news/2026-nfl-fantasy-football-waiver-wire-week-6-rb-woody-marks-te-brenton-strange-among-targets"
+      ]
     }
   ],
   "kenzie_picks": [
@@ -494,7 +649,8 @@
         "https://betstats-nfl.vercel.app",
         "https://www.si.com/betting/seahawks-vs-broncos-best-nfl-prop-bets-for-thursday-night-football-in-week-6-bet-on-jaxon-smith-njigba",
         "https://www.denvergazette.com/2026/10/14/broncos-rule-out-dbs-surtain-hufanga-list-moss-as-questionable-5/"
-      ]
+      ],
+      "status": "stale: game kicks off 2026-10-15 8:15 PM ET; settle after final"
     },
     {
       "player": "Jaxon Smith-Njigba",
@@ -508,7 +664,8 @@
         "https://betstats-nfl.vercel.app",
         "https://x.com/theplayerprops_/status/2110720304553296228",
         "https://www.si.com/betting/seahawks-vs-broncos-best-nfl-prop-bets-for-thursday-night-football-in-week-6-bet-on-jaxon-smith-njigba"
-      ]
+      ],
+      "status": "stale: game kicks off 2026-10-15 8:15 PM ET; settle after final"
     },
     {
       "player": "AJ Barner",
@@ -520,7 +677,8 @@
       "linked_injury": "DEN S Talanoa Hufanga (Out)",
       "sources": [
         "https://x.com/theplayerprops_/status/2110710848792539345"
-      ]
+      ],
+      "status": "stale: game kicks off 2026-10-15 8:15 PM ET; settle after final"
     },
     {
       "player": "Evan Engram",
@@ -534,7 +692,8 @@
         "https://x.com/theplayerprops_/status/2110711025746018605",
         "https://www.nfl.com/news/sean-payton-believes-evan-engram-can-fill-joker-role-broncos-offense",
         "https://www.espn.com/nfl/story/_/id/50185443/seahawks-rule-thomas-charbonnet-thursday-vs-broncos"
-      ]
+      ],
+      "status": "stale: game kicks off 2026-10-15 8:15 PM ET; settle after final"
     },
     {
       "player": "Bo Nix",
@@ -546,11 +705,11 @@
       "linked_injury": "SEA LB Drake Thomas (Out)",
       "sources": [
         "https://x.com/theplayerprops_/status/2110732910978633951"
-      ]
+      ],
+      "status": "stale: game kicks off 2026-10-15 8:15 PM ET; settle after final"
     }
   ],
-  "kenzie_picks_note": "Props are taken from betstats-nfl.vercel.app (ThePlayerProps) free board/streaks and @theplayerprops_ X posts dated 2026-10-15. Site lines are game-log thresholds. Bet responsibly, 21+.",
-  "kenzie_picks_final_after": "2026-10-15T20:15:00-04:00",
+  "kenzie_picks_note": "Props are taken from betstats-nfl.vercel.app (ThePlayerProps) free board/streaks and @theplayerprops_ X posts dated 2026-10-15. Site lines are game-log thresholds; X lines reference sportsbook lines. Bet responsibly, 21+.",
   "matchup_spotlights": [
     {
       "game": "SEA@DEN",
@@ -591,6 +750,17 @@
       "body": "Mayfield's dislocated throwing thumb means Jalon Daniels likely makes his third start (19/25, 189 yards, 1 TD last week), with roughly 21 mph sustained wind forecast at Raymond James. Daniels' legs are the safer bet than his arm.",
       "sources": [
         "https://www.nbcsports.com/fantasy/football/player-news/2026-10-14/mayfield-thumb-not-practicing-wednesday"
+      ]
+    },
+    {
+      "game": "HOU@JAX",
+      "title": "Woody's World Tour: London Edition",
+      "body": "With no Montgomery, Tank Dell or Jalen Pitre on the trip, Woody Marks gets the backfield to himself: 15 carries, 62 yards and 4 catches in his one start-type game. But Jacksonville's run defense allows the lowest yards after contact in the league, per FantasyPros. On the other side, Brenton Strange (14 of 16 targets for 163 yards over two weeks) gets to work the middle Pitre usually guards. Kickoff 9:30 AM ET at Wembley.",
+      "sources": [
+        "https://www.houstontexans.com/news/houston-texans-travel-update-10-15-2026",
+        "https://www.fantasypros.com/nfl/notes/466311/woody-marks-2026-week-6-outlook.php",
+        "https://www.nfl.com/news/2026-nfl-fantasy-football-waiver-wire-week-6-rb-woody-marks-te-brenton-strange-among-targets",
+        "https://www.nfl.com/players/woody-marks/stats/logs/"
       ]
     }
   ]

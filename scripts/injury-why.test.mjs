@@ -87,6 +87,30 @@ test('Best Props and Sleepers rows carry the injury clause and the anchor', asyn
   assert.ok(pick.every(r => r.why && typeof r.injuryNote !== 'undefined'));
 });
 
+test('the week 6 file adds the Houston outs, the Marks split, the London spotlight, and stale TNF picks', async () => {
+  const { loadInjuryDesk, formatWithWithout } = await import('../lib/injuryAnalysis.ts');
+  const loaded = loadInjuryDesk();
+  const hou = loaded.injuries.filter(i => i.team === 'HOU');
+  assert.deepEqual(hou.map(i => [i.player, i.status]), [
+    ['David Montgomery', 'Out'],
+    ['Tank Dell', 'Out'],
+    ['Jalen Pitre', 'Out'],
+  ]);
+  const marks = hou[0].beneficiaries.find(b => b.player === 'Woody Marks');
+  assert.ok(marks.key_stat_with_without.includes('With Montgomery: 4 games, 7 carries/g, 21.8 rush yds/g'));
+  assert.ok(marks.key_stat_with_without.includes('Without Montgomery: 1 game, 15 carries, 62 rush yds, 4 targets, 23 rec yds'));
+  assert.ok(marks.key_stat_with_without.includes('Week 5 vs TEN'));
+  assert.equal(marks.key_stat_with_without.includes('[object Object]'), false);
+  assert.ok(hou[0].matchup_note.includes('lowest yards after contact'));
+  const london = loaded.matchup_spotlights.find(s => s.title === "Woody's World Tour: London Edition");
+  assert.ok(london);
+  assert.equal(london.game, 'HOU@JAX');
+  assert.ok(london.body.includes('Wembley'));
+  assert.ok(loaded.kenzie_picks.length > 0);
+  assert.ok(loaded.kenzie_picks.every(p => p.status.startsWith('stale:')));
+  assert.equal(formatWithWithout('plain text'), 'plain text');
+});
+
 test('public gating still sends only the preview rows', () => {
   const home = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
   const welcome = readFileSync(new URL('../app/welcome/page.tsx', import.meta.url), 'utf8');
