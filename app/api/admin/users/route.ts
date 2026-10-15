@@ -8,5 +8,5 @@ export async function DELETE(req:Request){ const s=await getServerSession(authOp
   if(u.stripeSub && ['active','trialing','past_due'].includes(u.subStatus) && process.env.STRIPE_SECRET_KEY){
     const c=await fetch(`https://api.stripe.com/v1/subscriptions/${u.stripeSub}`,{method:'DELETE',headers:{Authorization:`Bearer ${process.env.STRIPE_SECRET_KEY}`}});
     if(!c.ok){ const j=await c.json().catch(()=>({})); return NextResponse.json({error:`Stripe cancel failed: ${j?.error?.message||c.status}; user not removed.`},{status:502}); } canceled=true; }
-  await r.del(userKey(e), `favs:${e}`, ...(u.stripeCustomer?[`stripecust:${u.stripeCustomer}`]:[]));
+  await r.del(userKey(e), `favs:${e}`, `favstreaks:${e}`, ...(u.stripeCustomer?[`stripecust:${u.stripeCustomer}`]:[]));
   return NextResponse.json({ok:true,canceled}); }
