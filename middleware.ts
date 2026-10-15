@@ -8,7 +8,7 @@ const PUBLIC_PREFIX=['/props']; // public SEO prop pages (limited summary only)
 const PUBLIC_API=['/api/auth','/api/signup','/api/me','/api/promo','/api/stripe','/api/password'];
 const SIGNED_IN_OK=['/account','/api/account']; // any signed-in user, member or not
 // Free-account features (paid-only inside these pages, e.g. Best Props 4+ and the line explorer, stays behind <Gate>).
-const FREE_PATHS=['/streaks','/players','/teams','/matchups','/leaders','/insights','/pindex.json','/api/streaksearch']; // /api/streaksearch counts free searches itself
+const FREE_PATHS=['/streaks','/players','/teams','/matchups','/injuries','/leaders','/insights','/pindex.json','/api/streaksearch']; // /api/streaksearch counts free searches itself
 const RURL=()=>process.env.UPSTASH_REDIS_REST_URL||process.env.KV_REST_API_URL; const RTOK=()=>process.env.UPSTASH_REDIS_REST_TOKEN||process.env.KV_REST_API_TOKEN;
 async function member(email:string){ if(email===ADMIN||FREE_ACCESS.includes(email)) return true; if(!RURL()||!RTOK()) return false;
   try{ const r=await fetch(`${RURL()}/get/${encodeURIComponent('user:'+email)}`,{headers:{Authorization:`Bearer ${RTOK()}`},cache:'no-store'}); if(!r.ok) return false;
@@ -30,7 +30,7 @@ export async function middleware(req:NextRequest){ const p=req.nextUrl.pathname;
   if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)||starts(p,PUBLIC_PREFIX)) return NextResponse.next();
   const tok=await getToken({req,secret:process.env.NEXTAUTH_SECRET}); const email=(tok?.email||'').toString().trim().toLowerCase();
   if(!email){ if(p==='/') return NextResponse.rewrite(new URL('/welcome',req.url)); // public preview home
-    if(starts(p,['/matchups'])){ const res=NextResponse.next(); res.headers.set('Cache-Control','private, no-store'); return res; } // injury reports on matchup pages are public
+    if(starts(p,['/matchups','/injuries'])){ const res=NextResponse.next(); res.headers.set('Cache-Control','private, no-store'); return res; } // matchup injury reports and the injury desk are public
     if(p.startsWith('/api/')||p.endsWith('.json')) return NextResponse.json({error:'Sign in required'},{status:401});
     const u=req.nextUrl.clone(); u.search=''; u.pathname='/signup'; u.searchParams.set('callbackUrl',p); return NextResponse.redirect(u); }
   const pm=p.match(/^\/players\/([a-z0-9-]+)\/?$/);

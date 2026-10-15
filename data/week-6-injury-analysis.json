@@ -1,0 +1,314 @@
+{
+  "week": 6,
+  "updated": "2026-10-15T11:47:43-04:00",
+  "headline_summary": [
+    "Denver is without CB1 Pat Surtain II and S Talanoa Hufanga (both officially Out) for TNF, and CB Riley Moss is questionable: a boost for Seattle's passing game and Jaxon Smith-Njigba (practiced fully).",
+    "Baker Mayfield (thumb) is projected out (did not practice Wednesday; coach says the plan is Jalon Daniels). A rookie QB plus a ~21 mph wind forecast in Tampa.",
+    "Saquon Barkley and DeVonta Smith both missed Wednesday practice. The Eagles backfield ran 16 times for 20 yards without Barkley in Week 5.",
+    "Lamar Jackson (ankle) did not practice Wednesday but has a 'realistic' chance to play (Schefter); Tyler Huntley is on standby.",
+    "Seattle rules out LBs Drake Thomas and Chazz Surratt; RB Zach Charbonnet (PUP, hasn't played this season) is Out but no change for the offense."
+  ],
+  "injuries": [
+    {
+      "game": "SEA@DEN",
+      "team": "DEN",
+      "player": "Pat Surtain II",
+      "position": "CB",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Ankle",
+      "severity": "critical",
+      "team_impact": "Denver loses its CB1 (three-time All-Pro) along with S Talanoa Hufanga, and CB Riley Moss is questionable (ribs). Coverage depth behind them is thin, and Seattle's receivers face a much weaker secondary.",
+      "beneficiaries": [],
+      "opponent_beneficiaries": [
+        {
+          "player": "Jaxon Smith-Njigba",
+          "position": "WR",
+          "team": "SEA",
+          "why": "SEA WR1 avoids a Surtain shadow; he practiced in full and carries no designation.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "Lean toward SEA WR1 receiving-yards overs or SEA pass-volume props; check the line for movement already priced in. Not guaranteed.",
+      "confidence": "high (status); medium (angle)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://sports.mynorthwest.com/nfl/seattle-seahawks/lb-drake-thomas-among-3-seahawks-ruled-out-vs-broncos",
+        "https://www.cbssports.com/nfl/news/nfl-week-6-injury-report-broncos-patrick-surtain-talanoa-hufanga-ruled-out/"
+      ]
+    },
+    {
+      "game": "SEA@DEN",
+      "team": "DEN",
+      "player": "Talanoa Hufanga",
+      "position": "S",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Ankle",
+      "severity": "significant",
+      "team_impact": "Starting safety (two-time All-Pro) out; reported to miss 2-3 weeks. Combined with Surtain out, Denver's back end is down two of its top defensive backs.",
+      "beneficiaries": [],
+      "opponent_beneficiaries": [
+        {
+          "player": "SEA tight ends / slot receivers",
+          "position": "TE/WR",
+          "team": "SEA",
+          "why": "Weaker coverage over the middle without the starting safety.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "Supports SEA passing overs alongside Surtain's absence; the edge is smaller on its own. Not guaranteed.",
+      "confidence": "high (status)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://sports.mynorthwest.com/nfl/seattle-seahawks/report-seattle-seahawks-charbonnet-has-legitimate-chance-to-play-in-week-7"
+      ]
+    },
+    {
+      "game": "SEA@DEN",
+      "team": "DEN",
+      "player": "Riley Moss",
+      "position": "CB",
+      "status": "Questionable",
+      "status_official": true,
+      "injury": "Ribs",
+      "severity": "significant",
+      "team_impact": "Missed last week. If he sits too, Denver is without its top two corners and a starting safety.",
+      "beneficiaries": [],
+      "opponent_beneficiaries": [
+        {
+          "player": "SEA WR2",
+          "position": "WR",
+          "team": "SEA",
+          "why": "Would face backup-level corners if Moss is out.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "Check inactives about 90 min before kickoff (~6:45 PM ET); a Moss scratch strengthens the SEA passing angle.",
+      "confidence": "medium",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://sports.mynorthwest.com/nfl/seattle-seahawks/lb-drake-thomas-among-3-seahawks-ruled-out-vs-broncos"
+      ]
+    },
+    {
+      "game": "SEA@DEN",
+      "team": "SEA",
+      "player": "Drake Thomas",
+      "position": "LB",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Ankle",
+      "severity": "moderate",
+      "team_impact": "Starting LB out, and LB Chazz Surratt (calf) is also out, so Seattle's linebacker depth is thin against the run and in short coverage.",
+      "beneficiaries": [],
+      "opponent_beneficiaries": [
+        {
+          "player": "DEN RBs / TEs",
+          "position": "RB/TE",
+          "team": "DEN",
+          "why": "Weaker second level in run defense and coverage of backs and tight ends.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "Small lean toward DEN RB rushing or reception overs. Not guaranteed.",
+      "confidence": "high (status); low (angle)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.espn.com/nfl/story/_/id/50185443/seahawks-rule-thomas-charbonnet-thursday-vs-broncos"
+      ]
+    },
+    {
+      "game": "SEA@DEN",
+      "team": "SEA",
+      "player": "Zach Charbonnet",
+      "position": "RB",
+      "status": "Out",
+      "status_official": true,
+      "injury": "Knee (Feb. ACL surgery; on PUP)",
+      "severity": "minor",
+      "team_impact": "No change from recent weeks: he hasn't played in 2026. Emanuel Wilson and George Holani continue to lead the backfield.",
+      "beneficiaries": [
+        {
+          "player": "Emanuel Wilson",
+          "position": "RB",
+          "team": "SEA",
+          "why": "Continues as lead back.",
+          "key_stat_with_without": "N/A: Charbonnet has played 0 games in 2026, so there is no 'with' sample"
+        }
+      ],
+      "opponent_beneficiaries": [],
+      "betting_angle": "No change; the market already assumes he's out.",
+      "confidence": "high",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.espn.com/nfl/story/_/id/50185443/seahawks-rule-thomas-charbonnet-thursday-vs-broncos"
+      ]
+    },
+    {
+      "game": "PIT@TB",
+      "team": "TB",
+      "player": "Baker Mayfield",
+      "position": "QB",
+      "status": "Projected Out",
+      "status_official": false,
+      "injury": "Dislocated right (throwing) thumb",
+      "severity": "critical",
+      "team_impact": "Rookie Jalon Daniels is expected to make his third straight start. Mayfield did not practice Wednesday; coach Todd Bowles said the plan is to start Daniels. Daniels adds rushing but has a small passing sample.",
+      "beneficiaries": [
+        {
+          "player": "Jalon Daniels",
+          "position": "QB",
+          "team": "TB",
+          "why": "Expected starter; rushing adds fantasy/prop value.",
+          "key_stat_with_without": "Week 5 vs DAL (1 game): 19/25, 189 pass yds, 1 TD, 23 rush yds (NBC Sports). Very small sample; season splits not verified."
+        }
+      ],
+      "opponent_beneficiaries": [
+        {
+          "player": "PIT defense / pass rush",
+          "position": "DEF",
+          "team": "PIT",
+          "why": "Facing a rookie QB, and the forecast calls for ~21 mph sustained wind in Tampa.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "Daniels rushing-yards overs; lean toward TB passing unders given the rookie QB and forecast wind. Not guaranteed. TB WR Chris Godwin Jr. also did not practice Wednesday.",
+      "confidence": "medium-high (projected, not official until Friday)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.nbcsports.com/fantasy/football/player-news/2026-10-14/mayfield-thumb-not-practicing-wednesday",
+        "https://www.rotowire.com/football/headlines/baker-mayfield-injury-likely-to-remain-out-week-6-642394",
+        "https://www.fantasypros.com/nfl/news/612987/baker-mayfield-thumb-not-expected-to-return-week-6.php"
+      ]
+    },
+    {
+      "game": "CAR@PHI",
+      "team": "PHI",
+      "player": "Saquon Barkley",
+      "position": "RB",
+      "status": "Projected Out (uncertain)",
+      "status_official": false,
+      "injury": "Hamstring",
+      "severity": "critical",
+      "team_impact": "Missed Week 5 and did not practice Wednesday. With Tank Bigsby on IR and Will Shipley also not practicing (foot), the Eagles would turn to Dameon Pierce and Carson Steele. Eagles backs ran 16 times for 20 yards in Week 5 without Barkley and Bigsby.",
+      "beneficiaries": [
+        {
+          "player": "Dameon Pierce / Carson Steele",
+          "position": "RB",
+          "team": "PHI",
+          "why": "Next backs up on the depth chart.",
+          "key_stat_with_without": "Week 5 vs JAX (1 game, without Barkley/Bigsby): PHI RBs combined 16 carries, 20 yds (PhillyVoice). Very small sample."
+        }
+      ],
+      "opponent_beneficiaries": [
+        {
+          "player": "CAR run defense",
+          "position": "DEF",
+          "team": "CAR",
+          "why": "Faces a depleted PHI backfield and offensive line (C Drew Kendall did not practice).",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "betting_angle": "If Barkley is ruled out, lean toward PHI RB rushing unders; Jalen Hurts' rushing attempts could rise. Not guaranteed.",
+      "confidence": "medium (status depends on Thu/Fri practice)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.phillyvoice.com/eagles-panthers-week-6-injury-report-analysis-2026-saquon-barkley-devonta-smith-jalyx-hunt/",
+        "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/eagles-list-24-injured-players-including-devonta-smith-saquon-barkley-as-dnp"
+      ]
+    },
+    {
+      "game": "CAR@PHI",
+      "team": "PHI",
+      "player": "DeVonta Smith",
+      "position": "WR",
+      "status": "Projected Out (uncertain)",
+      "status_official": false,
+      "injury": "Hamstring/toe",
+      "severity": "significant",
+      "team_impact": "WR2 has missed two straight games and did not practice Wednesday (new toe injury added). WR Marquise Brown (ankle) and Dontayvion Wicks (hamstring) were limited, so the receiver corps is thin.",
+      "beneficiaries": [
+        {
+          "player": "Remaining PHI WRs and TEs",
+          "position": "WR/TE",
+          "team": "PHI",
+          "why": "Targets get concentrated among the healthy pass catchers.",
+          "key_stat_with_without": "Qualitative only; no verifiable with/without split"
+        }
+      ],
+      "opponent_beneficiaries": [],
+      "betting_angle": "Wait for Friday statuses; target concentration on the healthy PHI pass catchers. Not guaranteed.",
+      "confidence": "medium",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.inquirer.com/eagles/eagles-injury-news-updates-landon-dickerson-week-6-carolina-panthers-20261014.html"
+      ]
+    },
+    {
+      "game": "BAL@CLE",
+      "team": "BAL",
+      "player": "Lamar Jackson",
+      "position": "QB",
+      "status": "Uncertain (projected game-time decision)",
+      "status_official": false,
+      "injury": "Ankle",
+      "severity": "critical",
+      "team_impact": "Did not practice Wednesday. ESPN's Adam Schefter reports a 'realistic' chance he plays; if not, Tyler Huntley starts again behind a run-heavy plan.",
+      "beneficiaries": [
+        {
+          "player": "Tyler Huntley",
+          "position": "QB",
+          "team": "BAL",
+          "why": "Starts if Jackson sits.",
+          "key_stat_with_without": "Week 5 at ATL (1 game, without Jackson): 24/32, 201 yds, 2 pass TD, plus the OT rushing TD (Ravens Wire/NBC). Very small sample."
+        },
+        {
+          "player": "Derrick Henry",
+          "position": "RB",
+          "team": "BAL",
+          "why": "Offense leaned on the run without Jackson.",
+          "key_stat_with_without": "Week 5 at ATL (1 game): 24 carries, 102 yds; BAL had 208 team rushing yds (Ravens Wire). Single game; no full with/without split verified."
+        }
+      ],
+      "opponent_beneficiaries": [],
+      "betting_angle": "Hold until Friday status and Sunday inactives; if Huntley starts, lean toward Henry carries overs. Not guaranteed.",
+      "confidence": "low-medium (status unresolved)",
+      "sources": [
+        "https://www.nfl.com/injuries/league/2026/reg6",
+        "https://www.espn.com/nfl/story/_/id/50181398/source-lamar-jackson-realistic-chance-play-week-6",
+        "https://ravenswire.usatoday.com/story/sports/nfl/ravens/2026/10/15/ravens-browns-week-6-lamar-jackson-afc-north-stakes/92262597007/"
+      ]
+    }
+  ],
+  "kenzie_picks": [
+    {
+      "player": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "prop": "Over 4.5 Receptions",
+      "pick": "over",
+      "confidence": 4,
+      "reasoning": "Denver's secondary is missing its two biggest names: CB1 Pat Surtain II and S Talanoa Hufanga are officially Out, and CB Riley Moss is Questionable. JSN practiced fully and has no designation. The site has him at 5/5 at this line on a 5-game streak, averaging 7.4 catches. The site's own caution flag about Broncos pass coverage was built with Surtain on the field. No guarantees, but this is the cleanest injury edge of the week.",
+      "linked_injury": "DEN CB Pat Surtain II (Out), S Talanoa Hufanga (Out), CB Riley Moss (Questionable)"
+    },
+    {
+      "player": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "prop": "75+ Rec Yds",
+      "pick": "over",
+      "confidence": 3,
+      "reasoning": "Same injury story, but with the yardage version of the bet. The site shows a 5-game streak at 75+ receiving yards (5/5). With Denver's top cover corner and a starting safety out, the deep shots should be easier. One point lower than the catches pick because yardage swings more, and a streak can end any night.",
+      "linked_injury": "DEN CB Pat Surtain II (Out), S Talanoa Hufanga (Out)"
+    },
+    {
+      "player": "Bhayshul Tuten",
+      "team": "JAX",
+      "prop": "Over 64.5 Rushing yds",
+      "pick": "over",
+      "confidence": 2,
+      "reasoning": "The site has Tuten at 5/5 at this line, averaging 69.8 yards on a 5-game streak. Houston LB Azeez Al-Shaair and S Jalen Pitre both missed Wednesday practice. That's practice participation only, not an official status yet. The site flags Houston's run defense as a strength and forecasts minor wind at Wembley, so keep it small until Friday's report.",
+      "linked_injury": "HOU LB Azeez Al-Shaair and S Jalen Pitre (DNP Wed, unofficial)"
+    }
+  ],
+  "kenzie_picks_note": "Lines come from the site's game-log-derived thresholds (the site says they are not sportsbook lines). Only the 3 free Best Props and the top streaks were visible; the rest are locked for members."
+}
