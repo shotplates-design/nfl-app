@@ -44,7 +44,7 @@ export function candidates(){ const w=currentWeek(); const T:Record<string,any>=
     const area=AREA(best.k); const weak=area.find(a=>t.oppWeak.includes(a)), str=area.find(a=>t.oppStr.includes(a));
     if(weak) why.push(`${t.oppName} ${weak} is listed as a weakness in the matchup report`); else if(str) why.push(`caution: ${t.oppName} ${str} is listed as a strength`);
     if(t.weather&&!t.weather.indoor&&t.weather.impact&&t.weather.impact!=='none') why.push(`${t.weather.impact} weather impact forecast${t.weather.wind_mph!=null?` (wind ${t.weather.wind_mph} mph)`:''}`);
-    out.push({slug,name,team,role,opp:t.opp,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,
+    out.push({slug,name,team,role,stat:best.k,opp:t.opp,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,
       hits:best.hits,games:best.games,streak:best.streak,avg:best.avg,thr:best.line,score:Math.round(best.score*10)/10,strip:best.strip.slice(-5),label:`${best.line}+ ${lab}`,why:why.join('; ')+'.'}); }
   return out.sort((a,b)=>b.score-a.score); }
 export function bestProps(limit=18){ const all=candidates(); const pick:any[]=[]; const cnt=(f:(r:any)=>boolean)=>pick.filter(f).length;
@@ -86,7 +86,7 @@ export function sleepers(limit=15){ const w=currentWeek(); const pg=(PG ||= buil
     if(!best) continue; const lab=STATS[best.k][0];
     const why=[`#${rank[slug]} ${role} in season ${STATS[VOL[role]][0].toLowerCase()}`,`hit ${best.line}+ in ${best.hits}/${best.games}`,`last 3 avg ${best.l3.toFixed(1)} vs ${best.avg.toFixed(1)} season`];
     if(best.weak) why.push(`${t.oppName} ${best.weak} is listed as a weakness`); else if(best.str) why.push(`caution: ${t.oppName} ${best.str} is listed as a strength`);
-    out.push({slug,name,team,role,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,hits:best.hits,games:best.games,
+    out.push({slug,name,team,role,stat:best.k,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,hits:best.hits,games:best.games,
       streak:(()=>{let n=0;for(let i=best.strip.length-1;i>=0&&best.strip[i].h;i--)n++;return n})(),avg:best.avg,thr:best.line,score:Math.round(best.score*10)/10,strip:best.strip.slice(-5),label:`${best.line}+ ${lab}`,why:why.join('; ')+'.',rank:rank[slug]}); }
   const pick:any[]=[]; for(const r of out.sort((a,b)=>b.score-a.score)){ if(pick.length>=limit) break; if(pick.filter(x=>x.team===r.team).length<2) pick.push(r); }
   return {pick,all:out}; }
