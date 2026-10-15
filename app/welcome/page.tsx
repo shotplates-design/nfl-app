@@ -1,4 +1,4 @@
-import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import BestProps from '@/components/BestProps'; import { topStreaks } from '@/lib/data'; import { StreakTable } from '@/lib/ui'; import Search from '../Search';
+import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { bestProps } from '@/lib/bestprops'; import { currentWeek } from '@/lib/matchups'; import BestProps from '@/components/BestProps'; import { allStreaks } from '@/lib/data'; import { StreakTable } from '@/lib/ui'; import Search from '../Search';
 // Public home shown at "/" to visitors without a membership (middleware rewrite). Same look as the member home, but the HTML carries ONLY the top 3
 // Best Props (fields the card needs, no player/matchup links, no watchlist); the locked section uses dummy rows, not real data.
 export const metadata={title:`${SITE_NAME}: NFL Player Props, Hit Rates & Streaks`,description:'Weekly NFL player props ranked by hit rate, streaks and matchups, plus a prop search builder. Sign up for full access.',alternates:{canonical:'/'}};
@@ -10,7 +10,7 @@ const SDUMMY=Array.from({length:5},(_,i)=>({slug:'locked',key:String(i),name:'Pl
 const Lock=({title}:{title:string})=><div className="absolute inset-0 flex items-start justify-center pt-8 bg-gradient-to-b from-slate-950/40 to-slate-950/90"><div className="card max-w-xs text-center space-y-2"><p className="font-semibold text-white">🔒 {title}</p>
     <p className="text-sm text-slate-400">Free account: streaks, prop search builder, unlimited player pages, teams, matchups, leaders, insights and the top 3 Best Props.</p>
     <Link href="/signup" className="block rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Sign up for full access</Link><p className="text-xs text-slate-500">Have an account? <Link href="/login">Log in</Link></p></div></div>;
-export default function Welcome(){ const streaks=topStreaks(3).map((r:any)=>Object.fromEntries(SPICK.map(k=>[k,r[k]]))); const w=currentWeek(); const all=bestProps(18);
+export default function Welcome(){ const streaks=allStreaks().hot.filter((r,i,a)=>a.findIndex(x=>x.slug===r.slug)===i).slice(0,3).map((r:any)=>Object.fromEntries(SPICK.map(k=>[k,r[k]]))); const w=currentWeek(); const all=bestProps(18);
  const top=all.slice(0,3).map(r=>Object.fromEntries(PICK.map(k=>[k,(r as any)[k]])));
  return <>
   <div className="mb-4"><Search/></div>
