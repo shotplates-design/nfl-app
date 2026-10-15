@@ -9,5 +9,5 @@ export default function BestProps({rows,start=1,chips=false,preview=false}:{rows
       <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1"><span className="text-emerald-300 font-semibold">{r.prop}</span><span className="text-[10px] text-slate-500">line {r.bench}; not a sportsbook line</span></div>
       <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs"><HitBar hits={r.hits} games={r.games}/><span>{r.streak?`🔥 ${r.streak} straight`:'No active streak'}</span><span>Avg {r.avg.toFixed(1)} vs {r.thr-0.5}</span><span className="text-slate-500">Score {r.score}</span></div>
       <div className="mt-1"><Strip r={{...r,games:r.strip.length,hits:r.strip.filter((s:any)=>s.h).length}}/> <span className="text-[10px] text-slate-500">last {r.strip.length}</span></div>
-      <p className="text-xs text-slate-300 mt-1"><span className="text-slate-500">Why:</span> {r.why}</p>
+      <p className="text-xs text-slate-300 mt-1 break-anywhere"><span className="text-slate-500">Why:</span> {r.why}{r.injuryNote?.text&&<>{' '}<Link href={r.injuryNote.href}>{r.injuryNote.text}</Link></>}</p>
       </div></div></li>)}</ol></div>; }

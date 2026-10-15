@@ -10,7 +10,7 @@ export default async function Page({params}:{params:{slug:string}}){ const a=A.f
  <h1>{a.title}</h1><p className="text-xs text-slate-500 mb-3">Updated {a.date}</p><p className="mb-4">{a.intro}</p>
  {a.kind==='streaks'&&<><p className="text-xs text-slate-500 mb-2">{BENCH_NOTE}</p>{a.hot.length>0&&<><h2>🔥 Hot streaks</h2><StreakTable rows={a.hot}/></>}
   {a.cold.length>0&&<><h2>🧊 Cold streaks</h2><StreakTable rows={a.cold}/></>}<p className="mt-3 text-sm"><Link href={`/streaks/${a.cat}`}>Live {a.cat} streaks →</Link></p></>}
- {a.kind==='performers'&&<div className="card overflow-x-auto max-w-full"><table className="cards"><thead><tr><th>Player</th><th>Team</th><th>Opp</th><th>Result</th><th>{a.statLabel}</th></tr></thead><tbody>
+ {a.kind==='performers'&&<div className="card overflow-x-auto max-w-full"><table><thead><tr><th>Player</th><th>Team</th><th>Opp</th><th>Result</th><th>{a.statLabel}</th></tr></thead><tbody>
   {a.rows.map((x:any)=><tr key={x.slug}><td className="who" data-l="Player"><P x={x}/></td><td data-l="Team">{x.team.toUpperCase()}</td><td data-l="Opp">{x.opp}</td><td data-l="Result">{x.result}</td><td data-l={a.statLabel}>{x.val}</td></tr>)}</tbody></table></div>}
  {a.kind==='matchup'&&<><ul className="text-sm space-y-1">{a.rows.map((x:any)=><li key={x.slug+x.cat}><P x={x}/> – {x.val} {x.label}</li>)}</ul>
   <p className="mt-4 text-sm"><Link href={`/teams/${a.team}`}>More {teamName(a.team)} stats →</Link></p></>}
