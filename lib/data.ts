@@ -25,10 +25,12 @@ export function leaders(cat:string,field:string,n=50,minGames=2){ const qbCar=ca
   .filter(x=>x.gp>=minGames&&x.avg!=null).sort((a,b)=>b.total-a.total).slice(0,n); }
 export const teamCodes = ()=> Array.from(new Set(players.map(p=>p.team))).sort();
 export const bySlug = (s:string)=> players.find(p=>p.slug===s);
-import { playerStreaks, allStreaks as _all, topValueStreaks, GROUPS } from './streaks.mjs';
+import { playerStreaks, allStreaks as _all, topValueStreaks, bestHitProp, GROUPS } from './streaks.mjs';
 export { GROUPS };
 export const streaksFor = (p:Player)=> playerStreaks(p) as any[];
 let _cache:any=null; export const allStreaks = ()=> (_cache ||= _all(players)) as {hot:any[],cold:any[]};
 // Server-rendered default list. Not a /api/streaksearch query, so it does not spend a free search.
 let _top:any=null; export const topStreaks = (n=10)=> ((_top ||= topValueStreaks(players,{limit:10})) as any[]).slice(0,n);
 export const bestHot = (p:Player)=> streaksFor(p).filter(r=>r.hot&&r.streak>=2).sort((a,b)=>b.streak-a.streak||b.thr-a.thr)[0];
+// Best prop for team position tables. Across every stat, not only the table's category. Null when nothing clears 60% on a meaningful line.
+export const bestProp = (p:Player)=> bestHitProp(p, players) as {text:string,title:string,hits:number,games:number,thr:number,rate:number,key:string}|null;
