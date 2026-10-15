@@ -1,1 +1,7 @@
-export default function L(){ return <div aria-busy="true" aria-label="Loading"><div className="skeleton h-8 w-48 mb-3"/><div className="flex gap-2 mb-4"><div className="skeleton h-9 w-28"/><div className="skeleton h-9 w-28"/></div>{[...Array(6)].map((_,i)=><div key={i} className="skeleton h-10 mb-2"/>)}</div>; }
+export default function L() {
+  return <div aria-busy="true" aria-label="Loading">
+    <div className="skeleton h-8 w-40 mb-3"/>
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-3">{[0, 1, 2, 3].map(i => <div key={i} className="skeleton h-24"/>)}</div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">{[0, 1, 2, 3].map(i => <div key={i} className="skeleton h-72"/>)}</div>
+  </div>;
+}
