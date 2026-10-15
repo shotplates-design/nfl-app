@@ -1,5 +1,4 @@
-import Link from 'next/link'; import { notFound } from 'next/navigation'; import { weeks, findGame, fmtKick, teamStreaks, teamName, feedCode } from '@/lib/matchups'; import { Crumbs, JsonLd, StreakTable, BENCH_NOTE } from '@/lib/ui'; import { SITE } from '@/lib/data'; import TeamBadge, { teamColor } from '@/components/TeamBadge'; import { WeatherBadge, InjuryReport } from '@/components/Conditions'; import { viewerIsMember } from '@/lib/viewer'; import { lineGroupsForTeams } from '@/lib/odds';
-import LineCards from '@/components/LineCards'; import MemberLock from '@/components/MemberLock';
+import Link from 'next/link'; import { notFound } from 'next/navigation'; import { weeks, findGame, fmtKick, teamStreaks, teamName, feedCode } from '@/lib/matchups'; import { Crumbs, JsonLd, StreakTable, BENCH_NOTE } from '@/lib/ui'; import { SITE } from '@/lib/data'; import TeamBadge, { teamColor } from '@/components/TeamBadge'; import { WeatherBadge, InjuryReport } from '@/components/Conditions';
 export const dynamic='force-dynamic';
 export const dynamicParams=false;
 export function generateStaticParams(){ return weeks().flatMap(w=>w.games.map(g=>({game:g.slug}))); }
@@ -7,14 +6,12 @@ export function generateMetadata({params}:{params:{game:string}}){ const f=findG
  const title=`${g.away} vs ${g.home} Week ${w.week} ${w.season}: Player Prop Streaks & Matchup Breakdown`;
  const description=`${g.away} at ${g.home}, ${fmtKick(g.kickoff)}. Active player streaks, hit rates vs standard benchmarks, and team strengths & weaknesses for both sides.`;
  return {title,description,alternates:{canonical:`/matchups/${g.slug}`},openGraph:{title,description,url:`/matchups/${g.slug}`,type:'article'}}; }
-const Side=({name,code,str,weak,lines,injuries}:{name:string,code:string,str?:string[],weak?:string[],lines?:{name:string;chips:string[]}[],injuries?:any[]})=>{ const t=teamStreaks(code); return <section className="mt-6 min-w-0"><h2 className="flex items-center gap-2 min-w-0"><TeamBadge code={code} name={teamName(code)} size="md"/><Link href={`/teams/${code}`}>{teamName(code)}</Link></h2>
+const Side=({code,str,weak,injuries}:{code:string,str?:string[],weak?:string[],injuries?:any[]})=>{ const t=teamStreaks(code); return <section className="mt-6 min-w-0"><h2 className="flex items-center gap-2 min-w-0"><TeamBadge code={code} name={teamName(code)} size="md"/><Link href={`/teams/${code}`}>{teamName(code)}</Link></h2>
  <h3 className="text-sm font-semibold mb-1">Injuries</h3><InjuryReport list={injuries||[]}/>
  {(str?.length||weak?.length)?<div className="grid sm:grid-cols-2 gap-2 text-sm mb-3 mt-3"><div className="card min-w-0"><div className="text-xs text-emerald-400 mb-1">Strengths (supplied team analysis)</div><p className="break-anywhere">{str?.join(' · ')}</p></div><div className="card min-w-0"><div className="text-xs text-rose-400 mb-1">Weaknesses</div><p className="break-anywhere">{weak?.join(' · ')}</p></div></div>:null}
- {lines&&<><h3 className="text-sm font-semibold mb-1">DraftKings lines</h3>{lines.length?<LineCards groups={lines}/>:<p className="text-sm text-slate-500">No player props posted yet.</p>}</>}
  <h3 className="text-sm font-semibold mb-1">🔥 Active hot streaks</h3>{t.hot.length?<StreakTable rows={t.hot}/>:<p className="text-sm text-slate-500">None.</p>}
  {t.cold.length>0&&<><h3 className="text-sm font-semibold mt-3 mb-1">🧊 Cold streaks</h3><StreakTable rows={t.cold}/></>}</section>; };
-export default async function Page({params}:{params:{game:string}}){ const f=findGame(params.game); if(!f) notFound(); const {w,g}=f; const a=g.analysis; const member=await viewerIsMember();
- const lines=member?await lineGroupsForTeams([g.awayCode,g.homeCode]):null;
+export default async function Page({params}:{params:{game:string}}){ const f=findGame(params.game); if(!f) notFound(); const {w,g}=f; const a=g.analysis;
  return <article><Crumbs items={[['Home','/'],['Matchups','/matchups'],[`${g.away} @ ${g.home}`,`/matchups/${g.slug}`]]}/>
  <JsonLd data={{'@context':'https://schema.org','@type':'SportsEvent',name:`${g.away} at ${g.home}`,sport:'American Football',startDate:g.kickoff||undefined,eventStatus:'https://schema.org/EventScheduled',
   awayTeam:{'@type':'SportsTeam',name:teamName(g.awayCode),url:`${SITE}/teams/${g.awayCode}`},homeTeam:{'@type':'SportsTeam',name:teamName(g.homeCode),url:`${SITE}/teams/${g.homeCode}`},
@@ -24,7 +21,6 @@ export default async function Page({params}:{params:{game:string}}){ const f=fin
  {a&&<div className="card mt-3 text-sm max-w-full"><div className="font-semibold mb-1 break-anywhere">Matchup model: {a.lean}</div><table><thead><tr><th>Category</th><th>{g.away}</th><th>{g.home}</th><th>Edge</th></tr></thead><tbody>
   {Object.entries(a.categories||{}).map(([k,v]:any)=><tr key={k}><td className="who" data-l="Category">{k.replace(/_/g,' ')}</td><td data-l={g.away}>{v.away}</td><td data-l={g.home}>{v.home}</td><td data-l="Edge" className={v.edge>0?'text-emerald-400':v.edge<0?'text-rose-400':''}>{v.edge>0?`${g.away} +${v.edge}`:v.edge<0?`${g.home} +${-v.edge}`:'even'}</td></tr>)}</tbody></table>
   <p className="text-xs text-slate-500 mt-1">Scores and edges as supplied (0–1 scale); not betting lines.</p></div>}
- <p className="text-xs text-slate-500 mt-3">{BENCH_NOTE} DraftKings hit rate is how many games this season cleared that posted line.</p>
- {!member&&<div className="mt-4"><MemberLock title="DraftKings lines are members-only"/></div>}
- <Side name={g.away} code={g.awayCode} str={g.away_strengths} weak={g.away_weaknesses} lines={lines?lines[g.awayCode]:undefined} injuries={(g.cond?.injuries||[]).filter((i:any)=>feedCode(i.team)===g.awayCode)}/><Side name={g.home} code={g.homeCode} str={g.home_strengths} weak={g.home_weaknesses} lines={lines?lines[g.homeCode]:undefined} injuries={(g.cond?.injuries||[]).filter((i:any)=>feedCode(i.team)===g.homeCode)}/>
+ <p className="text-xs text-slate-500 mt-3">{BENCH_NOTE}</p>
+ <Side code={g.awayCode} str={g.away_strengths} weak={g.away_weaknesses} injuries={(g.cond?.injuries||[]).filter((i:any)=>feedCode(i.team)===g.awayCode)}/><Side code={g.homeCode} str={g.home_strengths} weak={g.home_weaknesses} injuries={(g.cond?.injuries||[]).filter((i:any)=>feedCode(i.team)===g.homeCode)}/>
  <p className="mt-6 text-sm"><Link href="/matchups">← All Week {w.week} matchups</Link></p></article>; }

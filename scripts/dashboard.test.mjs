@@ -40,12 +40,6 @@ const desk = {
   }],
 };
 const week = { week: 6, games: [{ awayCode: 'sea', homeCode: 'den', slug: 'seahawks-at-broncos-2026-week-6' }] };
-const legs = [
-  { player: 'Alpha Receiver', market: 'player_reception_yds', side: 'Over', point: 74.5, price: -115 },
-  { player: 'Alpha Receiver', market: 'player_reception_yds', side: 'Over', point: 74.5, price: 140 },
-  { player: 'Beta Receiver', market: 'player_reception_yds', side: 'Under', point: 40.5, price: -110 },
-  { player: 'Nobody', market: 'player_reception_yds', side: 'Over', point: 50.5, price: -110 },
-];
 
 test('weekOf maps the 2026 game-log dates', () => {
   assert.equal(weekOf('Wed 9/9'), 1);
@@ -59,8 +53,8 @@ test('weekOf maps the 2026 game-log dates', () => {
   assert.equal(weekOf(''), null);
 });
 
-test('filters move hit rates, trends, streaks, injuries, and odds together', () => {
-  const model = buildDashboard({ players, hot, desk, week, legs });
+test('filters move hit rates, trends, streaks, and injuries together', () => {
+  const model = buildDashboard({ players, hot, desk, week });
   const all = dashboardView(model, {});
   assert.equal(all.kpis.best.slug, 'beta');
   assert.equal(all.kpis.best.hits, 4);
@@ -73,11 +67,6 @@ test('filters move hit rates, trends, streaks, injuries, and odds together', () 
   assert.equal(all.injuries[0].matchup, 'seahawks-at-broncos-2026-week-6');
   assert.equal(all.injuries[0].exploited[0].slug, 'alpha');
   assert.ok(all.injuries[0].exploited[0].why.includes('NFL leader'));
-  assert.equal(all.scatter.length, 1);
-  assert.equal(all.scatter[0].slug, 'alpha');
-  assert.equal(all.scatter[0].line, 74.5);
-  assert.equal(all.scatter[0].price, -115);
-  assert.equal(all.scatter[0].hits, 3);
 
   const sea = dashboardView(model, { team: 'sea' });
   assert.ok(sea.bars.every(b => b.team === 'SEA'));
@@ -101,7 +90,7 @@ test('the live season model names Jaxon Smith-Njigba and the Surtain injury', as
   const { players: roster, allStreaks } = await import('../lib/data.ts');
   const { loadInjuryDesk } = await import('../lib/injuryAnalysis.ts');
   const { currentWeek } = await import('../lib/matchups.ts');
-  const model = buildDashboard({ players: roster, hot: allStreaks().hot, desk: loadInjuryDesk(), week: currentWeek(), legs: [] });
+  const model = buildDashboard({ players: roster, hot: allStreaks().hot, desk: loadInjuryDesk(), week: currentWeek() });
   const view = dashboardView(model, { team: 'sea', pos: 'WR/TE', stat: 'recYds' });
   const jsn = view.bars.find(b => b.slug === 'jaxon-smith-njigba');
   assert.ok(jsn, 'JSN is on the Seahawks receiving board');
@@ -112,5 +101,4 @@ test('the live season model names Jaxon Smith-Njigba and the Surtain injury', as
   assert.ok(surtain);
   assert.equal(surtain.href, '/injuries#injury-den-pat-surtain-ii');
   assert.ok(surtain.exploited.some(e => e.slug === 'jaxon-smith-njigba'));
-  assert.equal(model.odds.length, 0);
 });
