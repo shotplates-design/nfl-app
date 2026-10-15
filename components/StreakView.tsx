@@ -9,6 +9,27 @@ export function HitRing({hits,games,size=56}:{hits:number,games:number,size?:num
   return <svg width={size} height={size} viewBox="0 0 56 56" role="img" aria-label={`Hit rate ${Math.round(pct*100)}%`}><circle cx="28" cy="28" r={r} className="stroke-slate-700" strokeWidth="6" fill="none"/>
    <circle cx="28" cy="28" r={r} className={`ring-anim ${pct>=.6?'stroke-emerald-500':pct>=.4?'stroke-amber-400':'stroke-rose-500'}`} strokeWidth="6" fill="none" strokeLinecap="round" transform="rotate(-90 28 28)" style={{strokeDasharray:c,['--off' as any]:c*(1-pct),strokeDashoffset:c*(1-pct)}}/>
    <text x="28" y="32" textAnchor="middle" fontSize="12" className="fill-white font-bold">{Math.round(pct*100)}%</text></svg>; }
-export function StreakTableView({rows,preview=false,nolink=false}:{rows:any[],preview?:boolean,nolink?:boolean}){ return <div className="card overflow-x-auto max-w-full"><table className="cards"><thead><tr><th><span className="sr-only">Watch</span></th><th>Player</th><th>Benchmark</th><th>Streak</th><th>Hit rate</th><th>Game by game</th></tr></thead><tbody>
-  {rows.map(r=><tr key={r.slug+r.key} className="fade-in"><td data-l="Watch">{!preview&&<FavButton slug={r.slug} name={r.name}/>}</td><td className="who" data-l="Player">{nolink?<span className="break-anywhere">{r.name}</span>:<Link href={`/players/${r.slug}`} prefetch={preview?false:undefined} className="break-anywhere">{r.name}</Link>} <span className="text-slate-500 text-xs">{r.team.toUpperCase()}</span></td><td data-l="Benchmark">{r.label}</td>
-  <td data-l="Streak" className={r.hot?'text-emerald-400 font-semibold':'text-sky-300 font-semibold'}>{r.hot?'🔥':'🧊'} {r.streak} straight</td><td data-l="Hit rate"><HitBar hits={r.hits} games={r.games}/></td><td data-l="Games"><Strip r={r}/></td></tr>)}</tbody></table></div>; }
+export function TinyDots({r}:{r:any}){ const strip=Array.isArray(r?.strip)?r.strip:[];
+  return <span className="dots" role="list" aria-label={`${r.hits} of ${r.games} games`}>{strip.map((g:any,i:number)=><span key={i} role="listitem" title={`${g.d||''} ${g.o||''}: ${g.v}`.trim()} className={`w-2 h-2 rounded-[2px] shrink-0 ${g.h?'bg-emerald-500':'bg-slate-600'}`}/>)}</span>; }
+function Who({r,nolink}:{r:any,nolink?:boolean}){ const team=String(r.team||'').toUpperCase();
+  const name=nolink?<span className="truncate font-semibold text-white min-w-0">{r.name}</span>:<Link href={`/players/${r.slug}`} className="truncate font-semibold min-w-0">{r.name}</Link>;
+  return <span className="min-w-0 flex flex-col justify-center gap-px overflow-hidden leading-none">{name}{team?<span className="text-[10px] text-slate-500 truncate">{team}</span>:null}</span>; }
+/** One player per row, 48px. kind=result is a prop search; kind=streak is a benchmark streak (top 10, groups, matchups). */
+export function StreakLine({r,kind,rank,preview=false,nolink=false}:{r:any,kind:'result'|'streak',rank?:number,preview?:boolean,nolink?:boolean}){
+  const hot=r.hot!==false;
+  const label=`${rank?`Rank ${rank}, `:''}${r.name} ${String(r.team||'').toUpperCase()}${r.label?`, ${r.label}`:''}, ${r.hits}/${r.games}${r.avg!=null?`, avg ${Number(r.avg).toFixed(1)}`:''}, streak ${r.streak}`;
+  return <div className={`srow ${kind==='result'?'result':rank?'ranked':'streak'}`} role="row" aria-label={label}>
+    {rank!=null&&<span className="tabular-nums text-slate-400 text-center">{rank}</span>}
+    <span>{!preview&&<FavButton slug={r.slug} name={r.name} compact/>}</span>
+    <Who r={r} nolink={nolink}/>
+    {kind==='streak'&&<span className="truncate text-slate-200">{r.label}</span>}
+    {kind==='streak'&&<span className={`tabular-nums font-semibold ${hot?'text-emerald-400':'text-sky-300'}`}>{hot?'🔥':'🧊'}{r.streak}</span>}
+    <span className="tabular-nums text-emerald-300">{r.hits}/{r.games}</span>
+    {kind==='result'&&<span className="tabular-nums text-slate-300">{Number(r.avg).toFixed(1)}</span>}
+    {kind==='result'&&<span className="tabular-nums text-slate-200">{r.streak}</span>}
+    <TinyDots r={r}/>
+  </div>; }
+export function ResultList({rows}:{rows:any[]}){ if(!rows.length) return null;
+  return <div className="slist min-w-0" role="table" aria-label="Search results">{rows.map(r=><StreakLine key={r.slug} r={r} kind="result"/>)}</div>; }
+export function StreakTableView({rows,preview=false,nolink=false,ranked=false}:{rows:any[],preview?:boolean,nolink?:boolean,ranked?:boolean}){
+  return <div className="slist min-w-0" role="table" aria-label={ranked?'Top 10 active streaks':'Streaks'}>{rows.map((r,i)=><StreakLine key={r.slug+(r.key||'')} r={r} kind="streak" rank={ranked?i+1:undefined} preview={preview} nolink={nolink}/>)}</div>; }
