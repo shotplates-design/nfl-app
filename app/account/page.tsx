@@ -7,5 +7,5 @@ export default async function P(){ const s=await getServerSession(authOptions); 
    <dl className="card grid grid-cols-[auto,1fr] gap-x-4 gap-y-2 text-sm"><dt className="text-slate-400">Email</dt><dd className="break-all">{email}</dd>
     <dt className="text-slate-400">Membership</dt><dd>{status}{u?.subStatus&&!paid?` (${u.subStatus})`:''}</dd>
     {u?.created&&<><dt className="text-slate-400">Joined</dt><dd>{new Date(u.created).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',timeZone:'America/New_York'})}</dd></>}</dl>
-   {status==='None'&&<a href="/subscribe" className="block text-center rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Subscribe – $4.99/mo</a>}
+   {status==='None'&&<a href="/subscribe" className="block text-center rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Subscribe</a>}
    <AccountActions billing={paid&&!!u?.stripeCustomer}/></div>; }

@@ -4,7 +4,7 @@ export default function Subscribe(){ const me=useMe(); const [msg,setMsg]=useSta
  async function checkout(){ setBusy(true); setMsg(''); const [ok,j]=await post('/api/stripe/checkout'); setBusy(false); if(ok&&j.url) location.href=j.url; else setMsg(j.comingSoon?'Payments are coming soon. Use a promo code if you have one.':j.error); }
  async function promo(e:any){ e.preventDefault(); setBusy(true); setMsg(''); const [ok,j]=await post('/api/promo',{code:new FormData(e.target).get('code')}); setBusy(false); if(ok){ setDone(true); setMsg('Promo applied: you have full free access.'); } else setMsg(j.error); }
  async function portal(){ const [ok,j]=await post('/api/stripe/portal'); if(ok) location.href=j.url; else setMsg(j.error); }
- if(me&&!me.signedIn) return <div className="card max-w-sm mx-auto"><p><Link href="/signup">Sign up free</Link> (no card) or <Link href="/login">log in</Link> first.</p></div>;
+ if(me&&!me.signedIn) return <div className="card max-w-sm mx-auto"><p><Link href="/signup">Sign up for full access</Link> or <Link href="/login">log in</Link> first.</p></div>;
  const member=done||me?.member;
  return <div className="card max-w-sm mx-auto space-y-4"><h1>{member?'You’re a member':'Become a member'}</h1>
   {member?<><p className="text-sm text-slate-300">{done||me?.free?'Free access via promo code.':'Subscription active.'}</p><Link href="/" className="block text-center rounded-lg bg-emerald-600 py-2 font-semibold text-white no-underline">Go to Best Props →</Link>
