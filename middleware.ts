@@ -30,6 +30,7 @@ export async function middleware(req:NextRequest){ const p=req.nextUrl.pathname;
   if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)||starts(p,PUBLIC_PREFIX)) return NextResponse.next();
   const tok=await getToken({req,secret:process.env.NEXTAUTH_SECRET}); const email=(tok?.email||'').toString().trim().toLowerCase();
   if(!email){ if(p==='/') return NextResponse.rewrite(new URL('/welcome',req.url)); // public preview home
+    if(starts(p,['/matchups'])){ const res=NextResponse.next(); res.headers.set('Cache-Control','private, no-store'); return res; } // injury reports on matchup pages are public
     if(p.startsWith('/api/')||p.endsWith('.json')) return NextResponse.json({error:'Sign in required'},{status:401});
     const u=req.nextUrl.clone(); u.search=''; u.pathname='/signup'; u.searchParams.set('callbackUrl',p); return NextResponse.redirect(u); }
   const pm=p.match(/^\/players\/([a-z0-9-]+)\/?$/);

@@ -1,0 +1,252 @@
+{
+  "week": 6,
+  "updated": "2026-10-15T07:42:40-04:00",
+  "games": [
+    {
+      "away": "SEA",
+      "home": "DEN",
+      "kickoff_et": "2026-10-15T20:15:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 47,
+        "wind_mph": 3,
+        "precip_pct": 0,
+        "impact": "none",
+        "note": "Empower Field; clear, light wind, gusts ~9 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": [
+        {
+          "team": "SEA",
+          "player": "Zach Charbonnet",
+          "position": "RB",
+          "status": "Out",
+          "injury": "Knee",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6",
+          "note": "On PUP after Feb. ACL surgery; has not played in 2026 (no with/without split). https://www.espn.com/nfl/story/_/id/50185443/seahawks-rule-thomas-charbonnet-thursday-vs-broncos"
+        },
+        {
+          "team": "SEA",
+          "player": "Chazz Surratt",
+          "position": "LB",
+          "status": "Out",
+          "injury": "Calf",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6"
+        },
+        {
+          "team": "SEA",
+          "player": "Drake Thomas",
+          "position": "LB",
+          "status": "Out",
+          "injury": "Ankle",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6"
+        },
+        {
+          "team": "DEN",
+          "player": "Talanoa Hufanga",
+          "position": "S",
+          "status": "Out",
+          "injury": "Ankle",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6"
+        },
+        {
+          "team": "DEN",
+          "player": "Pat Surtain II",
+          "position": "CB",
+          "status": "Out",
+          "injury": "Ankle",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6"
+        },
+        {
+          "team": "DEN",
+          "player": "Riley Moss",
+          "position": "CB",
+          "status": "Questionable",
+          "injury": "Ribs",
+          "source_url": "https://www.nfl.com/injuries/league/2026/reg6"
+        }
+      ]
+    },
+    {
+      "away": "HOU",
+      "home": "JAX",
+      "kickoff_et": "2026-10-18T09:30:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 54,
+        "wind_mph": 11,
+        "precip_pct": 37,
+        "impact": "minor",
+        "note": "Wembley Stadium, London (JAX home); gusts ~23 mph, shower chance up to 37%. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "CHI",
+      "home": "ATL",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Mercedes-Benz Stadium, retractable roof (typically closed)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "BAL",
+      "home": "CLE",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 57,
+        "wind_mph": 10,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Huntington Bank Field; dry, gusts ~14 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "TEN",
+      "home": "IND",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Lucas Oil Stadium, retractable roof (typically closed)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "NYJ",
+      "home": "NE",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 57,
+        "wind_mph": 8,
+        "precip_pct": 1,
+        "impact": "none",
+        "note": "Gillette Stadium; dry, gusts ~11 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "NO",
+      "home": "NYG",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 58,
+        "wind_mph": 5,
+        "precip_pct": 2,
+        "impact": "none",
+        "note": "MetLife Stadium; dry, light wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "CAR",
+      "home": "PHI",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 58,
+        "wind_mph": 4,
+        "precip_pct": 3,
+        "impact": "none",
+        "note": "Lincoln Financial Field; dry, light wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "PIT",
+      "home": "TB",
+      "kickoff_et": "2026-10-18T13:00:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 78,
+        "wind_mph": 21,
+        "precip_pct": 1,
+        "impact": "major",
+        "note": "Raymond James Stadium; sustained ~21 mph, gusts ~27 mph could affect passing/kicking; 3-day-out forecast, recheck. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "ARI",
+      "home": "LAR",
+      "kickoff_et": "2026-10-18T16:05:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "SoFi Stadium, fixed translucent roof (indoor conditions)"
+      },
+      "injuries": []
+    },
+    {
+      "away": "LAC",
+      "home": "KC",
+      "kickoff_et": "2026-10-18T16:25:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 65,
+        "wind_mph": 15,
+        "precip_pct": 0,
+        "impact": "minor",
+        "note": "GEHA Field at Arrowhead; breezy, gusts ~20 mph. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "BUF",
+      "home": "LV",
+      "kickoff_et": "2026-10-18T16:25:00-04:00",
+      "weather": {
+        "indoor": true,
+        "temp_f": null,
+        "wind_mph": null,
+        "precip_pct": null,
+        "impact": "none",
+        "note": "Allegiant Stadium, fixed dome"
+      },
+      "injuries": []
+    },
+    {
+      "away": "DAL",
+      "home": "GB",
+      "kickoff_et": "2026-10-18T20:20:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 54,
+        "wind_mph": 16,
+        "precip_pct": 0,
+        "impact": "minor",
+        "note": "Lambeau Field; sustained ~16 mph, gusts ~34 mph; recheck, could become major. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    },
+    {
+      "away": "WAS",
+      "home": "SF",
+      "kickoff_et": "2026-10-19T20:15:00-04:00",
+      "weather": {
+        "indoor": false,
+        "temp_f": 64,
+        "wind_mph": 8,
+        "precip_pct": 3,
+        "impact": "none",
+        "note": "Levi's Stadium; dry, light wind. Open-Meteo hourly forecast at kickoff (pulled 2026-10-15 07:4x ET); precip_pct = max probability over ~3h game window"
+      },
+      "injuries": []
+    }
+  ]
+}

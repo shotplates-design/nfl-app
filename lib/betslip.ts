@@ -4,8 +4,11 @@ export type BookKey = typeof BOOKS[number];
 export const BOOK_TITLE: Record<BookKey,string> = { draftkings:'DraftKings', betmgm:'BetMGM', espnbet:'theScore' };
 // Our stat keys -> The Odds API player-prop markets. Only these are fetched (credit budget).
 export const STAT_MARKET: Record<string,string> = {
-  passYds:'player_pass_yds', passTd:'player_pass_tds', rushYds:'player_rush_yds',
-  recYds:'player_reception_yds', rec:'player_receptions', rrTd:'player_anytime_td',
+  passYds:'player_pass_yds', passTd:'player_pass_tds', cmp:'player_pass_completions', passAtt:'player_pass_attempts', int:'player_pass_interceptions',
+  rushYds:'player_rush_yds', car:'player_rush_attempts', rushTd:'player_rush_tds',
+  recYds:'player_reception_yds', rec:'player_receptions', recTd:'player_reception_tds', rrTd:'player_anytime_td',
+  tackles:'player_tackles_assists', solo:'player_solo_tackles', sacks:'player_sacks', defInt:'player_defensive_interceptions',
+  fgm:'player_field_goals', xpm:'player_pats', kPts:'player_kicking_points',
 };
 export const PROP_MARKETS = [...new Set(Object.values(STAT_MARKET))];
 export type LinkKind = 'betslip'|'market'|'event';
@@ -13,6 +16,7 @@ export type StoredBook = { ol?:string; ml?:string; el?:string; os?:string; ms?:s
 export type StoredLeg = {
   player:string; display:string; market:string; point:number|null; side:string;
   eventId:string; home:string; away:string; books:Partial<Record<BookKey,StoredBook>>;
+  price?: number;
 };
 export type OddsCache = { at:number; events:{id:string;home:string;away:string;commence:string}[]; legs:StoredLeg[] };
 export type InLeg = { name:string; stat:string; line:number; side?:string; team?:string; teamName?:string };
@@ -42,7 +46,14 @@ function eventForTeam(cache:OddsCache, teamName?:string){ const n=normName(teamN
 
 /** Deepest link for one book: outcome betslip, else market, else event. */
 export function bookLink(cache:OddsCache, leg:InLeg, book:BookKey): (OutLink & {stored?:StoredBook; eventLink?:string}) | null {
-  const market = STAT_MARKET[leg.stat]; if(!market) return null;
+  const eventOnly = () => {
+    const ev = eventForTeam(cache, leg.teamName);
+    const sample = ev && cache.legs.find(r => r.eventId === ev.id && r.books[book]?.el);
+    const el = sample?.books[book]?.el;
+    if (!el) return null;
+    return { book, title: BOOK_TITLE[book], link: el, kind: 'event' as const, eventLink: el };
+  };
+  const market = STAT_MARKET[leg.stat]; if (!market) return eventOnly();
   const side = leg.stat==='rrTd' ? 'Yes' : (/^under$/i.test(leg.side||'') ? 'Under' : 'Over');
   const rows = cache.legs.filter(r=>r.market===market && r.side===side && samePlayer(r.player, leg.name) && r.books[book]);
   const target = targetPoint(Number(leg.line)||0);
