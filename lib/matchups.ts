@@ -18,9 +18,15 @@ export function teamStreaks(code:string){ const hot:any[]=[], cold:any[]=[];
   return { hot:hot.sort(s).slice(0,8), cold:cold.sort(s).slice(0,4) }; }
 export { teamName };
 
-// Conditions feeds: data/feeds/week-N-conditions.json (see data/feeds/README.md). Matched by team codes.
+// Drop-in conditions file: data/week-N-conditions.json (week 6 is data/week-6-conditions.json).
+// Kenzie replaces that file before a kickoff window. data/feeds/ is only a fallback.
 const FEED_ALIAS: Record<string,string> = {was:'wsh',az:'ari',la:'lar'};
-const fc=(c:string)=>{ const x=String(c).toLowerCase(); return FEED_ALIAS[x]||x; };
-function attachConditions(w:any){ const f=path.join(process.cwd(),'data','feeds',`week-${w.week}-conditions.json`); if(!fs.existsSync(f)) return;
+export const feedCode=(c:string)=>{ const x=String(c||'').toLowerCase(); return FEED_ALIAS[x]||x; };
+function attachConditions(w:any){
+  const dropIn=path.join(process.cwd(),'data',`week-${w.week}-conditions.json`);
+  const legacy=path.join(process.cwd(),'data','feeds',`week-${w.week}-conditions.json`);
+  const f=fs.existsSync(dropIn)?dropIn:legacy;
+  if(!fs.existsSync(f)) return;
   const d=JSON.parse(fs.readFileSync(f,'utf8'));
-  for(const g of w.games){ const c=(d.games||[]).find((x:any)=>fc(x.away)===g.awayCode&&fc(x.home)===g.homeCode); if(c){ g.cond={weather:c.weather||null,injuries:c.injuries||[]}; g.condUpdated=d.updated; } } }
+  for(const g of w.games){ const c=(d.games||[]).find((x:any)=>feedCode(x.away)===g.awayCode&&feedCode(x.home)===g.homeCode);
+    if(c){ g.cond={weather:c.weather||null,injuries:c.injuries||[],with_without:c.with_without}; g.condUpdated=d.updated; } } }
