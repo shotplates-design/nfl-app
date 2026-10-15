@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { viewerIsMember } from '@/lib/viewer';
 import { offersForSlugs } from '@/lib/odds';
 export const dynamic = 'force-dynamic';
-// Members only. Resolves one bet leg per saved player (DraftKings line when we have it, otherwise their best streak).
+// Members only. One DraftKings line chip per saved player, or their best streak when no line is cached.
 export async function POST(req: Request) {
   if (!await viewerIsMember()) return NextResponse.json({ error: 'Membership required' }, { status: 402 });
   const body = await req.json().catch(() => null);

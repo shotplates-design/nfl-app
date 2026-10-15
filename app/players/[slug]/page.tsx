@@ -1,6 +1,6 @@
 import Link from 'next/link'; import { notFound } from 'next/navigation';
-import { players, bySlug, CAT_STATS, CAT_LABEL, catGames, avg, fmt, teamName, SITE, streaksFor, bestHot } from '@/lib/data'; import Gate from '@/components/Gate'; import LineToggle from '@/components/LineToggle'; import FavButton from '@/components/FavButton'; import { Crumbs, JsonLd, Bars, Strip, HitBar, BENCH_NOTE } from '@/lib/ui'; import BetButton from '@/components/BetButton'; import { legStat } from '@/lib/betslip';
-import { viewerIsMember, playerViewsLeft } from '@/lib/viewer'; import { lineGroupForPlayer, oddsEnabled } from '@/lib/odds';
+import { players, bySlug, CAT_STATS, CAT_LABEL, catGames, avg, fmt, teamName, SITE, streaksFor, bestHot } from '@/lib/data'; import Gate from '@/components/Gate'; import LineToggle from '@/components/LineToggle'; import FavButton from '@/components/FavButton'; import { Crumbs, JsonLd, Bars, Strip, HitBar, BENCH_NOTE } from '@/lib/ui';
+import { viewerIsMember, playerViewsLeft } from '@/lib/viewer'; import { lineGroupForPlayer } from '@/lib/odds';
 import LineCards from '@/components/LineCards'; import MemberLock from '@/components/MemberLock';
 export const dynamic='force-dynamic'; // per-session: line-explorer data only for members
 const DUMMY_MARKETS=[{field:'locked',name:'Locked market',thr:[1,2,3],games:Array.from({length:5},()=>({d:'',o:'',v:2}))}];
@@ -8,7 +8,7 @@ export function generateMetadata({params}:{params:{slug:string}}){ const p=bySlu
  const b=bestHot(p); const title=`${p.name} Stats, Game Log & Streaks ${p.season} (${p.team.toUpperCase()})`;
  const description=`${p.name} ${p.season} ${p.cat?CAT_LABEL[p.cat].toLowerCase():''} stats for the ${teamName(p.team)}: ${catGames(p).length} game log entries${b?`, ${b.streak} straight games with ${b.label} (${b.hits}/${b.games})`:''}. Prop-benchmark hit rates & splits by opponent.`;
  return {title,description,alternates:{canonical:`/players/${p.slug}`},openGraph:{title,description,url:`/players/${p.slug}`,type:'profile'}}; }
-export default async function Page({params}:{params:{slug:string}}){ const p=bySlug(params.slug); if(!p) notFound(); const mem=await viewerIsMember(); const left=mem?null:await playerViewsLeft(); const bet=mem&&oddsEnabled();
+export default async function Page({params}:{params:{slug:string}}){ const p=bySlug(params.slug); if(!p) notFound(); const mem=await viewerIsMember(); const left=mem?null:await playerViewsLeft();
  const dk=mem?await lineGroupForPlayer(p):null;
  const cat=p.cat; const stats=cat?CAT_STATS[cat]:[]; const gs=catGames(p); const st=streaksFor(p); const mk:any={}; st.forEach(r=>{const k=r.field+r.group; (mk[k] ||= {field:r.field,name:r.label.replace(/^\d+\+ /,'').replace(/ \(\d+\+\)$/,''),thr:[],games:r.strip.map((g:any)=>({d:g.d,o:g.o,v:g.v}))}).thr.push(r.thr)}); const markets=Object.values(mk); const l5=gs.slice(-5);
  const opp: Record<string,any[]> = {}; gs.forEach(g=>{(opp[g.opp.replace(/^(@|vs)/,'')] ||= []).push(g)});
@@ -19,8 +19,8 @@ export default async function Page({params}:{params:{slug:string}}){ const p=byS
   <div className="flex items-center gap-3 min-w-0"><h1 className="break-anywhere">{p.name}</h1><FavButton slug={p.slug} name={p.name}/><Link href={`/compare?a=${p.slug}`} className="text-xs ml-auto shrink-0">Compare ⇄</Link></div><p className="text-sm text-slate-400"><Link href={`/teams/${p.team}`}>{teamName(p.team)}</Link> · {p.season} season{cat&&<> · {CAT_LABEL[cat]}</>}</p>
   <h2>DraftKings lines</h2>{mem?dk?<LineCards groups={[dk]}/>:<p className="text-sm text-slate-500">No DraftKings player props posted for this week’s game yet.</p>:<MemberLock title="Sportsbook lines are members-only"/>}
   {markets.length>0&&<><h2>Line explorer</h2><p className="text-xs text-slate-500 mb-2">Pick a quick line or set any number to see the hit rate update.</p><Gate label="The line explorer"><LineToggle markets={(mem?markets:DUMMY_MARKETS) as any}/></Gate></>}
-  {st.length>0&&<><h2>Streaks & hit rates vs benchmarks</h2><p className="text-xs text-slate-500 mb-2">{BENCH_NOTE}</p><div className="card overflow-x-auto max-w-full"><table className="cards"><thead><tr><th>Benchmark</th><th>Current streak</th><th>Hit rate</th><th>Game by game</th>{bet&&<th>Bet</th>}</tr></thead><tbody>
-   {st.map(r=><tr key={r.key}><td className="who" data-l="Benchmark">{r.label}</td><td data-l="Streak" className={r.hot?'text-emerald-400':'text-sky-300'}>{r.hot?'🔥 Hit':'🧊 Missed'} {r.streak} straight</td><td data-l="Hit rate"><HitBar hits={r.hits} games={r.games}/></td><td data-l="Games"><Strip r={r}/></td>{bet&&<td data-l="Bet"><BetButton name={r.name||p.name} stat={legStat(r)} line={r.thr} team={p.team}/></td>}</tr>)}</tbody></table></div>
+  {st.length>0&&<><h2>Streaks & hit rates vs benchmarks</h2><p className="text-xs text-slate-500 mb-2">{BENCH_NOTE}</p><div className="card overflow-x-auto max-w-full"><table className="cards"><thead><tr><th>Benchmark</th><th>Current streak</th><th>Hit rate</th><th>Game by game</th></tr></thead><tbody>
+   {st.map(r=><tr key={r.key}><td className="who" data-l="Benchmark">{r.label}</td><td data-l="Streak" className={r.hot?'text-emerald-400':'text-sky-300'}>{r.hot?'🔥 Hit':'🧊 Missed'} {r.streak} straight</td><td data-l="Hit rate"><HitBar hits={r.hits} games={r.games}/></td><td data-l="Games"><Strip r={r}/></td></tr>)}</tbody></table></div>
    <p className="text-xs mt-1"><Link href={`/streaks/${st[0].group}`}>More {st[0].group} streaks →</Link></p></>}
   {gs.length>0&&<>
   <h2>Season averages</h2><div className="overflow-x-auto card"><table><thead><tr><th></th>{stats.map(s=><th key={s[0]}>{s[1]}</th>)}</tr></thead><tbody>
