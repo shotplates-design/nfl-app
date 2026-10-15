@@ -12,5 +12,7 @@ export async function stripe(path:string, params:Record<string,string>){ // mini
 export const ADMIN_EMAIL = 'drosser1724@yahoo.com';
 export const FREE_ACCESS_EMAILS = ['nnoroozi11@gmail.com']; // case-insensitive; full member access, not admin
 export const hasFreeAccess = (email?:string|null) => !!email && FREE_ACCESS_EMAILS.includes(email.trim().toLowerCase());
+// One-time: a FREE_ACCESS user record missing the Rosser promo gets the same fields /api/promo writes.
+export async function saveFreeAccessPromo(email?:string|null){ if(!hasFreeAccess(email)) return null; const u=await getUser(email!); if(!u||(u.free===true&&u.promo==='rosser')) return u; return updateUser(email!,{free:true,promo:'rosser'}); }
 export const isAdmin = (email?:string|null) => !!email && email.trim().toLowerCase()===ADMIN_EMAIL;
 export const isMember = (u:any) => hasFreeAccess(typeof u==='string'?u:u?.email) || (!!u && typeof u==='object' && (u.free===true || ['active','trialing'].includes(u.subStatus) || (typeof u.freeUntil==='number' && u.freeUntil>Date.now())));
