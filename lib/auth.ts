@@ -11,5 +11,7 @@ export const authOptions: NextAuthOptions = {
   providers:[ Credentials({ name:'Email', credentials:{ email:{label:'Email',type:'email'}, password:{label:'Password',type:'password'} },
     async authorize(c){ if(!authConfigured()||!c?.email||!c?.password) return null;
       const u = await redis().get<{email:string,name:string,hash:string}>(userKey(c.email)); if(!u) return null;
-      return (await bcrypt.compare(c.password,u.hash)) ? { id:u.email, email:u.email, name:u.name } : null; } }) ],
+      if(!(await bcrypt.compare(c.password,u.hash))) return null;
+      const { saveFreeAccessPromo } = await import('@/lib/member'); await saveFreeAccessPromo(u.email);
+      return { id:u.email, email:u.email, name:u.name }; } }) ],
 };
