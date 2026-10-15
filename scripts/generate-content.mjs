@@ -56,6 +56,5 @@ for(const p of P){ const gs=p.games.filter(g=>g.cat===p.cat); if(!gs.length||!p.
   const av={}; for(const f of CS[p.cat]||[]){ const v=gs.map(g=>g[f]).filter(x=>typeof x==='number'); if(v.length) av[f]=Math.round(v.reduce((a,b)=>a+b,0)/v.length*10)/10; }
   idx[p.slug]={n:p.name,t:p.team,c:p.cat,gp:gs.length,av,st:playerStreaks(p).map(r=>[r.label,r.streak,r.hot?1:0,r.hits,r.games])}; }
 fs.writeFileSync(new URL('../public/pindex.json', import.meta.url), JSON.stringify(idx));
-const { buildPgames } = await import('../lib/props.mjs');
-fs.writeFileSync(new URL('../public/pgames.json', import.meta.url), JSON.stringify(buildPgames(P)));
+// Prop-builder game data is no longer published: it is served per query by /api/streaksearch (free accounts are capped).
 console.log('pindex', Object.keys(idx).length);
