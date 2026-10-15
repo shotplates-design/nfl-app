@@ -17,11 +17,7 @@ details>summary{list-style:none}details>summary::-webkit-details-marker{display:
 @media (prefers-reduced-motion:reduce){.drawer-in{animation:none}}
 main,header,nav,section,article,li,.card{min-width:0}
 .break-anywhere{overflow-wrap:anywhere;word-break:break-word}
-.bet-btn{@apply inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 font-semibold text-white no-underline}
-.bet-btn.ghost{@apply border border-emerald-600 bg-transparent text-emerald-300}
-.bet-btn:disabled{opacity:.6}
 @media (max-width:639px){
-  .bet-btn{display:flex;width:100%;min-height:44px;font-size:16px}
   th,td{white-space:normal}
   .overflow-x-auto{max-width:100%}
   table.cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}

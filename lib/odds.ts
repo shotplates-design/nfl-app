@@ -2,12 +2,11 @@
 import { redis } from './auth';
 import { TEAMS, players, bySlug, bestHot } from './data';
 import { currentWeek } from './matchups';
-import { BOOKS, PROP_MARKETS, httpsLink, normName, legStat, samePlayer, STAT_MARKET, type BookKey, type OddsCache, type StoredLeg, type InLeg, resolveBets } from './betslip';
+import { normName, legStat, samePlayer, STAT_MARKET, type StoredLeg } from './betslip';
 import { PLAYER_MARKETS, MARKET_META, CAT_MARKET, CREDIT_FLOOR, pullDecision, groupsFromLegs, chipForLeg, type LineGroup } from './lines';
 
 const env = (name: string) => (process.env as Record<string, string | undefined>)[name];
 export const oddsEnabled = () => !!env('ODDS_API_KEY');
-const CACHE_KEY = 'odds:nfl';
 const GAME_TTL = 6 * 24 * 60 * 60;
 const LIST_TTL = 6 * 60 * 60;
 export const MONTHLY_CAP = 450;
@@ -55,22 +54,19 @@ function playerOf(o: { name?: string; description?: string }) {
 export function compressEvent(ev: any): StoredLeg[] {
   const out: StoredLeg[] = []; const by = new Map<string, StoredLeg>();
   for (const book of ev?.bookmakers || []) {
-    if (!BOOKS.includes(book.key)) continue;
-    const bk = book.key as BookKey; const el = httpsLink(book.link); const es = book.sid ? String(book.sid) : undefined;
+    if (book.key !== 'draftkings') continue;
     for (const m of book.markets || []) {
-      if (!MARKET_META[m.key] && !PROP_MARKETS.includes(m.key)) continue;
-      const ml = httpsLink(m.link); const ms = m.sid ? String(m.sid) : undefined;
+      if (!MARKET_META[m.key]) continue;
       for (const o of m.outcomes || []) {
         const player = playerOf(o); if (!player || /d\/st/i.test(player)) continue;
         const side = sideOf(o.name || ''); const point = typeof o.point === 'number' ? o.point : null;
         const id = `${normName(player)}|${m.key}|${side}|${point ?? ''}|${ev.id}`;
         let row = by.get(id);
         if (!row) {
-          row = { player, display: player, market: m.key, point, side, eventId: String(ev.id), home: ev.home_team || '', away: ev.away_team || '', books: {} };
+          row = { player, display: player, market: m.key, point, side, eventId: String(ev.id), home: ev.home_team || '', away: ev.away_team || '' };
           by.set(id, row); out.push(row);
         }
-        row.books[bk] = { ol: httpsLink(o.link), ml, el, os: o.sid ? String(o.sid) : undefined, ms, es };
-        if (bk === 'draftkings' && (side === 'Over' || side === 'Yes') && typeof o.price === 'number' && row.price == null) row.price = o.price;
+        if ((side === 'Over' || side === 'Yes') && typeof o.price === 'number' && row.price == null) row.price = o.price;
       }
     }
   }
@@ -113,7 +109,7 @@ async function ensureEvent(ev: Ev): Promise<GameCache | null> {
     return cached;
   }
   const q = await oddsGet(`sports/americanfootball_nfl/events/${encodeURIComponent(ev.id)}/odds`, {
-    regions: 'us', oddsFormat: 'american', markets: PLAYER_MARKETS.join(','), bookmakers: 'draftkings', includeLinks: 'true', includeSids: 'true',
+    regions: 'us', oddsFormat: 'american', markets: PLAYER_MARKETS.join(','), bookmakers: 'draftkings',
   });
   if (q.remaining != null && q.remaining < CREDIT_FLOOR) console.log(`[odds] remaining ${q.remaining} is under ${CREDIT_FLOOR}; further refreshes stop`);
   if (!q.res.ok) return cached;
@@ -145,21 +141,6 @@ export async function ensureTeams(codes: string[]) {
     if (g) out.push(g);
   }
   return out;
-}
-
-async function cacheForTeams(codes: string[]): Promise<OddsCache> {
-  const events = codes.length ? await loadWeekEvents() : [];
-  const want = events.filter(e => codes.some(c => teamIn(e, c)));
-  const games: GameCache[] = [];
-  for (const ev of want) { const g = await redis().get<GameCache>(`odds:g:${ev.id}`); if (g) games.push(g); }
-  const legacy = await redis().get<OddsCache>(CACHE_KEY);
-  const legs = games.flatMap(g => g.legs);
-  const evs = games.map(g => ({ id: g.id, home: g.home, away: g.away, commence: g.commence }));
-  if (legacy?.legs?.length) {
-    for (const e of legacy.events || []) if (!evs.some(x => x.id === e.id)) evs.push(e);
-    legs.push(...legacy.legs);
-  }
-  return { at: Date.now(), events: evs, legs };
 }
 
 export async function lineGroupsForTeams(codes: string[]): Promise<Record<string, LineGroup[]>> {
@@ -216,16 +197,4 @@ export async function pullOdds() {
     if (g && g.at > now - 120000) refreshed++; else skipped++;
   }
   return { ok: true, refreshed, skipped, remaining: await creditsLeft(), credits: await creditsUsed() };
-}
-
-export async function betLinks(legs: InLeg[]) {
-  if (!oddsEnabled() || !redisReady()) return { available: false, legs: [] as any[], parlay: [] as any[] };
-  const codes = [...new Set(legs.map(l => l.team).filter((t): t is string => !!t))];
-  await ensureTeams(codes);
-  const cache = await cacheForTeams(codes);
-  const team = (code?: string) => code && TEAMS[code] ? TEAMS[code] : undefined;
-  const mapped = legs.map(l => ({ ...l, teamName: l.teamName || team(l.team) }));
-  const resolved = resolveBets(cache.legs.length ? cache : null, mapped);
-  const available = resolved.legs.some(l => l.books.length > 0) || resolved.parlay.length > 0;
-  return { available, ...resolved };
 }
