@@ -25,8 +25,6 @@ async function freePlayer(req:NextRequest, slug:string, email:string){ const k=p
   await redisCmd('SADD',k,slug); await redisCmd('EXPIRE',k,String(PLAYER_WEEK_TTL)); return NextResponse.next(); }
 const starts=(p:string,l:string[])=>l.some(x=>p===x||p.startsWith(x+'/'));
 export async function middleware(req:NextRequest){ const p=req.nextUrl.pathname;
-  // Odds cron has no user session. Only Vercel's CRON_SECRET may run it (it spends API credits).
-  if(p==='/api/cron/odds'){ const secret=(process.env as Record<string,string|undefined>)['CRON_SECRET']; if(secret&&req.headers.get('authorization')===`Bearer ${secret}`) return NextResponse.next(); return NextResponse.json({error:'Unauthorized'},{status:401}); }
   if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)||starts(p,PUBLIC_PREFIX)) return NextResponse.next();
   const tok=await getToken({req,secret:process.env.NEXTAUTH_SECRET}); const email=(tok?.email||'').toString().trim().toLowerCase();
   if(!email){ if(p==='/') return NextResponse.rewrite(new URL('/welcome',req.url)); // public preview home

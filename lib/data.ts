@@ -16,6 +16,8 @@ export const CAT_STATS: Record<string,[string,string][]> = {
 };
 export const CAT_LABEL: Record<string,string> = {passing:'Passing',rushing:'Rushing',receiving:'Receiving',defense:'Defense',kicking:'Kicking',punting:'Punting'};
 export const keyStat = (cat:string)=> CAT_STATS[cat]?.[0];
+// Targets stay on game logs and season-average tables. They are not a prop, so SEO prop pages omit that column.
+export const propPageStats = (cat:string)=> (CAT_STATS[cat]||[]).filter(s=>s[0]!=='tgts').slice(0,4);
 export function catGames(p:Player){ return p.games.filter(g=>g.cat===p.cat); }
 export function avg(gs:Game[],f:string){ const v=gs.map(g=>g[f]).filter(x=>typeof x==='number'); return v.length? v.reduce((a,b)=>a+b,0)/v.length : null; }
 export function sum(gs:Game[],f:string){ return gs.map(g=>g[f]).filter(x=>typeof x==='number').reduce((a,b)=>a+b,0); }

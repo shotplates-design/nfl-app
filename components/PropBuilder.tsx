@@ -1,7 +1,7 @@
 'use client'; import { useEffect, useState } from 'react'; import Link from 'next/link'; import Chips from './Chips'; import LineInput from './LineInput'; import { Strip, HitBar } from './StreakView'; import FavButton from './FavButton'; import MemberLock from './MemberLock'; import { shareResultsImage } from './shareImage';
 import { STATS, ROLES, POS_STATS, normalizeQuery, DEFAULT_Q } from '@/lib/props.mjs';
 const SCOPES:[string,string][]=[['season','Every game this season'],['last','Each of last N games'],['streak','Current streak ≥ N'],['rate','Hit rate ≥ N%']];
-const MAXL:Record<string,number>={recYds:200,rushYds:200,passYds:450,rec:15,tgts:15,car:30,rrTd:3,passTd:5,cmp:40,passAtt:50,int:3,tackles:15,sacks:4,fgm:5};
+const MAXL:Record<string,number>={recYds:200,rushYds:200,passYds:450,rec:15,car:30,rrTd:3,passTd:5,cmp:40,passAtt:50,int:3,tackles:15,sacks:4,fgm:5};
 function fromUrl(init:any){ if(typeof window==='undefined') return init; const u=new URLSearchParams(location.search); const q:any={...init};
   for(const k of Object.keys(DEFAULT_Q)){ const v=u.get(k); if(v!=null) q[k]=['line','n'].includes(k)?+v:v; } return normalizeQuery(q); }
 export default function PropBuilder({initial=DEFAULT_Q,syncUrl=true,preloaded,startEmpty=false}:{initial?:any,syncUrl?:boolean,preloaded?:any,startEmpty?:boolean}){

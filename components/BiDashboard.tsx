@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { POSITIONS, STATS_META, dashboardView } from '@/lib/dashboard.mjs';
 
 const COLORS = ['#34d399', '#38bdf8', '#fbbf24', '#c084fc', '#fb7185', '#22d3ee'];
@@ -75,7 +75,7 @@ export default function BiDashboard({ model, name }: { model: any; name?: string
     <div className="flex items-start justify-between gap-3 mb-3">
       <div className="min-w-0">
         <h1 className="!mb-1">Dashboard</h1>
-        <p className="text-sm text-slate-400">Welcome{name ? `, ${name}` : ''}. Hit rates from this season&apos;s game logs{model.injuryWeek ? `, injury desk Week ${model.injuryWeek}` : ''}{model.odds?.length ? `, ${model.odds.length} cached DraftKings lines` : ''}.</p>
+        <p className="text-sm text-slate-400">Welcome{name ? `, ${name}` : ''}. Hit rates from this season&apos;s game logs{model.injuryWeek ? `, injury desk Week ${model.injuryWeek}` : ''}.</p>
       </div>
       <button type="button" className="md:hidden shrink-0 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm" onClick={() => setOpen(true)} aria-expanded={open}>Filters</button>
     </div>
@@ -165,22 +165,6 @@ export default function BiDashboard({ model, name }: { model: any; name?: string
         </li>)}</ul> : <p className="text-sm text-slate-400">No injuries match this team and position.</p>}
       </section>
     </div>
-
-    <section className="card min-w-0 mt-3">
-      <h2 className="!mt-0 text-sm">DraftKings line vs hit rate</h2>
-      <p className="text-xs text-slate-500 mb-2">{view.scatterLabel}. The line is the cached DraftKings over. Hit rate is how often the player beat that number in the selected weeks.</p>
-      {view.scatter.length && ready ? <div className={chartH}>
-        <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
-            <CartesianGrid {...GRID}/>
-            <XAxis dataKey="line" name="Line" tick={AXIS} stroke="#334155" type="number"/>
-            <YAxis dataKey="rate" name="Hit rate" domain={[0, 100]} tick={AXIS} stroke="#334155" unit="%"/>
-            <Tooltip contentStyle={tipStyle()} cursor={{ strokeDasharray: '3 3' }} formatter={(v: any, key: any) => [key === 'rate' ? `${v}%` : v, key === 'rate' ? 'Hit rate' : 'Line']} labelFormatter={(_l: any, items: any) => items?.[0]?.payload ? `${items[0].payload.name} (${items[0].payload.team})` : ''}/>
-            <Scatter data={view.scatter} fill="#34d399" cursor="pointer" onClick={(d: any) => go(router, d?.slug || d?.payload?.slug)}/>
-          </ScatterChart>
-        </ResponsiveContainer>
-      </div> : <p className="text-sm text-slate-400">No cached DraftKings {view.scatterLabel} lines for this filter. Lines show up here after the odds cache has them.</p>}
-    </section>
 
     <section className="card min-w-0 mt-3 overflow-x-auto">
       <h2 className="!mt-0 text-sm">Active streak board</h2>

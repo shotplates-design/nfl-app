@@ -1,5 +1,5 @@
 import Link from 'next/link'; import { notFound } from 'next/navigation';
-import { players, bySlug, CAT_STATS, CAT_LABEL, catGames, avg, fmt, teamName, SITE, bestHot } from '@/lib/data'; import { Crumbs, JsonLd } from '@/lib/ui';
+import { players, bySlug, CAT_LABEL, catGames, avg, fmt, teamName, SITE, bestHot, propPageStats } from '@/lib/data'; import { Crumbs, JsonLd } from '@/lib/ui';
 // Public, indexable SEO page. Deliberately a LIMITED summary (season + last-5 averages, one top streak). No game log, no line explorer,
 // no Best Props data; full player pages stay behind sign-in.
 export const revalidate=3600; export const dynamicParams=true;
@@ -9,7 +9,7 @@ export function generateMetadata({params}:{params:{slug:string}}){ const p=bySlu
  const description=`${p.name} (${teamName(p.team)}) ${p.season} player prop stats: season and last-5 averages${b?`, ${b.streak} straight games with ${b.label}`:''}. Hit rates, streaks and prop research at ThePlayerProps.`;
  return {title,description,alternates:{canonical:`/props/${p.slug}`},robots:{index:true,follow:true},openGraph:{title:title.absolute,description,url:`/props/${p.slug}`,type:'profile'}}; }
 export default function Page({params}:{params:{slug:string}}){ const p=bySlug(params.slug); if(!p) notFound();
- const cat=p.cat; const stats=(cat?CAT_STATS[cat]:[]).slice(0,4); const gs=catGames(p); const l5=gs.slice(-5); const b=bestHot(p);
+ const cat=p.cat; const stats=cat?propPageStats(cat):[]; const gs=catGames(p); const l5=gs.slice(-5); const b=bestHot(p);
  const mates=players.filter(x=>x.team===p.team&&x.slug!==p.slug&&x.cat===cat&&x.games.length).slice(0,8);
  return <>
   <Crumbs items={[['Home','/'],[p.name,`/props/${p.slug}`]]}/>
