@@ -3,14 +3,15 @@ import { NextResponse, type NextRequest } from 'next/server'; import { getToken 
 // gets the FREE paths; everything else needs a member (active/trialing Stripe subscription, promo 'free' flag, or the admin account). Membership is read from Upstash Redis on each gated request.
 const ADMIN='drosser1724@yahoo.com';
 const PUBLIC_PAGES=new Set(['/welcome','/signup','/login','/subscribe','/forgot-password','/reset-password','/robots.txt','/sitemap.xml','/manifest.webmanifest','/opengraph-image','/search.json']); // search.json = name/slug/team/category only, no stats
+const PUBLIC_PREFIX=['/props']; // public SEO prop pages (limited summary only)
 const PUBLIC_API=['/api/auth','/api/signup','/api/me','/api/promo','/api/stripe','/api/password'];
-const SIGNED_IN_OK=['/account','/api/account']; // any signed-in user, member or not
+const SIGNED_IN_OK=['/account','/api/account','/api/referral']; // any signed-in user, member or not
 // Free-account features (paid-only inside these pages, e.g. Best Props 4+ and the line explorer, stays behind <Gate>).
 const FREE_PATHS=['/streaks','/players','/teams','/matchups','/leaders','/insights','/pindex.json','/api/streaksearch']; // /api/streaksearch counts free searches itself
 const RURL=()=>process.env.UPSTASH_REDIS_REST_URL||process.env.KV_REST_API_URL; const RTOK=()=>process.env.UPSTASH_REDIS_REST_TOKEN||process.env.KV_REST_API_TOKEN;
 async function member(email:string){ if(email===ADMIN) return true; if(!RURL()||!RTOK()) return false;
   try{ const r=await fetch(`${RURL()}/get/${encodeURIComponent('user:'+email)}`,{headers:{Authorization:`Bearer ${RTOK()}`},cache:'no-store'}); if(!r.ok) return false;
-    const {result}=await r.json(); const u=typeof result==='string'?JSON.parse(result):result; return !!u&&(u.free===true||['active','trialing'].includes(u.subStatus)); }catch{ return false; } }
+    const {result}=await r.json(); const u=typeof result==='string'?JSON.parse(result):result; return !!u&&(u.free===true||['active','trialing'].includes(u.subStatus)||(typeof u.freeUntil==='number'&&u.freeUntil>Date.now())); }catch{ return false; } }
 async function redisCmd(...args:string[]){ if(!RURL()||!RTOK()) return null; try{ const r=await fetch(RURL()!,{method:'POST',headers:{Authorization:`Bearer ${RTOK()}`,'Content-Type':'application/json'},body:JSON.stringify(args),cache:'no-store'}); return r.ok?(await r.json()).result:null; }catch{ return null; } }
 // Only real page loads (Sec-Fetch-Dest: document) can spend a free player view; prefetch/RSC fetches for an unviewed player get an empty 204
 // and the router falls back to a full page load, which is counted.
@@ -23,7 +24,7 @@ async function freePlayer(req:NextRequest, slug:string, email:string){ const k=p
   await redisCmd('SADD',k,slug); await redisCmd('EXPIRE',k,String(PLAYER_WEEK_TTL)); return NextResponse.next(); }
 const starts=(p:string,l:string[])=>l.some(x=>p===x||p.startsWith(x+'/'));
 export async function middleware(req:NextRequest){ const p=req.nextUrl.pathname;
-  if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)) return NextResponse.next();
+  if(PUBLIC_PAGES.has(p)||starts(p,PUBLIC_API)||starts(p,PUBLIC_PREFIX)) return NextResponse.next();
   const tok=await getToken({req,secret:process.env.NEXTAUTH_SECRET}); const email=(tok?.email||'').toString().trim().toLowerCase();
   if(!email){ if(p==='/') return NextResponse.rewrite(new URL('/welcome',req.url)); // public preview home
     if(p.startsWith('/api/')||p.endsWith('.json')) return NextResponse.json({error:'Sign in required'},{status:401});
