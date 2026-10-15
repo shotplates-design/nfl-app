@@ -27,6 +27,11 @@ main,header,nav,section,article,li,.card{min-width:0}
   table.cards td[data-l]::before{content:attr(data-l);color:#94a3b8;font-size:11px;margin-right:auto}
   table.cards td.who{font-weight:600;font-size:15px;justify-content:flex-start}
   table.cards td.who::before{content:none}
+  table.cards.top10 tr{display:flex;flex-wrap:wrap;align-items:center}
+  table.cards.top10 td.rank{width:auto;flex:0 0 auto;padding:0 8px 0 0;font-size:15px}
+  table.cards.top10 td.rank::before{content:none}
+  table.cards.top10 td.who{width:auto;flex:1 1 auto;min-width:0}
+  table.cards.top10 td:not(.rank):not(.who){flex:1 1 100%}
   .card:has(> table.cards),.card:has(> .overflow-x-auto > table.cards){padding:0;border:0;background:transparent}
   .strip{flex-wrap:wrap;max-width:100%}
 }
