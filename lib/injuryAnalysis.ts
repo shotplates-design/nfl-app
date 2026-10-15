@@ -47,6 +47,7 @@ export type InjuryItem = {
   confidence: string;
   expert_takes: ExpertTake[];
   sources: string[];
+  matchup_note: string;
 };
 export type KenziePick = {
   player: string;
@@ -59,6 +60,7 @@ export type KenziePick = {
   links: { id: string; label: string; game: string }[];
   sources: string[];
   final_after: string;
+  status: string;
 };
 export type MatchupSpotlight = {
   game: string;
@@ -80,6 +82,31 @@ export type InjuryDesk = {
 const slug = (s: string) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 const https = (u: unknown) => typeof u === 'string' && u.startsWith('https://') ? u : '';
 const text = (v: unknown, n: number) => String(v || '').slice(0, n);
+const SPLIT_BITS: [string, string][] = [['games', 'games'], ['carries_pg', 'carries/g'], ['rush_yds_pg', 'rush yds/g'], ['targets_pg', 'targets/g'], ['rec_yds_pg', 'rec yds/g'], ['carries', 'carries'], ['rush_yds', 'rush yds'], ['targets', 'targets'], ['rec_yds', 'rec yds']];
+function splitSide(label: string, raw: unknown) {
+  if (!raw || typeof raw !== 'object') return '';
+  const row = raw as Record<string, unknown>;
+  const bits = SPLIT_BITS.filter(([k]) => row[k] != null && row[k] !== '').map(([k, lab]) => k === 'games' && Number(row[k]) === 1 ? '1 game' : `${row[k]} ${lab}`);
+  if (typeof row.note === 'string' && row.note.trim()) bits.push(row.note.trim());
+  return bits.length ? `${label}: ${bits.join(', ')}` : '';
+}
+/** A string stays as written. A with/without object becomes one readable line so the split is not "[object Object]". */
+export function formatWithWithout(v: unknown): string {
+  if (v == null || v === '') return '';
+  if (typeof v === 'string') return v.slice(0, 1200);
+  if (typeof v !== 'object') return String(v).slice(0, 1200);
+  const raw = v as Record<string, unknown>;
+  const parts: string[] = [];
+  for (const [k, val] of Object.entries(raw)) {
+    if (k === 'small_sample' || k === 'source_url' || k === 'extra') continue;
+    const label = k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const line = splitSide(label, val);
+    if (line) parts.push(line);
+  }
+  if (raw.small_sample === true) parts.push('Small sample');
+  if (typeof raw.extra === 'string' && raw.extra.trim()) parts.push(raw.extra.trim());
+  return parts.join('. ').slice(0, 1200);
+}
 function clock(v: unknown): string {
   const s = typeof v === 'string' ? v.trim() : '';
   return s && Number.isFinite(Date.parse(s)) ? s : '';
@@ -96,7 +123,7 @@ function person(raw: any): InjuryPerson | null {
     position: text(raw?.position, 24),
     team: text(raw?.team, 8).toUpperCase(),
     why: text(raw?.why, 1000),
-    key_stat_with_without: text(raw?.key_stat_with_without, 800),
+    key_stat_with_without: formatWithWithout(raw?.key_stat_with_without),
   };
 }
 function exploited(raw: any): ExploitedBy | null {
@@ -162,6 +189,7 @@ export function loadInjuryDesk(): InjuryDesk | null {
       confidence: text(r?.confidence, 120),
       expert_takes: (Array.isArray(r?.expert_takes) ? r.expert_takes : []).map(take).filter(Boolean) as ExpertTake[],
       sources: linkList(r?.sources),
+      matchup_note: text(r?.matchup_note, 1200),
     };
   });
   const deskFinal = clock(raw.kenzie_picks_final_after);
@@ -183,6 +211,7 @@ export function loadInjuryDesk(): InjuryDesk | null {
       links,
       sources: linkList(p?.sources),
       final_after: clock(p?.final_after) || clock(p?.kickoff) || fromMap || deskFinal,
+      status: text(p?.status, 200),
     };
   });
   const spotlights: MatchupSpotlight[] = (Array.isArray(raw.matchup_spotlights) ? raw.matchup_spotlights : []).map((s: any) => ({

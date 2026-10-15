@@ -88,6 +88,7 @@ function Card({ item }: { item: InjuryItem }) {
       </div>
     </div>
     {item.team_impact && <p className="text-sm text-slate-200 mt-3 break-anywhere">{item.team_impact}</p>}
+    {item.matchup_note && <p className="text-sm text-slate-300 mt-2 break-anywhere"><span className="text-slate-500">Matchup · </span>{item.matchup_note}</p>}
     <People title="Who benefits" emoji="🟢" rows={item.beneficiaries}/>
     <People title="Opponent boost" emoji="⚡" rows={item.opponent_beneficiaries}/>
     <Exploit rows={item.exploited_by}/>
@@ -117,9 +118,11 @@ function PickCard({ pick, now }: { pick: KenziePick; now: number }) {
       <TeamBadge code={pick.team.toLowerCase()} name={pick.team} size="md"/>
       <span className="font-bold break-anywhere">{pick.player}</span>
       {final && <span className="inline-flex items-center rounded-full bg-slate-700 px-2 py-0.5 text-[11px] font-black uppercase tracking-wide text-slate-100">Final</span>}
+      {/^stale\b/i.test(pick.status) && <span className="inline-flex items-center rounded-full bg-amber-700 px-2 py-0.5 text-[11px] font-black uppercase tracking-wide text-amber-50">Stale</span>}
       <span className={`ml-auto inline-flex items-center rounded-full px-3 py-1 text-xs font-black tracking-wide ${pick.pick === 'under' ? 'bg-rose-600 text-white' : 'bg-emerald-500 text-slate-950'}`}>{pick.pick === 'under' ? 'UNDER' : 'OVER'}</span>
     </div>
     <p className="mt-2 text-lg font-bold text-white break-anywhere">{pick.prop}</p>
+    {pick.status && <p className="mt-1 text-xs text-amber-200 break-anywhere">{pick.status}</p>}
     <p className="mt-1 text-sm" aria-label={`Confidence ${pick.confidence} of 5`}>
       {Array.from({ length: 5 }, (_, i) => <span key={i} aria-hidden="true">{i < pick.confidence ? '🔥' : '☆'}</span>)}
       <span className="ml-2 text-xs text-slate-400">{pick.confidence}/5</span>
@@ -137,6 +140,7 @@ export default function InjuryDeskView({ desk, now = Date.now() }: { desk: Injur
   const sharedLock = lockTimes.length === 1 ? lockTimes[0] : '';
   const lockLabel = sharedLock ? fmtWhen(sharedLock) : '';
   const allFinal = desk.kenzie_picks.length > 0 && desk.kenzie_picks.every(p => pickIsFinal(p.final_after, now));
+  const allStale = desk.kenzie_picks.length > 0 && desk.kenzie_picks.every(p => /^stale\b/i.test(p.status));
   const slate = [...new Set(desk.kenzie_picks.flatMap(p => p.links.map(l => l.game)).filter(Boolean))];
   const slateLabel = slate.map(gameLabel).join(' · ');
   const spotGames = [...new Set(desk.matchup_spotlights.map(s => s.game).filter(Boolean))];
@@ -169,9 +173,9 @@ export default function InjuryDeskView({ desk, now = Date.now() }: { desk: Injur
     </section>
 
     <section className="mt-8 min-w-0" data-picks-state={allFinal ? 'final' : 'live'}>
-      <h2 className="!mt-0">🌶️ Kenzie&apos;s Picks{allFinal ? ' · Final' : ''}</h2>
+      <h2 className="!mt-0">🌶️ Kenzie&apos;s Picks{allFinal ? ' · Final' : allStale ? ' · Stale' : ''}</h2>
       <p className="text-sm text-slate-400 mb-3 break-anywhere">
-        {allFinal && lockLabel ? `Final. These picks locked at ${lockLabel}.` : lockLabel ? `Live until ${lockLabel}.` : 'Her favorite edges off this week’s report.'}
+        {allStale ? 'Stale. Thursday night has kicked off or is about to; settle these after the final.' : allFinal && lockLabel ? `Final. These picks locked at ${lockLabel}.` : lockLabel ? `Live until ${lockLabel}.` : 'Her favorite edges off this week’s report.'}
         {slateLabel ? ` ${slateLabel}.` : ''} Flames are confidence, 1 to 5.
       </p>
       <ul className="space-y-3">{desk.kenzie_picks.map(p => <PickCard key={`${p.player}-${p.prop}`} pick={p} now={now}/>)}</ul>
