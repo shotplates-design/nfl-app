@@ -2,7 +2,7 @@ import Link from 'next/link'; import { SITE_NAME } from '@/lib/data'; import { b
 // Public home shown at "/" to visitors without a membership (middleware rewrite). Same look as the member home, but the HTML carries ONLY the top 3
 // Best Props (fields the card needs, no player/matchup links, no watchlist); the locked section uses dummy rows, not real data.
 export const metadata={title:`${SITE_NAME}: NFL Player Props, Hit Rates & Streaks`,description:'Weekly NFL player props ranked by hit rate, streaks and matchups, plus a prop search builder. Sign up for full access.',alternates:{canonical:'/'}};
-const PICK=['name','team','role','at','oppName','kick','prop','bench','hits','games','streak','avg','thr','score','strip','why'];
+const PICK=['name','team','role','at','oppName','kick','prop','bench','hits','games','streak','avg','thr','score','strip','why','injuryNote'];
 const DUMMY=Array.from({length:4},()=>({name:'Player Name',team:'',role:'WR',at:'vs',oppName:'Opponent',kick:'Sun 1:00 PM',prop:'Over 00.5 Yds',bench:'00.5',hits:0,games:5,streak:0,avg:0,thr:1,score:0,
   strip:Array.from({length:5},()=>({h:true,v:0,v2:0})),why:'Locked. Members see every ranked prop with the full reasoning.'}));
 const SPICK=['slug','key','name','team','label','hot','streak','hits','games','strip'];

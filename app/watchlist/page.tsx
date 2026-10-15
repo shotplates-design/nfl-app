@@ -3,7 +3,7 @@ import Gate from '@/components/Gate';
 import Watchlist from './Watchlist';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';
-import { authOptions, redis } from '@/lib/auth';
+import { authOptions, redis, authConfigured } from '@/lib/auth';
 import { viewerIsMember } from '@/lib/viewer';
 import { offersForSlugs, type WatchOffer } from '@/lib/odds';
 export const dynamic = 'force-dynamic';
@@ -14,7 +14,7 @@ export default async function P() {
   if (member) {
     const s = await getServerSession(authOptions);
     const email = s?.user?.email?.trim().toLowerCase();
-    if (email) {
+    if (email && authConfigured()) {
       const favs = (await redis().get<Record<string, string>>(`favs:${email}`)) || {};
       offers = await offersForSlugs(Object.keys(favs));
     }
