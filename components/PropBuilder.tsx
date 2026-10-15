@@ -1,4 +1,4 @@
-'use client'; import { useEffect, useState } from 'react'; import Link from 'next/link'; import Chips from './Chips'; import LineInput from './LineInput'; import { Strip, HitBar } from './StreakView'; import FavButton from './FavButton'; import MemberLock from './MemberLock';
+'use client'; import { useEffect, useState } from 'react'; import Link from 'next/link'; import Chips from './Chips'; import LineInput from './LineInput'; import { Strip, HitBar } from './StreakView'; import FavButton from './FavButton'; import MemberLock from './MemberLock'; import { shareResultsImage } from './shareImage';
 import { STATS, ROLES, POS_STATS, normalizeQuery, DEFAULT_Q } from '@/lib/props.mjs';
 const SCOPES:[string,string][]=[['season','Every game this season'],['last','Each of last N games'],['streak','Current streak ≥ N'],['rate','Hit rate ≥ N%']];
 const MAXL:Record<string,number>={recYds:200,rushYds:200,passYds:450,rec:15,tgts:15,car:30,rrTd:3,passTd:5,cmp:40,passAtt:50,int:3,tackles:15,sacks:4,fgm:5};
@@ -24,7 +24,8 @@ export default function PropBuilder({initial=DEFAULT_Q,syncUrl=true,preloaded}:{
    <Chips label="Scope" options={SCOPES} value={q.scope} onChange={set('scope')}/>
    <LineInput value={q.n} onChange={set('n')} max={q.scope==='rate'?100:8} step={q.scope==='rate'?5:1} label={q.scope==='rate'?'Min %':q.scope==='season'?'Min games':'N games'}/>
    <div className="flex flex-wrap items-center gap-x-4"><Chips label="Sort" options={[['streak','Streak'],['rate','Hit rate'],['avg','Average'],['name','Name']]} value={q.sort} onChange={set('sort')}/>
-    {syncUrl&&<button type="button" onClick={share} className="text-xs rounded-full border border-slate-700 px-3 py-1">🔗 Share query</button>}</div>
+    {syncUrl&&<button type="button" onClick={share} className="text-xs rounded-full border border-slate-700 px-3 py-1">🔗 Share query</button>}
+    {pg&&rows.length>0&&<button type="button" onClick={()=>shareResultsImage(desc,rows.slice(0,8))} className="text-xs rounded-full border border-emerald-600 text-emerald-300 px-3 py-1">📸 Share image</button>}</div>
    {typeof cur?.left==='number'&&<p className="text-xs text-amber-200 mt-2" aria-live="polite">{cur.left} of 10 free searches left</p>}
    {cur?.locked?<MemberLock title={cur.signedIn?"You've used your 10 free prop searches":'Prop search is for signed-in accounts'} signedIn={cur.signedIn}/>:<>
    <p className="text-sm mt-2" aria-live="polite"><strong>{pg?rows.length:'…'}</strong> {desc}</p>

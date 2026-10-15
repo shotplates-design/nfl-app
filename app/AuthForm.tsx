@@ -1,7 +1,8 @@
-'use client'; import { useState } from 'react'; import { signIn } from 'next-auth/react'; import Link from 'next/link';
+'use client'; import { useEffect, useState } from 'react'; import { signIn } from 'next-auth/react'; import Link from 'next/link';
 export default function AuthForm({mode}:{mode:'login'|'signup'}){ const [err,setErr]=useState(''); const [busy,setBusy]=useState(false);
+ useEffect(()=>{ const r=new URLSearchParams(location.search).get('ref'); if(r) try{localStorage.setItem('tpp_ref',r.slice(0,20))}catch{} },[]);
  async function submit(e:any){ e.preventDefault(); setErr(''); setBusy(true); const f=new FormData(e.target); const email=String(f.get('email')), password=String(f.get('password'));
-  if(mode==='signup'){ const r=await fetch('/api/signup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email,password,name:f.get('name')})}); const j=await r.json(); if(!r.ok){setErr(j.error);setBusy(false);return;} }
+  if(mode==='signup'){ const r=await fetch('/api/signup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email,password,name:f.get('name'),ref:new URLSearchParams(location.search).get('ref')||localStorage.getItem('tpp_ref')||''})}); const j=await r.json(); if(!r.ok){setErr(j.error);setBusy(false);return;} }
   const r=await signIn('credentials',{email,password,redirect:false}); setBusy(false); if(r?.ok) { const c=new URLSearchParams(location.search).get('callbackUrl')||''; location.href=mode==='signup'?'/subscribe':(c.startsWith('/')&&!c.startsWith('//')?c:'/'); } else setErr('Invalid email or password (or accounts not configured).'); }
  const inp="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-base";
  return <form onSubmit={submit} className="card max-w-sm mx-auto space-y-3"><h1>{mode==='login'?'Log in':'Sign up for full access'}</h1>

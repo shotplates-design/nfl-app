@@ -1,5 +1,5 @@
 import HeaderAuth from '@/components/HeaderAuth'; import MenuDrawer from '@/components/MenuDrawer';
-import './globals.css'; import BottomNav from '@/components/BottomNav'; import Link from 'next/link'; import type { Metadata, Viewport } from 'next'; import { SITE, SITE_NAME } from '@/lib/data';
+import './globals.css'; import { Analytics } from '@vercel/analytics/next'; import BottomNav from '@/components/BottomNav'; import Link from 'next/link'; import type { Metadata, Viewport } from 'next'; import { SITE, SITE_NAME } from '@/lib/data';
 export const metadata: Metadata = { metadataBase:new URL(SITE), title:{default:`${SITE_NAME} – NFL Week Matchups, Player Prop Streaks & Hit Rates`,template:`%s | ${SITE_NAME}`},
   description:'Free NFL player stats, game logs, prop-benchmark streaks, hit rates and leaderboards to help bettors research props and matchups.',
   openGraph:{siteName:SITE_NAME,type:'website',locale:'en_US'}, twitter:{card:'summary_large_image'}, alternates:{canonical:'/'},
@@ -12,5 +12,5 @@ export default function Root({children}:{children:React.ReactNode}){ return <htm
   <footer className="max-w-5xl mx-auto px-4 py-8 text-xs text-slate-400 border-t border-slate-800 mt-10 space-y-2">
     <p><strong>Bet responsibly.</strong> Stats are informational only and do not guarantee outcomes. Must be 21+ (or legal age in your jurisdiction). If you or someone you know has a gambling problem, call or text <a href="tel:18004262537">1-800-GAMBLER</a> or visit <a href="https://www.ncpgambling.org" rel="nofollow noopener">ncpgambling.org</a>.</p>
     <p>Data: {new Date().getFullYear()} NFL season player data supplied to {SITE_NAME}. Not affiliated with the NFL.</p></footer>
-  <BottomNav/>
+  <BottomNav/><Analytics/>
 </body></html>; }
