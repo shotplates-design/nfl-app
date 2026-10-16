@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'; import { getToken 
 // Server-side gating. Signed-out visitors get only the public pages ('/' = welcome preview). Any signed-in account (free, no card)
 // gets the FREE paths; everything else needs a member (active/trialing Stripe subscription, promo 'free' flag, an always-granted email, or the admin account). Membership is read from Upstash Redis on each gated request.
 const ADMIN='drosser1724@yahoo.com';
-const FREE_ACCESS=['nnoroozi11@gmail.com']; // same list as FREE_ACCESS_EMAILS in lib/member.ts
+const FREE_ACCESS=['nnoroozi11@gmail.com','jalenwatkins7@gmail.com']; // same list as FREE_ACCESS_EMAILS in lib/member.ts
 const PUBLIC_PAGES=new Set(['/welcome','/signup','/login','/subscribe','/forgot-password','/reset-password','/robots.txt','/sitemap.xml','/manifest.webmanifest','/opengraph-image','/search.json']); // search.json = name/slug/team/category only, no stats
 const PUBLIC_PREFIX=['/props']; // public SEO prop pages (limited summary only)
 const PUBLIC_API=['/api/auth','/api/signup','/api/me','/api/promo','/api/stripe','/api/password'];

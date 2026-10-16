@@ -10,7 +10,7 @@ export async function stripe(path:string, params:Record<string,string>){ // mini
   const r=await fetch(`https://api.stripe.com/v1/${path}`,{method:'POST',headers:{Authorization:`Bearer ${process.env.STRIPE_SECRET_KEY}`,'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(params)});
   const j=await r.json(); if(!r.ok) throw new Error(j?.error?.message||'Stripe error'); return j; }
 export const ADMIN_EMAIL = 'drosser1724@yahoo.com';
-export const FREE_ACCESS_EMAILS = ['nnoroozi11@gmail.com']; // case-insensitive; full member access, not admin
+export const FREE_ACCESS_EMAILS = ['nnoroozi11@gmail.com', 'jalenwatkins7@gmail.com']; // case-insensitive; full member access, not admin
 export const hasFreeAccess = (email?:string|null) => !!email && FREE_ACCESS_EMAILS.includes(email.trim().toLowerCase());
 // One-time: a FREE_ACCESS user record missing the Rosser promo gets the same fields /api/promo writes.
 export async function saveFreeAccessPromo(email?:string|null){ if(!hasFreeAccess(email)) return null; const u=await getUser(email!); if(!u||(u.free===true&&u.promo==='rosser')) return u; return updateUser(email!,{free:true,promo:'rosser'}); }
