@@ -24,7 +24,7 @@ function confTone(c: string) {
 
 function Sources({ urls }: { urls: string[] }) {
   if (!urls.length) return null;
-  return <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{urls.map(u => <li key={u} className="min-w-0 max-w-full"><a href={u} target="_blank" rel="noopener noreferrer" className="text-[11px] break-anywhere">{host(u)}</a></li>)}</ul>;
+  return <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{urls.map(u => <li key={u} className="min-w-0 max-w-full"><a href={u} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 text-[11px] break-anywhere">{host(u)}</a></li>)}</ul>;
 }
 
 function People({ title, emoji, rows }: { title: string; emoji: string; rows: InjuryPerson[] }) {

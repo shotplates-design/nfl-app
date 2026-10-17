@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { SITE } from './data';
 export function JsonLd({data}:{data:any}){ return <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(data)}}/>; }
 export function Crumbs({items}:{items:[string,string][]}){ return <>
-  <nav aria-label="Breadcrumb" className="text-xs text-slate-400 mb-3">{items.map(([n,h],i)=><span key={h}>{i>0&&' / '}{i<items.length-1?<Link href={h}>{n}</Link>:n}</span>)}</nav>
+  <nav aria-label="Breadcrumb" className="text-xs text-slate-400 mb-3">{items.map(([n,h],i)=><span key={h}>{i>0&&' / '}{i<items.length-1?<Link href={h} className="inline-flex items-center min-h-[44px] -my-3">{n}</Link>:n}</span>)}</nav>
   <JsonLd data={{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items.map(([n,h],i)=>({'@type':'ListItem',position:i+1,name:n,item:SITE+h}))}}/></>; }
 export function Bars({data,label}:{data:{x:string,y:number|null}[],label:string}){
   const vals=data.map(d=>d.y??0); const max=Math.max(1,...vals.map(Math.abs)); const w=Math.max(1,data.length);
