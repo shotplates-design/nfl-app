@@ -6,7 +6,7 @@ export default function MenuDrawer(){ const [open,setOpen]=useState(false); cons
     const key=(e:KeyboardEvent)=>{ if(e.key==='Escape'){ setOpen(false); btn.current?.focus(); } if(e.key==='Tab'){ const l=f(); const i=l.indexOf(document.activeElement as HTMLElement);
       if(e.shiftKey&&i<=0){ e.preventDefault(); l[l.length-1].focus(); } else if(!e.shiftKey&&i===l.length-1){ e.preventDefault(); l[0].focus(); } } };
     document.addEventListener('keydown',key); return ()=>{ document.removeEventListener('keydown',key); document.body.style.overflow=''; document.documentElement.style.overflow=''; }; },[open]);
-  return <><button ref={btn} type="button" aria-label="Open menu" aria-expanded={open} aria-controls="site-menu" onClick={()=>setOpen(true)} className="p-2 -ml-2 rounded hover:bg-slate-800">
+  return <><button ref={btn} type="button" aria-label="Open menu" aria-expanded={open} aria-controls="site-menu" onClick={()=>setOpen(true)} className="flex h-11 w-11 items-center justify-center -ml-3 rounded hover:bg-slate-800">
     <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" className="stroke-slate-200" strokeWidth="2" strokeLinecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
    {open&&mounted&&createPortal(<div className="fixed inset-0 z-[100]"><div className="fixed inset-0 bg-black/70" onClick={()=>setOpen(false)} aria-hidden="true"/>
     <div ref={panel} id="site-menu" role="dialog" aria-modal="true" aria-label="Site menu" style={{height:"100dvh"}} className="fixed inset-y-0 left-0 w-[85vw] max-w-xs bg-slate-900 shadow-2xl overscroll-contain border-r border-slate-800 p-4 overflow-y-auto drawer-in">
