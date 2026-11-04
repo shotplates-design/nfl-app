@@ -82,16 +82,38 @@ class ZeroGate(unittest.TestCase):
                 with self.assertRaises(SystemExit, msg=f"{cat}.{stat}"):
                     check_category_stats(players)
 
-    def test_sparse_stat_uses_its_floor(self):
-        # int only needs 25%: 30% non-zero passes, 10% fails.
+    def test_sparse_stats_need_only_one_nonzero_row(self):
+        for position, cat, stat in (("passing", "passing", "int"), ("passing", "passing", "car"),
+                                    ("defense", "defense", "sacks"), ("kicking", "kicking", "fgm"),
+                                    ("punting", "punting", "net")):
+            players = league()
+            zero(players, position, cat, (stat,))
+            next(p for p in players if p["cat"] == position)["games"][0][stat] = 1
+            check_category_stats(players)
+
+    def test_sparse_stat_zero_in_one_position_fails(self):
         players = league()
-        for i, game in enumerate(players[0]["games"]):
-            game["int"] = 1 if i % 10 < 3 else 0
-        check_category_stats(players)
-        for i, game in enumerate(players[0]["games"]):
-            game["int"] = 1 if i % 10 == 0 else 0
+        zero(players, "defense", "defense", ("sacks",))
         with self.assertRaises(SystemExit):
             check_category_stats(players)
+
+    def test_off_position_group_skips_sparse_stats(self):
+        players = league()
+        players.append({"id": "wr2", "cat": "receiving", "games": games("receiving")
+                        + [dict(g, sacks=0, int=0) for g in games("defense")]})
+        check_category_stats(players)
+
+    def test_core_stat_under_half_fails(self):
+        players = league()
+        for game in players[2]["games"][: N * 6 // 10]:
+            game["rec"] = 0
+        with self.assertRaises(SystemExit):
+            check_category_stats(players)
+
+    def test_qb_rushing_supplement_one_nonzero_passes(self):
+        qb = {"players": {str(i): {"games": [{"car": 0, "rushYds": 0}]} for i in range(N)}}
+        qb["players"]["0"]["games"][0] = {"car": 2, "rushYds": 5}
+        check_qb_rushing(qb)
 
     def test_missing_stat_fails(self):
         players = league()

@@ -35,21 +35,23 @@ def check_counts(candidate: list, baseline: list, label: str) -> None:
         raise SystemExit(f"{label} count {len(candidate)} is under 90% of {len(baseline)}")
 
 
-# Key stats per game-log category, with the share of rows that must be non-zero.
-# Floors sit well under live rates (2026 wk1-8): passing int is ~49%, so it gets 25%.
+# Key stats per game-log category. CORE volume stats must be non-zero in at
+# least half of a group's rows. ANY marks sparse stats (ints, sacks, QB rushing,
+# kicking/punting), which only need one non-zero row per position group.
 # Rushing/receiving lng is not listed: nflverse has no per-game long, so it is always 0.
 # passing car/primYds are QB rushing (primYds comes from the ESPN supplement).
-DEFAULT_FLOOR = 0.5
+CORE = 0.5
+ANY = "any"
 CATEGORY_STATS = {
-    "passing": {"cmp": 0.5, "att": 0.5, "passYds": 0.5, "passTd": 0.5, "int": 0.25,
-                "rtg": 0.5, "qbr": 0.5, "lng": 0.5, "car": 0.5, "primYds": 0.5},
-    "rushing": {"car": 0.5, "primYds": 0.5},
-    "receiving": {"rec": 0.5, "primYds": 0.5, "tgts": 0.5},
-    "defense": {"tackles": 0.5, "solo": 0.5},
-    "kicking": {"fgm": 0.5, "fga": 0.5, "pts": 0.5},
-    "punting": {"punts": 0.5, "puntYds": 0.5, "net": 0.5},
+    "passing": {"cmp": CORE, "att": CORE, "passYds": CORE, "rtg": CORE, "qbr": CORE, "lng": CORE,
+                "passTd": ANY, "int": ANY, "car": ANY, "primYds": ANY},
+    "rushing": {"car": CORE, "primYds": CORE},
+    "receiving": {"rec": CORE, "primYds": CORE, "tgts": CORE},
+    "defense": {"tackles": CORE, "solo": CORE, "sacks": ANY, "int": ANY},
+    "kicking": {"fgm": ANY, "fga": ANY, "pts": ANY},
+    "punting": {"punts": ANY, "puntYds": ANY, "net": ANY},
 }
-QB_RUSHING_STATS = {"car": 0.5, "rushYds": 0.5}
+QB_RUSHING_STATS = {"car": ANY, "rushYds": ANY}
 # Groups smaller than this are skipped: week 1 and odd buckets (a punter's
 # trick-play pass) are too noisy to judge. A whole category with no rows still fails.
 MIN_ROWS = 30
@@ -67,7 +69,10 @@ def _check_group(label: str, games: list, stats: dict, min_rows: int) -> None:
         return
     for stat, floor in stats.items():
         hits = sum(_nonzero(game.get(stat)) for game in games)
-        if hits < floor * len(games):
+        if floor == ANY:
+            if hits == 0:
+                raise SystemExit(f"{label} stat {stat} is zero or missing in all {len(games)} rows")
+        elif hits < floor * len(games):
             raise SystemExit(
                 f"{label} stat {stat}: {hits}/{len(games)} rows non-zero, under the {floor:.0%} floor"
             )
@@ -94,7 +99,12 @@ def check_category_stats(players: list, min_rows: int = MIN_ROWS) -> None:
             raise SystemExit(f"no {cat} game logs in the refresh")
     for (cat, position), games in sorted(groups.items()):
         label = f"{cat} (all players)" if position == "all" else f"{cat} by {position}-primary players"
-        _check_group(label, games, CATEGORY_STATS[cat], min_rows)
+        stats = CATEGORY_STATS[cat]
+        if position not in ("all", cat):
+            # Off-position rows (a WR's special-teams tackles) are judged on
+            # volume only: they legitimately never record a sack or an int.
+            stats = {stat: floor for stat, floor in stats.items() if floor != ANY}
+        _check_group(label, games, stats, min_rows)
 
 
 def check_qb_rushing(qb: dict, min_rows: int = MIN_ROWS) -> None:
