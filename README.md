@@ -2,7 +2,7 @@
 # ThePlayerProps
 Data: `data/raw.csv` -> `npm run prepare-data` -> `data/players.json`.
 Content: `npm run content` regenerates `data/articles.json` (trending/top-performance/matchup pages) + `public/search.json`. Runs automatically in `npm run build`.
-Schedule: cron `0 11 * * * cd /workspace/betstats && npm run content && npm run build` or `.github/workflows/refresh-content.yml` (deploy hook).
+Refresh: `.github/workflows/refresh-data.yml` rebuilds `data/raw.csv` from nflverse weekly stats (ESPN public JSON only for QB rating/long and third downs), writes the current `data/matchups/week-N.json`, and commits to `main` after validation. Vercel deploys that push. The job has `contents: read` by default and `contents: write` only on the commit job. Actions must be allowed to push to `main` (workflow permissions, and a bypass if a ruleset blocks the GitHub Actions bot). There is no deploy hook, so the old content workflow cannot double-deploy.
 Set `NEXT_PUBLIC_SITE_URL` to the final domain for canonical/sitemap URLs.
 
 ## Accounts (dashboard login)

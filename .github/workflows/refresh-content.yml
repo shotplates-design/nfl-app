@@ -1,13 +1,37 @@
-# Regenerates SEO content pages daily and redeploys via a Vercel Deploy Hook (set VERCEL_DEPLOY_HOOK secret).
+# Content pages are generated during `npm run build` on Vercel.
+# Data refresh and the only deploy live in refresh-data.yml, which pushes to main.
+# This workflow does not deploy, so it cannot double-deploy with that push.
 name: refresh-content
-on: { schedule: [{ cron: '0 11 * * *' }], workflow_dispatch: {} }
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-content
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 24 }
-      - run: python3 scripts/prepare_data.py || true   # only if data/raw.csv was updated
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: "24"
+          cache: npm
+      - run: python -m pip install -r scripts/requirements.txt
+      - name: Prepare player JSON when raw.csv is in the checkout
+        run: |
+          if [ -f data/raw.csv ]; then
+            python3 scripts/prepare_data.py
+          else
+            echo "data/raw.csv is not in the checkout. refresh-data.yml rebuilds player JSON."
+          fi
+      - run: npm ci
       - run: node scripts/generate-content.mjs
-      - run: curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

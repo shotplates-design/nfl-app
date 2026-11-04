@@ -1,0 +1,4107 @@
+{
+ "week": 7,
+ "updated": "2026-10-26T18:18:10-04:00",
+ "injury_source_note": "Final game designations from NFL.com Week 7 injury report (https://www.nfl.com/injuries/league/2026/reg7; Fri. Oct 23 reports, Sat. Oct 24 for MNF) cross-checked with NFL.com's all-games status article (https://www.nfl.com/news/nfl-week-7-injury-report-2026-season) and team sites; Saturday Oct 24 downgrades/IR/activations/elevations applied from team sites and the Sat. transactions log (https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/). practice_latest = last practice status shown on NFL.com; practice_wed kept from prior pull. prev_status = status in prior feed (2026-10-22 18:49 ET). Inactives not yet posted for any Sunday game at refresh (2026-10-25 07:37 ET). NE@CHI (TNF) unchanged/final. Bye: BUF, JAX, LAC, WAS. Refreshed 2026-10-25 11:04 ET: new Open-Meteo pull for outdoor late/1 PM games; Sunday-morning insider reports added as notes (statuses unchanged; official designations stand until inactives, ~11:30 AM ET for 1 PM games) from https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season and team/beat coverage. Refreshed 2026-10-25 11:41 ET: official inactives for all seven 1 PM games applied from team X posts/graphics and beat reporters (source_urls per game); Questionable/Doubtful players on inactive lists set to Out (prev_status kept). Late-window (4:05/4:25 PM, SNF, MNF) inactives not yet posted. New Open-Meteo pull for outdoor games. Refreshed 2026-10-26 18:18 ET (MNF pre-game): new Open-Meteo pull for Lincoln Financial Field; Barkley trending to play (Garafolo); PHI IR activations added. MNF inactives not yet posted at refresh time.",
+ "games": [
+  {
+   "away": "NE",
+   "home": "CHI",
+   "kickoff_et": "2026-10-22T20:15:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 57,
+    "wind_mph": 6,
+    "precip_pct": 0,
+    "impact": "none",
+    "note": "Soldier Field; sustained up to ~6 mph, gusts ~10 mph, precip chance 0% over game window. Open-Meteo hourly forecast (pulled 2026-10-22 18:49 ET); precip_pct = max probability over ~3h game window"
+   },
+   "injuries": [
+    {
+     "team": "NE",
+     "player": "Ben Brown",
+     "position": "C",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7"
+    },
+    {
+     "team": "NE",
+     "player": "Kevin Byard",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Chest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Active (not on inactive list, 6:45 PM ET)."
+    },
+    {
+     "team": "NE",
+     "player": "Channing Canada",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7"
+    },
+    {
+     "team": "NE",
+     "player": "Carlton Davis III",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Neck",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Ruled out Wed. by Mike Vrabel along with Vera-Tucker, Brown, Prunty, Canada; Charles Woods starts opposite Christian Gonzalez, Matt Pryor/Walter Rouse at guard. https://sports.yahoo.com/articles/patriots-coach-mike-vrabel-rules-184722893.html"
+    },
+    {
+     "team": "NE",
+     "player": "Christian Elliss",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Chest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Active (not on inactive list, 6:45 PM ET)."
+    },
+    {
+     "team": "NE",
+     "player": "Morgan Moses",
+     "position": "T",
+     "status": "Questionable",
+     "injury": "Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Active (not on inactive list, 6:45 PM ET)."
+    },
+    {
+     "team": "NE",
+     "player": "Karon Prunty",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7"
+    },
+    {
+     "team": "NE",
+     "player": "Alijah Vera-Tucker",
+     "position": "G",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Matt Pryor and Walter Rouse expected at guard with Vera-Tucker and Ben Brown out (Patriots Wire). https://sports.yahoo.com/articles/patriots-coach-mike-vrabel-rules-184722893.html"
+    },
+    {
+     "team": "NE",
+     "player": "Craig Woodson",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Active (not on inactive list, 6:45 PM ET)."
+    },
+    {
+     "team": "CHI",
+     "player": "T.J. Edwards",
+     "position": "LB",
+     "status": "Doubtful",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Inactive (official, 6:45 PM ET)."
+    },
+    {
+     "team": "CHI",
+     "player": "Kyle Monangai",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Thumb, Toe",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Inactive (confirmed 6:45 PM ET). Third straight missed game (toe). Rapoport: nearing return. D'Andre Swift leads backfield. https://bearswire.usatoday.com/story/sports/nfl/bears/2026/10/22/bears-vs-patriots-inactives-injuries-jonah-jackson-kyle-monangai/92377608007/",
+     "key_player": true
+    },
+    {
+     "team": "CHI",
+     "player": "Jack Sanborn",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7"
+    },
+    {
+     "team": "CHI",
+     "player": "Tyrique Stevenson",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hip",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "note": "Active (not on inactive list, 6:45 PM ET)."
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Kyle Monangai",
+     "missing_team": "CHI",
+     "missing_position": "RB",
+     "teammate": "D'Andre Swift",
+     "teammate_position": "RB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "carries": 12.5,
+      "rush_yds": 43.5,
+      "targets": 5.0,
+      "receptions": 4.0,
+      "rec_yds": 28.0,
+      "tds": 1.5,
+      "weeks": "26W5, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 19,
+      "carries": 14.5,
+      "rush_yds": 70.8,
+      "targets": 2.8,
+      "receptions": 2.2,
+      "rec_yds": 19.5,
+      "tds": 0.7,
+      "weeks": "25W2, 25W3, 25W4, 25W6, 25W7, 25W8, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W17, 25W18, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Without Monangai (2 games, 26W5-W6): Swift 12.5 car/43.5 rush yds but 5.0 targets/1.5 TDs vs 14.5/70.8/2.8/0.7 with (19 games). More receiving work, less rushing efficiency.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 6). 'Without' = missing player had 0 offensive snaps; games where he played under 20% of snaps are excluded. Small sample."
+    },
+    {
+     "missing_player": "Kyle Monangai",
+     "missing_team": "CHI",
+     "missing_position": "RB",
+     "teammate": "Roschon Johnson",
+     "teammate_position": "RB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "carries": 9.0,
+      "rush_yds": 28.5,
+      "targets": 4.5,
+      "receptions": 3.5,
+      "rec_yds": 34.0,
+      "tds": 0.5,
+      "weeks": "26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "carries": 1.5,
+      "rush_yds": 8.2,
+      "targets": 0.2,
+      "receptions": 0.2,
+      "rec_yds": 1.8,
+      "tds": 0.0,
+      "weeks": "25W6, 25W7, 26W2, 26W4"
+     },
+     "takeaway": "Johnson jumps from 1.5 to 9.0 carries and 0.2 to 4.5 targets without Monangai (2 games). Tiny sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 6). 'Without' = missing player had 0 offensive snaps; games where he played under 20% of snaps are excluded. Small sample."
+    },
+    {
+     "missing_player": "Kyle Monangai",
+     "missing_team": "CHI",
+     "missing_position": "RB",
+     "teammate": "Luther Burden III",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "targets": 7.0,
+      "receptions": 6.0,
+      "rec_yds": 71.0,
+      "rec_tds": 0.0,
+      "weeks": "26W5, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 18,
+      "targets": 4.9,
+      "receptions": 3.6,
+      "rec_yds": 48.6,
+      "rec_tds": 0.2,
+      "weeks": "25W2, 25W3, 25W4, 25W6, 25W7, 25W8, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W17, 25W18, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Burden 4.9 to 7.0 targets, 48.6 to 71.0 rec yds without Monangai (2 games). Tiny sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 6). 'Without' = missing player had 0 offensive snaps; games where he played under 20% of snaps are excluded. Small sample."
+    },
+    {
+     "missing_player": "Kyle Monangai",
+     "missing_team": "CHI",
+     "missing_position": "RB",
+     "teammate": "Colston Loveland",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "targets": 6.0,
+      "receptions": 4.0,
+      "rec_yds": 42.0,
+      "rec_tds": 0.5,
+      "weeks": "26W5, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 19,
+      "targets": 5.2,
+      "receptions": 3.5,
+      "rec_yds": 41.7,
+      "rec_tds": 0.3,
+      "weeks": "25W2, 25W3, 25W6, 25W7, 25W8, 25W9, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W17, 25W18, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Little change for Loveland (5.2 vs 6.0 targets, ~42 yds) (2 games without).",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 6). 'Without' = missing player had 0 offensive snaps; games where he played under 20% of snaps are excluded. Small sample."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives": {
+    "NE": [
+     "CB Carlton Davis III",
+     "CB Karon Prunty",
+     "CB Channing Canada",
+     "C Ben Brown",
+     "DT Joshua Farmer",
+     "QB Behren Morton (3rd QB)"
+    ],
+    "CHI": [
+     "QB Case Keenum (emergency 3rd QB)",
+     "RB Kyle Monangai",
+     "DB Nick McCloud",
+     "LB T.J. Edwards",
+     "LB Jack Sanborn",
+     "OL Jordan McFadden",
+     "DL Jayden Loving"
+    ],
+    "source_urls": [
+     "https://x.com/Patriots/status/2113401409408516330",
+     "https://x.com/ChicagoBears/status/2113401280110461333"
+    ]
+   },
+   "inactives_note": "Official inactives posted 6:45 PM ET Oct 22 (team X posts, read from graphics). CHI: Doubtful LB T.J. Edwards inactive; Questionable CB Tyrique Stevenson active. NE: all four Questionables (T Morgan Moses, LB Christian Elliss, S Kevin Byard, S Craig Woodson) active. NE graphic lists 6 inactives and does not include ruled-out G Alijah Vera-Tucker (no roster move found; possibly a pending IR/roster move - unconfirmed, he remains Out per final report). Bears G Jonah Jackson (no designation) not inactive."
+  },
+  {
+   "away": "PIT",
+   "home": "NO",
+   "kickoff_et": "2026-10-25T09:30:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 60,
+    "wind_mph": 16,
+    "precip_pct": 0,
+    "impact": "major",
+    "note": "Stade de France, Saint-Denis/Paris (NO home); Open-Meteo best-match (pulled 2026-10-25 07:37 ET) game window 9-12 ET: sustained 16-16 mph, gusts 31-34 mph (max 34), precip ~0%, temp ~60F. Other models gusts at kickoff hour: ECMWF 37-38, GFS 36-38, Meteo-France 37-38 mph, easing to ~26-31 mph by 12 ET. Observed METARs 11:00-11:30Z (7:00-7:30 ET): Le Bourget LFPB (~3 km from stadium) W 18-21 mph G 35 mph; CDG LFPG W 25 mph G 41 mph (11:00Z), TEMPO G 35-40 mph. CDG TAF: easing to ~12 mph G 23 mph after 16-18Z (12-2 PM ET, late in game). Stade de France roof covers stands only, field open. Still 'major' (gust threshold 32 mph): crosswind/gusty conditions hurt deep passing and kicking, mainly 1st half. Steelers' Fri. walkthrough at the stadium was cancelled due to weather.",
+    "obs": {
+     "station": "LFPB Le Bourget",
+     "time_utc": "2026-10-25T11:30Z",
+     "wind_mph": 18,
+     "gust_mph": 35
+    },
+    "sources": [
+     "https://open-meteo.com/",
+     "https://aviationweather.gov/api/data/metar?ids=LFPB,LFPG",
+     "https://aviationweather.gov/api/data/taf?ids=LFPG"
+    ]
+   },
+   "injuries": [
+    {
+     "team": "PIT",
+     "player": "Rico Dowdle",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.steelers.com/news/week-7-injury-report-saints",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Limited all week (Fri. practice cancelled by Paris storm; estimated report). Jaylen Warren would see extra volume if he sits.",
+     "prev_status": null
+    },
+    {
+     "team": "PIT",
+     "player": "Brandin Echols",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out Thu. by team.",
+     "prev_status": "Out"
+    },
+    {
+     "team": "PIT",
+     "player": "DeShon Elliott",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://sports.yahoo.com/articles/steelers-activate-deshon-elliott-ir-160708867.html",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR Sat. Oct 24; expected to make season debut. Full participant all week.",
+     "prev_status": null
+    },
+    {
+     "team": "PIT",
+     "player": "Cameron Heyward",
+     "position": "DT",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "PIT",
+     "player": "Sebastian Joseph-Day",
+     "position": "DE",
+     "status": "IR",
+     "injury": "Triceps",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on Reserve/Injured Thu. Oct 22.",
+     "prev_status": "IR"
+    },
+    {
+     "team": "PIT",
+     "player": "Jalen Ramsey",
+     "position": "CB",
+     "status": null,
+     "injury": "Wrist",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "PIT",
+     "player": "Ben Skowronek",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out Thu. by team (Paris game; team departs Thu. night). Missed Week 6 too.",
+     "prev_status": "Out"
+    },
+    {
+     "team": "PIT",
+     "player": "T.J. Watt",
+     "position": "LB",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NO",
+     "player": "Daniel Carlson",
+     "position": "K",
+     "status": null,
+     "injury": null,
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "prev_status": null
+    },
+    {
+     "team": "NO",
+     "player": "CJ Donaldson",
+     "position": "RB",
+     "status": null,
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NO",
+     "player": "Alvin Kamara",
+     "position": "RB",
+     "status": null,
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NO",
+     "player": "Cesar Ruiz",
+     "position": "G",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "NO",
+     "player": "Nathan Shepherd",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Illness, Not injury related - resting player",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    }
+   ],
+   "with_without": [],
+   "inactives_posted": false,
+   "inactives_note": "Inactives post ~90 min before kickoff (~8:00 AM ET); not yet posted at refresh.",
+   "game_state_note": "Kicked off 9:30 AM ET (Paris); in progress at this refresh. Pregame data retained from 07:37 ET pull."
+  },
+  {
+   "away": "SF",
+   "home": "ATL",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "Mercedes-Benz Stadium (retractable roof, typically closed); indoor, weather not a factor."
+   },
+   "injuries": [
+    {
+     "team": "SF",
+     "player": "Nick Bosa",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Knee, Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Mike Evans",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Ribs, Achilles",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out Fri. (Achilles tendinitis/ribs); Samuel also Out, so SF without both top WRs. https://sports.yahoo.com/fantasy/live/nfl-injury-tracker-week-7-latest-news-fantasy-implications-as-lamar-jackson-downgraded-to-out-saquon-barkley-back-at-practice-puka-nacua-questionable-200425606.html",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Luke Gifford",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Christian Kirk",
+     "position": "WR",
+     "status": null,
+     "injury": "Calf",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR Sat. Oct 24 and cleared to play (SF debut); NFL.com table still shows Questionable.",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Siran Neal",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "SF",
+     "player": "Deebo Samuel Sr.",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out Fri.; second straight missed game.",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Marques Sigle",
+     "position": "S",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Upton Stout",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "SF",
+     "player": "Garret Wallow",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Mykel Williams",
+     "position": "DE",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "SF",
+     "player": "Trent Williams",
+     "position": "T",
+     "status": null,
+     "injury": "Resting player",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Billy Bowman Jr.",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Beaux Collins",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hip",
+     "source_url": "https://www.cbssports.com/fantasy/football/news/falcons-beaux-collins-remains-on-ir-for-sunday/",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Remains on IR (not activated). Some outlets (Yahoo) still list Questionable.",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Kendal Daniels",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Neck",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "Divine Deablo",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Forearm",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Gervon Dexter Sr.",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "Samson Ebukam",
+     "position": "DE",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "C.J. Henderson",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "Michael Jerrell",
+     "position": "T",
+     "status": "IR",
+     "injury": "Biceps",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR (biceps) Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Brian Robinson",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Za'Darius Smith",
+     "position": "DE",
+     "status": "Questionable",
+     "injury": "Neck",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Expected to play per Rapoport (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "A.J. Terrell",
+     "position": "CB",
+     "status": null,
+     "injury": "Groin",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR Sat. Oct 24; designation dropped.",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Avieon Terrell",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "ATL",
+     "player": "Cameron Williams",
+     "position": "T",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ATL",
+     "player": "Olamide Zaccheaus",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). Sun. AM: Rapoport reports he is not expected to play (unconfirmed until inactives). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Mike Evans",
+     "missing_team": "SF",
+     "teammate": null,
+     "with_without_available": false,
+     "missing_player_status": "Out (official)",
+     "note": "Evans has played every SF game in 2026 (his first SF season); no without sample. With Evans: Kittle 6.0 tgt/56.2 yds, Purdy 243.3 pass yds (6 games). Samuel also Out, so the 1-game no-Samuel sample (Wk6: Kittle 8 tgt/69 yds/1 TD; Purdy 264 yds) included Evans and does not represent this week.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player"
+    },
+    {
+     "missing_player": "Deebo Samuel Sr.",
+     "missing_team": "SF",
+     "missing_position": "WR",
+     "teammate": "Mike Evans",
+     "teammate_position": "WR",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 5.0,
+      "receptions": 3.0,
+      "rec_yds": 94.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "targets": 6.8,
+      "receptions": 4.8,
+      "rec_yds": 65.2,
+      "rec_tds": 0.6,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Mike Evans with Deebo Samuel Sr. (5 g) vs without (1 g): tgt 6.8 -> 5.0, rec yds 65.2 -> 94.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Deebo Samuel Sr.",
+     "missing_team": "SF",
+     "missing_position": "WR",
+     "teammate": "George Kittle",
+     "teammate_position": "TE",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 8.0,
+      "receptions": 5.0,
+      "rec_yds": 69.0,
+      "rec_tds": 1.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "targets": 5.6,
+      "receptions": 4.2,
+      "rec_yds": 53.6,
+      "rec_tds": 0.8,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "George Kittle with Deebo Samuel Sr. (5 g) vs without (1 g): tgt 5.6 -> 8.0, rec yds 53.6 -> 69.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Deebo Samuel Sr.",
+     "missing_team": "SF",
+     "missing_position": "WR",
+     "teammate": "Brock Purdy",
+     "teammate_position": "QB",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "pass_att": 29.0,
+      "pass_yds": 264.0,
+      "pass_tds": 1.0,
+      "ints": 0.0,
+      "carries": 5.0,
+      "rush_yds": 28.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "pass_att": 28.4,
+      "pass_yds": 239.2,
+      "pass_tds": 2.6,
+      "ints": 0.4,
+      "carries": 5.0,
+      "rush_yds": 25.6,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Brock Purdy with Deebo Samuel Sr. (5 g) vs without (1 g): pass yds 239.2 -> 264.0, pass TD 2.6 -> 1.0, rush yds 25.6 -> 28.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET. ATL: Questionables WR Olamide Zaccheaus and CB Avieon Terrell INACTIVE; Za'Darius Smith, Gervon Dexter, Samson Ebukam, C.J. Henderson, Kendal Daniels active. QB Andy Dalton (no injury designation) also inactive. SF: all as expected; Questionables S Siran Neal and CB Upton Stout active. SF list via 49ers beat writer Matt Barrows (team graphic not retrieved).",
+   "inactives": {
+    "SF": [
+     "QB Kurtis Rourke (3rd QB)",
+     "DE Nick Bosa",
+     "WR Mike Evans",
+     "LB Luke Gifford",
+     "WR Deebo Samuel Sr.",
+     "S Marques Sigle",
+     "LB Garret Wallow"
+    ],
+    "ATL": [
+     "QB Jack Strand (3rd QB)",
+     "QB Andy Dalton",
+     "LB Divine Deablo",
+     "WR Olamide Zaccheaus",
+     "CB Avieon Terrell",
+     "RB Brian Robinson Jr.",
+     "CB Billy Bowman Jr."
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379473772577078",
+     "https://x.com/i/status/2114380483643711512"
+    ]
+   }
+  },
+  {
+   "away": "CIN",
+   "home": "BAL",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 63,
+    "wind_mph": 1,
+    "precip_pct": 0,
+    "impact": "none",
+    "note": "M&T Bank Stadium; sustained up to ~5 mph, gusts ~6 mph, precip chance 0% (~0.0 mm) over game window. Open-Meteo hourly forecast (pulled 2026-10-25 11:41 ET); precip_pct = max probability over ~3h game window."
+   },
+   "injuries": [
+    {
+     "team": "BAL",
+     "player": "Rashod Bateman",
+     "position": "WR",
+     "status": null,
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "Calais Campbell",
+     "position": "DT",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "Jaylinn Hawkins",
+     "position": "S",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "Matthew Hibner",
+     "position": "TE",
+     "status": null,
+     "injury": "Hand",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "Lamar Jackson",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Ankle (high ankle sprain)",
+     "source_url": "https://www.baltimoreravens.com/news/lamar-jackson-out-against-bengals-week-7-tyler-huntley-third-straight-start",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Downgraded Questionable->Out Sat. Oct 24; third straight missed game. Tyler Huntley starts. Pelissero: Jackson took most 1st-team reps Fri. but team chose caution.",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "Tavius Robinson",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Pectoral",
+     "source_url": "https://www.baltimoreravens.com/news/lamar-jackson-out-against-bengals-week-7-tyler-huntley-third-straight-start",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR Sat. (season-ending pectoral).",
+     "prev_status": null
+    },
+    {
+     "team": "BAL",
+     "player": "T.J. Tampa",
+     "position": "CB",
+     "status": "Doubtful",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "BAL",
+     "player": "Broderick Washington",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Lamar Jackson",
+     "missing_team": "BAL",
+     "missing_position": "QB",
+     "teammate": "Tyler Huntley",
+     "teammate_position": "QB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 5,
+      "pass_att": 24.0,
+      "pass_yds": 145.4,
+      "pass_tds": 1.0,
+      "ints": 0.0,
+      "carries": 6.0,
+      "rush_yds": 40.0,
+      "weeks": "25W6, 25W8, 25W17, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 3,
+      "pass_att": 6.3,
+      "pass_yds": 42.7,
+      "pass_tds": 0.0,
+      "ints": 0.0,
+      "carries": 3.0,
+      "rush_yds": 5.0,
+      "weeks": "25W15, 25W16, 26W4"
+     },
+     "takeaway": "Tyler Huntley with Lamar Jackson (3 g) vs without (5 g): pass yds 42.7 -> 145.4, pass TD 0.0 -> 1.0, rush yds 5.0 -> 40.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official; downgraded Sat.)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample. 'Without' games: 2025 Wk5 (Cooper Rush started), 2025 Wk6/8/17 and 2026 Wk5/6 (Huntley). Huntley's 'with' rows are mop-up snaps."
+    },
+    {
+     "missing_player": "Lamar Jackson",
+     "missing_team": "BAL",
+     "missing_position": "QB",
+     "teammate": "Derrick Henry",
+     "teammate_position": "RB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 6,
+      "carries": 22.8,
+      "rush_yds": 100.3,
+      "targets": 1.2,
+      "receptions": 0.5,
+      "rec_yds": 4.7,
+      "tds": 1.3,
+      "weeks": "25W5, 25W6, 25W8, 25W17, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": false,
+     "with": {
+      "games": 17,
+      "carries": 17.6,
+      "rush_yds": 89.8,
+      "targets": 1.4,
+      "receptions": 1.2,
+      "rec_yds": 10.9,
+      "tds": 0.9,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W9, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W18, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Derrick Henry with Lamar Jackson (17 g) vs without (6 g): car 17.6 -> 22.8, rush yds 89.8 -> 100.3, tgt 1.4 -> 1.2, TD 0.9 -> 1.3.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official; downgraded Sat.)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. 'Without' games: 2025 Wk5 (Cooper Rush started), 2025 Wk6/8/17 and 2026 Wk5/6 (Huntley). Huntley's 'with' rows are mop-up snaps."
+    },
+    {
+     "missing_player": "Lamar Jackson",
+     "missing_team": "BAL",
+     "missing_position": "QB",
+     "teammate": "Zay Flowers",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 6,
+      "targets": 8.2,
+      "receptions": 6.0,
+      "rec_yds": 55.0,
+      "rec_tds": 0.2,
+      "weeks": "25W5, 25W6, 25W8, 25W17, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": false,
+     "with": {
+      "games": 16,
+      "targets": 6.9,
+      "receptions": 5.1,
+      "rec_yds": 84.5,
+      "rec_tds": 0.4,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W9, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W18, 26W1, 26W3, 26W4"
+     },
+     "takeaway": "Zay Flowers with Lamar Jackson (16 g) vs without (6 g): tgt 6.9 -> 8.2, rec yds 84.5 -> 55.0.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official; downgraded Sat.)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. 'Without' games: 2025 Wk5 (Cooper Rush started), 2025 Wk6/8/17 and 2026 Wk5/6 (Huntley). Huntley's 'with' rows are mop-up snaps."
+    },
+    {
+     "missing_player": "Lamar Jackson",
+     "missing_team": "BAL",
+     "missing_position": "QB",
+     "teammate": "Rashod Bateman",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 6,
+      "targets": 2.7,
+      "receptions": 1.5,
+      "rec_yds": 21.3,
+      "rec_tds": 0.0,
+      "weeks": "25W5, 25W6, 25W8, 25W17, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": false,
+     "with": {
+      "games": 13,
+      "targets": 3.4,
+      "receptions": 2.0,
+      "rec_yds": 25.3,
+      "rec_tds": 0.2,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W9, 25W10, 25W13, 25W14, 25W16, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Rashod Bateman with Lamar Jackson (13 g) vs without (6 g): tgt 3.4 -> 2.7, rec yds 25.3 -> 21.3.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official; downgraded Sat.)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. 'Without' games: 2025 Wk5 (Cooper Rush started), 2025 Wk6/8/17 and 2026 Wk5/6 (Huntley). Huntley's 'with' rows are mop-up snaps."
+    },
+    {
+     "missing_player": "Lamar Jackson",
+     "missing_team": "BAL",
+     "missing_position": "QB",
+     "teammate": "Mark Andrews",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 6,
+      "targets": 4.2,
+      "receptions": 3.0,
+      "rec_yds": 23.3,
+      "rec_tds": 0.0,
+      "weeks": "25W5, 25W6, 25W8, 25W17, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": false,
+     "with": {
+      "games": 17,
+      "targets": 4.6,
+      "receptions": 3.1,
+      "rec_yds": 27.2,
+      "rec_tds": 0.4,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W9, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W18, 26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Mark Andrews with Lamar Jackson (17 g) vs without (6 g): tgt 4.6 -> 4.2, rec yds 27.2 -> 23.3.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official; downgraded Sat.)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. 'Without' games: 2025 Wk5 (Cooper Rush started), 2025 Wk6/8/17 and 2026 Wk5/6 (Huntley). Huntley's 'with' rows are mop-up snaps."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET (team graphics). BAL: Questionable DE Broderick Washington INACTIVE; Doubtful CB T.J. Tampa ACTIVE (not on list). Lamar Jackson inactive as expected; Tyler Huntley starts.",
+   "inactives": {
+    "CIN": [
+     "S Russ Yeast",
+     "C Connor Lew",
+     "OT Myles Hinton",
+     "DE Shemar Stewart",
+     "DT Landon Robinson"
+    ],
+    "BAL": [
+     "QB Lamar Jackson",
+     "WR Elijah Sarratt",
+     "FS Jaylinn Hawkins",
+     "G Andrew Vorhees",
+     "DE Broderick Washington"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379501907956156",
+     "https://x.com/i/status/2114378952513077343"
+    ]
+   }
+  },
+  {
+   "away": "NYG",
+   "home": "HOU",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "NRG Stadium (retractable roof, typically closed); indoor, weather not a factor."
+   },
+   "injuries": [
+    {
+     "team": "NYG",
+     "player": "Paulson Adebo",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Activated from IR Sat. Oct 24. https://www.giants.com/news/week-7-tracker-latest-news-notes-roster-moves-houston-texans-jameis-winston-jj-mccarthy",
+     "prev_status": null,
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYG",
+     "player": "Tremaine Edmunds",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Shoulder",
+     "source_url": "https://www.giants.com/news/week-7-tracker-latest-news-notes-roster-moves-houston-texans-jameis-winston-jj-mccarthy",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR Sat. Oct 24 (torn muscle; reported season-ending).",
+     "prev_status": null
+    },
+    {
+     "team": "NYG",
+     "player": "Jermaine Eluemunor",
+     "position": "T",
+     "status": "Questionable",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYG",
+     "player": "Jevon Holland",
+     "position": "S",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.giants.com/news/week-7-tracker-latest-news-notes-roster-moves-houston-texans-jameis-winston-jj-mccarthy",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Downgraded Questionable->Out Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "NYG",
+     "player": "Theo Johnson",
+     "position": "TE",
+     "status": "Out",
+     "injury": "Neck",
+     "source_url": "https://www.giants.com/news/week-7-tracker-latest-news-notes-roster-moves-houston-texans-jameis-winston-jj-mccarthy",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Downgraded Doubtful->Out Sat. Oct 24; did not travel to Houston. TE2 behind Isaiah Likely.",
+     "prev_status": null
+    },
+    {
+     "team": "NYG",
+     "player": "Charlie Jones",
+     "position": "WR",
+     "status": null,
+     "injury": "Achilles",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NYG",
+     "player": "Marcus Mbow",
+     "position": "T",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYG",
+     "player": "Greg Newsome II",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "NYG",
+     "player": "Tyler Nubin",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Neck",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYG",
+     "player": "Andrew Thomas",
+     "position": "T",
+     "status": null,
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Azeez Al-Shaair",
+     "position": "LB",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Reed Blankenship",
+     "position": "S",
+     "status": "Out",
+     "injury": "Concussion, Hand",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Trent Brown",
+     "position": "T",
+     "status": null,
+     "injury": "Wrist",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Nico Collins",
+     "position": "WR",
+     "status": null,
+     "injury": "Nir-rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Tank Dell",
+     "position": "WR",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Full Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated to active roster Sat.; designation removed. First game since Dec. 2024.",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Blake Fisher",
+     "position": "T",
+     "status": "Out",
+     "injury": "Thumb",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "David Montgomery",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Jalen Pitre",
+     "position": "S",
+     "status": "Out",
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "HOU",
+     "player": "Dalton Schultz",
+     "position": "TE",
+     "status": null,
+     "injury": "Quad",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "David Montgomery",
+     "missing_team": "HOU",
+     "missing_position": "RB",
+     "teammate": "Woody Marks",
+     "teammate_position": "RB",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "carries": 15.0,
+      "rush_yds": 56.0,
+      "targets": 3.0,
+      "receptions": 2.0,
+      "rec_yds": 25.0,
+      "tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "carries": 7.0,
+      "rush_yds": 21.8,
+      "targets": 2.2,
+      "receptions": 1.8,
+      "rec_yds": 7.8,
+      "tds": 0.5,
+      "weeks": "26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Woody Marks with David Montgomery (4 g) vs without (1 g): car 7.0 -> 15.0, rush yds 21.8 -> 56.0, tgt 2.2 -> 3.0, TD 0.5 -> 0.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "David Montgomery",
+     "missing_team": "HOU",
+     "missing_position": "RB",
+     "teammate": "Xavier Hutchinson",
+     "teammate_position": "WR",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 3.0,
+      "receptions": 2.0,
+      "rec_yds": 10.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "targets": 6.5,
+      "receptions": 3.0,
+      "rec_yds": 41.5,
+      "rec_tds": 0.0,
+      "weeks": "26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Xavier Hutchinson with David Montgomery (4 g) vs without (1 g): tgt 6.5 -> 3.0, rec yds 41.5 -> 10.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "David Montgomery",
+     "missing_team": "HOU",
+     "missing_position": "RB",
+     "teammate": "Dalton Schultz",
+     "teammate_position": "TE",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 6.0,
+      "receptions": 4.0,
+      "rec_yds": 33.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "targets": 6.8,
+      "receptions": 5.2,
+      "rec_yds": 53.5,
+      "rec_tds": 0.0,
+      "weeks": "26W1, 26W2, 26W3, 26W4"
+     },
+     "takeaway": "Dalton Schultz with David Montgomery (4 g) vs without (1 g): tgt 6.8 -> 6.0, rec yds 53.5 -> 33.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET. NYG: Questionable T Marcus Mbow INACTIVE; Questionables CB Paulson Adebo, T Jermaine Eluemunor, S Tyler Nubin active. HOU: WR Tank Dell active (Schefter). NYG list via Giants.com's Dan Salomone (retweeted by @Giants).",
+   "inactives": {
+    "NYG": [
+     "QB Jake Haener (3rd QB)",
+     "OL Josh Sills",
+     "TE Theo Johnson",
+     "OL Marcus Mbow",
+     "CB Greg Newsome II",
+     "CB Nikko Reed",
+     "S Jevon Holland"
+    ],
+    "HOU": [
+     "S Jalen Pitre",
+     "S Reed Blankenship",
+     "RB David Montgomery",
+     "T Blake Fisher",
+     "G Febechi Nwaiwu",
+     "T Nate Thomas",
+     "TE Marlin Klein"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379691377172584",
+     "https://x.com/i/status/2114378957659189623"
+    ]
+   }
+  },
+  {
+   "away": "MIA",
+   "home": "NYJ",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 65,
+    "wind_mph": 2,
+    "precip_pct": 0,
+    "impact": "none",
+    "note": "MetLife Stadium; sustained up to ~4 mph, gusts ~5 mph, precip chance 0% (~0.0 mm) over game window. Open-Meteo hourly forecast (pulled 2026-10-25 11:41 ET); precip_pct = max probability over ~3h game window."
+   },
+   "injuries": [
+    {
+     "team": "MIA",
+     "player": "Rob Beal Jr.",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Doubtful",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "MIA",
+     "player": "Caleb Douglas",
+     "position": "WR",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "MIA",
+     "player": "Willie Gay Jr.",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Illness",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "MIA",
+     "player": "Will Kacmarek",
+     "position": "TE",
+     "status": null,
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "MIA",
+     "player": "Kyle Louis",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Activated from IR Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "prev_status": null,
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "MIA",
+     "player": "Reese Taylor",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Quadricep",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "MIA",
+     "player": "Jaylen Wright",
+     "position": "RB",
+     "status": null,
+     "injury": "Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Demario Davis",
+     "position": "LB",
+     "status": null,
+     "injury": null,
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Breece Hall",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Quadricep",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). Still officially Questionable. Sun. AM: Rapoport (NFL Network) reports he is unlikely to play; may test the quad pregame. Not confirmed until inactives (~11:30 AM ET). Braelon Allen leads if out (~84-85 rush yds/g in 3 starts per Sun-Sentinel/USA Today). https://sports.yahoo.com/articles/jets-breece-hall-unlikely-play-133100683.html",
+     "key_player": true,
+     "prev_status": "Questionable",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYJ",
+     "player": "Francisco Mauigoa",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Quadricep",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR (quad) Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Adonai Mitchell",
+     "position": "WR",
+     "status": null,
+     "injury": "Finger",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Max Mitchell",
+     "position": "T",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Kene Nwangwu",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYJ",
+     "player": "Joseph Ossai",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "NYJ",
+     "player": "Dylan Parham",
+     "position": "G",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "NYJ",
+     "player": "Harrison Phillips",
+     "position": "DT",
+     "status": null,
+     "injury": null,
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "prev_status": null
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Breece Hall",
+     "missing_team": "NYJ",
+     "missing_position": "RB",
+     "teammate": "Braelon Allen",
+     "teammate_position": "RB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 3,
+      "carries": 18.3,
+      "rush_yds": 84.3,
+      "targets": 2.7,
+      "receptions": 1.7,
+      "rec_yds": 11.3,
+      "tds": 0.3,
+      "weeks": "26W4, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 7,
+      "carries": 5.3,
+      "rush_yds": 19.6,
+      "targets": 1.1,
+      "receptions": 0.9,
+      "rec_yds": 4.0,
+      "tds": 0.3,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Braelon Allen with Breece Hall (7 g) vs without (3 g): car 5.3 -> 18.3, rush yds 19.6 -> 84.3, tgt 1.1 -> 2.7, TD 0.3 -> 0.3. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Questionable (game-time decision)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Breece Hall",
+     "missing_team": "NYJ",
+     "missing_position": "RB",
+     "teammate": "Isaiah Davis",
+     "teammate_position": "RB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 3,
+      "carries": 3.0,
+      "rush_yds": 8.0,
+      "targets": 1.0,
+      "receptions": 0.7,
+      "rec_yds": 6.3,
+      "tds": 0.0,
+      "weeks": "26W4, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 16,
+      "carries": 2.7,
+      "rush_yds": 14.8,
+      "targets": 1.8,
+      "receptions": 1.3,
+      "rec_yds": 11.6,
+      "tds": 0.1,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 25W7, 25W8, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W17"
+     },
+     "takeaway": "Isaiah Davis with Breece Hall (16 g) vs without (3 g): car 2.7 -> 3.0, rush yds 14.8 -> 8.0, tgt 1.8 -> 1.0, TD 0.1 -> 0.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Questionable (game-time decision)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Breece Hall",
+     "missing_team": "NYJ",
+     "missing_position": "RB",
+     "teammate": "Garrett Wilson",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 3,
+      "targets": 7.0,
+      "receptions": 4.7,
+      "rec_yds": 58.3,
+      "rec_tds": 0.3,
+      "weeks": "26W4, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 10,
+      "targets": 8.6,
+      "receptions": 5.7,
+      "rec_yds": 63.8,
+      "rec_tds": 0.6,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 25W10, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Garrett Wilson with Breece Hall (10 g) vs without (3 g): tgt 8.6 -> 7.0, rec yds 63.8 -> 58.3. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Questionable (game-time decision)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Breece Hall",
+     "missing_team": "NYJ",
+     "missing_position": "RB",
+     "teammate": "Kenyon Sadiq",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 3,
+      "targets": 3.3,
+      "receptions": 1.0,
+      "rec_yds": 5.0,
+      "rec_tds": 0.0,
+      "weeks": "26W4, 26W5, 26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 3,
+      "targets": 4.7,
+      "receptions": 4.0,
+      "rec_yds": 47.7,
+      "rec_tds": 0.3,
+      "weeks": "26W1, 26W2, 26W3"
+     },
+     "takeaway": "Kenyon Sadiq with Breece Hall (3 g) vs without (3 g): tgt 4.7 -> 3.3, rec yds 47.7 -> 5.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Questionable (game-time decision)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET. NYJ: RB1 Breece Hall INACTIVE (fourth straight missed game; Braelon Allen leads backfield), plus Questionables RB Kene Nwangwu and G Dylan Parham inactive; WR Adonai Mitchell returns. MIA: Questionable LB Willie Gay Jr. and Doubtful Rob Beal Jr. inactive. NYJ full list via @nyjets post as relayed by beat coverage; Hall confirmed by Adam Schefter.",
+   "inactives": {
+    "MIA": [
+     "WR Jalen Tolbert",
+     "CB Marcellas Dial Jr.",
+     "CB Reese Taylor",
+     "ILB Willie Gay Jr.",
+     "EDGE Rob Beal Jr.",
+     "G DJ Campbell",
+     "T Chukwuebuka Godrick"
+    ],
+    "NYJ": [
+     "RB Breece Hall",
+     "RB Kene Nwangwu",
+     "G Dylan Parham",
+     "OL Max Mitchell",
+     "EDGE Joseph Ossai",
+     "CB Jarvis Brownlee Jr.",
+     "DL Jack Heflin"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379463781761326",
+     "https://x.com/i/status/2114378967063110123",
+     "https://x.com/i/status/2114379335867998488"
+    ]
+   }
+  },
+  {
+   "away": "TB",
+   "home": "CAR",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 64,
+    "wind_mph": 12,
+    "precip_pct": 0,
+    "impact": "minor",
+    "note": "Bank of America Stadium; sustained up to ~12 mph, gusts ~17 mph, precip chance 0% (~0.0 mm) over game window. Gusts/wind could slightly affect deep passing and kicking. Open-Meteo hourly forecast (pulled 2026-10-25 11:41 ET); precip_pct = max probability over ~3h game window. Impact changed none -> minor since 11:03 ET pull."
+   },
+   "injuries": [
+    {
+     "team": "TB",
+     "player": "Emeka Egbuka",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Concussion, Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Ruled out Fri.; still in concussion protocol.",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "TB",
+     "player": "Luke Goedeke",
+     "position": "T",
+     "status": "Out",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "TB",
+     "player": "Bucky Irving",
+     "position": "RB",
+     "status": null,
+     "injury": "Illness",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "TB",
+     "player": "Baker Mayfield",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Thumb",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Full Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Questionable, Full practice all week; Bowles: 'looks like he's ready to go'; expected to start (Schefter). Custom glove on right hand reported. https://www.si.com/betting/baker-mayfield-injury-update-betting-impact-for-buccaneers-vs-panthers-in-nfl-week-7-2026",
+     "key_player": true,
+     "prev_status": null,
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "TB",
+     "player": "Zyon McCollum",
+     "position": "CB",
+     "status": null,
+     "injury": "Illness",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "TB",
+     "player": "Christian Rozeboom",
+     "position": "LB",
+     "status": null,
+     "injury": "Finger",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "TB",
+     "player": "Antoine Winfield Jr.",
+     "position": "S",
+     "status": "Out",
+     "injury": "Rib",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Monroe Freeling",
+     "position": "T",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "CAR",
+     "player": "Chuba Hubbard",
+     "position": "RB",
+     "status": null,
+     "injury": "Rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Thomas Incoom",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Calf",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR (calf) Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Devin Lloyd",
+     "position": "LB",
+     "status": null,
+     "injury": "Rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Bam Martin-Scott",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Activated from IR Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "prev_status": null,
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "CAR",
+     "player": "Taylor Moton",
+     "position": "T",
+     "status": null,
+     "injury": "Rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Jaelan Phillips",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "CAR",
+     "player": "Darren Waller",
+     "position": "TE",
+     "status": null,
+     "injury": "Rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Emeka Egbuka",
+     "missing_team": "TB",
+     "teammate": null,
+     "with_without_available": false,
+     "missing_player_status": "Out (official)",
+     "note": "Egbuka has played every TB game in 2025-26 data; no without sample. Godwin with Egbuka: 5.3 tgt/38.4 yds (15 games); Otton 5.0/34.5 (22 games). Mayfield (expected back) has no games without Egbuka in this data.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player"
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET. TB: QB Baker Mayfield ACTIVE and expected to start (Schefter). CAR: Questionables T Monroe Freeling and LB Bam Martin-Scott active; RB AJ Dillon healthy scratch. CAR list via AP's Steve Reed.",
+   "inactives": {
+    "TB": [
+     "DL Demonte Capehart",
+     "WR Emeka Egbuka",
+     "CB Ayden Garnes",
+     "T Luke Goedeke",
+     "G Billy Schrauth",
+     "S Antoine Winfield Jr."
+    ],
+    "CAR": [
+     "QB Haynes King (3rd QB)",
+     "TE Ja'Tavion Sanders",
+     "OLB Jaelan Phillips",
+     "RB AJ Dillon",
+     "C Sam Hecht",
+     "OT Stone Forsythe",
+     "DT TeRah Edwards"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379456915681541",
+     "https://x.com/i/status/2114380718788714974"
+    ]
+   }
+  },
+  {
+   "away": "IND",
+   "home": "MIN",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "U.S. Bank Stadium (fixed roof); indoor, weather not a factor."
+   },
+   "injuries": [
+    {
+     "team": "IND",
+     "player": "CJ Allen",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Bryce Boettcher",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "IND",
+     "player": "Ashton Dulin",
+     "position": "WR",
+     "status": null,
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Sauce Gardner",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Anthony Gould",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Rigoberto Sanchez",
+     "position": "P",
+     "status": null,
+     "injury": "Right foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Grover Stewart",
+     "position": "DT",
+     "status": null,
+     "injury": null,
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "prev_status": null
+    },
+    {
+     "team": "IND",
+     "player": "Justin Walley",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "IND",
+     "player": "Tyler Warren",
+     "position": "TE",
+     "status": "Out",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "MIN",
+     "player": "Justin Jefferson",
+     "position": "WR",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "MIN",
+     "player": "Jordan Mason",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Thumb",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Activated from IR (thumb) Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "prev_status": null,
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Tyler Warren",
+     "missing_team": "IND",
+     "missing_position": "TE",
+     "teammate": "Josh Downs",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 1,
+      "targets": 8.0,
+      "receptions": 4.0,
+      "rec_yds": 40.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 21,
+      "targets": 5.8,
+      "receptions": 3.7,
+      "rec_yds": 38.8,
+      "rec_tds": 0.2,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 25W8, 25W9, 25W10, 25W12, 25W13, 25W14, 25W15, 25W16, 25W17, 25W18, 26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Josh Downs with Tyler Warren (21 g) vs without (1 g): tgt 5.8 -> 8.0, rec yds 38.8 -> 40.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Tyler Warren",
+     "missing_team": "IND",
+     "missing_position": "TE",
+     "teammate": "Keenan Allen",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 1,
+      "targets": 11.0,
+      "receptions": 8.0,
+      "rec_yds": 82.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "targets": 7.2,
+      "receptions": 4.5,
+      "rec_yds": 36.2,
+      "rec_tds": 0.2,
+      "weeks": "26W1, 26W2, 26W3, 26W5"
+     },
+     "takeaway": "Keenan Allen with Tyler Warren (4 g) vs without (1 g): tgt 7.2 -> 11.0, rec yds 36.2 -> 82.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Tyler Warren",
+     "missing_team": "IND",
+     "missing_position": "TE",
+     "teammate": "Will Mallory",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 1,
+      "targets": 6.0,
+      "receptions": 2.0,
+      "rec_yds": 20.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 2,
+      "targets": 0.5,
+      "receptions": 0.5,
+      "rec_yds": 8.0,
+      "rec_tds": 0.0,
+      "weeks": "25W5, 25W17"
+     },
+     "takeaway": "Will Mallory with Tyler Warren (2 g) vs without (1 g): tgt 0.5 -> 6.0, rec yds 8.0 -> 20.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Tyler Warren",
+     "missing_team": "IND",
+     "missing_position": "TE",
+     "teammate": "Daniel Jones",
+     "teammate_position": "QB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 1,
+      "pass_att": 42.0,
+      "pass_yds": 269.0,
+      "pass_tds": 1.0,
+      "ints": 2.0,
+      "carries": 3.0,
+      "rush_yds": 30.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 18,
+      "pass_att": 31.1,
+      "pass_yds": 229.0,
+      "pass_tds": 1.2,
+      "ints": 0.7,
+      "carries": 3.3,
+      "rush_yds": 10.5,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 25W7, 25W8, 25W9, 25W10, 25W12, 25W13, 25W14, 26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Daniel Jones with Tyler Warren (18 g) vs without (1 g): pass yds 229.0 -> 269.0, pass TD 1.2 -> 1.0, rush yds 10.5 -> 30.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    }
+   ],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET (team graphics). IND: Questionable LB Bryce Boettcher INACTIVE; Questionable CB Justin Walley active. MIN: RB Jordan Mason ACTIVE off IR.",
+   "inactives": {
+    "IND": [
+     "LB CJ Allen",
+     "LB Bryce Boettcher",
+     "CB Sauce Gardner",
+     "WR Anthony Gould",
+     "QB Riley Leonard (3rd QB)",
+     "G Dalton Tucker",
+     "TE Tyler Warren"
+    ],
+    "MIN": [
+     "S Jakobe Thomas",
+     "QB Max Brosmer",
+     "CB Chuck Demmings",
+     "RB Demond Claiborne",
+     "T Caleb Tiernan",
+     "DL Elijah Williams"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114379486116577377",
+     "https://x.com/i/status/2114378954115022984"
+    ]
+   }
+  },
+  {
+   "away": "CLE",
+   "home": "TEN",
+   "kickoff_et": "2026-10-25T13:00:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 70,
+    "wind_mph": 0,
+    "precip_pct": 0,
+    "impact": "none",
+    "note": "Nissan Stadium; sustained up to ~3 mph, gusts ~5 mph, precip chance 0% (~0.0 mm) over game window. Open-Meteo hourly forecast (pulled 2026-10-25 11:41 ET); precip_pct = max probability over ~3h game window."
+   },
+   "injuries": [
+    {
+     "team": "CLE",
+     "player": "Denzel Boston",
+     "position": "WR",
+     "status": null,
+     "injury": "Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "KC Concepcion",
+     "position": "WR",
+     "status": null,
+     "injury": "Calf/quad",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Kalia Davis",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Quadricep",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Grant Delpit",
+     "position": "S",
+     "status": null,
+     "injury": "Concussion/shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Dillon Gabriel",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Backup QB (Deshaun Watson has started all 6 games).",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Mike Hall Jr.",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Elgton Jenkins",
+     "position": "C",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Teven Jenkins",
+     "position": "G",
+     "status": "IR",
+     "injury": "Back",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR (back) Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Quinshon Judkins",
+     "position": "RB",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Dylan Sampson",
+     "position": "RB",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR (knee) Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Carson Schwesinger",
+     "position": "LB",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "CLE",
+     "player": "Denzel Ward",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hand",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). Will warm up pregame to test the hand per Rapoport (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "CLE",
+     "player": "Quincy Williams",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Neck",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "TEN",
+     "player": "Tony Adams",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "TEN",
+     "player": "John Franklin-Myers",
+     "position": "DE",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "TEN",
+     "player": "Dorian Mausi",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Foot",
+     "source_url": "https://titanswire.usatoday.com/story/sports/nfl/titans/2026/10/24/tennessee-titans-downgrade-lb-dorian-mausi-to-out/92417400007/",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Not activated from IR Sat.; downgraded to Out.",
+     "prev_status": null
+    },
+    {
+     "team": "TEN",
+     "player": "Calvin Ridley",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hip",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "TEN",
+     "player": "Tyjae Spears",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Not injury related - resting player, Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": "Questionable",
+     "note": "INACTIVE (official list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    },
+    {
+     "team": "TEN",
+     "player": "Kevin Winston Jr.",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Quadricep",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Active (not on inactive list, ~11:30 AM ET Oct 25). ",
+     "note_updated": "2026-10-25T11:41:40-04:00"
+    }
+   ],
+   "with_without": [],
+   "inactives_posted": true,
+   "inactives_note": "Official inactives posted ~11:30 AM ET. TEN: Questionables WR Calvin Ridley and RB Tyjae Spears INACTIVE (KJ Osborne elevated per ESPN's Turron Davenport); Tony Adams, Kevin Winston Jr. active. CLE: CB Denzel Ward and LB Quincy Williams active; RB Dylan Sampson active off IR. TEN list via Titans.com's Jim Wyatt.",
+   "inactives": {
+    "CLE": [
+     "QB Taylen Green (3rd QB)",
+     "LB Justin Jefferson",
+     "CB Noah Igbinoghene",
+     "RB Audric Estime",
+     "DT Mike Hall Jr.",
+     "C Parker Brailsford"
+    ],
+    "TEN": [
+     "WR Calvin Ridley",
+     "RB Tyjae Spears",
+     "RB Nick Singleton",
+     "TE Kylen Granson",
+     "T Brandon Crenshaw-Dickson",
+     "DT Jackie Marshall",
+     "CB Jaylon Jones"
+    ],
+    "source_urls": [
+     "https://x.com/i/status/2114378959689568680",
+     "https://x.com/i/status/2114378978093920745",
+     "https://x.com/i/status/2114379062055743599"
+    ]
+   }
+  },
+  {
+   "away": "DEN",
+   "home": "ARI",
+   "kickoff_et": "2026-10-25T16:05:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "State Farm Stadium (retractable roof; open/closed decision made by team near game time); indoor/roofed, weather not a factor (ARI roof status TBD)."
+   },
+   "injuries": [
+    {
+     "team": "DEN",
+     "player": "Tyler Badie",
+     "position": "RB",
+     "status": "IR",
+     "injury": "Thumb",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR Sat. Oct 24 (RB4 by carries).",
+     "prev_status": null
+    },
+    {
+     "team": "DEN",
+     "player": "Jonah Coleman",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR (ankle) Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "prev_status": null
+    },
+    {
+     "team": "DEN",
+     "player": "Jonah Elliss",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Ankle",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR Sat. Oct 24.",
+     "prev_status": null
+    },
+    {
+     "team": "DEN",
+     "player": "Talanoa Hufanga",
+     "position": "S",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "DEN",
+     "player": "Pat Surtain II",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Sun. AM: Rapoport reports he is unlikely to play; good chance he returns next week (unconfirmed until inactives). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:04:39-04:00"
+    },
+    {
+     "team": "DEN",
+     "player": "Jaylen Waddle",
+     "position": "WR",
+     "status": null,
+     "injury": "Chest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Budda Baker",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Groin, Illness",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Expected to play per Rapoport (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:04:39-04:00"
+    },
+    {
+     "team": "ARI",
+     "player": "Carson Beck",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "key_player": true,
+     "prev_status": null,
+     "note": "Backup QB (behind starter Jacoby Brissett). DNP Thu/Fri; still Questionable (back spasms), no game-day decision as of 2:15 PM ET. https://www.azcardinals.com/news/injury-report-week-7-vs-broncos",
+     "note_updated": "2026-10-25T14:12:07-04:00"
+    },
+    {
+     "team": "ARI",
+     "player": "Jon Gaines II",
+     "position": "G",
+     "status": "Out",
+     "injury": "Knee, Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Jeremiyah Love",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Max Melton",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Walter Nolen",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Darius Robinson",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Isaac Seumalo",
+     "position": "G",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Josh Sweat",
+     "position": "LB",
+     "status": null,
+     "injury": "Nir/rest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Garrett Williams",
+     "position": "CB",
+     "status": null,
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Jedrick Wills",
+     "position": "T",
+     "status": null,
+     "injury": "Illness",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "ARI",
+     "player": "Andrew Wingard",
+     "position": "S",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Jeremiyah Love",
+     "missing_team": "ARI",
+     "missing_position": "RB",
+     "teammate": "Tyler Allgeier",
+     "teammate_position": "RB",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "carries": 18.0,
+      "rush_yds": 38.0,
+      "targets": 2.0,
+      "receptions": 1.0,
+      "rec_yds": 10.0,
+      "tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "carries": 7.0,
+      "rush_yds": 23.8,
+      "targets": 2.4,
+      "receptions": 2.4,
+      "rec_yds": 8.8,
+      "tds": 0.2,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Tyler Allgeier with Jeremiyah Love (5 g) vs without (1 g): car 7.0 -> 18.0, rush yds 23.8 -> 38.0, tgt 2.4 -> 2.0, TD 0.2 -> 0.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Jeremiyah Love",
+     "missing_team": "ARI",
+     "missing_position": "RB",
+     "teammate": "Michael Wilson",
+     "teammate_position": "WR",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 7.0,
+      "receptions": 4.0,
+      "rec_yds": 32.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "targets": 10.2,
+      "receptions": 5.8,
+      "rec_yds": 57.6,
+      "rec_tds": 0.2,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Michael Wilson with Jeremiyah Love (5 g) vs without (1 g): tgt 10.2 -> 7.0, rec yds 57.6 -> 32.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    },
+    {
+     "missing_player": "Jeremiyah Love",
+     "missing_team": "ARI",
+     "missing_position": "RB",
+     "teammate": "Trey McBride",
+     "teammate_position": "TE",
+     "seasons": "2026",
+     "without": {
+      "games": 1,
+      "targets": 9.0,
+      "receptions": 7.0,
+      "rec_yds": 53.0,
+      "rec_tds": 0.0,
+      "weeks": "26W6"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 5,
+      "targets": 11.2,
+      "receptions": 8.4,
+      "rec_yds": 61.6,
+      "rec_tds": 0.6,
+      "weeks": "26W1, 26W2, 26W3, 26W4, 26W5"
+     },
+     "takeaway": "Trey McBride with Jeremiyah Love (5 g) vs without (1 g): tgt 11.2 -> 9.0, rec yds 61.6 -> 53.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample."
+    }
+   ],
+   "inactives_posted": false,
+   "inactives_note": "As of 2:36 PM ET, only pre-ruled-out players listed (DEN: Badie, Elliss, Hufanga; ARI: Wingard, Love, Nolen) per https://www.fantasypros.com/nfl/players/inactives.php; full official inactives (Surtain, Beck) not yet confirmed."
+  },
+  {
+   "away": "LAR",
+   "home": "LV",
+   "kickoff_et": "2026-10-25T16:25:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "Allegiant Stadium (fixed roof); indoor, weather not a factor."
+   },
+   "injuries": [
+    {
+     "team": "LAR",
+     "player": "Nate Landman",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "LAR",
+     "player": "Trent McDuffie",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Groin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "LAR",
+     "player": "Puka Nacua",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Still Questionable (calf) as of 2:36 PM ET, no official decision. Schefter (ESPN, 7:45 AM ET): Rams optimistic he plays barring pregame setback. https://www.espn.com/nfl/story/_/id/50275162/source-rams-optimistic-puka-nacua-play-vs-raiders Unconfirmed until inactives (~2:55 PM ET).",
+     "key_player": true,
+     "prev_status": null,
+     "note_updated": "2026-10-25T14:36:00-04:00"
+    },
+    {
+     "team": "LV",
+     "player": "Brock Bowers",
+     "position": "TE",
+     "status": null,
+     "injury": "Hamstring/calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "LV",
+     "player": "Tonka Hemingway",
+     "position": "DT",
+     "status": null,
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "LV",
+     "player": "Carter Runyon",
+     "position": "TE",
+     "status": "Out",
+     "injury": "Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "LV",
+     "player": "Dont'e Thornton Jr.",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "LV",
+     "player": "Quay Walker",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Chest",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "LV",
+     "player": "Mike Washington Jr.",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Foot, Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null,
+     "note": "Game-time decision per ESPN's Jeremy Fowler (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:04:39-04:00"
+    }
+   ],
+   "with_without": [],
+   "inactives_posted": false,
+   "inactives_note": "As of 2:36 PM ET, full inactives not posted (due ~2:55 PM ET); only pre-ruled-out players listed per https://www.fantasypros.com/nfl/players/inactives.php."
+  },
+  {
+   "away": "GB",
+   "home": "DET",
+   "kickoff_et": "2026-10-25T16:25:00-04:00",
+   "weather": {
+    "indoor": true,
+    "temp_f": null,
+    "wind_mph": null,
+    "precip_pct": null,
+    "impact": "none",
+    "note": "Ford Field (fixed roof); indoor, weather not a factor."
+   },
+   "injuries": [
+    {
+     "team": "GB",
+     "player": "Aaron Banks",
+     "position": "G",
+     "status": "Questionable",
+     "injury": "Knee, Toe",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Zaire Franklin",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Shin",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Matthew Golden",
+     "position": "WR",
+     "status": null,
+     "injury": "Shoulder",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Jordan Love",
+     "position": "QB",
+     "status": null,
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Bo Melton",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Jordon Riley",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Achilles",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Benjamin St-Juste",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Christian Watson",
+     "position": "WR",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Savion Williams",
+     "position": "WR",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "DET",
+     "player": "Brian Branch",
+     "position": "S",
+     "status": null,
+     "injury": "Achilles",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from PUP Sat.; Lions removed him from game status report (no designation).",
+     "prev_status": null
+    },
+    {
+     "team": "DET",
+     "player": "Cade Mays",
+     "position": "C",
+     "status": null,
+     "injury": "Wrist",
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Activated from IR Sat.; removed from game status report.",
+     "prev_status": null
+    },
+    {
+     "team": "GB",
+     "player": "Josh Jacobs",
+     "position": "RB",
+     "status": null,
+     "injury": null,
+     "source_url": "https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "key_player": true,
+     "note": "Not an injury: activated from commissioner's exempt list Sat. Oct 24; Schefter: expected to play vs DET (first game of 2026). Further league discipline still possible.",
+     "prev_status": null
+    }
+   ],
+   "with_without": [],
+   "inactives_posted": false,
+   "inactives_note": "As of 2:36 PM ET, full inactives not posted (due ~2:55 PM ET); only pre-ruled-out players listed per https://www.fantasypros.com/nfl/players/inactives.php."
+  },
+  {
+   "away": "KC",
+   "home": "SEA",
+   "kickoff_et": "2026-10-25T20:20:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 54,
+    "wind_mph": 4,
+    "precip_pct": 12,
+    "impact": "none",
+    "note": "Lumen Field; light winds up to ~4 mph (gusts ~4 mph), precip chance 12% (~0.0 mm) over game window. No meaningful weather impact. Open-Meteo hourly forecast (pulled 2026-10-25 18:28 ET); precip_pct = max probability over ~3h game window. Impact changed minor -> none since 11:41 ET pull (gusts dropped from ~25 mph)."
+   },
+   "injuries": [
+    {
+     "team": "KC",
+     "player": "Travis Kelce",
+     "position": "TE",
+     "status": null,
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "Cooper McDonald",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Activated from IR Sat. Oct 24. https://whynfl.com/saturday-october-24-nfl-transactions-roundup-2026/",
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "Jaylon Moore",
+     "position": "T",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "Rashee Rice",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hamstring, Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "Josh Simmons",
+     "position": "T",
+     "status": null,
+     "injury": "Back/nir/personal",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "Brashard Smith",
+     "position": "RB",
+     "status": "IR",
+     "injury": "Hamstring",
+     "source_url": "https://www.profootballrumors.com/2026/10/minor-nfl-transactions-10-24-26",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Placed on IR Sat. Oct 24; Jaydn Ott signed from practice squad.",
+     "prev_status": null
+    },
+    {
+     "team": "KC",
+     "player": "L'Jarius Sneed",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Zach Charbonnet",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Full Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Ruled out Fri. by Mike Macdonald as part of ACL ramp-up plan despite full practices. https://www.seahawks.com/news/zach-charbonnet-ruled-out-other-seahawks-injury-updates-from-mike-macdonald",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Nick Emmanwori",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Hip",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Expected to play per Rapoport (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:04:39-04:00"
+    },
+    {
+     "team": "SEA",
+     "player": "DeMarcus Lawrence",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Drew Lock",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Elbow",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Backup QB; Limited all week (right elbow).",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Uchenna Nwosu",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Hip",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null,
+     "note": "Expected to play per Rapoport (Sun. AM). https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+     "note_updated": "2026-10-25T11:04:39-04:00"
+    },
+    {
+     "team": "SEA",
+     "player": "Connor O'Toole",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Rashid Shaheed",
+     "position": "WR",
+     "status": null,
+     "injury": "Hip",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Limited Participation in Practice",
+     "practice_latest": "Full Participation in Practice",
+     "note": "No game designation on final injury report (expected available).",
+     "injury_source": "https://www.cbssports.com/nfl/news/nfl-week-7-injury-report-ravens-lamar-jackson-jets-breece-hall/",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Chazz Surratt",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "SEA",
+     "player": "Drake Thomas",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_wed": "Did Not Participate In Practice",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "Rashee Rice",
+     "missing_team": "KC",
+     "missing_position": "WR",
+     "teammate": "Xavier Worthy",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 7,
+      "targets": 5.0,
+      "receptions": 3.1,
+      "rec_yds": 37.0,
+      "rec_tds": 0.1,
+      "weeks": "25W1, 25W4, 25W5, 25W6, 25W16, 25W17, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": false,
+     "with": {
+      "games": 11,
+      "targets": 5.5,
+      "receptions": 3.4,
+      "rec_yds": 37.2,
+      "rec_tds": 0.1,
+      "weeks": "25W7, 25W8, 25W9, 25W11, 25W12, 25W13, 25W14, 25W15, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Xavier Worthy with Rashee Rice (11 g) vs without (7 g): tgt 5.5 -> 5.0, rec yds 37.2 -> 37.0.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded."
+    },
+    {
+     "missing_player": "Rashee Rice",
+     "missing_team": "KC",
+     "missing_position": "WR",
+     "teammate": "Tyquan Thornton",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 6,
+      "targets": 4.2,
+      "receptions": 2.2,
+      "rec_yds": 45.3,
+      "rec_tds": 0.5,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": false,
+     "with": {
+      "games": 11,
+      "targets": 1.7,
+      "receptions": 1.1,
+      "rec_yds": 24.9,
+      "rec_tds": 0.0,
+      "weeks": "25W7, 25W8, 25W9, 25W11, 25W12, 25W13, 25W14, 25W15, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Tyquan Thornton with Rashee Rice (11 g) vs without (6 g): tgt 1.7 -> 4.2, rec yds 24.9 -> 45.3.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded."
+    },
+    {
+     "missing_player": "Rashee Rice",
+     "missing_team": "KC",
+     "missing_position": "WR",
+     "teammate": "Travis Kelce",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 10,
+      "targets": 5.8,
+      "receptions": 4.1,
+      "rec_yds": 42.8,
+      "rec_tds": 0.2,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 25W16, 25W17, 25W18, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": false,
+     "with": {
+      "games": 11,
+      "targets": 6.6,
+      "receptions": 4.8,
+      "rec_yds": 64.3,
+      "rec_tds": 0.5,
+      "weeks": "25W7, 25W8, 25W9, 25W11, 25W12, 25W13, 25W14, 25W15, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Travis Kelce with Rashee Rice (11 g) vs without (10 g): tgt 6.6 -> 5.8, rec yds 64.3 -> 42.8.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded."
+    },
+    {
+     "missing_player": "Rashee Rice",
+     "missing_team": "KC",
+     "missing_position": "WR",
+     "teammate": "Patrick Mahomes",
+     "teammate_position": "QB",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 7,
+      "pass_att": 34.7,
+      "pass_yds": 255.1,
+      "pass_tds": 1.6,
+      "ints": 0.4,
+      "carries": 6.1,
+      "rush_yds": 34.0,
+      "weeks": "25W1, 25W2, 25W3, 25W4, 25W5, 25W6, 26W6"
+     },
+     "partial_games_excluded": 1,
+     "small_sample": false,
+     "with": {
+      "games": 11,
+      "pass_att": 35.2,
+      "pass_yds": 262.3,
+      "pass_tds": 1.6,
+      "ints": 1.0,
+      "carries": 3.3,
+      "rush_yds": 21.9,
+      "weeks": "25W7, 25W8, 25W9, 25W11, 25W12, 25W13, 25W14, 25W15, 26W1, 26W2, 26W3"
+     },
+     "takeaway": "Patrick Mahomes with Rashee Rice (11 g) vs without (7 g): pass yds 262.3 -> 255.1, pass TD 1.6 -> 1.6, rush yds 21.9 -> 34.0.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded."
+    }
+   ],
+   "inactives_posted": false,
+   "inactives_note": "Inactives post ~90 min before kickoff (~6:50 PM ET); not yet posted at 6:30 PM ET refresh. No designation changes since Fri. reports (checked chiefs.com, nfl.com, Chiefs Wire 10/25: Mahomes and Kelce set to play)."
+  },
+  {
+   "away": "DAL",
+   "home": "PHI",
+   "kickoff_et": "2026-10-26T20:15:00-04:00",
+   "weather": {
+    "indoor": false,
+    "temp_f": 59,
+    "wind_mph": 5,
+    "precip_pct": 0,
+    "impact": "none",
+    "note": "Lincoln Financial Field; sustained up to ~5 mph, gusts ~11 mph, precip chance 0% (~0.0 mm) over game window. Open-Meteo hourly forecast (pulled 2026-10-26 18:18 ET); precip_pct = max probability over ~3h game window."
+   },
+   "injuries": [
+    {
+     "team": "DAL",
+     "player": "Marist Liufau",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Forearm",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "DAL",
+     "player": "P.J. Locke",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Foot",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "DAL",
+     "player": "Drew Shelton",
+     "position": "T",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "DAL",
+     "player": "KaVontae Turpin",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Ribs",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "DAL",
+     "player": "Dee Winters",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Calf",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Saquon Barkley",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "note": "Full practice Sat.; still Questionable. NFL Network's Mike Garafolo (Oct 26): 'trending toward playing.' Confirm at inactives (~6:45 PM ET). https://www.nbcsports.com/fantasy/football/player-news/2026-10-26/garafolo-saquon-trending-toward-playing-vs-dal ; https://www.nfl.com/news/eagles-rb-saquon-barkley-hamstring-questionable-to-play-monday-vs-cowboys-after-full-practice",
+     "key_player": true,
+     "prev_status": null,
+     "note_updated": "2026-10-26T18:18:10-04:00"
+    },
+    {
+     "team": "PHI",
+     "player": "Jakorian Bennett",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Grant Calcaterra",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Back",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Activated from IR Mon. Oct 26 afternoon (NBC Sports Philadelphia); expected to play. https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/eagles-cowboys-tanner-mckee-saquon-barkley-live-updates/761633/",
+     "note_updated": "2026-10-26T18:18:10-04:00"
+    },
+    {
+     "team": "PHI",
+     "player": "Michael Carter II",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Abdomen",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Landon Dickerson",
+     "position": "G",
+     "status": "Questionable",
+     "injury": "Knee, Pectoral",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Activated from IR Mon. Oct 26 afternoon (NBC Sports Philadelphia); expected to play. https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/eagles-cowboys-tanner-mckee-saquon-barkley-live-updates/761633/",
+     "note_updated": "2026-10-26T18:18:10-04:00"
+    },
+    {
+     "team": "PHI",
+     "player": "Jonathan Greenard",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Jalyx Hunt",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Knee, Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Limited Participation in Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "DeVonta Smith",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Hamstring",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out on Sat. final MNF report (hamstring).",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Nolan Smith",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Concussion",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Eli Stowers",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Quadricep",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Full Participation in Practice",
+     "prev_status": null,
+     "note": "Activated from IR Mon. Oct 26 afternoon (NBC Sports Philadelphia); expected to play. https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/eagles-cowboys-tanner-mckee-saquon-barkley-live-updates/761633/",
+     "note_updated": "2026-10-26T18:18:10-04:00"
+    },
+    {
+     "team": "PHI",
+     "player": "Dontayvion Wicks",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Ankle",
+     "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+     "practice_latest": "Did Not Participate In Practice",
+     "note": "Ruled out on Sat. final MNF report (ankle).",
+     "key_player": true,
+     "prev_status": null
+    },
+    {
+     "team": "PHI",
+     "player": "Jalen Hurts",
+     "position": "QB",
+     "status": "IR",
+     "injury": "Blood clots (calf)",
+     "injury_detail": "DVT and bilateral pulmonary emboli",
+     "source_url": "https://www.nfl.com/news/eagles-qb-jalen-hurts-out-2026-season-blood-clots",
+     "key_player": true,
+     "note": "On IR since Week 6 (Out/IR in week-6 feed). NFL Network/AP: likely out for rest of 2026 season. Tanner McKee starting.",
+     "prev_status": "IR"
+    }
+   ],
+   "with_without": [
+    {
+     "missing_player": "DeVonta Smith",
+     "missing_team": "PHI",
+     "missing_position": "WR",
+     "teammate": "Dontayvion Wicks",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "targets": 6.5,
+      "receptions": 4.0,
+      "rec_yds": 40.5,
+      "rec_tds": 0.0,
+      "weeks": "26W4, 26W5"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "targets": 4.8,
+      "receptions": 2.8,
+      "rec_yds": 50.8,
+      "rec_tds": 0.2,
+      "weeks": "26W1, 26W2, 26W3, 26W6"
+     },
+     "takeaway": "Dontayvion Wicks with DeVonta Smith (4 g) vs without (2 g): tgt 4.8 -> 6.5, rec yds 50.8 -> 40.5. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample. Confounded: Smith's 2026 'without' games (Wk4-5) were with Jalen Hurts; Hurts is now on IR (Tanner McKee starts), and Wicks is also Out, so PHI has no sample without both Smith and Wicks. QB split dropped (Hurts on IR)."
+    },
+    {
+     "missing_player": "DeVonta Smith",
+     "missing_team": "PHI",
+     "missing_position": "WR",
+     "teammate": "Makai Lemon",
+     "teammate_position": "WR",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 2,
+      "targets": 6.5,
+      "receptions": 4.0,
+      "rec_yds": 35.0,
+      "rec_tds": 0.0,
+      "weeks": "26W4, 26W5"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 4,
+      "targets": 3.8,
+      "receptions": 2.5,
+      "rec_yds": 14.2,
+      "rec_tds": 0.0,
+      "weeks": "26W1, 26W2, 26W3, 26W6"
+     },
+     "takeaway": "Makai Lemon with DeVonta Smith (4 g) vs without (2 g): tgt 3.8 -> 6.5, rec yds 14.2 -> 35.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample. Confounded: Smith's 2026 'without' games (Wk4-5) were with Jalen Hurts; Hurts is now on IR (Tanner McKee starts), and Wicks is also Out, so PHI has no sample without both Smith and Wicks. QB split dropped (Hurts on IR)."
+    },
+    {
+     "missing_player": "DeVonta Smith",
+     "missing_team": "PHI",
+     "missing_position": "WR",
+     "teammate": "Dallas Goedert",
+     "teammate_position": "TE",
+     "seasons": "2025-2026",
+     "without": {
+      "games": 1,
+      "targets": 9.0,
+      "receptions": 6.0,
+      "rec_yds": 38.0,
+      "rec_tds": 0.0,
+      "weeks": "26W5"
+     },
+     "partial_games_excluded": 0,
+     "small_sample": true,
+     "with": {
+      "games": 18,
+      "targets": 5.4,
+      "receptions": 3.9,
+      "rec_yds": 40.7,
+      "rec_tds": 0.7,
+      "weeks": "25W1, 25W3, 25W4, 25W5, 25W6, 25W7, 25W8, 25W10, 25W11, 25W12, 25W13, 25W14, 25W15, 25W16, 25W17, 26W1, 26W2, 26W6"
+     },
+     "takeaway": "Dallas Goedert with DeVonta Smith (18 g) vs without (1 g): tgt 5.4 -> 9.0, rec yds 40.7 -> 38.0. Small sample.",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
+     "extra_sources": [
+      "https://github.com/nflverse/nflverse-data/releases/tag/snap_counts"
+     ],
+     "missing_player_status": "Out (official)",
+     "note": "Computed from nflverse weekly stats + snap counts (REG 2025-26, through 2026 Wk 7 TNF). 'Without' = missing player had 0 offensive snaps for this team; games where he played under 20% of snaps excluded. Small sample. Confounded: Smith's 2026 'without' games (Wk4-5) were with Jalen Hurts; Hurts is now on IR (Tanner McKee starts), and Wicks is also Out, so PHI has no sample without both Smith and Wicks. QB split dropped (Hurts on IR)."
+    },
+    {
+     "missing_player": "Dontayvion Wicks",
+     "missing_team": "PHI",
+     "teammate": null,
+     "with_without_available": false,
+     "missing_player_status": "Out (official)",
+     "note": "Wicks joined PHI in 2026 and has played every game (no without sample). DeVonta Smith is also Out; see Smith splits. With Wicks: Makai Lemon 4.7 tgt/21.2 yds (6 g), Goedert 6.0 tgt/45.0 yds (4 g).",
+     "source_url": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player"
+    }
+   ],
+   "inactives_posted": false,
+   "inactives_note": "Inactives post ~90 min before kickoff; not yet posted at refresh. Final designations from Fri. reports (Sat. for MNF) plus Sat. moves.",
+   "roster_moves": {
+    "note": "PHI activated G Landon Dickerson, TE Eli Stowers, TE Grant Calcaterra from IR; elevated OLB Keyshawn James-Newby and RB Elijah Mitchell from practice squad (Oct 26). NFL.com: TE Dallas Goedert good to go.",
+    "source_urls": [
+     "https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/eagles-cowboys-tanner-mckee-saquon-barkley-live-updates/761633/",
+     "https://www.nfl.com/news/eagles-rb-saquon-barkley-hamstring-questionable-to-play-monday-vs-cowboys-after-full-practice"
+    ]
+   }
+  }
+ ]
+}

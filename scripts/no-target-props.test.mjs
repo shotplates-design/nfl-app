@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { GROUPS, bestHitProp, playerStreaks, topValueStreaks } from '../lib/streaks.mjs';
+import { GROUPS, HIT_RATE, bestHitProp, playerStreaks, topValueStreaks } from '../lib/streaks.mjs';
 import { DEFAULT_Q, POPULAR, POS_STATS, STATS, buildPgames, normalizeQuery } from '../lib/props.mjs';
 import { STATS_META } from '../lib/dashboard.mjs';
 
 const mentionsTargets = (s) => /targets?/i.test(String(s || ''));
+const notAProp = (key) => key === 'tgts' || key === 'tackles';
 const games = [
   { date: 'Sun 9/13', opp: 'vsDEN', cat: 'receiving', primYds: 10, rec: 1, tgts: 12, primTd: 0 },
   { date: 'Sun 9/20', opp: '@LAR', cat: 'receiving', primYds: 12, rec: 1, tgts: 11, primTd: 0 },
@@ -14,6 +15,16 @@ const games = [
   { date: 'Sun 10/11', opp: 'vsLAR', cat: 'receiving', primYds: 11, rec: 1, tgts: 12, primTd: 0 },
 ];
 const guy = { slug: 'target-guy', name: 'Target Guy', team: 'sea', cat: 'receiving', games };
+const tackler = {
+  slug: 'tackle-guy', name: 'Tackle Guy', team: 'sea', cat: 'defense',
+  games: [
+    { date: 'Sun 9/13', opp: 'vsDEN', cat: 'defense', tackles: 8 },
+    { date: 'Sun 9/20', opp: '@LAR', cat: 'defense', tackles: 7 },
+    { date: 'Sun 9/27', opp: 'vsSF', cat: 'defense', tackles: 6 },
+    { date: 'Sun 10/4', opp: '@ARI', cat: 'defense', tackles: 6 },
+    { date: 'Sun 10/11', opp: 'vsLAR', cat: 'defense', tackles: 2 },
+  ],
+};
 
 test('a receiver who only clears targets is not given a prop or a top streak', () => {
   assert.equal(bestHitProp(guy, [guy]), null);
@@ -22,6 +33,11 @@ test('a receiver who only clears targets is not given a prop or a top streak', (
     assert.notEqual(r.field, 'tgts');
     assert.equal(mentionsTargets(r.label), false);
   }
+});
+
+test('a defender who only clears tackles is not given a prop', () => {
+  assert.equal(HIT_RATE, 0.6);
+  assert.equal(bestHitProp(tackler, [tackler]), null);
 });
 
 test('streak builder, dashboard charts, and SEO queries have no targets option', () => {
@@ -57,23 +73,26 @@ test('streak builder, dashboard charts, and SEO queries have no targets option',
   assert.equal(builder.includes('tgts'), false);
 });
 
-test('prop pages drop the targets column and game logs keep it', async () => {
+test('prop pages drop the targets column and game logs keep targets and tackles', async () => {
   const { CAT_STATS, propPageStats } = await import('../lib/data.ts');
   assert.ok(CAT_STATS.receiving.some(s => s[0] === 'tgts' && s[1] === 'Targets'));
   assert.ok(CAT_STATS.rushing.some(s => s[0] === 'tgts' && s[1] === 'Targets'));
+  assert.ok(CAT_STATS.defense.some(s => s[0] === 'tackles' && s[1] === 'Tackles'));
   const shown = propPageStats('receiving').map(s => s[0]);
   assert.deepEqual(shown, ['primYds', 'rec', 'primTd', 'lng']);
   for (const cat of Object.keys(CAT_STATS)) assert.equal(propPageStats(cat).some(s => s[0] === 'tgts'), false);
+  assert.ok(propPageStats('defense').some(s => s[0] === 'tackles'));
 });
 
-test('live best props, top streaks, sleepers, and the line explorer skip targets', async () => {
+test('live best props, top streaks, sleepers, and the line explorer skip targets and tackle props', async () => {
   const { players, streaksFor } = await import('../lib/data.ts');
   const { candidates, sleepers, SLEEPER_NOTE } = await import('../lib/bestprops.ts');
   assert.equal(mentionsTargets(SLEEPER_NOTE), false);
   for (const p of players) {
     const bp = bestHitProp(p, players);
     if (bp) {
-      assert.notEqual(bp.key, 'tgts');
+      assert.equal(notAProp(bp.key), false);
+      assert.ok(bp.rate + 1e-9 >= HIT_RATE);
       assert.equal(mentionsTargets(bp.text), false);
       assert.equal(mentionsTargets(bp.title), false);
     }
@@ -87,11 +106,12 @@ test('live best props, top streaks, sleepers, and the line explorer skip targets
     assert.equal(mentionsTargets(r.label), false);
   }
   for (const r of candidates()) {
-    assert.notEqual(r.stat, 'tgts');
+    assert.equal(notAProp(r.stat), false);
     assert.equal(mentionsTargets(`${r.prop} ${r.label}`), false);
+    assert.ok(r.hits / r.games + 1e-9 >= 0.6);
   }
   for (const r of sleepers(50).all) {
-    assert.notEqual(r.stat, 'tgts');
+    assert.equal(notAProp(r.stat), false);
     assert.equal(mentionsTargets(`${r.prop} ${r.label}`), false);
   }
   for (const row of buildPgames(players).p) for (const g of row[4]) assert.equal(Object.hasOwn(g[2], 'tgts'), false);
