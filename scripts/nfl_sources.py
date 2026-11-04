@@ -82,8 +82,14 @@ def read_csv(path: Path):
         yield from csv.DictReader(handle)
 
 
+class MissingColumn(SystemExit):
+    """A source CSV lost a column we read. Fail loudly instead of writing zeros."""
+
+
 def num(row: dict, col: str) -> float:
-    value = row.get(col)
+    if col not in row:
+        raise MissingColumn(f"source row is missing expected column {col!r}; refusing to fill zeros")
+    value = row[col]
     if value is None or value == "":
         return 0.0
     try:

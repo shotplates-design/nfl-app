@@ -35,6 +35,43 @@ def check_counts(candidate: list, baseline: list, label: str) -> None:
         raise SystemExit(f"{label} count {len(candidate)} is under 90% of {len(baseline)}")
 
 
+# Stats that must not all be zero across every game log of a category.
+# Counting fields (attempts, punts) are left out on purpose: a zeroed scrape
+# often keeps them, so the real yards, catches, and tackles are what we test.
+CATEGORY_STATS = {
+    "passing": ("cmp", "att", "passYds", "passTd"),
+    "rushing": ("car", "primYds"),
+    "receiving": ("rec", "primYds", "tgts"),
+    "defense": ("tackles", "solo"),
+    "kicking": ("fgm", "fga", "pts"),
+    "punting": ("punts", "puntYds"),
+}
+
+
+def _nonzero(value) -> bool:
+    try:
+        return float(value) != 0
+    except (TypeError, ValueError):
+        return False
+
+
+def check_category_stats(players: list) -> None:
+    """Fail if any stat in a category is zero or missing across all of its rows."""
+    rows: dict[str, list] = {cat: [] for cat in CATEGORY_STATS}
+    for player in players:
+        for game in player.get("games") or []:
+            cat = game.get("cat")
+            if cat in rows:
+                rows[cat].append(game)
+    for cat, stats in CATEGORY_STATS.items():
+        games = rows[cat]
+        if not games:
+            raise SystemExit(f"no {cat} game logs in the refresh")
+        for stat in stats:
+            if not any(_nonzero(game.get(stat)) for game in games):
+                raise SystemExit(f"{cat} stat {stat} is zero or missing in all {len(games)} rows")
+
+
 def check_week(path: Path) -> None:
     week = load(path)
     reject_betting(week)
@@ -100,6 +137,7 @@ def main() -> None:
         raise SystemExit("players.json must be a list")
     reject_betting(candidate_players)
     check_counts(candidate_players, baseline_players, "players")
+    check_category_stats(candidate_players)
     candidate_games = count_games(candidate_players)
     baseline_games = count_games(baseline_players)
     if candidate_games < 0.9 * baseline_games:
