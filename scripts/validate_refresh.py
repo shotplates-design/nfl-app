@@ -41,10 +41,11 @@ def check_counts(candidate: list, baseline: list, label: str) -> None:
 # Rushing/receiving lng is not listed: nflverse has no per-game long, so it is always 0.
 # passing car/primYds are QB rushing (primYds comes from the ESPN supplement).
 CORE = 0.5
+# passTd uses its own 10% floor (live rate ~74%).
 ANY = "any"
 CATEGORY_STATS = {
     "passing": {"cmp": CORE, "att": CORE, "passYds": CORE, "rtg": CORE, "qbr": CORE, "lng": CORE,
-                "passTd": ANY, "int": ANY, "car": ANY, "primYds": ANY},
+                "passTd": 0.1, "int": ANY, "car": ANY, "primYds": ANY},
     "rushing": {"car": CORE, "primYds": CORE},
     "receiving": {"rec": CORE, "primYds": CORE, "tgts": CORE},
     "defense": {"tackles": CORE, "solo": CORE, "sacks": ANY, "int": ANY},
@@ -52,8 +53,8 @@ CATEGORY_STATS = {
     "punting": {"punts": ANY, "puntYds": ANY, "net": ANY},
 }
 QB_RUSHING_STATS = {"car": ANY, "rushYds": ANY}
-# Groups smaller than this are skipped: week 1 and odd buckets (a punter's
-# trick-play pass) are too noisy to judge. A whole category with no rows still fails.
+# Position groups smaller than this are skipped (odd buckets such as a punter's
+# trick-play pass). Whole-category checks always run, whatever the row count.
 MIN_ROWS = 30
 
 
@@ -78,7 +79,16 @@ def _check_group(label: str, games: list, stats: dict, min_rows: int) -> None:
             )
 
 
-def check_category_stats(players: list, min_rows: int = MIN_ROWS) -> None:
+def category_counts(players: list) -> dict:
+    counts = {cat: 0 for cat in CATEGORY_STATS}
+    for player in players:
+        for game in player.get("games") or []:
+            if game.get("cat") in counts:
+                counts[game["cat"]] += 1
+    return counts
+
+
+def check_category_stats(players: list, baseline: list | None = None, min_rows: int = MIN_ROWS) -> None:
     """Check each category overall and per position group.
 
     players.json has no position field, so a player's primary category
@@ -97,6 +107,11 @@ def check_category_stats(players: list, min_rows: int = MIN_ROWS) -> None:
     for cat, stats in CATEGORY_STATS.items():
         if not groups.get((cat, "all")):
             raise SystemExit(f"no {cat} game logs in the refresh")
+    if baseline is not None:
+        have, had = category_counts(players), category_counts(baseline)
+        for cat in CATEGORY_STATS:
+            if have[cat] < 0.9 * had[cat]:
+                raise SystemExit(f"{cat} game logs {have[cat]} are under 90% of baseline {had[cat]}")
     for (cat, position), games in sorted(groups.items()):
         label = f"{cat} (all players)" if position == "all" else f"{cat} by {position}-primary players"
         stats = CATEGORY_STATS[cat]
@@ -104,14 +119,14 @@ def check_category_stats(players: list, min_rows: int = MIN_ROWS) -> None:
             # Off-position rows (a WR's special-teams tackles) are judged on
             # volume only: they legitimately never record a sack or an int.
             stats = {stat: floor for stat, floor in stats.items() if floor != ANY}
-        _check_group(label, games, stats, min_rows)
+        _check_group(label, games, stats, 0 if position == "all" else min_rows)
 
 
-def check_qb_rushing(qb: dict, min_rows: int = MIN_ROWS) -> None:
+def check_qb_rushing(qb: dict) -> None:
     games = [game for entry in (qb.get("players") or {}).values() for game in entry.get("games") or []]
     if not games:
         raise SystemExit("QB rushing supplement has no games")
-    _check_group("QB rushing supplement", games, QB_RUSHING_STATS, min_rows)
+    _check_group("QB rushing supplement", games, QB_RUSHING_STATS, 0)
 
 
 def check_week(path: Path) -> None:
@@ -179,7 +194,7 @@ def main() -> None:
         raise SystemExit("players.json must be a list")
     reject_betting(candidate_players)
     check_counts(candidate_players, baseline_players, "players")
-    check_category_stats(candidate_players)
+    check_category_stats(candidate_players, baseline_players)
     candidate_games = count_games(candidate_players)
     baseline_games = count_games(baseline_players)
     if candidate_games < 0.9 * baseline_games:

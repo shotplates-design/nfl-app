@@ -14,7 +14,8 @@ N = MIN_ROWS + 10
 
 
 def games(cat, n=N, value=3.0):
-    return [{"cat": cat, **{stat: value + i % 5 for stat in CATEGORY_STATS[cat]}} for i in range(n)]
+    step = 1 if value else 0  # value=0 gives fully zeroed rows
+    return [{"cat": cat, **{stat: value + step * (i % 5) for stat in CATEGORY_STATS[cat]}} for i in range(n)]
 
 
 def league():
@@ -122,10 +123,48 @@ class ZeroGate(unittest.TestCase):
         with self.assertRaises(SystemExit):
             check_category_stats(players)
 
-    def test_small_groups_are_skipped(self):
-        # Week-1-sized sample: every group under MIN_ROWS, even zeroed, is not judged.
-        players = [{"cat": c, "games": games(c, n=MIN_ROWS - 1, value=0)} for c in CATEGORY_STATS]
+    def test_small_position_group_is_skipped(self):
+        # A 29-row off-position group, fully zeroed, is not judged on its own.
+        players = league()
+        players.append({"id": "k2", "cat": "kicking", "games": games("punting", n=MIN_ROWS - 1, value=0)})
         check_category_stats(players)
+
+    def test_category_shrunk_to_29_zeroed_rows_fails(self):
+        players = [p for p in league() if p["cat"] != "kicking"]
+        players.append({"id": "k", "cat": "kicking", "games": games("kicking", n=MIN_ROWS - 1, value=0)})
+        with self.assertRaises(SystemExit):
+            check_category_stats(players)
+
+    def test_single_zeroed_passing_row_fails(self):
+        players = [p for p in league() if p["cat"] != "passing"]
+        players.append({"id": "qb", "cat": "passing", "games": games("passing", n=1, value=0)})
+        with self.assertRaises(SystemExit):
+            check_category_stats(players)
+
+    def test_small_good_category_passes(self):
+        # Week-1-sized kicking (25 rows) with real values is still checked and passes.
+        players = [p for p in league() if p["cat"] != "kicking"]
+        players.append({"id": "k", "cat": "kicking", "games": games("kicking", n=25)})
+        check_category_stats(players)
+
+    def test_category_shrunk_below_90pct_of_baseline_fails(self):
+        baseline = league()
+        players = league()
+        players[4]["games"] = players[4]["games"][: int(N * 0.85)]
+        with self.assertRaises(SystemExit) as caught:
+            check_category_stats(players, baseline)
+        self.assertIn("kicking", str(caught.exception))
+        check_category_stats(league(), baseline)
+
+    def test_passtd_floor(self):
+        players = league()
+        for i, game in enumerate(players[0]["games"]):
+            game["passTd"] = 1 if i < N // 5 else 0
+        check_category_stats(players)
+        for i, game in enumerate(players[0]["games"]):
+            game["passTd"] = 1 if i < 2 else 0
+        with self.assertRaises(SystemExit):
+            check_category_stats(players)
 
     def test_missing_category_fails(self):
         players = [p for p in league() if p["cat"] != "punting"]
@@ -133,7 +172,8 @@ class ZeroGate(unittest.TestCase):
             check_category_stats(players)
 
     def test_live_data_passes(self):
-        check_category_stats(json.loads((DATA / "players.json").read_text(encoding="utf-8")))
+        live = json.loads((DATA / "players.json").read_text(encoding="utf-8"))
+        check_category_stats(live, live)
         check_qb_rushing(json.loads((DATA / "supplemental" / "qb-rushing.json").read_text(encoding="utf-8")))
 
 
