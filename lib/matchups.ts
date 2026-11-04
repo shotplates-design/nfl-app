@@ -29,4 +29,4 @@ function attachConditions(w:any){
   if(!fs.existsSync(f)) return;
   const d=JSON.parse(fs.readFileSync(f,'utf8'));
   for(const g of w.games){ const c=(d.games||[]).find((x:any)=>feedCode(x.away)===g.awayCode&&feedCode(x.home)===g.homeCode);
-    if(c){ g.cond={weather:c.weather||null,injuries:c.injuries||[],with_without:c.with_without}; g.condUpdated=d.updated; } } }
+    if(c){ g.cond={weather:c.weather||null,injuries:c.injuries||[],with_without:c.with_without,inactives:c.inactives,inactives_note:c.inactives_note,inactives_posted:c.inactives_posted}; g.condUpdated=d.updated; } } }

@@ -1,0 +1,827 @@
+{
+ "season": 2026,
+ "week": 8,
+ "schedule_source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=8",
+ "schedule_checked": "2026-11-04",
+ "byes": [
+  "hou",
+  "no",
+  "nyg",
+  "sf"
+ ],
+ "notes": "Kickoffs from the ESPN public scoreboard (nflverse schedule if ESPN is unavailable). Team edges from nflverse season stats entering this week. No betting lines.",
+ "games": [
+  {
+   "away": "Panthers",
+   "home": "Packers",
+   "kickoff": "2026-10-29T20:15:00-04:00",
+   "network": "PRIME",
+   "venue": "Lambeau Field",
+   "analysis": {
+    "away_team": "Panthers",
+    "home_team": "Packers",
+    "overall_edge": 0.2318,
+    "lean": "Panthers clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.75,
+      "home": 0.7031,
+      "edge": 0.0469
+     },
+     "rushing": {
+      "away": 0.6406,
+      "home": 0.0312,
+      "edge": 0.6094
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.4453,
+      "home": 0.4062,
+      "edge": 0.0391
+     }
+    }
+   },
+   "away_strengths": [
+    "Receiving efficiency",
+    "Receiving first-down rate",
+    "Rush ball security",
+    "Pass defense",
+    "Pass TD prevention"
+   ],
+   "away_weaknesses": [
+    "Run defense",
+    "Rush TD prevention",
+    "Receiving ball security",
+    "Pass rush",
+    "Forced fumbles"
+   ],
+   "home_strengths": [
+    "Interceptions",
+    "Pass coverage",
+    "Receiving efficiency",
+    "Pass defense",
+    "Passing TD production"
+   ],
+   "home_weaknesses": [
+    "Rush efficiency",
+    "Rush first-down rate",
+    "Rush TD prevention",
+    "Forced fumbles",
+    "Rush ball security"
+   ]
+  },
+  {
+   "away": "Ravens",
+   "home": "Bills",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "CBS",
+   "venue": "Highmark Stadium",
+   "analysis": {
+    "away_team": "Ravens",
+    "home_team": "Bills",
+    "overall_edge": -0.1537,
+    "lean": "Bills clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.7031,
+      "home": 0.7656,
+      "edge": -0.0625
+     },
+     "rushing": {
+      "away": 0.7969,
+      "home": 0.8906,
+      "edge": -0.0938
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.3047,
+      "home": 0.6094,
+      "edge": -0.3047
+     }
+    }
+   },
+   "away_strengths": [
+    "Pass efficiency",
+    "QB/pass rating",
+    "Ball security through the air",
+    "Rush efficiency",
+    "Receiving ball security"
+   ],
+   "away_weaknesses": [
+    "Interceptions",
+    "Pass protection",
+    "Rush TD prevention",
+    "Fumble recoveries",
+    "Pass coverage"
+   ],
+   "home_strengths": [
+    "Pass efficiency",
+    "Rush first-down rate",
+    "Receiving efficiency",
+    "Rush efficiency",
+    "QB/pass rating"
+   ],
+   "home_weaknesses": [
+    "Rush ball security",
+    "Pass TD prevention",
+    "Pass coverage",
+    "Forced fumbles",
+    "Interceptions"
+   ]
+  },
+  {
+   "away": "Titans",
+   "home": "Bengals",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "CBS",
+   "venue": "Paycor Stadium",
+   "analysis": {
+    "away_team": "Titans",
+    "home_team": "Bengals",
+    "overall_edge": -0.0521,
+    "lean": "Bengals slight matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.1719,
+      "home": 0.4375,
+      "edge": -0.2656
+     },
+     "rushing": {
+      "away": 0.2969,
+      "home": 0.2969,
+      "edge": 0.0
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.8516,
+      "home": 0.7422,
+      "edge": 0.1094
+     }
+    }
+   },
+   "away_strengths": [
+    "Pass TD prevention",
+    "Pass protection",
+    "Interceptions",
+    "Pass rush",
+    "Rush ball security"
+   ],
+   "away_weaknesses": [
+    "Pass efficiency",
+    "Forced fumbles",
+    "Receiving ball security",
+    "Receiving efficiency",
+    "Passing TD production"
+   ],
+   "home_strengths": [
+    "QB/pass rating",
+    "Passing TD production",
+    "Pass rush",
+    "Pass TD prevention",
+    "Pass protection"
+   ],
+   "home_weaknesses": [
+    "Rush efficiency",
+    "Run defense",
+    "Pass defense",
+    "Receiving efficiency",
+    "Receiving ball security"
+   ]
+  },
+  {
+   "away": "Cardinals",
+   "home": "Cowboys",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "FOX",
+   "venue": "AT&T Stadium",
+   "analysis": {
+    "away_team": "Cardinals",
+    "home_team": "Cowboys",
+    "overall_edge": -0.2005,
+    "lean": "Cowboys clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.1406,
+      "home": 0.2188,
+      "edge": -0.0781
+     },
+     "rushing": {
+      "away": 0.1875,
+      "home": 0.3906,
+      "edge": -0.2031
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.3672,
+      "home": 0.6875,
+      "edge": -0.3203
+     }
+    }
+   },
+   "away_strengths": [
+    "Rush ball security",
+    "Receiving ball security",
+    "Forced fumbles",
+    "Fumble recoveries",
+    "Pass protection"
+   ],
+   "away_weaknesses": [
+    "Pass TD prevention",
+    "Receiving efficiency",
+    "Pass coverage",
+    "Pass defense",
+    "Pass efficiency"
+   ],
+   "home_strengths": [
+    "Pass protection",
+    "Receiving ball security",
+    "Rush first-down rate",
+    "Passing TD production",
+    "Rush ball security"
+   ],
+   "home_weaknesses": [
+    "Interceptions",
+    "Pass coverage",
+    "Rush TD prevention",
+    "Run defense",
+    "Fumble recoveries"
+   ]
+  },
+  {
+   "away": "Vikings",
+   "home": "Lions",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "FOX",
+   "venue": "Ford Field",
+   "analysis": {
+    "away_team": "Vikings",
+    "home_team": "Lions",
+    "overall_edge": -0.2604,
+    "lean": "Lions clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.4219,
+      "home": 0.8906,
+      "edge": -0.4688
+     },
+     "rushing": {
+      "away": 0.4375,
+      "home": 0.5469,
+      "edge": -0.1094
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.6172,
+      "home": 0.8203,
+      "edge": -0.2031
+     }
+    }
+   },
+   "away_strengths": [
+    "Pass coverage",
+    "Pass TD prevention",
+    "Rush TD prevention",
+    "Pass defense",
+    "Pass rush"
+   ],
+   "away_weaknesses": [
+    "Rush first-down rate",
+    "Receiving ball security",
+    "Passing TD production",
+    "Receiving first-down rate",
+    "Receiving efficiency"
+   ],
+   "home_strengths": [
+    "QB/pass rating",
+    "Ball security through the air",
+    "Pass rush",
+    "Receiving first-down rate",
+    "Passing TD production"
+   ],
+   "home_weaknesses": [
+    "Pass TD prevention",
+    "Fumble recoveries",
+    "Forced fumbles",
+    "Pass coverage",
+    "Rush ball security"
+   ]
+  },
+  {
+   "away": "Raiders",
+   "home": "Jets",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "FOX",
+   "venue": "MetLife Stadium",
+   "analysis": {
+    "away_team": "Raiders",
+    "home_team": "Jets",
+    "overall_edge": 0.2448,
+    "lean": "Raiders clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.5938,
+      "home": 0.4844,
+      "edge": 0.1094
+     },
+     "rushing": {
+      "away": 0.2812,
+      "home": 0.1406,
+      "edge": 0.1406
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.8203,
+      "home": 0.3359,
+      "edge": 0.4844
+     }
+    }
+   },
+   "away_strengths": [
+    "Passing TD production",
+    "Forced fumbles",
+    "Fumble recoveries",
+    "Rush ball security",
+    "Receiving first-down rate"
+   ],
+   "away_weaknesses": [
+    "Rush first-down rate",
+    "Run defense",
+    "Rush efficiency",
+    "Pass TD prevention",
+    "Pass coverage"
+   ],
+   "home_strengths": [
+    "Fumble recoveries",
+    "Forced fumbles",
+    "Ball security through the air",
+    "QB/pass rating",
+    "Receiving ball security"
+   ],
+   "home_weaknesses": [
+    "Interceptions",
+    "Receiving first-down rate",
+    "Pass protection",
+    "Rush efficiency",
+    "Rush ball security"
+   ]
+  },
+  {
+   "away": "Browns",
+   "home": "Steelers",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "CBS",
+   "venue": "Acrisure Stadium",
+   "analysis": {
+    "away_team": "Browns",
+    "home_team": "Steelers",
+    "overall_edge": 0.0,
+    "lean": "very close matchup",
+    "categories": {
+     "passing": {
+      "away": 0.5156,
+      "home": 0.5156,
+      "edge": 0.0
+     },
+     "rushing": {
+      "away": 0.6406,
+      "home": 0.5625,
+      "edge": 0.0781
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.3828,
+      "home": 0.4609,
+      "edge": -0.0781
+     }
+    }
+   },
+   "away_strengths": [
+    "Pass rush",
+    "Forced fumbles",
+    "Rush TD prevention",
+    "Ball security through the air",
+    "Pass defense"
+   ],
+   "away_weaknesses": [
+    "Pass protection",
+    "Rush first-down rate",
+    "Passing TD production",
+    "Rush ball security",
+    "Run defense"
+   ],
+   "home_strengths": [
+    "Rush ball security",
+    "Interceptions",
+    "Run defense",
+    "Pass TD prevention",
+    "Forced fumbles"
+   ],
+   "home_weaknesses": [
+    "Pass protection",
+    "Receiving first-down rate",
+    "Pass efficiency",
+    "Receiving efficiency",
+    "QB/pass rating"
+   ]
+  },
+  {
+   "away": "Falcons",
+   "home": "Buccaneers",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "FOX",
+   "venue": "Raymond James Stadium",
+   "analysis": {
+    "away_team": "Falcons",
+    "home_team": "Buccaneers",
+    "overall_edge": 0.138,
+    "lean": "Falcons clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.625,
+      "home": 0.3906,
+      "edge": 0.2344
+     },
+     "rushing": {
+      "away": 0.8906,
+      "home": 0.8281,
+      "edge": 0.0625
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.4766,
+      "home": 0.3594,
+      "edge": 0.1172
+     }
+    }
+   },
+   "away_strengths": [
+    "Fumble recoveries",
+    "Rush efficiency",
+    "Receiving ball security",
+    "Forced fumbles",
+    "Run defense"
+   ],
+   "away_weaknesses": [
+    "Ball security through the air",
+    "Interceptions",
+    "QB/pass rating",
+    "Rush TD prevention",
+    "Pass TD prevention"
+   ],
+   "home_strengths": [
+    "Rush TD prevention",
+    "Interceptions",
+    "Rush efficiency",
+    "Run defense",
+    "Rush first-down rate"
+   ],
+   "home_weaknesses": [
+    "Pass protection",
+    "Receiving first-down rate",
+    "Receiving efficiency",
+    "QB/pass rating",
+    "Pass efficiency"
+   ]
+  },
+  {
+   "away": "Colts",
+   "home": "Jaguars",
+   "kickoff": "2026-11-01T13:00:00-05:00",
+   "network": "CBS",
+   "venue": "EverBank Stadium",
+   "analysis": {
+    "away_team": "Colts",
+    "home_team": "Jaguars",
+    "overall_edge": -0.138,
+    "lean": "Jaguars clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.1406,
+      "home": 0.625,
+      "edge": -0.4844
+     },
+     "rushing": {
+      "away": 0.75,
+      "home": 0.2812,
+      "edge": 0.4688
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.2109,
+      "home": 0.6094,
+      "edge": -0.3984
+     }
+    }
+   },
+   "away_strengths": [
+    "Rush first-down rate",
+    "Receiving ball security",
+    "Rush ball security",
+    "Rush TD prevention",
+    "Rush efficiency"
+   ],
+   "away_weaknesses": [
+    "Passing TD production",
+    "QB/pass rating",
+    "Interceptions",
+    "Fumble recoveries",
+    "Run defense"
+   ],
+   "home_strengths": [
+    "Run defense",
+    "Receiving first-down rate",
+    "Rush ball security",
+    "Receiving efficiency",
+    "Pass efficiency"
+   ],
+   "home_weaknesses": [
+    "Pass defense",
+    "Fumble recoveries",
+    "Pass rush",
+    "Forced fumbles",
+    "Rush efficiency"
+   ]
+  },
+  {
+   "away": "Chargers",
+   "home": "Rams",
+   "kickoff": "2026-11-01T16:05:00-05:00",
+   "network": "FOX",
+   "venue": "SoFi Stadium",
+   "analysis": {
+    "away_team": "Chargers",
+    "home_team": "Rams",
+    "overall_edge": -0.1302,
+    "lean": "Rams clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.5938,
+      "home": 0.3906,
+      "edge": 0.2031
+     },
+     "rushing": {
+      "away": 0.4844,
+      "home": 0.7188,
+      "edge": -0.2344
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.1797,
+      "home": 0.5391,
+      "edge": -0.3594
+     }
+    }
+   },
+   "away_strengths": [
+    "Forced fumbles",
+    "Pass TD prevention",
+    "Fumble recoveries",
+    "Interceptions",
+    "Rush efficiency"
+   ],
+   "away_weaknesses": [
+    "QB/pass rating",
+    "Ball security through the air",
+    "Rush first-down rate",
+    "Passing TD production",
+    "Receiving ball security"
+   ],
+   "home_strengths": [
+    "Pass defense",
+    "Passing TD production",
+    "Rush efficiency",
+    "Rush first-down rate",
+    "Pass coverage"
+   ],
+   "home_weaknesses": [
+    "Fumble recoveries",
+    "Ball security through the air",
+    "Pass rush",
+    "Run defense",
+    "Receiving efficiency"
+   ]
+  },
+  {
+   "away": "Chiefs",
+   "home": "Broncos",
+   "kickoff": "2026-11-01T16:25:00-05:00",
+   "network": "CBS",
+   "venue": "Empower Field at Mile High",
+   "analysis": {
+    "away_team": "Chiefs",
+    "home_team": "Broncos",
+    "overall_edge": 0.2917,
+    "lean": "Chiefs clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.8125,
+      "home": 0.4688,
+      "edge": 0.3438
+     },
+     "rushing": {
+      "away": 0.6406,
+      "home": 0.5781,
+      "edge": 0.0625
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.9531,
+      "home": 0.4844,
+      "edge": 0.4688
+     }
+    }
+   },
+   "away_strengths": [
+    "Rush efficiency",
+    "Receiving ball security",
+    "Pass protection",
+    "Pass TD prevention",
+    "Rush first-down rate"
+   ],
+   "away_weaknesses": [
+    "Pass rush",
+    "Forced fumbles",
+    "Passing TD production",
+    "Fumble recoveries",
+    "Receiving first-down rate"
+   ],
+   "home_strengths": [
+    "Pass coverage",
+    "Pass rush",
+    "Pass protection",
+    "Interceptions",
+    "Pass defense"
+   ],
+   "home_weaknesses": [
+    "Receiving first-down rate",
+    "Pass efficiency",
+    "Receiving efficiency",
+    "QB/pass rating",
+    "Rush efficiency"
+   ]
+  },
+  {
+   "away": "Patriots",
+   "home": "Dolphins",
+   "kickoff": "2026-11-01T16:25:00-05:00",
+   "network": "CBS",
+   "venue": "Hard Rock Stadium",
+   "analysis": {
+    "away_team": "Patriots",
+    "home_team": "Dolphins",
+    "overall_edge": -0.0547,
+    "lean": "Dolphins slight matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.5156,
+      "home": 0.4062,
+      "edge": 0.1094
+     },
+     "rushing": {
+      "away": 0.625,
+      "home": 0.7031,
+      "edge": -0.0781
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.3438,
+      "home": 0.5391,
+      "edge": -0.1953
+     }
+    }
+   },
+   "away_strengths": [
+    "Pass efficiency",
+    "Receiving efficiency",
+    "Passing TD production",
+    "Receiving first-down rate",
+    "QB/pass rating"
+   ],
+   "away_weaknesses": [
+    "Receiving ball security",
+    "Ball security through the air",
+    "Rush ball security",
+    "Fumble recoveries",
+    "Pass defense"
+   ],
+   "home_strengths": [
+    "Receiving efficiency",
+    "Rush TD prevention",
+    "Rush efficiency",
+    "Run defense",
+    "Ball security through the air"
+   ],
+   "home_weaknesses": [
+    "Pass rush",
+    "Pass coverage",
+    "Forced fumbles",
+    "Passing TD production",
+    "Fumble recoveries"
+   ]
+  },
+  {
+   "away": "Eagles",
+   "home": "Commanders",
+   "kickoff": "2026-11-01T20:20:00-05:00",
+   "network": "NBC",
+   "venue": "Northwest Stadium",
+   "analysis": {
+    "away_team": "Eagles",
+    "home_team": "Commanders",
+    "overall_edge": -0.099,
+    "lean": "Commanders clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.2969,
+      "home": 0.4219,
+      "edge": -0.125
+     },
+     "rushing": {
+      "away": 0.4375,
+      "home": 0.5625,
+      "edge": -0.125
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.3047,
+      "home": 0.3516,
+      "edge": -0.0469
+     }
+    }
+   },
+   "away_strengths": [
+    "Receiving ball security",
+    "Rush ball security",
+    "Forced fumbles",
+    "Pass defense",
+    "Pass coverage"
+   ],
+   "away_weaknesses": [
+    "Fumble recoveries",
+    "Pass rush",
+    "Pass efficiency",
+    "Rush first-down rate",
+    "Rush TD prevention"
+   ],
+   "home_strengths": [
+    "Ball security through the air",
+    "Fumble recoveries",
+    "Rush efficiency",
+    "Rush TD prevention",
+    "QB/pass rating"
+   ],
+   "home_weaknesses": [
+    "Pass coverage",
+    "Pass TD prevention",
+    "Interceptions",
+    "Receiving efficiency",
+    "Pass efficiency"
+   ]
+  },
+  {
+   "away": "Bears",
+   "home": "Seahawks",
+   "kickoff": "2026-11-02T20:15:00-05:00",
+   "network": "ESPN",
+   "venue": "Lumen Field",
+   "analysis": {
+    "away_team": "Bears",
+    "home_team": "Seahawks",
+    "overall_edge": 0.263,
+    "lean": "Bears clear matchup edge",
+    "categories": {
+     "passing": {
+      "away": 0.8125,
+      "home": 0.3906,
+      "edge": 0.4219
+     },
+     "rushing": {
+      "away": 0.8281,
+      "home": 0.3125,
+      "edge": 0.5156
+     },
+     "passing_protection_vs_pass_rush": {
+      "away": 0.4688,
+      "home": 0.6172,
+      "edge": -0.1484
+     }
+    }
+   },
+   "away_strengths": [
+    "Fumble recoveries",
+    "Pass rush",
+    "Rush efficiency",
+    "Pass efficiency",
+    "Forced fumbles"
+   ],
+   "away_weaknesses": [
+    "Pass defense",
+    "Rush ball security",
+    "Pass coverage",
+    "Passing TD production",
+    "Pass protection"
+   ],
+   "home_strengths": [
+    "Receiving first-down rate",
+    "Pass defense",
+    "Pass coverage",
+    "Run defense",
+    "Interceptions"
+   ],
+   "home_weaknesses": [
+    "Forced fumbles",
+    "Ball security through the air",
+    "Rush ball security",
+    "Rush first-down rate",
+    "Rush efficiency"
+   ]
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 """Convert raw CSV -> data/players.json, data/teams.json. Only uses values present in the CSV."""
 import pandas as pd, json, re, math, os
-D=os.path.dirname(os.path.abspath(__file__))+'/../data'
+D=os.environ.get('NFL_DATA_DIR') or os.path.dirname(os.path.abspath(__file__))+'/../data'
 d=pd.read_csv(D+'/raw.csv',dtype=str)
 def num(v):
     try:
