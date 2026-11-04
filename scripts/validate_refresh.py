@@ -35,6 +35,100 @@ def check_counts(candidate: list, baseline: list, label: str) -> None:
         raise SystemExit(f"{label} count {len(candidate)} is under 90% of {len(baseline)}")
 
 
+# Key stats per game-log category. CORE volume stats must be non-zero in at
+# least half of a group's rows. ANY marks sparse stats (ints, sacks, QB rushing,
+# kicking/punting), which only need one non-zero row per position group.
+# Rushing/receiving lng is not listed: nflverse has no per-game long, so it is always 0.
+# passing car/primYds are QB rushing (primYds comes from the ESPN supplement).
+CORE = 0.5
+# passTd uses its own 10% floor (live rate ~74%).
+ANY = "any"
+CATEGORY_STATS = {
+    "passing": {"cmp": CORE, "att": CORE, "passYds": CORE, "rtg": CORE, "qbr": CORE, "lng": CORE,
+                "passTd": 0.1, "int": ANY, "car": ANY, "primYds": ANY},
+    "rushing": {"car": CORE, "primYds": CORE},
+    "receiving": {"rec": CORE, "primYds": CORE, "tgts": CORE},
+    "defense": {"tackles": CORE, "solo": CORE, "sacks": ANY, "int": ANY},
+    "kicking": {"fgm": ANY, "fga": ANY, "pts": ANY},
+    "punting": {"punts": ANY, "puntYds": ANY, "net": ANY},
+}
+QB_RUSHING_STATS = {"car": ANY, "rushYds": ANY}
+# Position groups smaller than this are skipped (odd buckets such as a punter's
+# trick-play pass). Whole-category checks always run, whatever the row count.
+MIN_ROWS = 30
+
+
+def _nonzero(value) -> bool:
+    try:
+        return float(value) != 0
+    except (TypeError, ValueError):
+        return False
+
+
+def _check_group(label: str, games: list, stats: dict, min_rows: int) -> None:
+    if len(games) < min_rows:
+        return
+    for stat, floor in stats.items():
+        hits = sum(_nonzero(game.get(stat)) for game in games)
+        if floor == ANY:
+            if hits == 0:
+                raise SystemExit(f"{label} stat {stat} is zero or missing in all {len(games)} rows")
+        elif hits < floor * len(games):
+            raise SystemExit(
+                f"{label} stat {stat}: {hits}/{len(games)} rows non-zero, under the {floor:.0%} floor"
+            )
+
+
+def category_counts(players: list) -> dict:
+    counts = {cat: 0 for cat in CATEGORY_STATS}
+    for player in players:
+        for game in player.get("games") or []:
+            if game.get("cat") in counts:
+                counts[game["cat"]] += 1
+    return counts
+
+
+def check_category_stats(players: list, baseline: list | None = None, min_rows: int = MIN_ROWS) -> None:
+    """Check each category overall and per position group.
+
+    players.json has no position field, so a player's primary category
+    (player["cat"]) stands in for position: receiving games from receiving-
+    primary players are WR/TE, from rushing-primary players RB, and so on.
+    A zeroed position cannot hide behind good rows from another position.
+    """
+    groups: dict[tuple, list] = {}
+    for player in players:
+        position = player.get("cat") or "unknown"
+        for game in player.get("games") or []:
+            cat = game.get("cat")
+            if cat in CATEGORY_STATS:
+                groups.setdefault((cat, "all"), []).append(game)
+                groups.setdefault((cat, position), []).append(game)
+    for cat, stats in CATEGORY_STATS.items():
+        if not groups.get((cat, "all")):
+            raise SystemExit(f"no {cat} game logs in the refresh")
+    if baseline is not None:
+        have, had = category_counts(players), category_counts(baseline)
+        for cat in CATEGORY_STATS:
+            if have[cat] < 0.9 * had[cat]:
+                raise SystemExit(f"{cat} game logs {have[cat]} are under 90% of baseline {had[cat]}")
+    for (cat, position), games in sorted(groups.items()):
+        label = f"{cat} (all players)" if position == "all" else f"{cat} by {position}-primary players"
+        stats = CATEGORY_STATS[cat]
+        if position not in ("all", cat):
+            # Off-position rows (a WR's special-teams tackles) are judged on
+            # volume only: they legitimately never record a sack or an int.
+            stats = {stat: floor for stat, floor in stats.items() if floor != ANY}
+        _check_group(label, games, stats, 0 if position == "all" else min_rows)
+
+
+def check_qb_rushing(qb: dict) -> None:
+    games = [game for entry in (qb.get("players") or {}).values() for game in entry.get("games") or []]
+    if not games:
+        raise SystemExit("QB rushing supplement has no games")
+    _check_group("QB rushing supplement", games, QB_RUSHING_STATS, 0)
+
+
 def check_week(path: Path) -> None:
     week = load(path)
     reject_betting(week)
@@ -100,12 +194,14 @@ def main() -> None:
         raise SystemExit("players.json must be a list")
     reject_betting(candidate_players)
     check_counts(candidate_players, baseline_players, "players")
+    check_category_stats(candidate_players, baseline_players)
     candidate_games = count_games(candidate_players)
     baseline_games = count_games(baseline_players)
     if candidate_games < 0.9 * baseline_games:
         raise SystemExit(f"game logs {candidate_games} are under 90% of {baseline_games}")
     qb = load(args.candidate / "supplemental" / "qb-rushing.json")
     reject_betting(qb)
+    check_qb_rushing(qb)
     baseline_qb = load(args.baseline / "supplemental" / "qb-rushing.json")
     if len(qb.get("players") or {}) < 0.9 * len(baseline_qb.get("players") or {}):
         raise SystemExit("QB rushing supplement shrank by more than 10%")
