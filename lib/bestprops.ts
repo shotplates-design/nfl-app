@@ -1,14 +1,13 @@
 // "Best Props This Week". For each player whose team plays, pick the HIGHEST line they still clear in >=80% of games
 // (a line set from their own game logs, rounded down), weight it by difficulty vs. the position's typical output,
 // then pick a diverse top list. Every number comes from season game logs; lines are not sportsbook lines.
-import { players } from './data'; import { currentWeek, fmtKick } from './matchups'; import { buildPgames, STATS } from './props.mjs'; import { loadInjuryDesk } from './injuryAnalysis'; import { injuryBlurb } from './injuryWhy.mjs';
+import { players } from './data'; import { currentWeek, fmtKick } from './matchups'; import { buildPgames, STATS } from './props.mjs'; import { espnStatusNote } from './injuryWhy.mjs';
 import propParams from '../data/prop-params.json';
-let DESK: ReturnType<typeof loadInjuryDesk> | undefined;
-const desk = () => DESK === undefined ? (DESK = loadInjuryDesk()) : DESK;
-function withInjury(why: string[], name: string, team: string) {
-  const b = injuryBlurb(desk(), { name, team });
-  if (b?.clause) why.push(b.clause);
-  return b?.note ?? null;
+/** ESPN status from the matchup conditions list; empty notes stay null. */
+function withInjury(why: string[], name: string, team: string, injuries: any[]) {
+  const note = espnStatusNote(injuries, { name, team });
+  if (note?.text) why.push(note.text);
+  return note;
 }
 export const MIN_RATE = Number(propParams.best_props_min_rate) || 0.8;
 const ALT_RATE = Number(propParams.best_props_alt_rate) || 0.7;
@@ -53,7 +52,7 @@ export function candidates(){ const w=currentWeek(); const T:Record<string,any>=
     const area=AREA(best.k); const weak=area.find(a=>t.oppWeak.includes(a)), str=area.find(a=>t.oppStr.includes(a));
     if(weak) why.push(`${t.oppName} ${weak} is listed as a weakness in the matchup report`); else if(str) why.push(`caution: ${t.oppName} ${str} is listed as a strength`);
     if(t.weather&&!t.weather.indoor&&t.weather.impact&&t.weather.impact!=='none') why.push(`${t.weather.impact} weather impact forecast${t.weather.wind_mph!=null?` (wind ${t.weather.wind_mph} mph)`:''}`);
-    const injuryNote=withInjury(why,name,team);
+    const injuryNote=withInjury(why,name,team,t.inj||[]);
     out.push({slug,name,team,role,stat:best.k,opp:t.opp,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,
       hits:best.hits,games:best.games,streak:best.streak,avg:best.avg,thr:best.line,score:Math.round(best.score*10)/10,strip:best.strip.slice(-5),label:`${best.line}+ ${lab}`,why:why.join('; ')+'.',injuryNote}); }
   return out.sort((a,b)=>b.score-a.score); }
@@ -95,7 +94,7 @@ export function sleepers(limit=15){ const w=currentWeek(); const pg=(PG ||= buil
     if(!best) continue; const lab=STATS[best.k][0];
     const why=[`#${rank[slug]} ${role} in season ${STATS[VOL[role]][0].toLowerCase()}`,`hit ${best.line}+ in ${best.hits}/${best.games}`,`last 3 avg ${best.l3.toFixed(1)} vs ${best.avg.toFixed(1)} season`];
     if(best.weak) why.push(`${t.oppName} ${best.weak} is listed as a weakness`); else if(best.str) why.push(`caution: ${t.oppName} ${best.str} is listed as a strength`);
-    const injuryNote=withInjury(why,name,team);
+    const injuryNote=withInjury(why,name,team,t.inj||[]);
     out.push({slug,name,team,role,stat:best.k,oppName:t.oppName,at:t.at,kick:t.kick,game:t.slug,prop:`Over ${best.line-0.5} ${lab}`,bench:`${best.line}+, set from his game logs`,hits:best.hits,games:best.games,injuryNote,
       streak:(()=>{let n=0;for(let i=best.strip.length-1;i>=0&&best.strip[i].h;i--)n++;return n})(),avg:best.avg,thr:best.line,score:Math.round(best.score*10)/10,strip:best.strip.slice(-5),label:`${best.line}+ ${lab}`,why:why.join('; ')+'.',rank:rank[slug]}); }
   const pick:any[]=[]; for(const r of out.sort((a,b)=>b.score-a.score)){ if(pick.length>=limit) break; if(pick.filter(x=>x.team===r.team).length<2) pick.push(r); }

@@ -86,19 +86,20 @@ test('filters move hit rates, trends, streaks, and injuries together', () => {
   assert.equal(qb.heat.positions.join(), 'QB');
 });
 
-test('the live season model names Jaxon Smith-Njigba and the Surtain injury', async () => {
+test('the live season model names Jaxon Smith-Njigba and current-week ESPN injuries', async () => {
   const { players: roster, allStreaks } = await import('../lib/data.ts');
   const { loadInjuryDesk } = await import('../lib/injuryAnalysis.ts');
   const { currentWeek } = await import('../lib/matchups.ts');
-  const model = buildDashboard({ players: roster, hot: allStreaks().hot, desk: loadInjuryDesk(), week: currentWeek() });
+  const desk = loadInjuryDesk();
+  const model = buildDashboard({ players: roster, hot: allStreaks().hot, desk, week: currentWeek() });
   const view = dashboardView(model, { team: 'sea', pos: 'WR/TE', stat: 'recYds' });
   const jsn = view.bars.find(b => b.slug === 'jaxon-smith-njigba');
   assert.ok(jsn, 'JSN is on the Seahawks receiving board');
   assert.equal(jsn.hits, jsn.games);
   assert.ok(view.lines.some(l => l.slug === 'jaxon-smith-njigba'));
-  const injuries = dashboardView(model, { week: '6' }).injuries;
-  const surtain = injuries.find(i => i.player === 'Pat Surtain II');
-  assert.ok(surtain);
-  assert.equal(surtain.href, '/injuries#injury-den-pat-surtain-ii');
-  assert.ok(surtain.exploited.some(e => e.slug === 'jaxon-smith-njigba'));
+  const injuries = dashboardView(model, { week: String(desk.week) }).injuries;
+  assert.ok(injuries.length > 0, 'current week ESPN desk surfaces on the dashboard');
+  const sample = injuries[0];
+  assert.match(sample.href, /^\/injuries#injury-/);
+  assert.ok(sample.player && sample.team);
 });

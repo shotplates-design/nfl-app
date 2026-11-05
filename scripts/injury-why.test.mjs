@@ -1,114 +1,103 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { injuryBlurb, injuryId, samePlayer } from '../lib/injuryWhy.mjs';
+import { espnStatusNote, injuryBlurb, injuryId, samePlayer } from '../lib/injuryWhy.mjs';
 
-const desk = JSON.parse(readFileSync(new URL('../data/week-6-injury-analysis.json', import.meta.url), 'utf8'));
-const gazette = desk.injuries[0].expert_takes[0].quote_or_paraphrase;
-const exploitedWhy = desk.injuries[0].exploited_by[0].why;
-const spotlight = desk.matchup_spotlights.find(s => /JSN/.test(s.title));
+const desk = {
+  week: 9,
+  injuries: [
+    {
+      id: 'injury-hou-david-montgomery',
+      team: 'HOU',
+      player: 'David Montgomery',
+      position: 'RB',
+      status: 'Out',
+      injury: 'Illness',
+    },
+    {
+      id: 'injury-sea-sam-darnold',
+      team: 'SEA',
+      player: 'Sam Darnold',
+      position: 'QB',
+      status: 'Out',
+      injury: 'Neck',
+    },
+    {
+      id: 'injury-lac-brenen-thompson',
+      team: 'LAC',
+      player: 'Brenen Thompson',
+      position: 'WR',
+      status: 'Doubtful',
+      injury: 'Undisclosed',
+    },
+  ],
+};
 
-test('JSN gets the Surtain shadow-corner line, the exact quote, and the injuries anchor', () => {
-  const b = injuryBlurb(desk, { name: 'Jaxon Smith-Njigba', team: 'SEA' });
+test('ESPN status blurbs name the player and anchor without curated Kenzie prose', () => {
+  const b = injuryBlurb(desk, { name: 'David Montgomery', team: 'HOU' });
   assert.ok(b);
-  assert.equal(b.note.text, 'DEN CB Pat Surtain II out (shadow corner) — JSN draws softer coverage');
-  assert.equal(b.note.href, '/injuries#injury-den-pat-surtain-ii');
-  assert.equal(b.note.href, `/injuries#${injuryId('DEN', 'Pat Surtain II')}`);
-  assert.equal(injuryBlurb(desk, { name: 'Jaxon Smith-Njigba', team: 'sea' }).note.text, b.note.text);
-  assert.ok(b.clause.includes(exploitedWhy), 'exploited_by why is included in full');
-  assert.ok(b.clause.includes(`Denver Gazette: “${gazette}”`), 'expert quote is stored unsliced');
-  assert.equal(gazette, "Broncos will try to defend JSN on national TV 'with a makeshift secondary.'");
-  assert.ok(b.clause.includes(spotlight.body.split(/(?<=\.)\s/)[0]));
-  assert.ok(b.clause.includes('CB1 and three-time All-Pro'));
-  assert.ok(!b.clause.includes('…') && !b.clause.includes('...'));
+  assert.equal(b.note.text, 'HOU RB David Montgomery out (Illness)');
+  assert.equal(b.note.href, '/injuries#injury-hou-david-montgomery');
+  assert.equal(b.clause, b.note.text);
+  assert.equal(injuryBlurb(desk, { name: 'David Montgomery', team: 'hou' }).note.text, b.note.text);
+  assert.doesNotMatch(b.clause, /Gazette|exploited|softer coverage|“/);
 });
 
-test('middle coverage and teammate absences use the matching short line', () => {
-  const barner = injuryBlurb(desk, { name: 'AJ Barner', team: 'SEA' });
-  assert.equal(barner.note.text, 'DEN S Talanoa Hufanga out (middle coverage) — Barner draws softer coverage');
-  assert.equal(barner.note.href, '/injuries#injury-den-talanoa-hufanga');
-  assert.ok(barner.clause.includes(desk.injuries[1].exploited_by[0].why));
-
-  const wilson = injuryBlurb(desk, { name: 'Emanuel Wilson', team: 'SEA' });
-  assert.equal(wilson.note.text, 'SEA RB Zach Charbonnet out — Wilson benefits');
-  assert.equal(wilson.note.href, '/injuries#injury-sea-zach-charbonnet');
-  assert.ok(!/softer coverage/.test(wilson.note.text));
-  assert.ok(wilson.clause.includes('Workhorse role'));
-
-  const kupp = injuryBlurb(desk, { name: 'Cooper Kupp', team: 'SEA' });
-  assert.equal(kupp.note.text, 'DEN CB Pat Surtain II out (shadow corner) — Kupp draws softer coverage');
-
-  const dobbins = injuryBlurb(desk, { name: 'J.K. Dobbins', team: 'DEN' });
-  assert.equal(dobbins.note.text, 'SEA LB Drake Thomas out (middle coverage) — Dobbins benefits');
-  assert.equal(dobbins.note.href, '/injuries#injury-sea-drake-thomas');
-  assert.ok(dobbins.clause.includes('softer vs run'));
-});
-
-test('name matching does not attach group labels or the wrong team', () => {
-  assert.equal(injuryBlurb(desk, { name: 'Jaxon Smith-Njigba', team: 'DEN' }), null);
+test('Doubtful and Out both render; empty notes stay null', () => {
+  const d = injuryBlurb(desk, { name: 'Brenen Thompson', team: 'LAC' });
+  assert.equal(d.note.text, 'LAC WR Brenen Thompson Doubtful (Undisclosed)');
   assert.equal(injuryBlurb(desk, { name: 'Somebody Else', team: 'SEA' }), null);
-  assert.equal(injuryBlurb(null, { name: 'Jaxon Smith-Njigba', team: 'SEA' }), null);
-  assert.equal(samePlayer('SEA tight ends / slot receivers', 'AJ Barner'), false);
-  assert.equal(samePlayer('Seattle outside WRs', 'Jaxon Smith-Njigba'), false);
+  assert.equal(injuryBlurb(null, { name: 'Sam Darnold', team: 'SEA' }), null);
+  assert.equal(injuryBlurb({ injuries: [] }, { name: 'Sam Darnold', team: 'SEA' }), null);
+  assert.equal(injuryBlurb(desk, { name: 'Sam Darnold', team: 'DEN' }), null);
   assert.equal(samePlayer('Pat Surtain II', 'Pat Surtain'), true);
+  assert.equal(espnStatusNote([], { name: 'Sam Darnold', team: 'SEA' }), null);
+  assert.equal(espnStatusNote(undefined, { name: 'Sam Darnold', team: 'SEA' }), null);
 });
 
-test('an injured player himself gets the head line only', () => {
-  const self = injuryBlurb(desk, { name: 'Pat Surtain II', team: 'DEN' });
-  assert.equal(self.note.text, 'DEN CB Pat Surtain II out (shadow corner)');
-  assert.equal(self.note.href, '/injuries#injury-den-pat-surtain-ii');
+test('espnStatusNote reads matchup conditions rows the same way', () => {
+  const note = espnStatusNote(
+    [{ team: 'SEA', player: 'Sam Darnold', position: 'QB', status: 'Out', injury: 'Neck' }],
+    { name: 'Sam Darnold', team: 'sea' },
+  );
+  assert.equal(note.text, 'SEA QB Sam Darnold out (Neck)');
+  assert.equal(note.href, `/injuries#${injuryId('SEA', 'Sam Darnold')}`);
 });
 
-test('Best Props and Sleepers rows carry the injury clause and the anchor', async () => {
+test('Best Props and Sleepers attach ESPN status notes when present and stay null otherwise', async () => {
   const { candidates, sleepers } = await import('../lib/bestprops.ts');
   const rows = candidates();
-  const jsn = rows.find(r => r.name === 'Jaxon Smith-Njigba');
-  assert.ok(jsn, 'JSN is a Week 6 candidate');
-  assert.equal(jsn.injuryNote.text, 'DEN CB Pat Surtain II out (shadow corner) — JSN draws softer coverage');
-  assert.equal(jsn.injuryNote.href, '/injuries#injury-den-pat-surtain-ii');
-  assert.ok(jsn.why.includes(exploitedWhy));
-  assert.ok(jsn.why.includes(gazette));
-  assert.ok(jsn.why.endsWith('.'));
-
-  const quiet = rows.find(r => !r.injuryNote);
-  assert.ok(quiet, 'players the desk does not name keep a null injury note');
-  assert.equal(quiet.injuryNote, null);
+  assert.ok(rows.length > 0);
+  for (const r of rows) {
+    assert.ok(r.why && typeof r.injuryNote !== 'undefined');
+    assert.ok(!/Gazette|draws softer coverage|Kenzie/i.test(r.why));
+    if (r.injuryNote) {
+      assert.match(r.injuryNote.href, /^\/injuries#injury-[a-z0-9-]+$/);
+      assert.ok(r.injuryNote.text);
+      assert.ok(r.why.includes(r.injuryNote.text));
+    }
+  }
+  const quiet = rows.find((r) => r.injuryNote === null);
+  assert.ok(quiet, 'players without an ESPN status row keep a null injury note');
 
   const { pick, all } = sleepers(15);
-  const noted = all.filter(r => r.injuryNote);
-  assert.ok(noted.length > 0, 'at least one sleeper is tied to an injury');
-  for (const r of noted) {
+  assert.ok(pick.every((r) => r.why && typeof r.injuryNote !== 'undefined'));
+  for (const r of all.filter((x) => x.injuryNote)) {
     assert.match(r.injuryNote.href, /^\/injuries#injury-[a-z0-9-]+$/);
-    assert.ok(r.why.includes(r.injuryNote.text.split(' — ')[0].replace(/ \([^)]+\)$/, '')) || r.why.length > 10);
-    const blur = injuryBlurb(desk, { name: r.name, team: r.team });
-    assert.equal(r.injuryNote.href, blur.note.href);
-    assert.ok(r.why.includes(blur.clause));
+    assert.doesNotMatch(r.why, /Gazette|softer coverage/);
   }
-  assert.ok(pick.every(r => r.why && typeof r.injuryNote !== 'undefined'));
 });
 
-test('the week 6 file adds the Houston outs, the Marks split, the London spotlight, and stale TNF picks', async () => {
-  const { loadInjuryDesk, formatWithWithout } = await import('../lib/injuryAnalysis.ts');
+test('loadInjuryDesk prefers the current week conditions feed over a stale analysis file', async () => {
+  const { loadInjuryDesk } = await import('../lib/injuryAnalysis.ts');
+  const { currentWeek } = await import('../lib/matchups.ts');
   const loaded = loadInjuryDesk();
-  const hou = loaded.injuries.filter(i => i.team === 'HOU');
-  assert.deepEqual(hou.map(i => [i.player, i.status]), [
-    ['David Montgomery', 'Out'],
-    ['Tank Dell', 'Out'],
-    ['Jalen Pitre', 'Out'],
-  ]);
-  const marks = hou[0].beneficiaries.find(b => b.player === 'Woody Marks');
-  assert.ok(marks.key_stat_with_without.includes('With Montgomery: 4 games, 7 carries/g, 21.8 rush yds/g'));
-  assert.ok(marks.key_stat_with_without.includes('Without Montgomery: 1 game, 15 carries, 62 rush yds, 4 targets, 23 rec yds'));
-  assert.ok(marks.key_stat_with_without.includes('Week 5 vs TEN'));
-  assert.equal(marks.key_stat_with_without.includes('[object Object]'), false);
-  assert.ok(hou[0].matchup_note.includes('lowest yards after contact'));
-  const london = loaded.matchup_spotlights.find(s => s.title === "Woody's World Tour: London Edition");
-  assert.ok(london);
-  assert.equal(london.game, 'HOU@JAX');
-  assert.ok(london.body.includes('Wembley'));
-  assert.ok(loaded.kenzie_picks.length > 0);
-  assert.ok(loaded.kenzie_picks.every(p => p.status.startsWith('stale:')));
-  assert.equal(formatWithWithout('plain text'), 'plain text');
+  assert.ok(loaded);
+  assert.equal(loaded.week, currentWeek().week);
+  assert.ok(loaded.injuries.length > 0);
+  // Week-9 ESPN desk has no curated beneficiaries / expert takes.
+  assert.ok(loaded.injuries.every((i) => (i.exploited_by || []).length === 0));
+  assert.equal(loaded.kenzie_picks.length, 0);
 });
 
 test('public gating still sends only the preview rows', () => {

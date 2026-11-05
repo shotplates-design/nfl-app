@@ -1,5 +1,6 @@
 import TeamBadge from './TeamBadge';
-import { pickIsFinal, type ExpertTake, type ExploitedBy, type InjuryDesk, type InjuryItem, type InjuryPerson, type KenziePick, type MatchupSpotlight } from '@/lib/injuryAnalysis';
+import { type ExpertTake, type ExploitedBy, type InjuryDesk, type InjuryItem, type InjuryPerson, type MatchupSpotlight } from '@/lib/injuryAnalysis';
+import { buildInjuryEdges } from '@/lib/injuryEdges.mjs';
 
 const SEV = ['minor', 'moderate', 'significant', 'critical'] as const;
 const sevRank = (s: string) => { const i = SEV.indexOf(s as typeof SEV[number]); return i < 0 ? 1 : i + 1; };
@@ -93,7 +94,7 @@ function Card({ item }: { item: InjuryItem }) {
     <People title="Opponent boost" emoji="⚡" rows={item.opponent_beneficiaries}/>
     <Exploit rows={item.exploited_by}/>
     {item.betting_angle && <div className="mt-3 rounded-xl border border-emerald-600/70 bg-emerald-950/40 px-3 py-2 min-w-0">
-      <div className="text-xs font-bold text-emerald-300">🎯 Betting angle</div>
+      <div className="text-xs font-bold text-emerald-300">🎯 Research angle</div>
       <p className="text-sm text-emerald-50 mt-1 break-anywhere">{item.betting_angle}</p>
     </div>}
     {item.confidence && <p className="mt-3 flex items-start gap-2 text-xs text-slate-300 min-w-0"><span className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${confTone(item.confidence)}`} aria-hidden="true"/><span className="break-anywhere"><span className="text-slate-500">Confidence · </span>{item.confidence}</span></p>}
@@ -111,39 +112,25 @@ function Spotlight({ item }: { item: MatchupSpotlight }) {
   </article>;
 }
 
-function PickCard({ pick, now }: { pick: KenziePick; now: number }) {
-  const final = pickIsFinal(pick.final_after, now);
-  return <li data-pick-state={final ? 'final' : 'live'} className={`card min-w-0 ${final ? 'border-slate-600 opacity-80' : 'border-emerald-700/50'}`}>
+
+function EdgeCard({ edge }: { edge: ReturnType<typeof buildInjuryEdges>[number] }) {
+  return <li className="card min-w-0 border-emerald-700/50">
     <div className="flex flex-wrap items-center gap-2">
-      <TeamBadge code={pick.team.toLowerCase()} name={pick.team} size="md"/>
-      <span className="font-bold break-anywhere">{pick.player}</span>
-      {final && <span className="inline-flex items-center rounded-full bg-slate-700 px-2 py-0.5 text-[11px] font-black uppercase tracking-wide text-slate-100">Final</span>}
-      {/^stale\b/i.test(pick.status) && <span className="inline-flex items-center rounded-full bg-amber-700 px-2 py-0.5 text-[11px] font-black uppercase tracking-wide text-amber-50">Stale</span>}
-      <span className={`ml-auto inline-flex items-center rounded-full px-3 py-1 text-xs font-black tracking-wide ${pick.pick === 'under' ? 'bg-rose-600 text-white' : 'bg-emerald-500 text-slate-950'}`}>{pick.pick === 'under' ? 'UNDER' : 'OVER'}</span>
+      <TeamBadge code={edge.team.toLowerCase()} name={edge.team} size="md"/>
+      <span className="font-bold break-anywhere">{edge.player}</span>
+      <span className="text-xs text-slate-400">{edge.role}</span>
     </div>
-    <p className="mt-2 text-lg font-bold text-white break-anywhere">{pick.prop}</p>
-    {pick.status && <p className="mt-1 text-xs text-amber-200 break-anywhere">{pick.status}</p>}
-    <p className="mt-1 text-sm" aria-label={`Confidence ${pick.confidence} of 5`}>
-      {Array.from({ length: 5 }, (_, i) => <span key={i} aria-hidden="true">{i < pick.confidence ? '🔥' : '☆'}</span>)}
-      <span className="ml-2 text-xs text-slate-400">{pick.confidence}/5</span>
-    </p>
-    <p className="mt-2 text-sm text-slate-200 break-anywhere">{pick.reasoning}</p>
-    <Sources urls={pick.sources}/>
-    <p className="mt-2 text-xs text-slate-400 break-anywhere">Tied to: {pick.links.length ? pick.links.map((l, i) => <span key={l.id}>{i > 0 && ' · '}<a href={`#${l.id}`} className="font-semibold">{l.label}</a></span>) : pick.linked_injury || 'the report above'}</p>
+    <p className="mt-2 text-lg font-bold text-white break-anywhere">{edge.label}</p>
+    <p className="mt-2 text-sm text-slate-200 break-anywhere">{edge.reason}</p>
+    <p className="mt-2 text-xs text-slate-400 break-anywhere">Tied to: <a href={edge.injuredHref} className="font-semibold">{edge.injuredTeam} {edge.injured}</a> ({edge.injuredStatus})</p>
   </li>;
 }
 
-export default function InjuryDeskView({ desk, now = Date.now() }: { desk: InjuryDesk; now?: number }) {
+export default function InjuryDeskView({ desk }: { desk: InjuryDesk; now?: number }) {
   const when = fmtWhen(desk.updated);
   const games = [...new Set(desk.injuries.map(i => i.game).filter(Boolean))];
-  const lockTimes = [...new Set(desk.kenzie_picks.map(p => p.final_after).filter(Boolean))];
-  const sharedLock = lockTimes.length === 1 ? lockTimes[0] : '';
-  const lockLabel = sharedLock ? fmtWhen(sharedLock) : '';
-  const allFinal = desk.kenzie_picks.length > 0 && desk.kenzie_picks.every(p => pickIsFinal(p.final_after, now));
-  const allStale = desk.kenzie_picks.length > 0 && desk.kenzie_picks.every(p => /^stale\b/i.test(p.status));
-  const slate = [...new Set(desk.kenzie_picks.flatMap(p => p.links.map(l => l.game)).filter(Boolean))];
-  const slateLabel = slate.map(gameLabel).join(' · ');
   const spotGames = [...new Set(desk.matchup_spotlights.map(s => s.game).filter(Boolean))];
+  const edges = buildInjuryEdges(desk);
   return <div className="min-w-0">
     <header className="card border-emerald-700/60 bg-gradient-to-br from-emerald-950/80 to-slate-900 min-w-0">
       <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">The injury desk</p>
@@ -172,14 +159,12 @@ export default function InjuryDeskView({ desk, now = Date.now() }: { desk: Injur
       {!desk.injuries.length && <p className="card text-sm text-slate-400">No injuries in this file yet.</p>}
     </section>
 
-    <section className="mt-8 min-w-0" data-picks-state={allFinal ? 'final' : 'live'}>
-      <h2 className="!mt-0">🌶️ Kenzie&apos;s Picks{allFinal ? ' · Final' : allStale ? ' · Stale' : ''}</h2>
+    {edges.length > 0 && <section className="mt-8 min-w-0" data-injury-edges="1">
+      <h2 className="!mt-0">📈 Injury edges</h2>
       <p className="text-sm text-slate-400 mb-3 break-anywhere">
-        {allStale ? 'Stale. Thursday night has kicked off or is about to; settle these after the final.' : allFinal && lockLabel ? `Final. These picks locked at ${lockLabel}.` : lockLabel ? `Live until ${lockLabel}.` : 'Her favorite edges off this week’s report.'}
-        {slateLabel ? ` ${slateLabel}.` : ''} Flames are confidence, 1 to 5.
+        When ESPN lists a teammate Out or Doubtful, these are the next skill-position players whose season logs already clear a 60% hit-rate floor. Research only — no odds.
       </p>
-      <ul className="space-y-3">{desk.kenzie_picks.map(p => <PickCard key={`${p.player}-${p.prop}`} pick={p} now={now}/>)}</ul>
-      {desk.kenzie_picks_note && <p className="text-xs text-slate-500 mt-3 break-anywhere">{desk.kenzie_picks_note}</p>}
-    </section>
+      <ul className="space-y-3">{edges.map(e => <EdgeCard key={`${e.slug}-${e.stat}-${e.injured}`} edge={e}/>)}</ul>
+    </section>}
   </div>;
 }

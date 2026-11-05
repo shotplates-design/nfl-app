@@ -93,7 +93,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "CIN",
@@ -237,7 +238,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "DAL",
@@ -396,7 +398,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "NYJ",
@@ -565,7 +568,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "DET",
@@ -779,7 +783,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "CLE",
@@ -940,7 +945,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "NYG",
@@ -1117,7 +1123,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "LAR",
@@ -1332,7 +1339,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "DEN",
@@ -1488,7 +1496,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "HOU",
@@ -1653,7 +1662,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "GB",
@@ -1846,7 +1856,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "LV",
@@ -2032,7 +2043,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "ARI",
@@ -2227,7 +2239,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "TB",
@@ -2356,7 +2369,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "BUF",
@@ -2452,7 +2466,8 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   }
  ]
 }

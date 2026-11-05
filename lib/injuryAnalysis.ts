@@ -4,7 +4,7 @@ import { currentWeek } from './matchups';
 
 // Drop-in file: data/week-N-injury-analysis.json (curated desk + Kenzie picks).
 // loadInjuryDesk prefers the current week's analysis, else data/week-N-conditions.json
-// (auto-refreshed by scripts/refresh_injuries.py / import_kenzie_feed.py), else the newest
+// (auto-refreshed by scripts/refresh_injuries.py from ESPN), else the newest
 // of either. Swap the analysis file for a curated Friday/Sunday update when you have one.
 // Optional lock clock so Kenzie's picks can be marked final after kickoff:
 //   "kenzie_picks_final_after": "2026-10-15T20:15:00-04:00"  — applies to every pick
@@ -230,7 +230,7 @@ export function deskFromConditions(raw: any, weekHint: number): InjuryDesk | nul
   const sourceNote = text(raw.injury_source_note, 400);
   const headline = [
     `Auto injury desk for week ${week} from data/week-${week}-conditions.json.`,
-    sourceNote || 'Statuses from the conditions feed (ESPN refresh and/or Kenzie import). Curated analysis, when present for this week, still wins.',
+    sourceNote || 'Statuses from the conditions feed (ESPN refresh). Curated analysis, when present for this week, still wins.',
   ];
   return {
     week,

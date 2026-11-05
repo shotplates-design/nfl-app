@@ -5,8 +5,8 @@ import InjuryDeskView from '@/components/InjuryDesk';
 
 export const dynamic = 'force-dynamic';
 export const metadata = {
-  title: 'NFL Injury Desk & Kenzie’s Picks',
-  description: 'This week’s NFL injury report: status, severity, who benefits, and Kenzie’s picks. Visible to everyone.',
+  title: 'NFL Injury Desk & Injury Edges',
+  description: 'This week’s NFL injury report from ESPN: status, severity, and automatic injury edges when a teammate is Out or Doubtful. Visible to everyone.',
   alternates: { canonical: '/injuries' },
 };
 

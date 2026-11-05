@@ -1,18 +1,7 @@
 # Game conditions feeds
-The live drop-in file is `data/week-N-conditions.json`. Shape: `{week, updated, games:[{away, home, weather, injuries, with_without, kickoff_et?, inactives?, inactives_note?}]}`. Injuries may include `note` and `practice_latest` (shown on the matchup injury list). `inactives` may be absent; the page still renders the note. Team abbreviations: `WAS` is accepted for Washington (not `WSH`). The loader reads `data/week-N-conditions.json` first and falls back to `data/feeds/week-N-conditions.json`.
+The live drop-in file is `data/week-N-conditions.json`. Shape: `{week, updated, games:[{away, home, weather, injuries, with_without, inactives, kickoff_et?}]}`. Injuries may include `note` and `practice_latest` (shown on the matchup injury list). `weather`, `with_without`, and `inactives` stay present on every game even when empty. Team abbreviations: `WAS` is accepted for Washington (not `WSH`). The loader reads `data/week-N-conditions.json` first and falls back to `data/feeds/week-N-conditions.json`.
 
 ## Auto refresh (unattended)
-- `scripts/refresh_injuries.py` pulls free public ESPN injury JSON (`https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries`) as an automatic baseline only. It may **add** new injured players; it never overwrites an existing (Kenzie-written) injury entry (status, note, practice_latest, or richer analysis keys). Game fields weather, with_without, kickoff_et, inactives, and inactives_note stay untouched. No new schema keys. Fail closed on empty/broken payloads. No odds.
-- `.github/workflows/refresh-injuries.yml` runs that script on injury-report windows (Wed–Sun morning/afternoon ET, plus Sunday inactives) and on `workflow_dispatch`, then commits `data/week-N-conditions.json` when it changed. Vercel deploys from the push.
-- `/injuries` reads the current week’s curated `data/week-N-injury-analysis.json` when present; otherwise it builds the desk from `data/week-N-conditions.json`, so an ESPN refresh shows up with nobody touching the site.
-
-## Kenzie’s local feed (box only)
-Kenzie’s richer drop lives at `/workspace/feeds/week-N-conditions.json` (outside git; GitHub Actions cannot see it). On the box, run:
-
-```bash
-python3 scripts/import_kenzie_feed.py            # merge into data/week-N-conditions.json
-python3 scripts/import_kenzie_feed.py --commit   # also git commit
-python3 scripts/import_kenzie_feed.py --commit --push
-```
-
-Same fail-closed validation as the ESPN path. Kenzie’s rows win on `(team, player)`; weather / with_without / kickoff_et / inactives she sends also win. Field names stay exactly as Best Props, Sleepers, and matchups already read.
+- `scripts/refresh_injuries.py` pulls free public ESPN injury JSON (`https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries`) as the **only** injury source. Each run writes the full injury list for every game, so ESPN statuses update existing players. Required keys `weather`, `with_without`, and `inactives` stay present (empty defaults when missing). Fail closed on empty/broken payloads or when the new injury count drops below about 50% of the previous file. No odds.
+- `.github/workflows/refresh-injuries.yml` runs that script on injury-report windows (13:00 and 22:00 UTC Wed–Sun, plus Sunday 16:30 UTC) and on `workflow_dispatch`, then commits `data/week-N-conditions.json` when it changed. Vercel deploys from the push.
+- `/injuries` builds the desk from `data/week-N-conditions.json` (or a curated analysis file when present for that week). Best Props and Sleepers read ESPN status rows from the conditions feed. An automatic **Injury edges** section lists teammates who stand to gain when ESPN marks a player Out or Doubtful, only for props that already clear a 60% hit-rate floor.
