@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 9,
-  "built_at": "2026-11-04T22:00:00-05:00",
+  "built_at": "2026-11-05T03:38:58.619523+00:00",
   "params": {
     "best_props_min_rate": 0.85,
     "best_props_alt_rate": 0.75
@@ -25,7 +25,7 @@
       "stat": "recYds",
       "thr": 65,
       "rate": 1.0,
-      "score": 110.26
+      "score": 111.32
     },
     {
       "slug": "james-cook",
@@ -35,7 +35,7 @@
       "stat": "rushYds",
       "thr": 75,
       "rate": 0.8571,
-      "score": 103.89
+      "score": 103.56
     },
     {
       "slug": "jaxon-smith-njigba",
@@ -65,7 +65,7 @@
       "stat": "recYds",
       "thr": 55,
       "rate": 0.8571,
-      "score": 100.2
+      "score": 101.1
     },
     {
       "slug": "bucky-irving",
@@ -75,7 +75,7 @@
       "stat": "rushYds",
       "thr": 45,
       "rate": 1.0,
-      "score": 98.56
+      "score": 98.36
     },
     {
       "slug": "dj-moore",
@@ -85,7 +85,17 @@
       "stat": "recYds",
       "thr": 65,
       "rate": 1.0,
-      "score": 96.26
+      "score": 97.32
+    },
+    {
+      "slug": "kirk-cousins",
+      "name": "Kirk Cousins",
+      "team": "lv",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 240,
+      "rate": 0.875,
+      "score": 95.77
     },
     {
       "slug": "christian-mccaffrey",
@@ -95,17 +105,7 @@
       "stat": "rec",
       "thr": 3,
       "rate": 1.0,
-      "score": 96.0
-    },
-    {
-      "slug": "ashton-jeanty",
-      "name": "Ashton Jeanty",
-      "team": "lv",
-      "role": "RB",
-      "stat": "rec",
-      "thr": 3,
-      "rate": 1.0,
-      "score": 96.0
+      "score": 95.08
     },
     {
       "slug": "chase-brown",
@@ -115,7 +115,7 @@
       "stat": "rushYds",
       "thr": 35,
       "rate": 1.0,
-      "score": 94.88
+      "score": 94.73
     },
     {
       "slug": "dak-prescott",
@@ -145,7 +145,17 @@
       "stat": "rushYds",
       "thr": 40,
       "rate": 0.875,
-      "score": 91.72
+      "score": 91.55
+    },
+    {
+      "slug": "cam-skattebo",
+      "name": "Cam Skattebo",
+      "team": "nyg",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 55,
+      "rate": 0.8333,
+      "score": 91.33
     },
     {
       "slug": "sam-darnold",
@@ -176,16 +186,6 @@
       "thr": 270,
       "rate": 0.75,
       "score": 89.11
-    },
-    {
-      "slug": "justin-herbert",
-      "name": "Justin Herbert",
-      "team": "lac",
-      "role": "QB",
-      "stat": "rushYds",
-      "thr": 15,
-      "rate": 0.8571,
-      "score": 88.48
     }
   ]
 }
