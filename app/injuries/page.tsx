@@ -19,7 +19,7 @@ export default function Page() {
       <InjuryDeskView desk={desk}/>
     </> : <div className="card min-w-0">
       <h1>🩺 Injury desk</h1>
-      <p className="text-sm text-slate-400 break-anywhere">No file yet. Drop <span className="text-slate-200">data/week-N-injury-analysis.json</span> in and refresh.</p>
+      <p className="text-sm text-slate-400 break-anywhere">No file yet. Drop <span className="text-slate-200">data/week-N-conditions.json</span> (auto) or <span className="text-slate-200">data/week-N-injury-analysis.json</span> (curated) and refresh.</p>
     </div>}
   </>;
 }
