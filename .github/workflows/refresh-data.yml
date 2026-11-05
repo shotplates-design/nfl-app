@@ -1,6 +1,8 @@
 # Refresh NFL logs and the current week from nflverse, then ESPN public JSON.
-# A failed check stops before the commit, so main keeps the last good files.
-# Vercel deploys from the push. This workflow does not call a deploy hook.
+# After a valid refresh, walk-forward-grade Best Props and keep param changes
+# only when they are not worse. A failed check stops before the commit, so main
+# keeps the last good files. Vercel deploys from the push. This workflow does
+# not call a deploy hook.
 name: refresh-data
 on:
   schedule:
@@ -31,15 +33,25 @@ jobs:
       - run: python -m pip install -r scripts/requirements.txt
       - run: python scripts/refresh_nfl.py --out "${{ runner.temp }}/nfl-refresh"
       - run: python scripts/validate_refresh.py --candidate "${{ runner.temp }}/nfl-refresh" --baseline data --stage data
+      - name: Walk-forward grade Best Props and keep better params
+        run: python scripts/improve_hit_params.py --data data --out data
       - run: npm ci
       - run: npm test
       - run: npm run build
       - name: Pack the files the commit job is allowed to write
         run: |
-          mkdir -p refresh-out/supplemental refresh-out/matchups
+          mkdir -p refresh-out/supplemental refresh-out/matchups refresh-out/snapshots
           cp data/players.json refresh-out/players.json
           cp data/supplemental/qb-rushing.json refresh-out/supplemental/qb-rushing.json
           cp data/matchups/week-*.json refresh-out/matchups/
+          cp data/prop-params.json refresh-out/prop-params.json
+          cp data/accuracy-history.json refresh-out/accuracy-history.json
+          if ls data/snapshots/week-*-best-props.json >/dev/null 2>&1; then
+            cp data/snapshots/week-*-best-props.json refresh-out/snapshots/
+          fi
+          if [ -f data/improve-summary.json ]; then
+            cp data/improve-summary.json refresh-out/improve-summary.json
+          fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: nfl-refresh
@@ -61,7 +73,7 @@ jobs:
       - name: Replace data files and commit
         run: |
           set -euo pipefail
-          mkdir -p data/supplemental data/matchups
+          mkdir -p data/supplemental data/matchups data/snapshots
           if [ -f candidate/players.json ]; then src=candidate
           elif [ -f candidate/refresh-out/players.json ]; then src=candidate/refresh-out
           else echo "Unexpected artifact layout" && find candidate -maxdepth 3 -type f && exit 1
@@ -69,12 +81,25 @@ jobs:
           cp "$src/players.json" data/players.json
           cp "$src/supplemental/qb-rushing.json" data/supplemental/qb-rushing.json
           cp "$src/matchups"/week-*.json data/matchups/
+          cp "$src/prop-params.json" data/prop-params.json
+          cp "$src/accuracy-history.json" data/accuracy-history.json
+          if ls "$src"/snapshots/week-*-best-props.json >/dev/null 2>&1; then
+            cp "$src"/snapshots/week-*-best-props.json data/snapshots/
+          fi
+          if [ -f "$src/improve-summary.json" ]; then
+            cp "$src/improve-summary.json" data/improve-summary.json
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/players.json data/supplemental/qb-rushing.json data/matchups/week-*.json
+          git add data/players.json data/supplemental/qb-rushing.json data/matchups/week-*.json \
+            data/prop-params.json data/accuracy-history.json data/snapshots data/improve-summary.json
           if git diff --cached --quiet; then
             echo "No data changes."
             exit 0
           fi
-          git commit -m "Refresh NFL player logs and the current week"
+          msg="Refresh NFL player logs and the current week"
+          if git diff --cached --name-only | grep -q 'prop-params.json'; then
+            msg="Refresh NFL data and update Best Props params when walk-forward is not worse"
+          fi
+          git commit -m "$msg"
           git push origin HEAD:main

@@ -164,6 +164,15 @@ def check_rules() -> None:
         if re.search(rf"\b{word}\b", body):
             raise SystemExit(f"BEST_PROPS mentions {word}")
 
+    params_path = ROOT / "data" / "prop-params.json"
+    if params_path.exists():
+        params = load(params_path)
+        if float(params.get("hit_rate_floor", 0)) != 0.6:
+            raise SystemExit("prop-params hit_rate_floor must stay 0.6")
+        for key in ("best_props_min_rate", "best_props_alt_rate", "sleeper_rate"):
+            if float(params.get(key, 0)) < 0.6:
+                raise SystemExit(f"prop-params {key} is under the 60% hit floor")
+
 
 def stage(candidate: Path, dest: Path) -> None:
     players = candidate / "players.json"
