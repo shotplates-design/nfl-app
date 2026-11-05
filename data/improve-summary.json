@@ -1,0 +1,9 @@
+{
+  "improved": true,
+  "hit_rate": 0.6851851851851852,
+  "n": 54,
+  "params": {
+    "best_props_min_rate": 0.85,
+    "best_props_alt_rate": 0.75
+  }
+}

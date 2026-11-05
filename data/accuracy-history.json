@@ -1,0 +1,44 @@
+{
+  "runs": [
+    {
+      "at": "2026-11-04T22:00:00-05:00",
+      "params": {
+        "best_props_min_rate": 0.85,
+        "best_props_alt_rate": 0.75,
+        "sleeper_rate": 0.75,
+        "hit_rate_floor": 0.6
+      },
+      "walk_forward": {
+        "n": 54,
+        "hits": 37,
+        "hit_rate": 0.6851851851851852
+      },
+      "improved": true,
+      "baseline_hit_rate": 0.6111111111111112
+    }
+  ],
+  "weeks": {
+    "6": {
+      "season": 2026,
+      "n": 18,
+      "hits": 11,
+      "hit_rate": 0.6111111111111112,
+      "graded_at": "2026-11-04T22:00:00-05:00"
+    },
+    "7": {
+      "season": 2026,
+      "n": 18,
+      "hits": 12,
+      "hit_rate": 0.6666666666666666,
+      "graded_at": "2026-11-04T22:00:00-05:00"
+    },
+    "8": {
+      "season": 2026,
+      "n": 18,
+      "hits": 14,
+      "hit_rate": 0.7777777777777778,
+      "graded_at": "2026-11-04T22:00:00-05:00"
+    }
+  },
+  "updated_at": "2026-11-04T22:00:00-05:00"
+}

@@ -1,0 +1,9 @@
+{
+  "hit_rate_floor": 0.6,
+  "best_props_min_rate": 0.85,
+  "best_props_alt_rate": 0.75,
+  "sleeper_rate": 0.75,
+  "updated_at": "2026-11-04T22:00:00-05:00",
+  "source": "walkforward",
+  "notes": "Tunable Best Props / Sleepers rates. hit_rate_floor is fixed at 0.6 and never lowered. Targets and tackles are never props."
+}
