@@ -219,7 +219,8 @@
      "note": "Added to report Thu. Oct 29, Questionable (shoulder). https://www.packers.com/news/packers-list-four-questionable-rule-out-three-vs-panthers-week-8-injury-report ACTIVE (not on inactive list, 6:45 PM ET). https://x.com/RobDemovsky/status/2115938310296408262"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "CLE",
@@ -398,7 +399,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "BAL",
@@ -659,7 +661,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "TEN",
@@ -796,7 +799,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "ARI",
@@ -1049,7 +1053,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "LV",
@@ -1237,7 +1242,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "ATL",
@@ -1491,7 +1497,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "MIN",
@@ -1634,7 +1641,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "IND",
@@ -1822,7 +1830,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "LAC",
@@ -1975,7 +1984,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "NE",
@@ -2229,7 +2239,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "KC",
@@ -2435,7 +2446,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "PHI",
@@ -2741,7 +2753,8 @@
      "source_url": "https://www.nfl.com/injuries/league/2026/reg8"
     }
    ],
-   "with_without": []
+   "with_without": [],
+   "inactives": {}
   },
   {
    "away": "CHI",
@@ -3172,7 +3185,8 @@
     }
    ],
    "inactives_posted": false,
-   "inactives_note": "Official MNF inactives not yet posted as of this refresh (~6:20 PM ET); due ~6:45 PM ET."
+   "inactives_note": "Official MNF inactives not yet posted as of this refresh (~6:20 PM ET); due ~6:45 PM ET.",
+   "inactives": {}
   }
  ]
 }

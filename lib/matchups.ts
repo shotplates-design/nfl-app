@@ -18,8 +18,8 @@ export function teamStreaks(code:string){ const hot:any[]=[], cold:any[]=[];
   return { hot:hot.sort(s).slice(0,8), cold:cold.sort(s).slice(0,4) }; }
 export { teamName };
 
-// Drop-in conditions file: data/week-N-conditions.json (week 6 is data/week-6-conditions.json).
-// Kenzie replaces that file before a kickoff window. data/feeds/ is only a fallback.
+// Drop-in conditions file: data/week-N-conditions.json (auto-refreshed from ESPN).
+// data/feeds/ is only a fallback.
 const FEED_ALIAS: Record<string,string> = {was:'wsh',az:'ari',la:'lar'};
 export const feedCode=(c:string)=>{ const x=String(c||'').toLowerCase(); return FEED_ALIAS[x]||x; };
 function attachConditions(w:any){

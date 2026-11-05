@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Refresh injuries in data/week-N-conditions.json from ESPN's public site API.
 
-Fail closed: exit nonzero and write nothing on fetch/parse failure or a
-suspiciously empty result. ESPN is an automatic baseline only: it may add
-new injured players, but never overwrites an existing (Kenzie-written)
-injury entry. Game fields weather, with_without, kickoff_et, inactives,
-inactives_note, and related notes stay untouched. No new schema keys.
-No odds or bet fields.
+ESPN is the only injury source. Each scheduled run writes the full injury list
+for every game so ESPN statuses update existing players too. Required game keys
+weather, with_without, and inactives stay present (empty defaults when missing).
+Fail closed on fetch/parse failure, a suspiciously empty result, or a relative
+drop below ~50% of the previous file's injury row count. No odds or bet fields.
 """
 from __future__ import annotations
 
@@ -14,6 +13,7 @@ import argparse
 import copy
 import datetime as dt
 import json
+import math
 import re
 import sys
 import tempfile
@@ -42,18 +42,16 @@ STATUS_NORMALIZE = {
     "Physically Unable to Perform": "PUP",
     "Non Football Injury": "NFI",
 }
-# Practice participation inferred from ESPN shortComment when present.
 PRACTICE_PATTERNS = [
     (re.compile(r"did not practice|DNP", re.I), "Did Not Participate In Practice"),
     (re.compile(r"limited (participation|practice)|was limited", re.I), "Limited Participation in Practice"),
     (re.compile(r"full (participation|practice)|practiced fully|was a full participant", re.I), "Full Participation in Practice"),
 ]
-# Skip ESPN "Active" rows unless the comment still shows a practice limit.
 SKIP_ACTIVE_UNLESS_PRACTICE = True
 MIN_TEAMS_WITH_INJURIES = 8
 MIN_TOTAL_INJURIES = 20
-# Keys ESPN is allowed to write on *new* injury rows. Existing (Kenzie) rows
-# are copied verbatim — including any richer keys she already set.
+# Fail closed if the new write has fewer than this share of the previous file's rows.
+RELATIVE_DROP_FLOOR = 0.5
 ESPN_INJURY_KEYS = (
     "team",
     "player",
@@ -64,18 +62,8 @@ ESPN_INJURY_KEYS = (
     "note",
     "source_url",
 )
-# Game-level fields ESPN must never touch (Kenzie / curated).
-PRESERVE_GAME_FIELDS = (
-    "weather",
-    "with_without",
-    "kickoff_et",
-    "inactives",
-    "inactives_note",
-    "inactives_posted",
-    "game_state_note",
-    "roster_moves",
-)
-
+# Always present on every game (empty OK). Schema keys Best Props / Sleepers read.
+REQUIRED_GAME_KEYS = ("weather", "with_without", "inactives")
 
 
 class FailClosed(RuntimeError):
@@ -152,9 +140,12 @@ def fetch_espn_injuries() -> dict[str, list[dict[str, Any]]]:
             player = (athlete.get("displayName") or "").strip()
             if not player:
                 continue
-            team = norm_abbr((athlete.get("team") or {}).get("abbreviation") if isinstance(athlete.get("team"), dict) else None)
+            team = norm_abbr(
+                (athlete.get("team") or {}).get("abbreviation")
+                if isinstance(athlete.get("team"), dict)
+                else None
+            )
             if not team:
-                # Fall back: map displayName of parent block via first athlete team only.
                 continue
             pos = ""
             position = athlete.get("position")
@@ -163,7 +154,7 @@ def fetch_espn_injuries() -> dict[str, list[dict[str, Any]]]:
             status_raw = row.get("status")
             status = norm_status(status_raw if isinstance(status_raw, str) else None)
             details = row.get("details") if isinstance(row.get("details"), dict) else {}
-            injury = (details.get("type") or details.get("detail") or details.get("location") or None)
+            injury = details.get("type") or details.get("detail") or details.get("location") or None
             if isinstance(injury, str):
                 injury = injury.strip() or None
             else:
@@ -173,7 +164,6 @@ def fetch_espn_injuries() -> dict[str, list[dict[str, Any]]]:
             if status == "Active" and SKIP_ACTIVE_UNLESS_PRACTICE:
                 if not practice or practice.startswith("Full"):
                     continue
-                # Keep limited / DNP Active rows as practice watches with null game status.
                 status = None
             out = {
                 "team": team,
@@ -186,7 +176,6 @@ def fetch_espn_injuries() -> dict[str, list[dict[str, Any]]]:
             if practice:
                 out["practice_latest"] = practice
             if short and status in (None, "Questionable", "Doubtful", "Out"):
-                # Keep a short note when it adds practice/context; truncate.
                 note = short.strip()
                 if len(note) > 240:
                     note = note[:237] + "..."
@@ -227,7 +216,7 @@ def scoreboard_games(year: int, week: int) -> list[dict[str, Any]]:
                 away = abbr
         if not home or not away:
             continue
-        kickoff = event.get("date")  # UTC ISO
+        kickoff = event.get("date")
         kickoff_et = None
         if isinstance(kickoff, str) and kickoff:
             try:
@@ -248,8 +237,12 @@ def placeholder_weather() -> dict[str, Any]:
         "wind_mph": None,
         "precip_pct": None,
         "impact": "none",
-        "note": "Weather not set by the injury refresh; preserved or filled by Kenzie’s feed.",
+        "note": "Weather not set by the injury refresh.",
     }
+
+
+def empty_inactives() -> dict[str, Any]:
+    return {}
 
 
 def load_or_seed_conditions(path: Path, week: int, year: int) -> dict[str, Any]:
@@ -261,7 +254,6 @@ def load_or_seed_conditions(path: Path, week: int, year: int) -> dict[str, Any]:
         if not isinstance(data, dict) or not isinstance(data.get("games"), list):
             raise FailClosed(f"{path} is missing a games array")
         if int(data.get("week") or 0) not in (0, week):
-            # Allow rewriting when the file is for this week; otherwise seed fresh.
             if int(data.get("week") or 0) != week:
                 raise FailClosed(f"{path} is week {data.get('week')}, expected {week}")
         return data
@@ -277,10 +269,35 @@ def load_or_seed_conditions(path: Path, week: int, year: int) -> dict[str, Any]:
                 "weather": placeholder_weather(),
                 "injuries": [],
                 "with_without": [],
+                "inactives": empty_inactives(),
             }
             for g in schedule
         ],
     }
+
+
+def count_injuries(data: dict[str, Any] | None) -> int:
+    if not data or not isinstance(data.get("games"), list):
+        return 0
+    total = 0
+    for game in data["games"]:
+        if isinstance(game, dict) and isinstance(game.get("injuries"), list):
+            total += len(game["injuries"])
+    return total
+
+
+def assert_relative_drop_ok(previous: dict[str, Any] | None, updated: dict[str, Any]) -> None:
+    """Fail closed when the new file drops below ~50% of the previous injury count."""
+    prior = count_injuries(previous)
+    if prior <= 0:
+        return
+    new = count_injuries(updated)
+    floor = max(1, math.ceil(prior * RELATIVE_DROP_FLOOR))
+    if new < floor:
+        raise FailClosed(
+            f"Relative drop gate: new injury count {new} is below "
+            f"{RELATIVE_DROP_FLOOR:.0%} of previous {prior} (floor {floor})"
+        )
 
 
 def validate_conditions(data: dict[str, Any]) -> None:
@@ -296,7 +313,7 @@ def validate_conditions(data: dict[str, Any]) -> None:
     for i, game in enumerate(games):
         if not isinstance(game, dict):
             raise FailClosed(f"games[{i}] is not an object")
-        for key in ("away", "home", "weather", "injuries", "with_without"):
+        for key in ("away", "home", "weather", "injuries", "with_without", "inactives"):
             if key not in game:
                 raise FailClosed(f"games[{i}] missing {key}")
         injuries = game["injuries"]
@@ -310,7 +327,6 @@ def validate_conditions(data: dict[str, Any]) -> None:
             for key in ("team", "player"):
                 if not row.get(key):
                     raise FailClosed(f"games[{i}].injuries[{j}] missing {key}")
-            # Reject betting keys if they ever appear upstream.
             for bad in ("odds", "spread", "moneyline", "sportsbook", "parlay"):
                 if bad in row:
                     raise FailClosed(f"games[{i}].injuries[{j}] has forbidden key {bad}")
@@ -334,7 +350,6 @@ def espn_injury_row(row: dict[str, Any]) -> dict[str, Any]:
     for key in ESPN_INJURY_KEYS:
         if key in row:
             out[key] = copy.deepcopy(row[key])
-    # Required identity fields.
     out["team"] = norm_abbr(out.get("team"))
     out["player"] = str(out.get("player") or "").strip()
     if not out["team"] or not out["player"]:
@@ -344,40 +359,33 @@ def espn_injury_row(row: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-def merge_game_injuries(
-    existing: list[Any],
-    espn_rows: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    """Kenzie/prior rows win exactly; ESPN may only append unseen players.
-
-    An existing entry (anything already in the conditions file) is treated as
-    Kenzie-written: copy it verbatim, including notes, practice_latest, and any
-    richer analysis keys. ESPN never patches status or other fields on those
-    rows. ESPN rows whose (team, player) are new are appended as baseline.
-    """
-    kept: list[dict[str, Any]] = []
-    seen: set[tuple[str, str]] = set()
-    for row in existing:
-        if not isinstance(row, dict) or not row.get("player"):
-            continue
-        kept.append(copy.deepcopy(row))
-        seen.add(injury_key(row))
+def full_game_injuries(espn_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Write the full ESPN list for the game (statuses update existing players)."""
     rank = {"Out": 0, "IR": 1, "Doubtful": 2, "Questionable": 3, "PUP": 4, "NFI": 5}
-    newcomers: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    out: list[dict[str, Any]] = []
     for row in espn_rows:
         key = injury_key(row)
         if not key[0] or not key[1] or key in seen:
             continue
-        newcomers.append(espn_injury_row(row))
+        out.append(espn_injury_row(row))
         seen.add(key)
-    newcomers.sort(
-        key=lambda r: (rank.get(str(r.get("status") or ""), 9), str(r.get("player") or ""))
-    )
-    return kept + newcomers
+    out.sort(key=lambda r: (rank.get(str(r.get("status") or ""), 9), str(r.get("player") or "")))
+    return out
+
+
+def ensure_required_game_keys(game: dict[str, Any]) -> None:
+    """Keep weather, with_without, and inactives on every game (empty OK)."""
+    if "weather" not in game or game["weather"] is None:
+        game["weather"] = placeholder_weather()
+    if "with_without" not in game:
+        game["with_without"] = []
+    if "inactives" not in game or game["inactives"] is None:
+        game["inactives"] = empty_inactives()
 
 
 def apply_injuries(data: dict[str, Any], by_team: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
-    """Merge ESPN baseline into conditions without clobbering Kenzie fields."""
+    """Replace each game's injuries with the full ESPN list; keep required keys."""
     out = copy.deepcopy(data)
     prior_top_keys = set(out.keys())
     for game in out["games"]:
@@ -387,30 +395,18 @@ def apply_injuries(data: dict[str, Any], by_team: dict[str, list[dict[str, Any]]
         game["away"] = away
         game["home"] = home
         espn_rows = list(by_team.get(away, [])) + list(by_team.get(home, []))
-        prior_injuries = game.get("injuries") if isinstance(game.get("injuries"), list) else []
-        game["injuries"] = merge_game_injuries(prior_injuries, espn_rows)
-        # Required schema keys only when absent — never overwrite Kenzie values.
-        if "weather" not in game or game["weather"] is None:
-            game["weather"] = placeholder_weather()
-        if "with_without" not in game:
-            game["with_without"] = []
-        # Refuse to invent game-level keys beyond what the file already had,
-        # plus the two required schema keys we may fill above.
-        allowed_new = {"weather", "with_without", "away", "home", "injuries"}
+        game["injuries"] = full_game_injuries(espn_rows)
+        ensure_required_game_keys(game)
+        # Do not invent unrelated game-level keys.
+        allowed_new = {"weather", "with_without", "inactives", "away", "home", "injuries"}
         invented = set(game.keys()) - prior_game_keys - allowed_new
         if invented:
-            raise FailClosed(f"ESPN merge would invent game keys: {sorted(invented)}")
-        # Explicitly do not touch PRESERVE_GAME_FIELDS — deepcopy already kept them.
-        for field in PRESERVE_GAME_FIELDS:
-            if field in prior_game_keys and field not in game:
-                raise FailClosed(f"ESPN merge dropped preserved field {field}")
+            raise FailClosed(f"ESPN apply would invent game keys: {sorted(invented)}")
     out["updated"] = dt.datetime.now(ET).replace(microsecond=0).isoformat()
-    # Do not add injury_source_note (or any other top-level key) if absent.
     invented_top = set(out.keys()) - prior_top_keys - {"updated"}
     if invented_top:
-        raise FailClosed(f"ESPN merge would invent top-level keys: {sorted(invented_top)}")
+        raise FailClosed(f"ESPN apply would invent top-level keys: {sorted(invented_top)}")
     return out
-
 
 
 def atomic_write(path: Path, data: dict[str, Any]) -> None:
@@ -439,9 +435,11 @@ def main(argv: list[str] | None = None) -> int:
         by_team = fetch_espn_injuries()
         path = args.data_dir / f"week-{week}-conditions.json"
         current = load_or_seed_conditions(path, week, year)
+        previous = copy.deepcopy(current) if path.exists() else None
         current["week"] = week
         updated = apply_injuries(current, by_team)
         validate_conditions(updated)
+        assert_relative_drop_ok(previous, updated)
     except FailClosed as exc:
         print(f"FAIL CLOSED: {exc}", file=sys.stderr)
         return 1

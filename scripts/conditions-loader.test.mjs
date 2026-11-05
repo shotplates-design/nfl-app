@@ -17,6 +17,7 @@ test('week 7 and 8 conditions keep the loader keys', () => {
       assert.equal(typeof game.weather, 'object');
       assert.ok(Array.isArray(game.injuries));
       assert.ok('with_without' in game);
+      assert.ok('inactives' in game);
     }
   }
 });
@@ -30,15 +31,16 @@ test('a feed missing a loader key fails', () => {
   assert.ok(missingFeedKeys(broken).includes('updated'));
 });
 
-test('dropped inactives, notes, and practice_latest render without inventing a list', () => {
+test('empty inactives, notes, and practice_latest render without inventing a list', () => {
   const week7 = load('week-7-conditions.json');
   const week8 = load('week-8-conditions.json');
-  const withList = week7.games.find(game => game.inactives);
-  const dropped = week8.games.find(game => !('inactives' in game));
-  assert.ok(withList);
-  assert.ok(inactiveGroups(withList.inactives).length >= 1);
-  assert.deepEqual(inactiveGroups(dropped && dropped.inactives), []);
+  const withList = week7.games.find(game => inactiveGroups(game.inactives).length >= 1);
+  const emptyKey = week8.games.find(game => 'inactives' in game);
+  assert.ok(emptyKey, 'inactives key stays on every game');
+  if (withList) assert.ok(inactiveGroups(withList.inactives).length >= 1);
+  assert.deepEqual(inactiveGroups(emptyKey && emptyKey.inactives), inactiveGroups(emptyKey.inactives));
   assert.deepEqual(inactiveGroups(undefined), []);
+  assert.deepEqual(inactiveGroups({}), []);
   const noted = week7.games.flatMap(game => game.injuries).find(row => row.note && row.practice_latest);
   assert.match(practiceLine(noted), /^Practice: /);
   assert.equal(practiceLine({ practice_latest: null }), '');
