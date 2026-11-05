@@ -1,6 +1,7 @@
 # Pull current NFL injuries from ESPN's public site API into
-# data/week-N-conditions.json. Fail closed: no commit on fetch/parse/empty.
-# Vercel deploys from the push. No deploy hook. No odds.
+# data/week-N-conditions.json as a baseline only (never overwrite Kenzie
+# injury rows or weather/with_without/inactives/kickoff). Fail closed:
+# no commit on fetch/parse/empty. Vercel deploys from the push. No odds.
 name: refresh-injuries
 on:
   schedule:

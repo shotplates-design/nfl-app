@@ -2,9 +2,11 @@
 """Refresh injuries in data/week-N-conditions.json from ESPN's public site API.
 
 Fail closed: exit nonzero and write nothing on fetch/parse failure or a
-suspiciously empty result. Only injuries (plus practice_latest / note when
-ESPN provides them) are updated; weather, with_without, kickoff_et, inactives
-and other game fields are preserved. No odds or bet fields.
+suspiciously empty result. ESPN is an automatic baseline only: it may add
+new injured players, but never overwrites an existing (Kenzie-written)
+injury entry. Game fields weather, with_without, kickoff_et, inactives,
+inactives_note, and related notes stay untouched. No new schema keys.
+No odds or bet fields.
 """
 from __future__ import annotations
 
@@ -50,6 +52,30 @@ PRACTICE_PATTERNS = [
 SKIP_ACTIVE_UNLESS_PRACTICE = True
 MIN_TEAMS_WITH_INJURIES = 8
 MIN_TOTAL_INJURIES = 20
+# Keys ESPN is allowed to write on *new* injury rows. Existing (Kenzie) rows
+# are copied verbatim — including any richer keys she already set.
+ESPN_INJURY_KEYS = (
+    "team",
+    "player",
+    "position",
+    "status",
+    "injury",
+    "practice_latest",
+    "note",
+    "source_url",
+)
+# Game-level fields ESPN must never touch (Kenzie / curated).
+PRESERVE_GAME_FIELDS = (
+    "weather",
+    "with_without",
+    "kickoff_et",
+    "inactives",
+    "inactives_note",
+    "inactives_posted",
+    "game_state_note",
+    "roster_moves",
+)
+
 
 
 class FailClosed(RuntimeError):
@@ -295,31 +321,96 @@ def validate_conditions(data: dict[str, Any]) -> None:
         raise FailClosed(f"Refusing to write: only {teams_with} games have injuries")
 
 
+def injury_key(row: dict[str, Any]) -> tuple[str, str]:
+    return (
+        norm_abbr(str(row.get("team") or "")),
+        str(row.get("player") or "").strip().lower(),
+    )
+
+
+def espn_injury_row(row: dict[str, Any]) -> dict[str, Any]:
+    """Baseline injury shape only — never invent keys outside ESPN_INJURY_KEYS."""
+    out: dict[str, Any] = {}
+    for key in ESPN_INJURY_KEYS:
+        if key in row:
+            out[key] = copy.deepcopy(row[key])
+    # Required identity fields.
+    out["team"] = norm_abbr(out.get("team"))
+    out["player"] = str(out.get("player") or "").strip()
+    if not out["team"] or not out["player"]:
+        raise FailClosed("ESPN injury row missing team/player after normalize")
+    if "source_url" not in out:
+        out["source_url"] = SOURCE_URL
+    return out
+
+
+def merge_game_injuries(
+    existing: list[Any],
+    espn_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Kenzie/prior rows win exactly; ESPN may only append unseen players.
+
+    An existing entry (anything already in the conditions file) is treated as
+    Kenzie-written: copy it verbatim, including notes, practice_latest, and any
+    richer analysis keys. ESPN never patches status or other fields on those
+    rows. ESPN rows whose (team, player) are new are appended as baseline.
+    """
+    kept: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    for row in existing:
+        if not isinstance(row, dict) or not row.get("player"):
+            continue
+        kept.append(copy.deepcopy(row))
+        seen.add(injury_key(row))
+    rank = {"Out": 0, "IR": 1, "Doubtful": 2, "Questionable": 3, "PUP": 4, "NFI": 5}
+    newcomers: list[dict[str, Any]] = []
+    for row in espn_rows:
+        key = injury_key(row)
+        if not key[0] or not key[1] or key in seen:
+            continue
+        newcomers.append(espn_injury_row(row))
+        seen.add(key)
+    newcomers.sort(
+        key=lambda r: (rank.get(str(r.get("status") or ""), 9), str(r.get("player") or ""))
+    )
+    return kept + newcomers
+
+
 def apply_injuries(data: dict[str, Any], by_team: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+    """Merge ESPN baseline into conditions without clobbering Kenzie fields."""
     out = copy.deepcopy(data)
+    prior_top_keys = set(out.keys())
     for game in out["games"]:
+        prior_game_keys = set(game.keys())
         away = norm_abbr(game.get("away"))
         home = norm_abbr(game.get("home"))
         game["away"] = away
         game["home"] = home
-        merged = list(by_team.get(away, [])) + list(by_team.get(home, []))
-        # Stable sort: status severity then player name.
-        rank = {"Out": 0, "IR": 1, "Doubtful": 2, "Questionable": 3, "PUP": 4, "NFI": 5}
-        merged.sort(key=lambda r: (rank.get(str(r.get("status") or ""), 9), str(r.get("player") or "")))
-        game["injuries"] = merged
-        # Ensure required keys exist without clobbering richer prior values.
+        espn_rows = list(by_team.get(away, [])) + list(by_team.get(home, []))
+        prior_injuries = game.get("injuries") if isinstance(game.get("injuries"), list) else []
+        game["injuries"] = merge_game_injuries(prior_injuries, espn_rows)
+        # Required schema keys only when absent — never overwrite Kenzie values.
         if "weather" not in game or game["weather"] is None:
             game["weather"] = placeholder_weather()
         if "with_without" not in game:
             game["with_without"] = []
+        # Refuse to invent game-level keys beyond what the file already had,
+        # plus the two required schema keys we may fill above.
+        allowed_new = {"weather", "with_without", "away", "home", "injuries"}
+        invented = set(game.keys()) - prior_game_keys - allowed_new
+        if invented:
+            raise FailClosed(f"ESPN merge would invent game keys: {sorted(invented)}")
+        # Explicitly do not touch PRESERVE_GAME_FIELDS — deepcopy already kept them.
+        for field in PRESERVE_GAME_FIELDS:
+            if field in prior_game_keys and field not in game:
+                raise FailClosed(f"ESPN merge dropped preserved field {field}")
     out["updated"] = dt.datetime.now(ET).replace(microsecond=0).isoformat()
-    note = (
-        f"Auto-refresh {out['updated']} via scripts/refresh_injuries.py. "
-        f"Injuries from ESPN public API ({SOURCE_URL}). "
-        "Other game fields preserved. No odds."
-    )
-    out["injury_source_note"] = note
+    # Do not add injury_source_note (or any other top-level key) if absent.
+    invented_top = set(out.keys()) - prior_top_keys - {"updated"}
+    if invented_top:
+        raise FailClosed(f"ESPN merge would invent top-level keys: {sorted(invented_top)}")
     return out
+
 
 
 def atomic_write(path: Path, data: dict[str, Any]) -> None:

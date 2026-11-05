@@ -115,15 +115,129 @@ class RefreshInjuries(unittest.TestCase):
             "BAL": [{"team": "BAL", "player": "Raven", "position": "CB", "status": "Out",
                      "injury": "Foot", "source_url": ri.SOURCE_URL}],
         }
-        # Pad by_team so validate would pass if called; here we only check preserve.
         updated = ri.apply_injuries(current, by_team)
         game = updated["games"][0]
         self.assertEqual(game["weather"]["temp_f"], 68)
         self.assertEqual(game["with_without"][0]["player"], "Keeper")
         self.assertEqual(game["kickoff_et"], "2026-11-05T20:15:00-05:00")
         players = {r["player"] for r in game["injuries"]}
-        self.assertEqual(players, {"New", "Raven"})
-        self.assertNotIn("Old", players)
+        # Existing Kenzie/prior row kept; ESPN may only add newcomers.
+        self.assertEqual(players, {"Old", "New", "Raven"})
+
+    def test_espn_never_overwrites_kenzie_injury_or_game_fields(self):
+        """Jim: ESPN is baseline only; Kenzie entries and game fields stay exact."""
+        kenzie_ezra = {
+            "team": "JAX",
+            "player": "Ezra Cleveland",
+            "position": "G",
+            "status": None,
+            "injury": None,
+            "practice_latest": "Limited Participation in Practice",
+            "note": "Kenzie: expected to play through the ankle; watch snaps.",
+            "key_player_watch": True,
+            "source_url": "https://www.nfl.com/injuries",
+        }
+        current = {
+            "week": 9,
+            "updated": "kenzie-stamp",
+            "games": [{
+                "away": "JAX",
+                "home": "BAL",
+                "kickoff_et": "2026-11-05T20:15:00-05:00",
+                "weather": {"indoor": False, "temp_f": 54, "wind_mph": 12, "impact": "wind",
+                            "note": "Kenzie weather note"},
+                "with_without": [{"player": "Lamar Jackson", "takeaway": "Kenzie WW analysis"}],
+                "inactives": {"BAL": ["Someone"]},
+                "inactives_note": "Kenzie inactives note — do not touch",
+                "inactives_posted": True,
+                "injuries": [kenzie_ezra],
+            }],
+        }
+        prior_game_keys = set(current["games"][0].keys())
+        prior_top_keys = set(current.keys())
+        by_team = {
+            "JAX": [{
+                "team": "JAX",
+                "player": "Ezra Cleveland",
+                "position": "G",
+                "status": "Out",  # ESPN wants Out — must NOT win
+                "injury": "Ankle",
+                "practice_latest": "Did Not Participate In Practice",
+                "note": "ESPN shortComment that must not overwrite Kenzie",
+                "source_url": ri.SOURCE_URL,
+                "espn_only_extra": "must-not-land-on-kenzie-row",
+            }, {
+                "team": "JAX",
+                "player": "Brand New",
+                "position": "WR",
+                "status": "Questionable",
+                "injury": "Shoulder",
+                "practice_latest": "Limited Participation in Practice",
+                "note": "ESPN baseline note",
+                "source_url": ri.SOURCE_URL,
+                "espn_only_extra": "must-not-appear",
+            }],
+            "BAL": [{
+                "team": "BAL",
+                "player": "Raven Rookie",
+                "position": "CB",
+                "status": "Doubtful",
+                "injury": "Foot",
+                "source_url": ri.SOURCE_URL,
+            }],
+        }
+        updated = ri.apply_injuries(current, by_team)
+        game = updated["games"][0]
+
+        # Game fields survive byte-for-byte (aside from injuries list growth).
+        self.assertEqual(game["weather"], current["games"][0]["weather"])
+        self.assertEqual(game["with_without"], current["games"][0]["with_without"])
+        self.assertEqual(game["kickoff_et"], current["games"][0]["kickoff_et"])
+        self.assertEqual(game["inactives"], current["games"][0]["inactives"])
+        self.assertEqual(game["inactives_note"], current["games"][0]["inactives_note"])
+        self.assertEqual(game["inactives_posted"], current["games"][0]["inactives_posted"])
+
+        # No new game-level or top-level keys.
+        self.assertEqual(set(game.keys()), prior_game_keys)
+        self.assertEqual(set(updated.keys()), prior_top_keys)  # only updated value changes
+
+        ezra = next(r for r in game["injuries"] if r["player"] == "Ezra Cleveland")
+        self.assertEqual(ezra, kenzie_ezra)  # exact Kenzie entry
+
+        brand = next(r for r in game["injuries"] if r["player"] == "Brand New")
+        self.assertEqual(brand["status"], "Questionable")
+        self.assertEqual(brand["note"], "ESPN baseline note")
+        self.assertNotIn("espn_only_extra", brand)
+        self.assertEqual(set(brand.keys()) <= set(ri.ESPN_INJURY_KEYS), True)
+
+        players = {r["player"] for r in game["injuries"]}
+        self.assertEqual(players, {"Ezra Cleveland", "Brand New", "Raven Rookie"})
+
+    def test_espn_baseline_does_not_invent_schema_keys(self):
+        current = {
+            "week": 9,
+            "updated": "old",
+            "games": [{
+                "away": "JAX",
+                "home": "BAL",
+                "weather": {"impact": "none"},
+                "injuries": [],
+                "with_without": [],
+            }],
+        }
+        by_team = {
+            "JAX": [{"team": "JAX", "player": "A", "position": "QB", "status": "Out",
+                     "injury": "Knee", "source_url": ri.SOURCE_URL, "secret_key": 1}],
+            "BAL": [{"team": "BAL", "player": "B", "position": "WR", "status": "Out",
+                     "injury": "Ankle", "source_url": ri.SOURCE_URL}],
+        }
+        updated = ri.apply_injuries(current, by_team)
+        game = updated["games"][0]
+        self.assertEqual(set(game.keys()), {"away", "home", "weather", "injuries", "with_without"})
+        self.assertEqual(set(updated.keys()), {"week", "updated", "games"})
+        for row in game["injuries"]:
+            self.assertTrue(set(row.keys()) <= set(ri.ESPN_INJURY_KEYS))
+            self.assertNotIn("secret_key", row)
 
 
 class ImportKenzie(unittest.TestCase):
