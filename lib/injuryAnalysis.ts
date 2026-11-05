@@ -2,8 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { currentWeek } from './matchups';
 
-// Drop-in file: data/week-N-injury-analysis.json. The page reads the current week first, then the newest week on disk.
-// Swap the file for a Friday or Sunday update. No code change is required.
+// Drop-in file: data/week-N-injury-analysis.json (curated desk + Kenzie picks).
+// loadInjuryDesk prefers the current week's analysis, else data/week-N-conditions.json
+// (auto-refreshed by scripts/refresh_injuries.py / import_kenzie_feed.py), else the newest
+// of either. Swap the analysis file for a curated Friday/Sunday update when you have one.
 // Optional lock clock so Kenzie's picks can be marked final after kickoff:
 //   "kenzie_picks_final_after": "2026-10-15T20:15:00-04:00"  — applies to every pick
 //   "kickoffs": { "SEA@DEN": "2026-10-15T20:15:00-04:00" }   — used when a pick has "game"
@@ -159,13 +161,89 @@ function files() {
     return m ? [{ week: Number(m[1]), file: path.join(dir, name) }] : [];
   }).sort((a, b) => b.week - a.week);
 }
-
-export function loadInjuryDesk(): InjuryDesk | null {
-  const list = files();
-  if (!list.length) return null;
-  let week = 6;
-  try { week = currentWeek()?.week || week; } catch { /* keep default */ }
-  const hit = list.find(f => f.week === week) || list[0];
+function conditionsFiles() {
+  const dir = path.join(process.cwd(), 'data');
+  if (!fs.existsSync(dir)) return [] as { week: number; file: string }[];
+  return fs.readdirSync(dir).flatMap(name => {
+    const m = /^week-(\d+)-conditions\.json$/.exec(name);
+    return m ? [{ week: Number(m[1]), file: path.join(dir, name) }] : [];
+  }).sort((a, b) => b.week - a.week);
+}
+function severityFromStatus(status: string): string {
+  const s = status.toLowerCase();
+  if (s === 'out' || s === 'ir' || s.includes('injured reserve')) return 'critical';
+  if (s === 'doubtful') return 'significant';
+  if (s === 'questionable') return 'moderate';
+  if (s === 'pup' || s === 'nfi') return 'significant';
+  return 'minor';
+}
+/** Build a desk from data/week-N-conditions.json so /injuries tracks the auto refresh. */
+export function deskFromConditions(raw: any, weekHint: number): InjuryDesk | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const games = Array.isArray(raw.games) ? raw.games : [];
+  if (!games.length) return null;
+  const injuries: InjuryItem[] = [];
+  for (const game of games) {
+    if (!game || typeof game !== 'object') continue;
+    const away = text(game.away, 8).toUpperCase();
+    const home = text(game.home, 8).toUpperCase();
+    const gameKey = away && home ? `${away}@${home}` : '';
+    const rows = Array.isArray(game.injuries) ? game.injuries : [];
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i];
+      if (!r || typeof r !== 'object') continue;
+      const player = text(r.player, 80);
+      if (!player) continue;
+      const team = text(r.team, 8).toUpperCase() || away || home;
+      const status = text(r.status, 80);
+      const injury = text(r.injury, 160);
+      const practice = text(r.practice_latest, 120);
+      const note = text(r.note, 500);
+      const source = https(r.source_url);
+      const impactBits = [practice ? `Practice: ${practice}` : '', note].filter(Boolean);
+      injuries.push({
+        id: `injury-${slug(`${team}-${player}`) || i}`,
+        game: gameKey,
+        team,
+        player,
+        position: text(r.position, 16),
+        status: status || (practice ? 'Practice report' : ''),
+        status_official: Boolean(status),
+        injury,
+        severity: severityFromStatus(status),
+        team_impact: impactBits.join(' · ').slice(0, 2000),
+        coverage_role: '',
+        beneficiaries: [],
+        opponent_beneficiaries: [],
+        exploited_by: [],
+        betting_angle: '',
+        confidence: '',
+        expert_takes: [],
+        sources: source ? [source] : [],
+        matchup_note: '',
+      });
+    }
+  }
+  if (!injuries.length) return null;
+  const week = Number(raw.week) || weekHint;
+  const updated = text(raw.updated, 40);
+  const sourceNote = text(raw.injury_source_note, 400);
+  const headline = [
+    `Auto injury desk for week ${week} from data/week-${week}-conditions.json.`,
+    sourceNote || 'Statuses from the conditions feed (ESPN refresh and/or Kenzie import). Curated analysis, when present for this week, still wins.',
+  ];
+  return {
+    week,
+    updated,
+    headline_summary: headline,
+    injuries,
+    kenzie_picks: [],
+    kenzie_picks_note: '',
+    kenzie_picks_final_after: '',
+    matchup_spotlights: [],
+  };
+}
+function parseAnalysisFile(hit: { week: number; file: string }): InjuryDesk | null {
   let raw: any;
   try { raw = JSON.parse(fs.readFileSync(hit.file, 'utf8')); } catch { return null; }
   const injuries: InjuryItem[] = (Array.isArray(raw.injuries) ? raw.injuries : []).map((r: any, i: number) => {
@@ -230,4 +308,44 @@ export function loadInjuryDesk(): InjuryDesk | null {
     kenzie_picks_final_after: deskFinal,
     matchup_spotlights: spotlights,
   };
+}
+
+export function loadInjuryDesk(): InjuryDesk | null {
+  const analysis = files();
+  const conditions = conditionsFiles();
+  let week = 6;
+  try { week = currentWeek()?.week || week; } catch { /* keep default */ }
+  const aHit = analysis.find(f => f.week === week);
+  if (aHit) {
+    const desk = parseAnalysisFile(aHit);
+    if (desk) return desk;
+  }
+  const cHit = conditions.find(f => f.week === week);
+  if (cHit) {
+    try {
+      const raw = JSON.parse(fs.readFileSync(cHit.file, 'utf8'));
+      const desk = deskFromConditions(raw, week);
+      if (desk) return desk;
+    } catch { /* fall through */ }
+  }
+  const newestA = analysis[0];
+  const newestC = conditions[0];
+  if (newestC && (!newestA || newestC.week > newestA.week)) {
+    try {
+      const raw = JSON.parse(fs.readFileSync(newestC.file, 'utf8'));
+      const desk = deskFromConditions(raw, newestC.week);
+      if (desk) return desk;
+    } catch { /* fall through */ }
+  }
+  if (newestA) {
+    const desk = parseAnalysisFile(newestA);
+    if (desk) return desk;
+  }
+  if (newestC) {
+    try {
+      const raw = JSON.parse(fs.readFileSync(newestC.file, 'utf8'));
+      return deskFromConditions(raw, newestC.week);
+    } catch { return null; }
+  }
+  return null;
 }
