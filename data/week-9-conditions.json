@@ -1,6 +1,6 @@
 {
  "week": 9,
- "updated": "2026-11-08T15:39:29-05:00",
+ "updated": "2026-11-08T20:34:16-05:00",
  "games": [
   {
    "away": "JAX",
@@ -472,14 +472,6 @@
     },
     {
      "team": "DAL",
-     "player": "Jalen Thompson",
-     "position": "S",
-     "status": "IR",
-     "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "DAL",
      "player": "Jonathan Bullard",
      "position": "DT",
      "status": "IR",
@@ -504,6 +496,15 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "DAL",
+     "player": "Jake Ferguson",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Ferguson sustained a knee injury during Sunday's game against the Colts, Calvin Watkins of The Dallas Morning News reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "IND",
      "player": "Jalen Travis",
      "position": "OT",
@@ -523,11 +524,29 @@
     },
     {
      "team": "DAL",
-     "player": "Tyler Goodson",
-     "position": "RB",
+     "player": "Jonathan Mingo",
+     "position": "WR",
      "status": "Questionable",
-     "injury": "Knee",
-     "note": "Goodson (knee) is questionable to return to Sunday's game against the Colts, Tommy Yarrish of the Cowboys' official site reports.",
+     "injury": "Ankle",
+     "note": "Mingo (ankle) is questionable to return to Sunday's matchup against the Colts, Patrik Walker of the Cowboys' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "IND",
+     "player": "Mo Alie-Cox",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Groin",
+     "note": "Alie-Cox is questionable to return to Sunday's game against Dallas due to a groin injury.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "DAL",
+     "player": "P.J. Locke",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Locke suffered a concussion during Sunday's 27-23 win over the Colts, Todd Archer of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -703,6 +722,33 @@
      "position": "S",
      "status": "IR",
      "injury": "Knee",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "KC",
+     "player": "Jaylon Moore",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Moore (ankle) is questionable to return to Sunday's game against the Jets.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "KC",
+     "player": "Patrick Mahomes",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Elbow",
+     "note": "Coach Andy Reid acknowledged after Sunday's 35-12 win over the Jets that Mahomes will likely be sore Monday after suffering an apparent elbow injury during the contest, Lindsey Thiry of ESPN reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "KC",
+     "player": "Xavier Worthy",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "questionable",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1039,6 +1085,15 @@
      "position": "RB",
      "status": "IR",
      "injury": "Hamstring",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NO",
+     "player": "Erik McCoy",
+     "position": "C",
+     "status": "Questionable",
+     "injury": "Biceps",
+     "note": "McCoy (biceps) is questionable to return to Sunday's game against the Browns.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1379,7 +1434,16 @@
      "position": "G",
      "status": "Questionable",
      "injury": "Concussion",
-     "note": "Patrick is questionable to return to Sunday's Week 9 battle against the Rams and is undergoing a concussion evaluation.",
+     "note": "Patrick (concussion) has been ruled out for the remainder of Sunday's game against the Rams.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAR",
+     "player": "Puka Nacua",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Nacua suffered a knee injury during Sunday's 20-13 win at Washington and will undergo an MRI on Monday to determine its extent, Mike Garafolo of NFL Network reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1469,15 +1533,6 @@
      "status": "Out",
      "injury": "Hamstring",
      "note": "inactive",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "DEN",
-     "player": "Jaylen Waddle",
-     "position": "WR",
-     "status": "Out",
-     "injury": "Head",
-     "note": "Waddle (concussion) has been ruled out for the remainder of Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1577,11 +1632,20 @@
     },
     {
      "team": "DEN",
+     "player": "Jaylen Waddle",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Waddle (concussion) has been ruled out for the remainder of Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "DEN",
      "player": "Riley Moss",
      "position": "CB",
      "status": "Questionable",
      "injury": "Concussion",
-     "note": "Moss (concussion) has been ruled out for the remainder of Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports.",
+     "note": "Moss has exited Sunday's matchup against Carolina to be evaluated for a concussion, Sheena Quick of Fox Sports Radio 1340 reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1717,19 +1781,47 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "LAC",
-     "player": "Derwin James Jr.",
-     "position": "S",
-     "status": "IR",
-     "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "HOU",
      "player": "Jaylin Noel",
      "position": "WR",
      "status": "IR",
      "injury": "Toe",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Isas Waxter",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Waxter (ankle) has been ruled out for the remainder of Sunday's game against the Texans.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Justin Eboigbe",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Eboigbe is questionable to return to Sunday's game against Houston due to an ankle injury, Noah Furtado of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Justin Herbert",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Finger",
+     "note": "Herbert sustained a left middle finger injury in Sunday's 44-22 loss to the Texans, Alex Insdorf of BoltBeat.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Ladd McConkey",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Back",
+     "note": "McConkey (back) is questionable to return to Sunday's game against the Texans.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1872,6 +1964,78 @@
      "status": "IR",
      "injury": "Hamstring",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Ben Brown",
+     "position": "C",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Brown (knee) has been ruled out for the rest of Sunday's contest against the Packers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "GB",
+     "player": "Bo Melton",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Head",
+     "note": "Melton exited Sunday's game against the Patriots and is being evaluated for a concussion.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Brenden Schooler",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Schooler (hamstring) will not return to Sunday's game against the Packers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Carlton Davis III",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Davis (knee) is questionable to return to New England's matchup Sunday versus the Packers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "GB",
+     "player": "Josh Jacobs",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Finger",
+     "note": "Jacobs fractured his finger during Sunday's 45-27 win over the Patriots, Matt Schneidman of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Rhamondre Stevenson",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Stevenson (knee) won't return to Sunday's game against the Packers, Mark Daniels of MassLive.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "GB",
+     "player": "Ty'Ron Hopper",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Chest",
+     "note": "Hopper (chest) has been ruled out for the remainder of Sunday's game against the Patriots.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Will Campbell",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Campbell (knee) is questionable to return to Sunday's contest against the Packers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -1941,7 +2105,7 @@
      "position": "WR",
      "status": "Out",
      "injury": "Coach's Decision",
-     "note": "inactive",
+     "note": "Thornton (coach's decision) is inactive for Sunday's game against the 49ers.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1951,6 +2115,15 @@
      "status": "Out",
      "injury": "Coach's Decision",
      "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Gracen Halton",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Halton (ankle) is expected to miss the remainder of the 2026 season, Harrison Rich of the San Francisco Chronicle reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -2029,6 +2202,33 @@
      "position": "CB",
      "status": "IR",
      "injury": "Groin",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Deommodore Lenoir",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Foot",
+     "note": "Lenoir sustained a foot injury during Sunday's 38-17 win against Las Vegas.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Renardo Green",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Back",
+     "note": "Green suffered a back injury during Sunday's 38-17 win against the Raiders, Matt Barrows of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LV",
+     "player": "Trey Zuhn III",
+     "position": "C",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Zuhn (concussion) has been ruled out for the remainder of Las Vegas' matchup versus the 49ers on Sunday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -2188,6 +2388,24 @@
      "status": "IR",
      "injury": "Lower Leg",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SEA",
+     "player": "Drew Lock",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Oblique",
+     "note": "Seahawks coach Mike Macdonald said after Sunday's 17-3 win over the Cardinals that Lock sustained an oblique injury during the game, leaving Lock's availability for Week 10 against the Raiders up in the air, Bob Condotta of the Seattle T...",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "ARI",
+     "player": "Roy Lopez",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Toe",
+     "note": "Lopez (toe) has been ruled out for the remainder of Sunday's matchup with the Seahawks, Darren Urban of the Cardinals' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -2208,11 +2426,92 @@
    "injuries": [
     {
      "team": "TB",
+     "player": "Ayden Garnes",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TB",
+     "player": "Billy Schrauth",
+     "position": "G",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Case Keenum",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "Keenum (coach's decision) is inactive but serving as the Bears' emergency No. 3 quarterback for Sunday Night Football versus the Buccaneers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TB",
+     "player": "DeMonte Capehart",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Jayden Loving",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Keyshaun Elliott",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Kyle Monangai",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Toe",
+     "note": "Monangai (thumb/toe) is inactive for Sunday's contest against the Buccaneers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Malik Muhammad II",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Toe",
+     "note": "Muhammad (toe) is inactive for Sunday night's contest against Tampa Bay.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TB",
+     "player": "Trevor Keegan",
+     "position": "G",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TB",
      "player": "Yaya Diaby",
      "position": "LB",
      "status": "Out",
      "injury": "Knee - MCL",
-     "note": "Head coach Todd Bowles said that Diaby (knee) has been diagnosed with an MCL sprain and won't be available for Sunday's game against the Bears, Scott Smith of the Buccaneers' official site reports.",
+     "note": "inactive",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -2253,42 +2552,6 @@
      "position": "RB",
      "status": "IR",
      "injury": "Wrist",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "TB",
-     "player": "Emeka Egbuka",
-     "position": "WR",
-     "status": "Questionable",
-     "injury": "Foot",
-     "note": "Egbuka (foot), who is listed as questionable for Sunday's game at Chicago, is slated to return to action, Tom Pelissero of Netflix reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CHI",
-     "player": "Kyle Monangai",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Toe",
-     "note": "Monangai (thumb/toe) isn't slated to play in Sunday's game against the Buccaneers, but he's expected to return after the Bears' Week 10 bye in a Week 11 matchup with the Saints, Ian Rapoport of NFL Network reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CHI",
-     "player": "Malik Muhammad II",
-     "position": "CB",
-     "status": "Questionable",
-     "injury": "Toe",
-     "note": "Muhammad (toe) \"should be good to go\" for Sunday's game against the Buccaneers, Ian Rapoport of NFL Network reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CHI",
-     "player": "Tyrique Stevenson Sr.",
-     "position": "CB",
-     "status": "Questionable",
-     "injury": "Thumb",
-     "note": "Stevenson (thumb) \"should be good to go\" for Sunday's game against the Buccaneers, Ian Rapoport of NFL Network reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
