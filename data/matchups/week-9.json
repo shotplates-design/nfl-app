@@ -2,7 +2,7 @@
  "season": 2026,
  "week": 9,
  "schedule_source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=9",
- "schedule_checked": "2026-11-04",
+ "schedule_checked": "2026-11-10",
  "byes": [
   "pit",
   "ten"
@@ -37,8 +37,8 @@
       "edge": 0.3516
      },
      "third_down": {
-      "away": 0.5938,
-      "home": 0.5938,
+      "away": 0.5781,
+      "home": 0.5781,
       "edge": 0.0
      }
     }
@@ -100,8 +100,8 @@
       "edge": -0.0547
      },
      "third_down": {
-      "away": 0.5078,
-      "home": 0.5078,
+      "away": 0.5547,
+      "home": 0.5547,
       "edge": 0.0
      }
     }
@@ -129,9 +129,9 @@
    ],
    "home_weaknesses": [
     "Ball security through the air",
-    "Third-down conversion",
     "QB/pass rating",
     "Interceptions",
+    "Third-down conversion",
     "Receiving first-down rate"
    ]
   },
@@ -163,8 +163,8 @@
       "edge": 0.4141
      },
      "third_down": {
-      "away": 0.8672,
-      "home": 0.8672,
+      "away": 0.8203,
+      "home": 0.8203,
       "edge": 0.0
      }
     }
@@ -186,8 +186,8 @@
    "home_strengths": [
     "Rush first-down rate",
     "Receiving ball security",
-    "Third-down conversion",
     "Rush ball security",
+    "Third-down conversion",
     "Rush efficiency"
    ],
    "home_weaknesses": [
@@ -226,8 +226,8 @@
       "edge": -0.7266
      },
      "third_down": {
-      "away": 0.375,
-      "home": 0.375,
+      "away": 0.3125,
+      "home": 0.3125,
       "edge": 0.0
      }
     }
@@ -265,7 +265,7 @@
    "away": "Lions",
    "home": "Dolphins",
    "kickoff": "2026-11-08T13:00:00-05:00",
-   "network": "FOX",
+   "network": "CBS",
    "venue": "Hard Rock Stadium",
    "analysis": {
     "away_team": "Lions",
@@ -289,16 +289,16 @@
       "edge": -0.3281
      },
      "third_down": {
-      "away": 0.2969,
-      "home": 0.2969,
+      "away": 0.2891,
+      "home": 0.2891,
       "edge": 0.0
      }
     }
    },
    "away_strengths": [
     "Ball security through the air",
-    "Pass rush",
     "off_3rd_attempts",
+    "Pass rush",
     "QB/pass rating",
     "Rush first-down rate"
    ],
@@ -311,9 +311,9 @@
    ],
    "home_strengths": [
     "Rush TD prevention",
-    "off_3rd_attempts",
     "Receiving efficiency",
     "Run defense",
+    "off_3rd_attempts",
     "Rush efficiency"
    ],
    "home_weaknesses": [
@@ -352,8 +352,8 @@
       "edge": -0.3906
      },
      "third_down": {
-      "away": 0.5078,
-      "home": 0.5078,
+      "away": 0.6406,
+      "home": 0.6406,
       "edge": 0.0
      }
     }
@@ -367,14 +367,14 @@
    ],
    "away_weaknesses": [
     "Pass protection",
-    "Third-down conversion",
+    "off_3rd_attempts",
     "Rush first-down rate",
     "Passing TD production",
     "Receiving ball security"
    ],
    "home_strengths": [
-    "Receiving ball security",
     "Third-down conversion",
+    "Receiving ball security",
     "Forced fumbles",
     "Fumble recoveries",
     "Passing TD production"
@@ -415,18 +415,18 @@
       "edge": 0.125
      },
      "third_down": {
-      "away": 0.6562,
-      "home": 0.6562,
+      "away": 0.7812,
+      "home": 0.7812,
       "edge": 0.0
      }
     }
    },
    "away_strengths": [
     "Pass defense",
+    "Third-down conversion",
     "Receiving first-down rate",
     "Rush TD prevention",
-    "Interceptions",
-    "Pass coverage"
+    "Interceptions"
    ],
    "away_weaknesses": [
     "Pass rush",
@@ -437,15 +437,15 @@
    ],
    "home_strengths": [
     "Receiving ball security",
-    "Rush ball security",
     "Third-down conversion",
+    "Rush ball security",
     "Forced fumbles",
     "Pass coverage"
    ],
    "home_weaknesses": [
     "Fumble recoveries",
-    "Receiving first-down rate",
     "off_3rd_attempts",
+    "Receiving first-down rate",
     "Pass efficiency",
     "Pass rush"
    ]
@@ -478,8 +478,8 @@
       "edge": 0.25
      },
      "third_down": {
-      "away": 0.375,
-      "home": 0.375,
+      "away": 0.3047,
+      "home": 0.3047,
       "edge": 0.0
      }
     }
@@ -503,7 +503,7 @@
     "Fumble recoveries",
     "Rush efficiency",
     "Rush ball security",
-    "off_3rd_attempts"
+    "Rush TD prevention"
    ],
    "home_weaknesses": [
     "Third-down conversion",
@@ -555,8 +555,8 @@
     "Pass coverage"
    ],
    "away_weaknesses": [
-    "Third-down conversion",
     "Receiving first-down rate",
+    "Third-down conversion",
     "Pass efficiency",
     "Receiving efficiency",
     "Rush efficiency"
@@ -604,8 +604,8 @@
       "edge": -0.0234
      },
      "third_down": {
-      "away": 0.2188,
-      "home": 0.2188,
+      "away": 0.3203,
+      "home": 0.3203,
       "edge": 0.0
      }
     }
@@ -614,15 +614,15 @@
     "Ball security through the air",
     "Rush ball security",
     "Receiving ball security",
-    "off_3rd_attempts",
-    "QB/pass rating"
+    "QB/pass rating",
+    "Run defense"
    ],
    "away_weaknesses": [
     "Forced fumbles",
     "Rush efficiency",
-    "Third-down conversion",
     "Interceptions",
-    "Fumble recoveries"
+    "Fumble recoveries",
+    "Pass defense"
    ],
    "home_strengths": [
     "Pass TD prevention",
@@ -667,8 +667,8 @@
       "edge": 0.0703
      },
      "third_down": {
-      "away": 0.6562,
-      "home": 0.6562,
+      "away": 0.625,
+      "home": 0.625,
       "edge": 0.0
      }
     }
@@ -683,8 +683,8 @@
    "away_weaknesses": [
     "Rush efficiency",
     "Rush first-down rate",
-    "off_3rd_attempts",
     "Rush TD prevention",
+    "off_3rd_attempts",
     "Receiving ball security"
    ],
    "home_strengths": [
@@ -730,8 +730,8 @@
       "edge": -0.1797
      },
      "third_down": {
-      "away": 0.6641,
-      "home": 0.6641,
+      "away": 0.8125,
+      "home": 0.8125,
       "edge": 0.0
      }
     }
@@ -760,9 +760,9 @@
    "home_weaknesses": [
     "Interceptions",
     "Pass rush",
-    "Third-down conversion",
     "Fumble recoveries",
-    "Pass coverage"
+    "Pass coverage",
+    "Receiving ball security"
    ]
   },
   {
@@ -793,15 +793,15 @@
       "edge": -0.0234
      },
      "third_down": {
-      "away": 0.6562,
-      "home": 0.6562,
+      "away": 0.7266,
+      "home": 0.7266,
       "edge": 0.0
      }
     }
    },
    "away_strengths": [
-    "Third-down conversion",
     "Rush ball security",
+    "Third-down conversion",
     "Forced fumbles",
     "Fumble recoveries",
     "Passing TD production"
@@ -856,8 +856,8 @@
       "edge": 0.0547
      },
      "third_down": {
-      "away": 0.9219,
-      "home": 0.9219,
+      "away": 0.8359,
+      "home": 0.8359,
       "edge": 0.0
      }
     }
@@ -873,8 +873,8 @@
     "Receiving first-down rate",
     "Pass efficiency",
     "Receiving efficiency",
-    "off_3rd_attempts",
-    "QB/pass rating"
+    "QB/pass rating",
+    "off_3rd_attempts"
    ],
    "home_strengths": [
     "Third-down conversion",
@@ -919,8 +919,8 @@
       "edge": 0.5391
      },
      "third_down": {
-      "away": 0.3125,
-      "home": 0.3125,
+      "away": 0.2734,
+      "home": 0.2734,
       "edge": 0.0
      }
     }
@@ -929,15 +929,15 @@
     "Pass efficiency",
     "Rush first-down rate",
     "Receiving efficiency",
-    "off_3rd_attempts",
-    "Rush efficiency"
+    "Rush efficiency",
+    "Receiving first-down rate"
    ],
    "away_weaknesses": [
     "Rush ball security",
     "Pass TD prevention",
     "Receiving ball security",
-    "Third-down conversion",
-    "Pass rush"
+    "Pass rush",
+    "Forced fumbles"
    ],
    "home_strengths": [
     "Pass coverage",
@@ -948,10 +948,10 @@
    ],
    "home_weaknesses": [
     "Rush first-down rate",
+    "Third-down conversion",
     "Receiving ball security",
     "Passing TD production",
-    "Run defense",
-    "Receiving efficiency"
+    "Run defense"
    ]
   }
  ]
