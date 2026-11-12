@@ -1,6 +1,6 @@
 {
  "week": 10,
- "updated": "2026-11-11T21:47:04-05:00",
+ "updated": "2026-11-12T15:39:33-05:00",
  "games": [
   {
    "away": "WAS",
@@ -223,15 +223,6 @@
      "injury": "Ribs",
      "practice_latest": "Limited Participation in Practice",
      "note": "St. Brown (ribs) was limited at Wednesday's practice.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "NE",
-     "player": "Brenden Schooler",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Hamstring",
-     "note": "Schooler (hamstring) will not return to Sunday's game against the Packers.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -571,8 +562,7 @@
      "position": "LB",
      "status": "Questionable",
      "injury": "Groin",
-     "practice_latest": "Did Not Participate In Practice",
-     "note": "Al-Shaair (groin/personal) was listed as a DNP on Wednesday's injury report, Jonathan M. Alexander of the Houston Chronicle reports.",
+     "note": "Al-Shaair (groin/personal) remained absent from practice Thursday, Aaron Wilson of KPRC 2 Houston reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -609,7 +599,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Toe",
-     "note": "Boston isn't slated to practice Wednesday due to a toe injury, Daniel Oyefusi of ESPN reports.",
+     "note": "Boston (toe) wasn't present for Thursday's practice, Daniel Oyefusi of ESPN reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -729,7 +719,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Marks (knee) was a limited participant in Wednesday's practice, Chris Easterling of the Akron Beacon Journal reports.",
+     "note": "Marks (knee) wasn't spotted during the portion of Thursday's practice session open to reporters, Aaron Wilson of KPRC 2 Houston reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -982,7 +972,7 @@
      "position": "PK",
      "status": "Questionable",
      "injury": "Calf",
-     "note": "Smack (calf) was estimated as limited in Wednesday's jog-through practice.",
+     "note": "Head coach Matt LaFleur said he expects Smack (calf) to practice without limitations Thursday, Matt Schneidman of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1098,7 +1088,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Tuten (ankle/foot) was listed as a non-participant in practice Wednesday, Ryan O'Halloran of The Florida Times-Union reports.",
+     "note": "Tuten (ankle) was the Jaguars' only player without a helmet during the initial portion of Thursday's practice, Ryan O'Halloran of The Florida Times-Union reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1331,16 +1321,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Bell (knee) is listed as a limited participant on Wednesday's injury report, C. Isaiah Smalls II of the Miami Herald reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "IND",
-     "player": "Jaylon Carlies",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Neck",
-     "note": "Carlies (neck) has been ruled out for the remainder of Sunday's game against Dallas.",
+     "note": "Bell (knee) wasn't spotted at practice Thursday, David Furones of the South Florida Sun Sentinel reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1433,14 +1414,6 @@
      "status": "Out",
      "injury": null,
      "note": "Lee (hamstring) was estimated as a full participant on Wednesday's practice report.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CAR",
-     "player": "Brady Christensen",
-     "position": "G",
-     "status": "IR",
-     "injury": "Hamstring",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1685,7 +1658,7 @@
      "position": "DT",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Phillips (ankle) was estimated as a non-participant on the Jets' official injury report Wednesday.",
+     "note": "Phillips (ankle) was estimated as a nonparticipant on the Jets' official injury report Wednesday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1712,7 +1685,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Cooper (ankle) will be limited in Wednesday's practice, Brian Costello of the New York Post reports.",
+     "note": "Cooper (ankle) is participating in Thursday's practice, Antwan V. Staley of the New York Daily News reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1914,6 +1887,15 @@
    },
    "injuries": [
     {
+     "team": "ARI",
+     "player": "Bam Knight",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Concussion",
+     "note": "Knight (concussion) practiced Thursday without a yellow non-contact jersey, Dani Sureck of the Cardinals' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "LAR",
      "player": "Puka Nacua",
      "position": "WR",
@@ -1985,15 +1967,6 @@
      "status": "Questionable",
      "injury": "Groin",
      "note": "Wingard (groin) was a limited participant in Wednesday's practice, Theo Mackie of The Arizona Republic reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "ARI",
-     "player": "Bam Knight",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Concussion",
-     "note": "questionable",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -2233,7 +2206,7 @@
      "position": "CB",
      "status": "Questionable",
      "injury": "Foot",
-     "note": "Lenoir (foot) Matt Barrows of The Athletic in Wednesday's practice, Matt reports.",
+     "note": "Lenoir (foot) did not participate in Wednesday's practice, Matt Barrows of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -2460,10 +2433,11 @@
    "injuries": [
     {
      "team": "BAL",
-     "player": "Adam Randall",
-     "position": "RB",
-     "status": "IR",
-     "injury": "Neck",
+     "player": "Gerad Lichtenhan",
+     "position": "OT",
+     "status": "Out",
+     "injury": "Undisclosed",
+     "note": "out",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -2488,14 +2462,6 @@
      "position": "QB",
      "status": "IR",
      "injury": "Thumb",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "BAL",
-     "player": "Tyler Huntley",
-     "position": "QB",
-     "status": "IR",
-     "injury": "Toe",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
