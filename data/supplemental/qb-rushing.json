@@ -1,6 +1,6 @@
 {
  "source": "nflverse stats_player week (QB rushing on the passing row)",
- "fetched": "2026-11-10T15:15:08-05:00",
+ "fetched": "2026-11-15T14:15:22-05:00",
  "players": {
   "8439": {
    "name": "Aaron Rodgers",
@@ -1948,6 +1948,14 @@
      "rushYds": 16.0,
      "rushTd": 0.0,
      "eventId": "2026_09_LA_WAS"
+    },
+    {
+     "date": "Thu 11/12",
+     "opp": "@NYG",
+     "car": 11.0,
+     "rushYds": 28.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_WAS_NYG"
     }
    ]
   },
@@ -2712,6 +2720,14 @@
      "rushYds": 22.0,
      "rushTd": 0.0,
      "eventId": "2026_09_NYG_PHI"
+    },
+    {
+     "date": "Thu 11/12",
+     "opp": "vsWSH",
+     "car": 6.0,
+     "rushYds": 34.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_WAS_NYG"
     }
    ]
   },

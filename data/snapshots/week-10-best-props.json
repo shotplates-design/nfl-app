@@ -1,0 +1,191 @@
+{
+  "season": 2026,
+  "week": 10,
+  "built_at": "2026-11-15T19:17:16.673914+00:00",
+  "params": {
+    "best_props_min_rate": 0.85,
+    "best_props_alt_rate": 0.75
+  },
+  "props": [
+    {
+      "slug": "brock-bowers",
+      "name": "Brock Bowers",
+      "team": "lv",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 70,
+      "rate": 1.0,
+      "score": 112.0
+    },
+    {
+      "slug": "james-cook",
+      "name": "James Cook",
+      "team": "buf",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 75,
+      "rate": 0.875,
+      "score": 104.13
+    },
+    {
+      "slug": "trey-mcbride",
+      "name": "Trey McBride",
+      "team": "ari",
+      "role": "WR/TE",
+      "stat": "rec",
+      "thr": 7,
+      "rate": 1.0,
+      "score": 102.0
+    },
+    {
+      "slug": "christian-watson",
+      "name": "Christian Watson",
+      "team": "gb",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 55,
+      "rate": 0.7778,
+      "score": 98.11
+    },
+    {
+      "slug": "jameson-williams",
+      "name": "Jameson Williams",
+      "team": "det",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 45,
+      "rate": 0.8571,
+      "score": 96.74
+    },
+    {
+      "slug": "puka-nacua",
+      "name": "Puka Nacua",
+      "team": "lar",
+      "role": "WR/TE",
+      "stat": "rec",
+      "thr": 6,
+      "rate": 0.8571,
+      "score": 96.29
+    },
+    {
+      "slug": "justin-jefferson",
+      "name": "Justin Jefferson",
+      "team": "min",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 30,
+      "rate": 1.0,
+      "score": 95.64
+    },
+    {
+      "slug": "ashton-jeanty",
+      "name": "Ashton Jeanty",
+      "team": "lv",
+      "role": "RB",
+      "stat": "rec",
+      "thr": 3,
+      "rate": 1.0,
+      "score": 95.33
+    },
+    {
+      "slug": "chase-brown",
+      "name": "Chase Brown",
+      "team": "cin",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 35,
+      "rate": 1.0,
+      "score": 94.66
+    },
+    {
+      "slug": "jordan-love",
+      "name": "Jordan Love",
+      "team": "gb",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 270,
+      "rate": 0.7778,
+      "score": 94.41
+    },
+    {
+      "slug": "kyren-williams",
+      "name": "Kyren Williams",
+      "team": "lar",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 45,
+      "rate": 0.8889,
+      "score": 93.83
+    },
+    {
+      "slug": "josh-allen",
+      "name": "Josh Allen",
+      "team": "buf",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 210,
+      "rate": 0.875,
+      "score": 93.56
+    },
+    {
+      "slug": "jahmyr-gibbs",
+      "name": "Jahmyr Gibbs",
+      "team": "det",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 70,
+      "rate": 0.75,
+      "score": 93.32
+    },
+    {
+      "slug": "dak-prescott",
+      "name": "Dak Prescott",
+      "team": "dal",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 195,
+      "rate": 0.8889,
+      "score": 92.94
+    },
+    {
+      "slug": "drake-maye",
+      "name": "Drake Maye",
+      "team": "ne",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 195,
+      "rate": 0.8889,
+      "score": 92.94
+    },
+    {
+      "slug": "javonte-williams",
+      "name": "Javonte Williams",
+      "team": "dal",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 40,
+      "rate": 0.8889,
+      "score": 92.03
+    },
+    {
+      "slug": "geno-smith",
+      "name": "Geno Smith",
+      "team": "nyj",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 165,
+      "rate": 0.8889,
+      "score": 90.57
+    },
+    {
+      "slug": "sam-darnold",
+      "name": "Sam Darnold",
+      "team": "sea",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 165,
+      "rate": 0.8571,
+      "score": 89.3
+    }
+  ]
+}
