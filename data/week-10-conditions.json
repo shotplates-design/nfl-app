@@ -1,6 +1,6 @@
 {
  "week": 10,
- "updated": "2026-11-14T13:39:30-05:00",
+ "updated": "2026-11-14T20:40:50-05:00",
  "games": [
   {
    "away": "WAS",
@@ -212,15 +212,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "NE",
-     "player": "TreVeyon Henderson",
-     "position": "RB",
-     "status": "Out",
-     "injury": "Illness",
-     "note": "Coach Mike Vrabel said Friday that Henderson (illness) is working hard to get back, while acknowledging that he doesn't have a timetable for when that may occur, Mark Daniels of MassLive.com reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "DET",
      "player": "Isiah Pacheco",
      "position": "RB",
@@ -246,10 +237,10 @@
     },
     {
      "team": "NE",
-     "player": "Reggie Gilliam",
-     "position": "FB",
+     "player": "TreVeyon Henderson",
+     "position": "RB",
      "status": "IR",
-     "injury": "Knee",
+     "injury": "Illness",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -299,12 +290,30 @@
     },
     {
      "team": "NE",
+     "player": "Greg Van Roten",
+     "position": "G",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "The Patriots activated Van Roten (hamstring) from IR on Saturday, and he's questionable to play Sunday versus Detroit, Doug Kyed of the Boston Herald reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
      "player": "Kevin Byard",
      "position": "S",
      "status": "Questionable",
      "injury": "Chest",
      "practice_latest": "Full Participation in Practice",
      "note": "Following a full practice Friday, Byard (chest) is listed as questionable for Sunday's game against the Lions in Munich.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NE",
+     "player": "Reggie Gilliam",
+     "position": "FB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "The Patriots activated Gilliam (knee), who remains questionable for Sunday's game against Detroit, from injured reserve Saturday, Doug Kyed of the Boston Herald reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -362,6 +371,15 @@
    },
    "injuries": [
     {
+     "team": "ATL",
+     "player": "Divine Deablo",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Forearm",
+     "note": "Deablo (forearm) was downgraded from doubtful to out Saturday ahead of Sunday's clash against Kansas City, Tori McElhaney of the Falcons' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "KC",
      "player": "Jaylon Moore",
      "position": "OT",
@@ -411,15 +429,6 @@
      "position": "DE",
      "status": "IR",
      "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "ATL",
-     "player": "Divine Deablo",
-     "position": "LB",
-     "status": "Doubtful",
-     "injury": "Forearm",
-     "note": "Deablo (forearm) is listed as doubtful for Sunday's game against the Chiefs, Marc Raimondi of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -569,7 +578,7 @@
      "position": "OT",
      "status": "Questionable",
      "injury": "Illness",
-     "note": "questionable",
+     "note": "Smith is now questionable for Sunday's game against the Browns due to an illness.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -587,7 +596,7 @@
      "position": "LB",
      "status": "Questionable",
      "injury": "Groin",
-     "note": "questionable",
+     "note": "The Texans activated Hummel (groin) from injured reserve Saturday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -605,7 +614,7 @@
      "position": "DE",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Anderson (ankle) is listed as questionable for Sunday's game against the Browns.",
+     "note": "Anderson (ankle), who is listed as questionable, is planning to suit up Sunday against the Browns, Aaron Wilson of KPRC 2 Houston reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -662,21 +671,12 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "GB",
-     "player": "Josh Whyle",
-     "position": "TE",
-     "status": "Out",
-     "injury": "Concussion",
-     "note": "Whyle (concussion) has been ruled out ahead of Sunday's game against the Vikings, Wes Hodkiewicz of the Packers' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "MIN",
      "player": "Kyler Murray",
      "position": "QB",
      "status": "Out",
      "injury": "Hamstring",
-     "note": "Murray (hamstring) was ruled out for Sunday's contest in Green Bay.",
+     "note": "The Vikings are targeting Week 12 against the Falcons on Sunday, Nov. 29, for a return for Murray (hamstring), Tom Pelissero of Netflix reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -717,26 +717,10 @@
     },
     {
      "team": "GB",
-     "player": "Chris Brooks",
-     "position": "RB",
+     "player": "Josh Whyle",
+     "position": "TE",
      "status": "IR",
-     "injury": "Ankle",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "MIN",
-     "player": "Demond Claiborne",
-     "position": "RB",
-     "status": "IR",
-     "injury": "Knee",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "GB",
-     "player": "Skyy Moore",
-     "position": "WR",
-     "status": "IR",
-     "injury": "Ankle",
+     "injury": "Concussion",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -754,6 +738,15 @@
      "status": "Doubtful",
      "injury": "Shin",
      "note": "Franklin (shin) is listed as doubtful for Sunday's game against the Vikings, Wes Hodkiewicz of the Packers' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "GB",
+     "player": "Chris Brooks",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Green Bay activated Brooks (ankle) from injured reserve Saturday, though he is still questionable for Sunday's Week 10 clash against the Vikings.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -808,6 +801,15 @@
      "status": "Questionable",
      "injury": "Back",
      "note": "Van Ness (back) is listed as questionable for Sunday's game against the Vikings, Wes Hodkiewicz of the Packers' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "GB",
+     "player": "Skyy Moore",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "The Packers activated Moore (ankle) from injured reserve Saturday, and he remains questionable for Sunday's matchup against Minnesota.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -882,24 +884,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "TEN",
-     "player": "Peter Skoronski",
-     "position": "G",
-     "status": "Out",
-     "injury": "Hamstring",
-     "note": "Skoronski (hamstring) has been ruled out for Sunday's game against the Jaguars, Jim Wyatt of the Titans' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "TEN",
-     "player": "Tommy Townsend",
-     "position": "P",
-     "status": "Out",
-     "injury": "Knee",
-     "note": "Townsend (knee/Achilles) has been ruled out for Sunday's game against the Jaguars, Jim Wyatt of the Titans' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "JAX",
      "player": "B.J. Green II",
      "position": "DE",
@@ -916,12 +900,19 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "JAX",
-     "player": "Robert Hainsey",
-     "position": "C",
-     "status": "Questionable",
-     "injury": "Concussion",
-     "note": "questionable",
+     "team": "TEN",
+     "player": "Peter Skoronski",
+     "position": "G",
+     "status": "IR",
+     "injury": "Hamstring",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TEN",
+     "player": "Tommy Townsend",
+     "position": "P",
+     "status": "IR",
+     "injury": "Knee",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -966,7 +957,7 @@
      "position": "CB",
      "status": "Out",
      "injury": "Knee",
-     "note": "The Dolphins designated Baker (knee) for return to practice from the reserve/PUP list Wednesday, Barry Jackson of the Miami Herald reports.",
+     "note": "Baker (knee) was not activated from the reserve/PUP list ahead of Sunday's clash against Indianapolis.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1109,15 +1100,6 @@
     },
     {
      "team": "NO",
-     "player": "Christen Miller",
-     "position": "DT",
-     "status": "Out",
-     "injury": "Knee",
-     "note": "Miller (knee) has been ruled out for Sunday's game against Carolina, Ross Jackson of WWL-TV reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "NO",
      "player": "Erik McCoy",
      "position": "C",
      "status": "Out",
@@ -1132,6 +1114,22 @@
      "status": "Out",
      "injury": "Knee",
      "note": "Fuaga (knee) has been ruled out for Sunday's game against the Panthers, Nick Underhill of NewOrleans.Football reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CAR",
+     "player": "Brady Christensen",
+     "position": "G",
+     "status": "IR",
+     "injury": "Hamstring",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NO",
+     "player": "Christen Miller",
+     "position": "DT",
+     "status": "IR",
+     "injury": "Knee",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1159,22 +1157,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "NO",
-     "player": "Travis Etienne Jr.",
-     "position": "RB",
-     "status": "IR",
-     "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CAR",
-     "player": "Xavier Legette",
-     "position": "WR",
-     "status": "IR",
-     "injury": "Knee",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "CAR",
      "player": "Jaelan Phillips",
      "position": "LB",
@@ -1193,12 +1175,30 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "NO",
+     "player": "Travis Etienne Jr.",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "The Saints activated Etienne (hamstring) from injured reserve Saturday, but he remains questionable for Sunday's game against the Panthers, Nick Underhill of NewOrleans.Football reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "CAR",
      "player": "Will Lee III",
      "position": "CB",
      "status": "Questionable",
      "injury": "Hamstring",
      "note": "Lee (hamstring) is listed as questionable for Sunday's game against the Saints.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CAR",
+     "player": "Xavier Legette",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "The Panthers activated Legette (knee) from injured reserve Saturday, Alex Zietlow of The Charlotte Observer reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1233,15 +1233,7 @@
      "position": "WR",
      "status": "Out",
      "injury": "Knee - ACL",
-     "note": "Shavers (knee) is listed as questionable for Sunday's game against the Jets.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "NYJ",
-     "player": "VJ Payne",
-     "position": "S",
-     "status": "IR",
-     "injury": "Knee",
+     "note": "The Bills did not activate Shavers (knee) from the reserve/PUP list, and he will not be available for Sunday's game against the Jets.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1299,6 +1291,15 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "BUF",
+     "player": "Jordan Hancock",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "The Bills activated Hancock (hamstring) from injured reserve Saturday, and he is questionable to face the Jets on Sunday.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "NYJ",
      "player": "Joseph Ossai",
      "position": "DE",
@@ -1332,6 +1333,15 @@
      "status": "Questionable",
      "injury": "Shoulder",
      "note": "questionable",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYJ",
+     "player": "VJ Payne",
+     "position": "S",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "The Jets activated Payne (knee) from injured reserve Saturday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1466,14 +1476,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "ARI",
-     "player": "Hunter Long",
-     "position": "TE",
-     "status": "IR",
-     "injury": "Knee",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "LAR",
      "player": "Jordan Whittington",
      "position": "WR",
@@ -1538,6 +1540,15 @@
      "status": "Questionable",
      "injury": "Oblique",
      "note": "Allen (oblique) is questionable for Sunday's game against Arizona, Sarah Barshop of ESPN.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "ARI",
+     "player": "Hunter Long",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Arizona activated Long (knee) from injured reserve Saturday, and he remains questionable for Sunday's battle against the Rams.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1666,15 +1677,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "DAL",
-     "player": "Tyler Goodson",
-     "position": "RB",
-     "status": "Out",
-     "injury": "Knee - ACL + MCL",
-     "note": "Goodson sustained ACL and MCL sprains in his knee during Sunday's 27-23 win over the Colts, a source tells Todd Archer of ESPN.com.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "SF",
      "player": "C.J. West",
      "position": "DT",
@@ -1696,6 +1698,22 @@
      "position": "DT",
      "status": "IR",
      "injury": "Ankle",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Nate Hobbs",
+     "position": "CB",
+     "status": "IR",
+     "injury": "Groin",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "DAL",
+     "player": "Tyler Goodson",
+     "position": "RB",
+     "status": "IR",
+     "injury": "Knee - ACL + MCL",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1750,6 +1768,15 @@
      "status": "Questionable",
      "injury": "Ankle",
      "note": "Porter (ankle) is listed as questionable for Sunday's game against the 49ers, Tommy Yarrish of the Cowboys' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "DAL",
+     "player": "Jonathan Bullard",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Calf",
+     "note": "The Cowboys activated Bullard (calf) from injured reserve Saturday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1830,14 +1857,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "PIT",
-     "player": "Derrick Harmon",
-     "position": "DT",
-     "status": "IR",
-     "injury": "Foot",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "CIN",
      "player": "Jalen Davis",
      "position": "CB",
@@ -1851,6 +1870,23 @@
      "position": "WR",
      "status": "IR",
      "injury": "Foot",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PIT",
+     "player": "Sebastian Joseph-Day",
+     "position": "DT",
+     "status": "IR",
+     "injury": "Triceps",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PIT",
+     "player": "Derrick Harmon",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Foot",
+     "note": "The Steelers activated Harmon (foot) from injured reserve Saturday, Mike DeFabo of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1880,12 +1916,47 @@
    },
    "injuries": [
     {
+     "team": "LAC",
+     "player": "Branson Taylor",
+     "position": "G",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "out",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Isas Waxter",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Waxter (ankle) has been ruled out for Monday's battle against Baltimore.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "BAL",
      "player": "Jaylinn Hawkins",
      "position": "S",
      "status": "Out",
      "injury": "Knee",
-     "note": "out",
+     "note": "Hawkins (knee) has been ruled out for Monday's game against the Chargers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Kendall Williamson",
+     "position": "S",
+     "status": "Out",
+     "injury": "Calf",
+     "note": "Williamson (calf) has been ruled out for Monday's matchup against the Ravens.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "BAL",
+     "player": "Adam Randall",
+     "position": "RB",
+     "status": "IR",
+     "injury": "Neck",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1894,7 +1965,14 @@
      "position": "TE",
      "status": "IR",
      "injury": "Lower Leg",
-     "practice_latest": "Limited Participation in Practice",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Denzel Perryman",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Pectoral",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1914,41 +1992,21 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "BAL",
-     "player": "Adisa Isaac",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Hamstring",
-     "note": "Isaac (hamstring) is questionable to return to Thursday night's contest against the Jaguars.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "LAC",
-     "player": "Branson Taylor",
-     "position": "G",
-     "status": "Questionable",
-     "injury": "Ankle",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "LAC",
      "player": "Brenen Thompson",
      "position": "WR",
-     "status": "Questionable",
+     "status": "Doubtful",
      "injury": "Hamstring",
-     "practice_latest": "Did Not Participate In Practice",
-     "note": "Thompson (hamstring) did not practice Thursday.",
+     "note": "doubtful",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
      "team": "LAC",
-     "player": "Deane Leonard",
-     "position": "CB",
+     "player": "Justin Eboigbe",
+     "position": "DT",
      "status": "Questionable",
-     "injury": "Concussion",
-     "practice_latest": "Full Participation in Practice",
-     "note": "Leonard (concussion) was a full participant in Friday's practice.",
+     "injury": "Ankle",
+     "note": "Eboigbe (ankle) is questionable to suit up Monday against Baltimore.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1957,25 +2015,7 @@
      "position": "G",
      "status": "Questionable",
      "injury": "Lower Leg",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "LAC",
-     "player": "Keaton Mitchell",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Hip",
-     "note": "Mitchell (hip) remained limited at practice Friday.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "LAC",
-     "player": "Kendall Williamson",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Calf",
-     "note": "questionable",
+     "note": "Awosika (fibula) is questionable for Monday's matchup against the Ravens.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1984,16 +2024,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Back",
-     "note": "McConkey (back) didn't practice Friday.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "LAC",
-     "player": "Rodney Shelley",
-     "position": "CB",
-     "status": "Questionable",
-     "injury": "Calf",
-     "note": "questionable",
+     "note": "McConkey (back) is listed as questionable for Monday night's game against the Ravens, Noah Furtado of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
