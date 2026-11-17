@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "built_at": "2026-11-15T19:17:16.673914+00:00",
+  "built_at": "2026-11-17T21:32:47.520017+00:00",
   "params": {
     "best_props_min_rate": 0.85,
     "best_props_alt_rate": 0.75
@@ -45,7 +45,7 @@
       "stat": "recYds",
       "thr": 55,
       "rate": 0.7778,
-      "score": 98.11
+      "score": 98.17
     },
     {
       "slug": "jameson-williams",
@@ -55,7 +55,7 @@
       "stat": "recYds",
       "thr": 45,
       "rate": 0.8571,
-      "score": 96.74
+      "score": 96.79
     },
     {
       "slug": "puka-nacua",
@@ -75,7 +75,7 @@
       "stat": "recYds",
       "thr": 30,
       "rate": 1.0,
-      "score": 95.64
+      "score": 95.67
     },
     {
       "slug": "ashton-jeanty",

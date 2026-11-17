@@ -1,6 +1,6 @@
 {
  "source": "nflverse stats_player week (QB rushing on the passing row)",
- "fetched": "2026-11-15T14:15:22-05:00",
+ "fetched": "2026-11-17T16:30:48-05:00",
  "players": {
   "8439": {
    "name": "Aaron Rodgers",
@@ -68,6 +68,14 @@
      "rushYds": 0.0,
      "rushTd": 0.0,
      "eventId": "2026_08_CLE_PIT"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@CIN",
+     "car": 2.0,
+     "rushYds": -1.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_PIT_CIN"
     }
    ]
   },
@@ -145,6 +153,14 @@
      "rushYds": 1.0,
      "rushTd": 0.0,
      "eventId": "2026_09_LA_WAS"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@ARI",
+     "car": 2.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_LA_ARI"
     }
    ]
   },
@@ -222,6 +238,14 @@
      "rushYds": 0.0,
      "rushTd": 1.0,
      "eventId": "2026_09_LV_SF"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@GB",
+     "car": 3.0,
+     "rushYds": 11.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_MIN_GB"
     }
    ]
   },
@@ -299,6 +323,14 @@
      "rushYds": 8.0,
      "rushTd": 0.0,
      "eventId": "2026_09_NYJ_KC"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsBUF",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_BUF_NYJ"
     }
    ]
   },
@@ -405,6 +437,14 @@
      "rushYds": 1.0,
      "rushTd": 0.0,
      "eventId": "2026_09_DAL_IND"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsSF",
+     "car": 4.0,
+     "rushYds": 7.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_SF_DAL"
     }
    ]
   },
@@ -474,6 +514,14 @@
      "rushYds": 5.0,
      "rushTd": 0.0,
      "eventId": "2026_09_DET_MIA"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsNE",
+     "car": 1.0,
+     "rushYds": 3.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_NE_DET"
     }
    ]
   },
@@ -543,6 +591,14 @@
      "rushYds": 7.0,
      "rushTd": 0.0,
      "eventId": "2026_08_ARI_DAL"
+    },
+    {
+     "date": "Mon 11/16",
+     "opp": "vsLAC",
+     "car": 2.0,
+     "rushYds": 2.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_LAC_BAL"
     }
    ]
   },
@@ -612,6 +668,14 @@
      "rushYds": 2.0,
      "rushTd": 0.0,
      "eventId": "2026_08_CLE_PIT"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsHOU",
+     "car": 8.0,
+     "rushYds": 49.0,
+     "rushTd": 1.0,
+     "eventId": "2026_10_HOU_CLE"
     }
    ]
   },
@@ -715,6 +779,14 @@
      "rushYds": 8.0,
      "rushTd": 0.0,
      "eventId": "2026_09_NYJ_KC"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@ATL",
+     "car": 2.0,
+     "rushYds": 15.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_KC_ATL"
     }
    ]
   },
@@ -882,6 +954,14 @@
      "rushYds": 15.0,
      "rushTd": 0.0,
      "eventId": "2026_09_BUF_MIN"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@NYJ",
+     "car": 5.0,
+     "rushYds": 5.0,
+     "rushTd": 2.0,
+     "eventId": "2026_10_BUF_NYJ"
     }
    ]
   },
@@ -1025,6 +1105,14 @@
      "rushYds": 16.0,
      "rushTd": 0.0,
      "eventId": "2026_09_ARI_SEA"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@LV",
+     "car": 6.0,
+     "rushYds": 20.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_SEA_LV"
     }
    ]
   },
@@ -1102,6 +1190,14 @@
      "rushYds": 11.0,
      "rushTd": 0.0,
      "eventId": "2026_09_DAL_IND"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsMIA",
+     "car": 5.0,
+     "rushYds": 9.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_MIA_IND"
     }
    ]
   },
@@ -1179,6 +1275,14 @@
      "rushYds": 13.0,
      "rushTd": 1.0,
      "eventId": "2026_09_GB_NE"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsMIN",
+     "car": 1.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_MIN_GB"
     }
    ]
   },
@@ -1248,6 +1352,14 @@
      "rushYds": 7.0,
      "rushTd": 0.0,
      "eventId": "2026_09_HOU_LAC"
+    },
+    {
+     "date": "Mon 11/16",
+     "opp": "@BAL",
+     "car": 7.0,
+     "rushYds": 51.0,
+     "rushTd": 1.0,
+     "eventId": "2026_10_LAC_BAL"
     }
    ]
   },
@@ -1362,6 +1474,14 @@
      "rushYds": 7.0,
      "rushTd": 1.0,
      "eventId": "2026_09_CIN_ATL"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsPIT",
+     "car": 1.0,
+     "rushYds": 8.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_PIT_CIN"
     }
    ]
   },
@@ -1431,6 +1551,14 @@
      "rushYds": -1.0,
      "rushTd": 0.0,
      "eventId": "2026_09_JAX_BAL"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@TEN",
+     "car": 4.0,
+     "rushYds": 27.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_JAX_TEN"
     }
    ]
   },
@@ -1500,6 +1628,14 @@
      "rushYds": 40.0,
      "rushTd": 1.0,
      "eventId": "2026_09_LV_SF"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@DAL",
+     "car": 2.0,
+     "rushYds": 21.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_SF_DAL"
     }
    ]
   },
@@ -1672,6 +1808,14 @@
      "rushYds": 13.0,
      "rushTd": 0.0,
      "eventId": "2026_09_DEN_CAR"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@NO",
+     "car": 1.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_CAR_NO"
     }
    ]
   },
@@ -1741,6 +1885,14 @@
      "rushYds": 20.0,
      "rushTd": 0.0,
      "eventId": "2026_09_HOU_LAC"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@CLE",
+     "car": 3.0,
+     "rushYds": 20.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_HOU_CLE"
     }
    ]
   },
@@ -1895,6 +2047,14 @@
      "rushYds": 3.0,
      "rushTd": 0.0,
      "eventId": "2026_09_GB_NE"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@DET",
+     "car": 1.0,
+     "rushYds": 11.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_NE_DET"
     }
    ]
   },
@@ -2078,6 +2238,14 @@
      "rushYds": 41.0,
      "rushTd": 0.0,
      "eventId": "2026_08_TEN_CIN"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsJAX",
+     "car": 3.0,
+     "rushYds": 39.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_JAX_TEN"
     }
    ]
   },
@@ -2168,6 +2336,14 @@
      "rushYds": 51.0,
      "rushTd": 0.0,
      "eventId": "2026_09_CLE_NO"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsCAR",
+     "car": 6.0,
+     "rushYds": 25.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_CAR_NO"
     }
    ]
   },
@@ -2263,6 +2439,14 @@
      "rushYds": 3.0,
      "rushTd": 0.0,
      "eventId": "2026_02_PIT_NE"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@CIN",
+     "car": 1.0,
+     "rushYds": 9.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_PIT_CIN"
     }
    ]
   },
@@ -2399,6 +2583,14 @@
      "rushYds": 0.0,
      "rushTd": 0.0,
      "eventId": "2026_09_GB_NE"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "@DET",
+     "car": 4.0,
+     "rushYds": 19.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_NE_DET"
     }
    ]
   },
@@ -2473,6 +2665,14 @@
      "rushYds": 50.0,
      "rushTd": 0.0,
      "eventId": "2026_09_CIN_ATL"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsKC",
+     "car": 4.0,
+     "rushYds": 29.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_KC_ATL"
     }
    ]
   },
@@ -2662,6 +2862,14 @@
      "rushYds": 3.0,
      "rushTd": 0.0,
      "eventId": "2026_05_LV_NE"
+    },
+    {
+     "date": "Sun 11/15",
+     "opp": "vsSEA",
+     "car": 6.0,
+     "rushYds": 22.0,
+     "rushTd": 1.0,
+     "eventId": "2026_10_SEA_LV"
     }
    ]
   },
@@ -2900,6 +3108,84 @@
      "rushYds": 0.0,
      "rushTd": 0.0,
      "eventId": "2026_09_BUF_MIN"
+    }
+   ]
+  },
+  "14163": {
+   "name": "Tyrod Taylor",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "vsMIN",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_MIN_GB"
+    }
+   ]
+  },
+  "3044720": {
+   "name": "Joshua Dobbs",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "vsNE",
+     "car": 3.0,
+     "rushYds": -2.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_NE_DET"
+    }
+   ]
+  },
+  "4569603": {
+   "name": "Malik Washington",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "@IND",
+     "car": 0.0,
+     "rushYds": 0.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_MIA_IND"
+    }
+   ]
+  },
+  "4433971": {
+   "name": "Kyle McCord",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "@IND",
+     "car": 2.0,
+     "rushYds": 4.0,
+     "rushTd": 1.0,
+     "eventId": "2026_10_MIA_IND"
+    }
+   ]
+  },
+  "4685413": {
+   "name": "Cade Klubnik",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "vsBUF",
+     "car": 3.0,
+     "rushYds": 26.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_BUF_NYJ"
+    }
+   ]
+  },
+  "4430841": {
+   "name": "Carson Beck",
+   "games": [
+    {
+     "date": "Sun 11/15",
+     "opp": "vsLAR",
+     "car": 1.0,
+     "rushYds": 1.0,
+     "rushTd": 0.0,
+     "eventId": "2026_10_LA_ARI"
     }
    ]
   }
