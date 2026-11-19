@@ -1,6 +1,6 @@
 {
  "week": 11,
- "updated": "2026-11-18T22:04:14-05:00",
+ "updated": "2026-11-19T16:11:56-05:00",
  "games": [
   {
    "away": "IND",
@@ -39,7 +39,7 @@
      "position": "CB",
      "status": "Out",
      "injury": "Knee",
-     "note": "The Colts have ruled Ward (knee) out for Thursday night's game against the Texans.",
+     "note": "The Colts have ruled out Ward (knee) for Thursday night's game against the Texans.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -84,7 +84,7 @@
      "position": "TE",
      "status": "Out",
      "injury": "Hamstring",
-     "note": "The Colts ruled Mallory (hamstring) out for Thursday night's games against the Texans.",
+     "note": "The Colts ruled out Mallory (hamstring) for Thursday night's games against the Texans.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -113,27 +113,11 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "HOU",
-     "player": "Jaylin Smith",
-     "position": "CB",
-     "status": "IR",
-     "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "IND",
      "player": "Jaylon Carlies",
      "position": "LB",
      "status": "IR",
      "injury": "Neck",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "IND",
-     "player": "Mo Alie-Cox",
-     "position": "TE",
-     "status": "IR",
-     "injury": "Groin",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -146,12 +130,30 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "IND",
+     "player": "Charlie Heck",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Personal",
+     "note": "questionable",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "HOU",
      "player": "Jake Hummel",
      "position": "LB",
      "status": "Questionable",
      "injury": "Groin",
      "note": "Hummel (groin) is questionable for Houston's matchup against Indianapolis on Thursday.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "HOU",
+     "player": "Jaylin Smith",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Smith (hamstring) is questionable for Houston's matchup Thursday versus the Colts.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -169,7 +171,7 @@
      "position": "CB",
      "status": "Questionable",
      "injury": "Calf",
-     "note": "Gardner (calf) is listed as questionable for Thursday's game against the Texans.",
+     "note": "According to Jane Slater of NFL Network, Gardner (calf) is not in line to play Thursday night against the Texans.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -255,7 +257,7 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Hooker (knee) was a limited participant in Wednesday's practice.",
+     "note": "Hooker (knee) was a limited participant in Wednesday's walkthrough.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -282,7 +284,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Shoulder",
-     "note": "Douglas was a limited participant in Wednesday's practice due to a shoulder injury, David Furones of the South Florida Sun Sentinel reports.",
+     "note": "Douglas (shoulder) continued to don a non-contact jersey during Thursday's practice, Barry Jackson of the Miami Herald reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -300,7 +302,7 @@
      "position": "CB",
      "status": "Questionable",
      "injury": "Groin",
-     "note": "Benford (groin) did not participate in Wednesday's practice.",
+     "note": "Benford (groin) was estimated as a nonparticipant in Wednesday's walkthrough.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -309,7 +311,7 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Shoulder",
-     "note": "Hooker (knee) was a limited participant in Wednesday's practice.",
+     "note": "Bishop (knee) was a limited participant in Wednesday's walkthrough.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -318,8 +320,7 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Thumb",
-     "practice_latest": "Did Not Participate In Practice",
-     "note": "Kincaid (thumb/ankle) did not practice Wednesday, David Furones of the Sun Sentinel reports.",
+     "note": "Kincaid (thumb/ankle) wasn't spotted on the field for Thursday's practice, Joe Buscaglia of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -328,7 +329,7 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Toe",
-     "note": "Hamlin (toe) was a limited participant in Wednesday's practice.",
+     "note": "Hamlin (toe) was estimated to be a limited participant in Wednesday's walkthrough.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -346,7 +347,7 @@
      "position": "CB",
      "status": "Questionable",
      "injury": "Concussion",
-     "note": "Alford (concussion) did not participate in Wednesday's practice.",
+     "note": "Alford (concussion) did not participate in Wednesday's walkthrough.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -355,7 +356,7 @@
      "position": "LB",
      "status": "Questionable",
      "injury": "Calf",
-     "note": "Williams (calf) didn't participate in Buffalo's practice Wednesday.",
+     "note": "Williams (calf) didn't participate in Buffalo's walkthrough Wednesday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -505,8 +506,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Chest",
-     "practice_latest": "Limited Participation in Practice",
-     "note": "Head coach Kellen Moore said Tyson was limited at Wednesday's practice due to a chest injury, Nick Underhill of NewOrleans.Football reports.",
+     "note": "Tyson (chest) took part in the media-access portion of Thursday's practice, Mike Triplett of NewOrleans.Football reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -628,7 +628,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Shoulder",
-     "note": "Tate (shoulder) was a limited participant in Wednesday's practice.",
+     "note": "Tate (shoulder) was present for practice Thursday, Turron Davenport of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -761,7 +761,7 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Winfield (ankle) did not participate in practice Wednesday, Greg Auman of Fox Sports reports.",
+     "note": "Winfield (ankle) didn't participate in Wednesday's practice.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -770,7 +770,7 @@
      "position": "QB",
      "status": "Questionable",
      "injury": "Foot",
-     "note": "Mayfield (foot) isn't practicing Wednesday, Greg Auman of Fox Sports reports.",
+     "note": "Mayfield (foot/right thumb) said that he felt good but was \"limited\" at Thursday's practice, and he's hopeful to do more at Friday's session, Scott Smith of the Buccaneers' official site reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1032,7 +1032,6 @@
      "position": "WR",
      "status": "IR",
      "injury": "Foot",
-     "practice_latest": "Limited Participation in Practice",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1054,15 +1053,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "PIT",
-     "player": "Nick Herbig",
-     "position": "LB",
-     "status": "Doubtful",
-     "injury": "Hip",
-     "note": "Herbig (hip) did not participate in Wednesday's practice, Teresa Varley of the Steelers' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "PHI",
      "player": "Britain Covey",
      "position": "WR",
@@ -1072,21 +1062,12 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "PIT",
-     "player": "DeShon Elliott",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Knee",
-     "note": "Elliott (knee) was a limited participant in Wednesday's practice, Teresa Varley of the Steelers' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "PHI",
      "player": "DeVonta Smith",
      "position": "WR",
      "status": "Questionable",
      "injury": "Hamstring",
-     "note": "Smith (hamstring) was spotted practicing Wednesday, Tim McManus of ESPN.com reports.",
+     "note": "Smith (hamstring) is taking part in Thursday's practice, Andrew DiCecco of InsideTheBirds.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1095,7 +1076,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Wicks (ankle) practiced in a limited capacity Wednesday.",
+     "note": "Wicks (ankle) is participating in practice Thursday, Andrew DiCecco of InsideTheBirds.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1114,6 +1095,15 @@
      "status": "Questionable",
      "injury": "Abdomen",
      "note": "questionable",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PIT",
+     "player": "Nick Herbig",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Hip",
+     "note": "Herbig (hip) did not participate in Wednesday's practice, Teresa Varley of the Steelers' official site reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1163,6 +1153,15 @@
    },
    "injuries": [
     {
+     "team": "BAL",
+     "player": "Marlon Humphrey",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "Ravens head coach Jesse Minter said that Humphrey won't play Sunday against the Panthers after the defensive back made a derogatory comment about the city of Baltimore in an episode of his podcast released Wednesday, Jamison Hensley of E...",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "CAR",
      "player": "Brady Christensen",
      "position": "G",
@@ -1176,7 +1175,6 @@
      "position": "RB",
      "status": "IR",
      "injury": "Groin",
-     "practice_latest": "Full Participation in Practice",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1210,7 +1208,7 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Waller didn't practice Wednesday due to a knee issue, and afterward head coach Dave Canales called the tight end's injury a \"concern,\" Steve Reed of the Associated Press reports.",
+     "note": "Waller (knee) was a limited participant in Thursday's practice, Mike Kaye of ESPN reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1237,7 +1235,7 @@
      "position": "DT",
      "status": "Questionable",
      "injury": "Hamstring",
-     "note": "Madubuike (hamstring) did not participate at practice Wednesday, Jamison Hensley of ESPN.com reports.",
+     "note": "Madubuike (hamstring) remained sidelined for Thursday's practice, Jonas Shaffer of TheBaltimoreBanner.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1245,8 +1243,8 @@
      "player": "Olaivavega Ioane",
      "position": "G",
      "status": "Questionable",
-     "injury": "Shoulder",
-     "note": "Ioane (shoulder) was a limited participant in Wednesday's practice.",
+     "injury": "Knee",
+     "note": "Ioane (shoulder/knee) was a limited participant in Wednesday's practice.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1255,7 +1253,8 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Tremble didn't practice Wednesday due to a knee issue, with head coach Dave Canales noting after the session that the tight end's injury is a \"concern,\" Steve Reed of the Associated Press reports.",
+     "practice_latest": "Limited Participation in Practice",
+     "note": "Tremble (knee) was limited in Thursday's practice, Mike Kaye of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1501,7 +1500,7 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Coach Klint Kubiak noted Wednesday that Bowers (ankle) doesn't need to practice this week in order to play Sunday Sunday against the Broncos, Sam Warren of The Athletic reports.",
+     "note": "Raiders head coach Klint Kubiak said Wednesday that Bowers (ankle) doesn't need to practice this week to play Sunday against the Broncos, Sam Warren of The Athletic reports. \"If he's ready to go, we'll get him out there,\" Kubiak said.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1546,17 +1545,7 @@
      "position": "CB",
      "status": "Questionable",
      "injury": "Concussion",
-     "note": "Moss (concussion) has been ruled out for the remainder of Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "DEN",
-     "player": "Talanoa Hufanga",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Ankle",
-     "practice_latest": "Full Participation in Practice",
-     "note": "Hufanga (ankle) was a full participant at practice Wednesday, Aric DiLalla of the Broncos' official site reports.",
+     "note": "Moss (concussion) signed a four-year contract extension with the Broncos on Thursday, Aric DiLalla of the team's official site reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1625,7 +1614,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Tuten (ankle/foot) was a limited participant in Wednesday's practice, Ryan O'Halloran of The Florida Times-Union reports.",
+     "note": "Tuten (ankle/foot) was working off to the side during the stretching portion of Thursday's practice, according to Ryan O'Halloran of The Florida Times-Union.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1772,6 +1761,14 @@
     },
     {
      "team": "SF",
+     "player": "Christian Kirk",
+     "position": "WR",
+     "status": "IR",
+     "injury": "Knee - Meniscus",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
      "player": "De'Zhaun Stribling",
      "position": "WR",
      "status": "IR",
@@ -1875,7 +1872,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Achilles",
-     "note": "Head coach Kyle Shanahan said Evans (Achilles) won't practice Wednesday, but Shanahan hopes the wide receiver will return to drills Thursday, Nick Wagoner of ESPN.com reports.",
+     "note": "Evans (Achilles) is suited up for Thursday's practice, Cam Inman of The San Jose Mercury News reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1995,15 +1992,6 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Quadriceps",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "WAS",
-     "player": "Lucas Patrick",
-     "position": "G",
-     "status": "Questionable",
-     "injury": "Concussion",
      "note": "questionable",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
