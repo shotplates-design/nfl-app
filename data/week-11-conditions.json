@@ -1,6 +1,6 @@
 {
  "week": 11,
- "updated": "2026-11-20T22:03:34-05:00",
+ "updated": "2026-11-21T14:56:12-05:00",
  "games": [
   {
    "away": "IND",
@@ -124,22 +124,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "IND",
-     "player": "Akeem Davis-Gaither",
-     "position": "LB",
-     "status": "IR",
-     "injury": "Knee",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "IND",
-     "player": "Jaylon Carlies",
-     "position": "LB",
-     "status": "IR",
-     "injury": "Neck",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "HOU",
      "player": "Chris Braswell",
      "position": "DE",
@@ -220,16 +204,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "MIA",
-     "player": "Darrell Baker Jr.",
-     "position": "CB",
-     "status": "Out",
-     "injury": "Knee",
-     "practice_latest": "Full Participation in Practice",
-     "note": "Baker (knee) was a full participant at practice Wednesday, David Furones of the South Florida Sun Sentinel reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "BUF",
      "player": "Dorian Williams",
      "position": "LB",
@@ -261,14 +235,6 @@
      "position": "DT",
      "status": "IR",
      "injury": "Biceps",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "MIA",
-     "player": "Malik Willis",
-     "position": "QB",
-     "status": "IR",
-     "injury": "Abdomen",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -322,6 +288,15 @@
      "status": "Questionable",
      "injury": "Toe",
      "note": "Hamlin (toe) is listed as questionable for Sunday's game against Miami.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "BUF",
+     "player": "Ed Oliver",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Oblique",
+     "note": "Oliver (oblique) is listed as questionable for Sunday's game against the Dolphins.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -483,15 +458,6 @@
    "injuries": [
     {
      "team": "DAL",
-     "player": "DaRon Bland",
-     "position": "CB",
-     "status": "Out",
-     "injury": "Ankle",
-     "note": "Bland sustained a high-ankle sprain in Sunday's 46-40 loss to the 49ers, Todd Archer of ESPN.com reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "DAL",
      "player": "Jake Ferguson",
      "position": "TE",
      "status": "Out",
@@ -527,6 +493,14 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "DAL",
+     "player": "DaRon Bland",
+     "position": "CB",
+     "status": "IR",
+     "injury": "Ankle",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "TEN",
      "player": "Fernando Carmona",
      "position": "G",
@@ -540,6 +514,14 @@
      "position": "S",
      "status": "IR",
      "injury": "Hamstring",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TEN",
+     "player": "Tyjae Spears",
+     "position": "RB",
+     "status": "IR",
+     "injury": "Knee",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -565,8 +547,7 @@
      "position": "WR",
      "status": "Questionable",
      "injury": "Shoulder",
-     "practice_latest": "Full Participation in Practice",
-     "note": "Tate (shoulder), who was a full participant in Friday's practice, is listed as questionable for Sunday's game against the Cowboys.",
+     "note": "Tate (shoulder) is questionable for Sunday's game against the Cowboys but is \"considered likely\" to be cleared to play, Matt Zenitz of CBS Sports reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -594,24 +575,6 @@
      "status": "Questionable",
      "injury": "Hip",
      "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "TEN",
-     "player": "Tony Adams",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Concussion",
-     "note": "Adams (concussion) is listed as questionable for Sunday's game against the Cowboys.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "TEN",
-     "player": "Tyjae Spears",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Knee",
-     "note": "Spears (knee) is questionable for Sunday's game against Dallas.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -679,7 +642,7 @@
      "position": "QB",
      "status": "Questionable",
      "injury": "Foot",
-     "note": "Mayfield (foot) is practicing again Friday, Greg Auman of Fox Sports reports.",
+     "note": "Mayfield (thumb) is dealing with a plantar fascia injury in his foot, and he would wear a special orthotic and new cleats to stabilize his foot if he's cleared to play against the Lions on Sunday, Tom Pelissero of The Ringer and Netflix ...",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -724,7 +687,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Vaki (ankle) is questionable for Sunday's game against the Bucs.",
+     "note": "Vaki (ankle) is questionable for Sunday's game against the Buccaneers.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -762,6 +725,15 @@
     "note": "Weather not set by the injury refresh."
    },
    "injuries": [
+    {
+     "team": "ARI",
+     "player": "Carson Beck",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Back",
+     "note": "Beck (back) has been ruled out for Sunday's game at Kansas City, Darren Urban of the Cardinals' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
     {
      "team": "KC",
      "player": "Jaylon Moore",
@@ -847,15 +819,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "ARI",
-     "player": "Carson Beck",
-     "position": "QB",
-     "status": "Questionable",
-     "injury": "Back",
-     "note": "Beck (back) is listed as questionable for Sunday's game at Kansas City, Theo Mackie of The Arizona Republic reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "KC",
      "player": "Omarr Norman-Lott",
      "position": "DT",
@@ -900,6 +863,15 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "PIT",
+     "player": "Nick Herbig",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Hip",
+     "note": "Herbig (hip) has been downgraded from questionable to out for Sunday's game against the Eagles, Burt Lauten of the Steelers' official site reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "PHI",
      "player": "Zack Baun",
      "position": "LB",
@@ -933,14 +905,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "PIT",
-     "player": "Roman Wilson",
-     "position": "WR",
-     "status": "IR",
-     "injury": "Hand",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "PHI",
      "player": "Will Shipley",
      "position": "RB",
@@ -968,20 +932,20 @@
     },
     {
      "team": "PIT",
-     "player": "Nick Herbig",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Hip",
-     "note": "Herbig (hip) is listed as questionable for Sunday's game against the Eagles, Brooke Pryor of ESPN.com reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "PIT",
      "player": "Patrick Queen",
      "position": "LB",
      "status": "Questionable",
      "injury": "Hand",
      "note": "Queen (hand) is questionable for Sunday's game against the Eagles, Brooke Pryor of ESPN.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PIT",
+     "player": "Roman Wilson",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Hand",
+     "note": "The Steelers activated Wilson (hand) from injured reserve Saturday, Ian Rapoport of NFL Network reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1084,7 +1048,7 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Waller (knee) is practicing again Friday, Joseph Person of The Athletic reports.",
+     "note": "Waller (knee) is listed as questionable for Sunday's game against the Ravens, Joe Person of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1320,7 +1284,7 @@
      "position": "TE",
      "status": "Questionable",
      "injury": "Ankle",
-     "note": "Bowers (ankle) said Friday that his availability for Sunday's game against the Broncos remains up in the air, Sam Warren of The Athletic reports.",
+     "note": "Coach Klint Kubiak said Friday that Bowers (ankle) is slated to be listed as questionable for Sunday's game against the Broncos, Sam Warren of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1338,7 +1302,7 @@
      "position": "PK",
      "status": "Questionable",
      "injury": "Hip",
-     "note": "Gay (hip) is questionable for Sunday's game against the Broncos, Sam Warren of The Athletic reports.",
+     "note": "Gay (hip) was spotted at practice Friday, Sam Warren of The Athletic reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1358,6 +1322,15 @@
     "note": "Weather not set by the injury refresh."
    },
    "injuries": [
+    {
+     "team": "JAX",
+     "player": "Danny Striggow",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Concussion",
+     "note": "Striggow (concussion) is listed as questionable for Sunday's game against the Giants.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
     {
      "team": "JAX",
      "player": "Robert Hainsey",
@@ -1381,15 +1354,6 @@
      "position": "RB",
      "status": "IR",
      "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "JAX",
-     "player": "Danny Striggow",
-     "position": "DE",
-     "status": "Questionable",
-     "injury": "Concussion",
-     "note": "Striggow (concussion) is listed as questionable for Sunday's game against the Giants.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1594,6 +1558,15 @@
    "injuries": [
     {
      "team": "CIN",
+     "player": "Dalton Risner",
+     "position": "G",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "out",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CIN",
      "player": "Andrei Iosivas",
      "position": "WR",
      "status": "IR",
@@ -1619,20 +1592,18 @@
     },
     {
      "team": "CIN",
-     "player": "Swayze Bozeman",
+     "player": "Oren Burks",
      "position": "LB",
      "status": "IR",
-     "injury": "Forearm",
+     "injury": "Groin",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
      "team": "CIN",
-     "player": "Dalton Risner",
-     "position": "G",
-     "status": "Questionable",
-     "injury": "Knee",
-     "practice_latest": "Did Not Participate In Practice",
-     "note": "Risner (knees) did not practice Thursday.",
+     "player": "Swayze Bozeman",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Forearm",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1654,15 +1625,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "CIN",
-     "player": "Oren Burks",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Groin",
-     "note": "Burks (groin) did not participate at practice Thursday, Paul Dehner Jr. of The Athletic reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "WAS",
      "player": "Quan Martin",
      "position": "S",
@@ -1677,8 +1639,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Heel",
-     "practice_latest": "Limited Participation in Practice",
-     "note": "White was limited at Friday's practice due to a heel injury.",
+     "note": "White (heel) is trending toward being available for Monday's game against the Bengals, Tashan Reed of The Washington Post reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
