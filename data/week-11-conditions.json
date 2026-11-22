@@ -1,6 +1,6 @@
 {
  "week": 11,
- "updated": "2026-11-21T14:56:12-05:00",
+ "updated": "2026-11-21T21:00:14-05:00",
  "games": [
   {
    "away": "IND",
@@ -291,6 +291,15 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "MIA",
+     "player": "Darrell Baker Jr.",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "The Dolphins activated Baker (knee) from the reserve/PUP list Saturday.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "BUF",
      "player": "Ed Oliver",
      "position": "DT",
@@ -391,14 +400,6 @@
     {
      "team": "NO",
      "player": "Christen Miller",
-     "position": "DT",
-     "status": "IR",
-     "injury": "Knee",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CHI",
-     "player": "Kentavius Street",
      "position": "DT",
      "status": "IR",
      "injury": "Knee",
@@ -518,6 +519,14 @@
     },
     {
      "team": "TEN",
+     "player": "Jaylen Harrell",
+     "position": "LB",
+     "status": "IR",
+     "injury": "Knee - ACL",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TEN",
      "player": "Tyjae Spears",
      "position": "RB",
      "status": "IR",
@@ -605,19 +614,18 @@
     },
     {
      "team": "DET",
-     "player": "Cade Mays",
-     "position": "C",
-     "status": "Out",
-     "injury": "Ankle",
-     "note": "out",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "DET",
      "player": "Aidan Hutchinson",
      "position": "DE",
      "status": "IR",
      "injury": "Knee - ACL",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "DET",
+     "player": "Cade Mays",
+     "position": "C",
+     "status": "IR",
+     "injury": "Ankle",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -854,15 +862,6 @@
    },
    "injuries": [
     {
-     "team": "PHI",
-     "player": "Dontayvion Wicks",
-     "position": "WR",
-     "status": "Out",
-     "injury": "Ankle",
-     "note": "Wicks (ankle/foot) is listed as out for Sunday's game against the Steelers.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "PIT",
      "player": "Nick Herbig",
      "position": "LB",
@@ -873,11 +872,10 @@
     },
     {
      "team": "PHI",
-     "player": "Zack Baun",
-     "position": "LB",
-     "status": "Out",
-     "injury": "Back",
-     "note": "Baun (back) has been ruled out for Sunday's game against the Steelers.",
+     "player": "Dontayvion Wicks",
+     "position": "WR",
+     "status": "IR",
+     "injury": "Ankle",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -906,10 +904,10 @@
     },
     {
      "team": "PHI",
-     "player": "Will Shipley",
-     "position": "RB",
+     "player": "Zack Baun",
+     "position": "LB",
      "status": "IR",
-     "injury": "Foot",
+     "injury": "Back",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -947,6 +945,15 @@
      "injury": "Hand",
      "note": "The Steelers activated Wilson (hand) from injured reserve Saturday, Ian Rapoport of NFL Network reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PHI",
+     "player": "Will Shipley",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Foot",
+     "note": "The Eagles activated Shipley (foot) from injured reserve Saturday, but he remains questionable for Sunday's game against the Steelers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -972,15 +979,6 @@
      "status": "Out",
      "injury": "Foot",
      "note": "Okereke (foot) is out for Sunday's matchup against the Ravens, Mike Kaye of ESPN.com reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CAR",
-     "player": "Isaiah Simmons",
-     "position": "S",
-     "status": "Out",
-     "injury": "Knee",
-     "note": "Simmons (knee) has been ruled out ahead of Sunday's game against the Ravens, Mike Kaye of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1020,6 +1018,14 @@
     },
     {
      "team": "CAR",
+     "player": "Isaiah Simmons",
+     "position": "S",
+     "status": "IR",
+     "injury": "Knee",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CAR",
      "player": "Jonathon Brooks",
      "position": "RB",
      "status": "IR",
@@ -1036,19 +1042,20 @@
     },
     {
      "team": "CAR",
-     "player": "Mike Jackson",
-     "position": "CB",
-     "status": "IR",
-     "injury": "Groin",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "CAR",
      "player": "Darren Waller",
      "position": "TE",
      "status": "Questionable",
      "injury": "Knee",
      "note": "Waller (knee) is listed as questionable for Sunday's game against the Ravens, Joe Person of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CAR",
+     "player": "Mike Jackson",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Groin",
+     "note": "The Panthers activated Jackson (groin) from injured reserve Saturday, Darin Gantt of the team's official site reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1115,15 +1122,6 @@
     },
     {
      "team": "LAC",
-     "player": "Rodney Shelley",
-     "position": "CB",
-     "status": "Out",
-     "injury": "Ankle",
-     "note": "Shelly (ankle) has been ruled out ahead of Sunday's game against the Jets, Omar Navarro of the Chargers' official site reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "LAC",
      "player": "Branson Taylor",
      "position": "G",
      "status": "IR",
@@ -1140,10 +1138,10 @@
     },
     {
      "team": "LAC",
-     "player": "Trey Pipkins III",
-     "position": "OT",
+     "player": "Rodney Shelley",
+     "position": "CB",
      "status": "IR",
-     "injury": "Knee",
+     "injury": "Ankle",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1225,6 +1223,15 @@
      "status": "Questionable",
      "injury": "Groin",
      "note": "Wallace (groin) is questionable for Sunday's game against the Chargers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Trey Pipkins III",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "The Chargers activated Pipkins (knee) from injured reserve Saturday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1328,7 +1335,7 @@
      "position": "DE",
      "status": "Out",
      "injury": "Concussion",
-     "note": "Striggow (concussion) is listed as questionable for Sunday's game against the Giants.",
+     "note": "Striggow (concussion) has been downgraded to out for Sunday's game against the Giants.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1424,14 +1431,6 @@
      "position": "LB",
      "status": "IR",
      "injury": "Foot",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "C.J. West",
-     "position": "DT",
-     "status": "IR",
-     "injury": "Knee",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1562,7 +1561,7 @@
      "position": "G",
      "status": "Out",
      "injury": "Knee",
-     "note": "out",
+     "note": "Risner (knees) has been ruled out for Monday's game against the Commanders, Mike Petraglia of CLNSCincy.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1571,7 +1570,6 @@
      "position": "WR",
      "status": "IR",
      "injury": "Thumb",
-     "practice_latest": "Full Participation in Practice",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1607,12 +1605,21 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "WAS",
+     "player": "Amik Robertson",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Robertson (ankle) is listed as questionable for Monday's game against the Bengals.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "CIN",
      "player": "Dax Hill",
      "position": "CB",
      "status": "Questionable",
      "injury": "Illness",
-     "note": "Hill (illness) did not participate in practice Thursday, Paul Dehner Jr. of The Athletic reports.",
+     "note": "Hill (illness) is listed as questionable for Monday's game against the Commanders.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1625,12 +1632,21 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "WAS",
-     "player": "Quan Martin",
+     "team": "CIN",
+     "player": "Kyle Dugger",
      "position": "S",
      "status": "Questionable",
-     "injury": "Shoulder",
-     "note": "Martin (shoulder) was a limited participant at practice Thursday.",
+     "injury": "Quadriceps",
+     "note": "Dugger (quadriceps) is questionable for Monday night's game against the Commanders.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "WAS",
+     "player": "Lucas Patrick",
+     "position": "G",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Patrick (concussion) is questionable for Monday's game against the Bengals.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1639,17 +1655,7 @@
      "position": "RB",
      "status": "Questionable",
      "injury": "Heel",
-     "note": "White (heel) is trending toward being available for Monday's game against the Bengals, Tashan Reed of The Washington Post reports.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "WAS",
-     "player": "Treylon Burks",
-     "position": "WR",
-     "status": "Questionable",
-     "injury": "Foot",
-     "practice_latest": "Did Not Participate In Practice",
-     "note": "Burks (foot) did not practice Friday.",
+     "note": "White (heel) is listed as questionable for Monday's game versus the Bengals.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
