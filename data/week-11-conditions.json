@@ -1,6 +1,6 @@
 {
  "week": 11,
- "updated": "2026-11-22T15:09:38-05:00",
+ "updated": "2026-11-22T16:55:27-05:00",
  "games": [
   {
    "away": "IND",
@@ -342,6 +342,15 @@
      "status": "IR",
      "injury": "Knee - Meniscus",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "MIA",
+     "player": "JuJu Brents",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Shoulder",
+     "note": "Brents (shoulder) is questionable to return to Sunday's tilt against Buffalo.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -451,15 +460,6 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "CHI",
-     "player": "Roschon Johnson",
-     "position": "RB",
-     "status": "Out",
-     "injury": "Ankle",
-     "note": "Johnson exited Sunday's game versus the Saints due to an ankle injury and is doubtful to return.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "NO",
      "player": "Taliese Fuaga",
      "position": "OT",
@@ -483,6 +483,24 @@
      "position": "DT",
      "status": "IR",
      "injury": "Knee",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NO",
+     "player": "Juwan Johnson",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Johnson injured his hamstring during Sunday's game in Chicago, Jeff Nowak of WWL Radio reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CHI",
+     "player": "Roschon Johnson",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Johnson (ankle) has been ruled out for the rest of Sunday's game against the Saints, Courtney Cronin of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -659,12 +677,21 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "TEN",
+     "player": "Dan Moore Jr.",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Moore (knee) is questionable to return to Sunday's game against the Cowboys.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "DAL",
      "player": "Dee Winters",
      "position": "LB",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Winters (knee) is questionable to return to Sunday's game against the Titans, Nick Harris of the Fort Worth Star-Telegram reports.",
+     "note": "Winters (knee) has been ruled out for the remainder of Sunday's clash against the Titans, Joe Hoyt of The Dallas Morning News reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -673,7 +700,7 @@
      "position": "S",
      "status": "Questionable",
      "injury": "Knee",
-     "note": "Burgess (ankle) is questionable to return to Sunday's Week 11 matchup against Dallas.",
+     "note": "Burgess (knee) has been ruled out for the rest of Sunday's game against the Cowboys.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -840,6 +867,15 @@
      "position": "CB",
      "status": "IR",
      "injury": "Knee",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "TB",
+     "player": "Benjamin Morrison",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Morrison (hamstring) has been ruled out for the remainder of Sunday's matchup against Detroit, Scott Smith of the Buccaneers' official site reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1025,12 +1061,30 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
+     "team": "KC",
+     "player": "Ben VanSumeren",
+     "position": "FB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "VanSumeren (knee) has been ruled out for the rest of Sunday's game against the Cardinals.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
      "team": "ARI",
      "player": "Cody Simon",
      "position": "LB",
      "status": "Questionable",
      "injury": "Calf",
      "note": "Simon (calf) is questionable to return to Sunday's game against the Chiefs.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "KC",
+     "player": "Noah Gray",
+     "position": "TE",
+     "status": "Questionable",
+     "injury": "Ribs",
+     "note": "Gray (ribs) is questionable to return to Sunday's matchup against Arizona.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1205,6 +1259,15 @@
      "status": "Questionable",
      "injury": "Ankle",
      "note": "Highsmith (ankle) has been ruled out from returning to Sunday's matchup against Philadelphia, Brooke Pryor of ESPN.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PHI",
+     "player": "Quinyon Mitchell",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Mitchell (hamstring) has been ruled out for the rest of Sunday's game against the Steelers.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1381,6 +1444,24 @@
      "status": "IR",
      "injury": "Thumb",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "BAL",
+     "player": "Derrick Henry",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Henry is being evaluated for a concussion during Sunday's game against the Panthers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "CAR",
+     "player": "Jalen Coker",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Coker was taken to the medical tent late in the fourth quarter of Sunday's 35-33 win over the Ravens to be evaluated for an injury, Joe Person of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -1546,7 +1627,7 @@
      "position": "S",
      "status": "Out",
      "injury": "Hamstring",
-     "note": "inactive",
+     "note": "Jones (hamstring) is inactive for Sunday's game against the Raiders.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1591,7 +1672,7 @@
      "position": "WR",
      "status": "Out",
      "injury": "Coach's Decision",
-     "note": "inactive",
+     "note": "Thornton (coach's decision) is inactive for Sunday's Week 11 tilt against Denver.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1627,7 +1708,7 @@
      "position": "WR",
      "status": "Out",
      "injury": "Coach's Decision",
-     "note": "inactive",
+     "note": "Humphrey (coach's decision) is inactive for Sunday's game against Las Vegas.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1645,7 +1726,7 @@
      "position": "QB",
      "status": "Out",
      "injury": "Coach's Decision",
-     "note": "inactive",
+     "note": "Ehlinger (coach's decision) is inactive but will serve as the Broncos' emergency third quarterback against the Raiders on Sunday.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1693,11 +1774,101 @@
    "injuries": [
     {
      "team": "JAX",
+     "player": "Albert Regis",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
+     "player": "CJ Williams",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
      "player": "Danny Striggow",
      "position": "DE",
      "status": "Out",
      "injury": "Concussion",
-     "note": "Striggow (concussion) has been downgraded to out for Sunday's game against the Giants.",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Darius Alexander",
+     "position": "DT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Greg Desrosiers Jr.",
+     "position": "RB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "J.C. Davis",
+     "position": "OT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
+     "player": "Jalen Huskey",
+     "position": "S",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Jason Pinnock",
+     "position": "S",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Josh Sills",
+     "position": "G",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
+     "player": "Matt Dickerson",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Neck",
+     "note": "Dickerson (neck) is inactive for Sunday's game against the Giants.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Nic Jones",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1706,7 +1877,16 @@
      "position": "C",
      "status": "Out",
      "injury": "Knee",
-     "note": "Jaguars head coach Liam Coen announced Wednesday that Hainsey (knee) is out for Sunday's game against the Giants, Ryan O'Halloran of The Florida Times-Union reports.",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Thomas Fidone II",
+     "position": "TE",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1723,15 +1903,6 @@
      "position": "RB",
      "status": "IR",
      "injury": "Hamstring",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "JAX",
-     "player": "Matt Dickerson",
-     "position": "DE",
-     "status": "Questionable",
-     "injury": "Neck",
-     "note": "questionable",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
