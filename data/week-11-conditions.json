@@ -1,6 +1,6 @@
 {
  "week": 11,
- "updated": "2026-11-22T16:55:27-05:00",
+ "updated": "2026-11-22T21:26:13-05:00",
  "games": [
   {
    "away": "IND",
@@ -333,14 +333,6 @@
      "position": "DT",
      "status": "IR",
      "injury": "Biceps",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "MIA",
-     "player": "Zeek Biggers",
-     "position": "DT",
-     "status": "IR",
-     "injury": "Knee - Meniscus",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -855,14 +847,6 @@
     },
     {
      "team": "TB",
-     "player": "Jalen McMillan",
-     "position": "WR",
-     "status": "IR",
-     "injury": "Knee - PCL",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "TB",
      "player": "Josh Hayes",
      "position": "CB",
      "status": "IR",
@@ -1010,14 +994,6 @@
      "status": "Out",
      "injury": "Concussion",
      "note": "inactive",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "ARI",
-     "player": "Andrew Wingard",
-     "position": "S",
-     "status": "IR",
-     "injury": "Wrist",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1263,11 +1239,29 @@
     },
     {
      "team": "PHI",
+     "player": "Jonathan Jones",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Foot",
+     "note": "Jones (foot) was spotted in a walking boot following Sunday's 19-16 win over the Steelers, Dave Zangaro of NBC Sports Philadelphia reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PHI",
      "player": "Quinyon Mitchell",
      "position": "CB",
      "status": "Questionable",
      "injury": "Hamstring",
      "note": "Mitchell (hamstring) has been ruled out for the rest of Sunday's game against the Steelers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "PHI",
+     "player": "Saquon Barkley",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Arm",
+     "note": "Barkley (left arm) said after Sunday's 19-16 win over the Steelers that he believes he'll play in Thursday's game at Dallas, Johnny McGonigal of PennLive.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1446,21 +1440,12 @@
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
-     "team": "BAL",
-     "player": "Derrick Henry",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Concussion",
-     "note": "Henry is being evaluated for a concussion during Sunday's game against the Panthers.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
      "team": "CAR",
      "player": "Jalen Coker",
      "position": "WR",
      "status": "Questionable",
      "injury": "Concussion",
-     "note": "Coker was taken to the medical tent late in the fourth quarter of Sunday's 35-33 win over the Ravens to be evaluated for an injury, Joe Person of The Athletic reports.",
+     "note": "Coker entered the league's concussion protocol following Sunday's 35-33 win over the Ravens, Sheena Quick of Fox Sports Radio 1340 reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1603,6 +1588,33 @@
      "status": "IR",
      "injury": "Ankle",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Akheem Mesidor",
+     "position": "LB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Mesidor (ankle) is questionable to return to Sunday's contest against the Jets.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Justin Herbert",
+     "position": "QB",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Herbert entered the concussion protocol after Sunday's 27-24 loss to the Jets, Noah Furtado of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LAC",
+     "player": "Keaton Mitchell",
+     "position": "RB",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Mitchell (back) has re-entered Sunday's game against the Jets, Noah Furtado of The Athletic reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -1636,7 +1648,7 @@
      "position": "TE",
      "status": "Out",
      "injury": "Ankle",
-     "note": "Bowers (ankle/quad) is inactive for Sunday's game against the Broncos.",
+     "note": "Raiders coach Klink Kubiak said after Sunday's 38-24 loss to the Broncos that he's optimistic Bowers (ankle/quadriceps) will be available to face the Browns on Nov. 29, Ryan McFadden of ESPN.com reports.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1753,6 +1765,42 @@
      "position": "TE",
      "status": "IR",
      "injury": "Foot",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LV",
+     "player": "Adam Butler",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Concussion",
+     "note": "Butler (concussion) has been ruled out for the remainder of Sunday's contest against the Broncos.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LV",
+     "player": "Dareke Young",
+     "position": "WR",
+     "status": "Questionable",
+     "injury": "Undisclosed",
+     "note": "Young (stinger) is questionable to return to Sunday's contest against Denver.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LV",
+     "player": "JJ Pegues",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Forearm",
+     "note": "Pegues is questionable to return to Sunday's game against the Broncos due to a forearm injury.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "LV",
+     "player": "Tim Keenan III",
+     "position": "DT",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Keenan (knee) has been ruled out for the rest of Sunday's contest against Denver.",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
@@ -1904,6 +1952,33 @@
      "status": "IR",
      "injury": "Hamstring",
      "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "NYG",
+     "player": "Greg Newsome II",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Newsome (ankle) has been ruled out for the remainder of Sunday evening's matchup with the Jaguars, Patricia Traina of SI.com reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
+     "player": "Jarrian Jones",
+     "position": "CB",
+     "status": "Questionable",
+     "injury": "Chest",
+     "note": "Jones (chest) has been ruled out for the rest of Sunday's contest against the Giants.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "JAX",
+     "player": "Walker Little",
+     "position": "OT",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Little is questionable to return to Sunday's game against the Giants due to a knee injury.",
+     "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
    "with_without": [],
@@ -1933,6 +2008,33 @@
     },
     {
      "team": "SF",
+     "player": "Demarcus Robinson",
+     "position": "WR",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "Robinson (coach's decision) is inactive for Sunday night's contest against the Vikings, Brooke Evans of the 49ers' official website reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Dre Greenlaw",
+     "position": "LB",
+     "status": "Out",
+     "injury": "Neck",
+     "note": "Greenlaw (neck) is inactive for Sunday night's contest against the Vikings in Mexico City, Brooke Evans of the 49ers' official website reports.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Enrique Cruz Jr.",
+     "position": "OT",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
      "player": "Isaac Guerendo",
      "position": "RB",
      "status": "Out",
@@ -1942,11 +2044,47 @@
     },
     {
      "team": "MIN",
+     "player": "Isaiah Rodgers",
+     "position": "CB",
+     "status": "Out",
+     "injury": "Quadriceps",
+     "note": "Rodgers (quadriceps) is inactive for Sunday night's matchup against the 49ers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "MIN",
+     "player": "Jay Ward",
+     "position": "S",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Ward (knee) is inactive for Sunday night's game against the 49ers.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "MIN",
      "player": "Jordan Addison",
      "position": "WR",
      "status": "Out",
      "injury": "Thumb",
-     "note": "Head coach Kevin O'Connell said Wednesday that Addison underwent thumb surgery earlier this week and won't be placed on injured reserve, Alec Lewis of The Athletic reports.",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Khalid Kareem",
+     "position": "DE",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Kareem (ankle) is inactive for Sunday night's game against the Vikings.",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "SF",
+     "player": "Kurtis Rourke",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "inactive",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1955,7 +2093,16 @@
      "position": "QB",
      "status": "Out",
      "injury": "Hamstring",
-     "note": "Murray (hamstring) has been ruled out for Sunday night's game against the 49ers.",
+     "note": "inactive",
+     "source_url": "https://www.espn.com/nfl/injuries"
+    },
+    {
+     "team": "MIN",
+     "player": "Max Brosmer",
+     "position": "QB",
+     "status": "Out",
+     "injury": "Coach's Decision",
+     "note": "Brosmer (coach's decision) is inactive but operating as the Vikings' emergency third QB on Sunday night versus the 49ers.",
      "source_url": "https://www.espn.com/nfl/injuries"
     },
     {
@@ -1988,87 +2135,6 @@
      "position": "CB",
      "status": "IR",
      "injury": "Groin",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Dre Greenlaw",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Neck",
-     "note": "Greenlaw (neck) is listed as questionable for Sunday's game against the Vikings in Mexico City.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "MIN",
-     "player": "Isaiah Rodgers",
-     "position": "CB",
-     "status": "Questionable",
-     "injury": "Quadriceps",
-     "note": "Rodgers (quadriceps) is listed as questionable for Sunday's game against the 49ers in Mexico City.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "MIN",
-     "player": "Jay Ward",
-     "position": "S",
-     "status": "Questionable",
-     "injury": "Knee",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Jordan James",
-     "position": "RB",
-     "status": "Questionable",
-     "injury": "Calf",
-     "note": "James (calf) is questionable for Sunday's game against the Vikings in Mexico City.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Khalid Kareem",
-     "position": "DE",
-     "status": "Questionable",
-     "injury": "Ankle",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Luke Gifford",
-     "position": "LB",
-     "status": "Questionable",
-     "injury": "Chest",
-     "note": "questionable",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Mac Jones",
-     "position": "QB",
-     "status": "Questionable",
-     "injury": "Illness",
-     "note": "Jones (illness) is listed as questionable for Sunday's game against the Vikings in Mexico City.",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Mike Evans",
-     "position": "WR",
-     "status": "Questionable",
-     "injury": "Achilles",
-     "note": "Evans (Achilles), who is listed as questionable for Sunday's game against the Vikings in Mexico City, is expected to be active and is likely to avoid a strict \"pitch count,\" though the 49ers plan to \"be smart\" with his workload, Jay Glaz...",
-     "source_url": "https://www.espn.com/nfl/injuries"
-    },
-    {
-     "team": "SF",
-     "player": "Upton Stout",
-     "position": "CB",
-     "status": "Questionable",
-     "injury": "Shoulder",
-     "note": "questionable",
      "source_url": "https://www.espn.com/nfl/injuries"
     }
    ],
