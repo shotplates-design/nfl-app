@@ -1,0 +1,191 @@
+{
+  "season": 2026,
+  "week": 12,
+  "built_at": "2026-11-26T22:10:40.176498+00:00",
+  "params": {
+    "best_props_min_rate": 0.85,
+    "best_props_alt_rate": 0.75
+  },
+  "props": [
+    {
+      "slug": "james-cook",
+      "name": "James Cook",
+      "team": "buf",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 75,
+      "rate": 0.9,
+      "score": 105.22
+    },
+    {
+      "slug": "parker-washington",
+      "name": "Parker Washington",
+      "team": "jax",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 60,
+      "rate": 0.875,
+      "score": 105.2
+    },
+    {
+      "slug": "ceedee-lamb",
+      "name": "CeeDee Lamb",
+      "team": "dal",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 55,
+      "rate": 0.8182,
+      "score": 100.58
+    },
+    {
+      "slug": "jahmyr-gibbs",
+      "name": "Jahmyr Gibbs",
+      "team": "det",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 70,
+      "rate": 0.8,
+      "score": 99.41
+    },
+    {
+      "slug": "jameson-williams",
+      "name": "Jameson Williams",
+      "team": "det",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 45,
+      "rate": 0.8889,
+      "score": 98.7
+    },
+    {
+      "slug": "bucky-irving",
+      "name": "Bucky Irving",
+      "team": "tb",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 45,
+      "rate": 1.0,
+      "score": 98.33
+    },
+    {
+      "slug": "rashee-rice",
+      "name": "Rashee Rice",
+      "team": "kc",
+      "role": "WR/TE",
+      "stat": "recYds",
+      "thr": 45,
+      "rate": 0.8571,
+      "score": 97.43
+    },
+    {
+      "slug": "malik-nabers",
+      "name": "Malik Nabers",
+      "team": "nyg",
+      "role": "WR/TE",
+      "stat": "rec",
+      "thr": 5,
+      "rate": 0.9,
+      "score": 96.57
+    },
+    {
+      "slug": "puka-nacua",
+      "name": "Puka Nacua",
+      "team": "lar",
+      "role": "WR/TE",
+      "stat": "rec",
+      "thr": 6,
+      "rate": 0.8571,
+      "score": 96.29
+    },
+    {
+      "slug": "ashton-jeanty",
+      "name": "Ashton Jeanty",
+      "team": "lv",
+      "role": "RB",
+      "stat": "rec",
+      "thr": 3,
+      "rate": 1.0,
+      "score": 96.0
+    },
+    {
+      "slug": "kirk-cousins",
+      "name": "Kirk Cousins",
+      "team": "min",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 205,
+      "rate": 0.9091,
+      "score": 94.57
+    },
+    {
+      "slug": "brock-purdy",
+      "name": "Brock Purdy",
+      "team": "sf",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 205,
+      "rate": 0.9,
+      "score": 94.21
+    },
+    {
+      "slug": "dak-prescott",
+      "name": "Dak Prescott",
+      "team": "dal",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 195,
+      "rate": 0.9091,
+      "score": 93.78
+    },
+    {
+      "slug": "joe-burrow",
+      "name": "Joe Burrow",
+      "team": "cin",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 250,
+      "rate": 0.8,
+      "score": 93.77
+    },
+    {
+      "slug": "ollie-gordon-ii",
+      "name": "Ollie Gordon II",
+      "team": "mia",
+      "role": "RB",
+      "stat": "rushYds",
+      "thr": 55,
+      "rate": 0.7778,
+      "score": 93.07
+    },
+    {
+      "slug": "chase-brown",
+      "name": "Chase Brown",
+      "team": "cin",
+      "role": "RB",
+      "stat": "rec",
+      "thr": 3,
+      "rate": 0.9,
+      "score": 92.0
+    },
+    {
+      "slug": "jordan-love",
+      "name": "Jordan Love",
+      "team": "gb",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 220,
+      "rate": 0.8,
+      "score": 91.4
+    },
+    {
+      "slug": "trevor-lawrence",
+      "name": "Trevor Lawrence",
+      "team": "jax",
+      "role": "QB",
+      "stat": "passYds",
+      "thr": 210,
+      "rate": 0.8,
+      "score": 90.61
+    }
+  ]
+}
